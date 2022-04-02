@@ -11,14 +11,14 @@
           {
             "id": "video_url",
             "name": "Video URL",
-            "type": "url",
+            "type": "file",
             "required": true
           },
           {
             "id": "video_fallback_img",
             "name": "Fallback Image",
             "type": "image",
-            "required": false
+            "required": true
           }
         ]
       },
@@ -29,7 +29,7 @@
         "attribute_definitions": [
           {
             "id": "text_lebel",
-            "name": "Text above Heading Overlay",
+            "name": "Text Label above Heading Overlay",
             "type": "string",
             "required": false
           },

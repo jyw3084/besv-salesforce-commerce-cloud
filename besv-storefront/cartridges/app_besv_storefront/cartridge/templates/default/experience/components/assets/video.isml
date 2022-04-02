@@ -1,10 +1,11 @@
 <isscript>
     var assets = require('*/cartridge/scripts/assets.js');
+	<iscomment> add css file here</iscomment>
 </isscript>
 
-<div class="js-video video-content">
-	<video width="100%" height="auto" loop autoplay>
-	  <source src="${pdict.videoUrl}" type="video/mp4">
+<div class="video-content">
+	<video width="100%" height="auto" loop autoplay muted poster="${pdict.videoFallbackImg.src.desktop}">
+	  <source src="${pdict.videoUrl.src}" type="video/mp4">
 	</video>
 	<div class="hover-text">
 		<section>
@@ -14,7 +15,7 @@
 			<h2>${pdict.heading}</h2>
 			<p>${pdict.description}</p>
 			<a href="${pdict.buttonLink}">
-				<button id="js-trigger-overlay" type="button">
+				<button id="trigger-overlay" type="button">
 					${pdict.buttonName}
 				</button>
 			</a>
