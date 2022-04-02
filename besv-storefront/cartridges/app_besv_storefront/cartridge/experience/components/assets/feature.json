@@ -1,0 +1,33 @@
+{
+    "name": "Key Feature",
+    "description": "This is a component combined feature with heading and description",
+    "group": "assets",
+    "attribute_definition_groups": [
+      {
+        "id": "feature_tile",
+        "attribute_definitions": [
+          {
+            "id": "keyIcon",
+            "name": "Icon",
+            "type": "image",
+            "required": true
+          },
+          {
+            "id": "heading",
+            "name": "heading",
+            "description": "heading for feature",
+            "type": "string",
+            "required": true
+          },
+          {
+            "id": "description",
+            "name": "Description",
+            "description": "description for feature",
+            "type": "text",
+            "required": true
+          }
+        ]
+      }
+    ],
+    "region_definitions": []
+  }

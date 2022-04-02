@@ -1,0 +1,17 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    <iscomment>
+        add css or js here
+    </iscomment>
+</isscript>
+<div class = "key-features">
+    <div class="container">
+        <isif condition="${!empty(pdict.heading)}">
+            <h2 class="key-heading">${pdict.heading}</h2>
+        </isif>
+        <div class="key-features-wrapper">
+            <isprint value="${pdict.regions.features.setClassName('key-features-wrapper__parent').render()}"
+                encoding="off" />
+        </div>
+    </div>
+</div>

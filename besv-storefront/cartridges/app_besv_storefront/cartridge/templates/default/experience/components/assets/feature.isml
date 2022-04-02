@@ -1,0 +1,14 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    <iscomment> add css and js file here</iscomment>
+</isscript>
+
+<div class="feature-tile">
+    <div class="feature-tile-icon">
+        <img src="${pdict.icon.src.desktop}" alt="" />
+    </div>
+    <div class="feature-tile-detail">
+        <h3 class="feature-tile-heading">${pdict.heading}</h3>
+        <p class="feature-tile-description">${pdict.description}</p>
+    </div>
+</div>
