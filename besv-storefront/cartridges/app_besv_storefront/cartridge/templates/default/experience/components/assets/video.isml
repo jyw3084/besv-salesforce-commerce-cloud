@@ -1,0 +1,24 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+</isscript>
+
+<div class="js-video video-content">
+	<video width="100%" height="auto" loop autoplay>
+	  <source src="${pdict.videoUrl}" type="video/mp4">
+	</video>
+	<div class="hover-text">
+		<section>
+			<isif condition="${pdict.label}">
+				<p>${pdict.label}</p>
+			</isif>
+			<h2>${pdict.heading}</h2>
+			<p>${pdict.description}</p>
+			<a href="${pdict.buttonLink}">
+				<button id="js-trigger-overlay" type="button">
+					${pdict.buttonName}
+				</button>
+			</a>
+		</section>
+	</div>
+</div>
+

@@ -1,0 +1,73 @@
+{
+    "name": "Video Banner",
+    "description": "Video Player Banner",
+    "group": "assets",
+    "attribute_definition_groups": [
+      {
+        "id": "videoSettings",
+        "name": "Video",
+        "description": "Video Settings",
+        "attribute_definitions": [
+          {
+            "id": "video_url",
+            "name": "Video URL",
+            "type": "url",
+            "required": true
+          },
+          {
+            "id": "video_fallback_img",
+            "name": "Fallback Image",
+            "type": "image",
+            "required": false
+          }
+        ]
+      },
+      {
+        "id": "textSettings",
+        "name": "Text on Video",
+        "description": "Video Overlay Text Settings",
+        "attribute_definitions": [
+          {
+            "id": "text_lebel",
+            "name": "Text above Heading Overlay",
+            "type": "string",
+            "required": false
+          },
+          {
+            "id": "text_heading",
+            "name": "Text Heading Overlay",
+            "type": "string",
+            "required": true
+          },
+          {
+            "id": "text_description",
+            "name": "Text Description Overlay",
+            "type": "text",
+            "required": true
+          }
+        ]
+      },
+      {
+        "id": "button_spec",
+        "name": "Button Specification",
+        "description": "Specify the link for the 'Show Now' button.",
+        "attribute_definitions": [
+          {
+            "id": "button_link",
+            "name": "Link",
+            "description": "Specification for the link to where the user will be directed.",
+            "type": "url",
+            "required": true
+          },
+          {
+            "id": "button_name",
+            "name": "Button Name",
+              "description": "The text to be displayed on Botton. If nothing is entered 'Shop Now' will be displayed.",
+            "type": "string",
+            "required": false
+          }
+        ]
+      }
+    ],
+    "region_definitions": []
+}
