@@ -5,7 +5,7 @@
 
 <div class="feature-tile">
     <div class="feature-tile-icon">
-        <img src="${pdict.icon.src.desktop}" alt="" />
+        <img src="${pdict.icon.src.desktop}" alt="key feature" />
     </div>
     <div class="feature-tile-detail">
         <h3 class="feature-tile-heading">${pdict.heading}</h3>

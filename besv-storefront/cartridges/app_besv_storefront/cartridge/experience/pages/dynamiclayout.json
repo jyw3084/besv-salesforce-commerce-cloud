@@ -6,6 +6,7 @@
         "id":"main",
         "name":"Main Region",
         "component_type_exclusions": [
+          { "type_id": "assets.award" },
           { "type_id": "assets.feature" },
           { "type_id": "commerce_assets.categorytile" },
           { "type_id": "commerce_assets.productListTile" },

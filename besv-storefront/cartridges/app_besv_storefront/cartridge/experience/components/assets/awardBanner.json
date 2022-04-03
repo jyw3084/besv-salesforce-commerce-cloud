@@ -13,15 +13,6 @@
             "name": "Image",
             "type": "image",
             "required": true
-          },
-          {
-            "id": "image_position",
-            "name": "Image Position",
-            "description": "Image Position",
-            "type": "enum",
-            "values": ["left","right"],
-            "default_value": "right",
-            "required": true
           }
         ]
       },
