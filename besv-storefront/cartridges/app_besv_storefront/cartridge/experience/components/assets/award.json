@@ -1,0 +1,19 @@
+{
+    "name": "Award",
+    "description": "This is a award component used in Award Banner",
+    "group": "assets",
+    "attribute_definition_groups": [
+      {
+        "id": "awardSetting",
+        "attribute_definitions": [
+          {
+            "id": "keyIcon",
+            "name": "Icon",
+            "type": "image",
+            "required": true
+          }
+        ]
+      }
+    ],
+    "region_definitions": []
+  }

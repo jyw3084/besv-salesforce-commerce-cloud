@@ -1,0 +1,3 @@
+<div class="award-icon">
+    <img src="${pdict.icon.src.desktop}" alt="awrad winning" />
+</div>

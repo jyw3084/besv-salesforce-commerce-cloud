@@ -1,0 +1,106 @@
+{
+    "name": "Award Winning Banner",
+    "description": "Award Winning Banner",
+    "group": "assets",
+    "attribute_definition_groups": [
+      {
+        "id": "imgageSettings",
+        "name": "Image",
+        "description": "Image Settings",
+        "attribute_definitions": [
+          {
+            "id": "banner_image",
+            "name": "Image",
+            "type": "image",
+            "required": true
+          },
+          {
+            "id": "image_position",
+            "name": "Image Position",
+            "description": "Image Position",
+            "type": "enum",
+            "values": ["left","right"],
+            "default_value": "right",
+            "required": true
+          }
+        ]
+      },
+      {
+        "id": "textSettings",
+        "name": "Banner Text",
+        "description": "Banner Text",
+        "attribute_definitions": [
+          {
+            "id": "text_heading",
+            "name": "Text Heading",
+            "type": "string",
+            "required": true
+          },
+          {
+            "id": "text_description",
+            "name": "Text Description",
+            "type": "text",
+            "required": true
+          }
+        ]
+      },
+      {
+        "id": "button_spec",
+        "name": "Button Specification",
+        "description": "Specify the link for the 'Show Now' button.",
+        "attribute_definitions": [
+          {
+            "id": "button_link",
+            "name": "Link",
+            "description": "Specification for the link to where the user will be directed.",
+            "type": "url",
+            "required": true
+          },
+          {
+            "id": "button_name",
+            "name": "Button Name",
+              "description": "The text to be displayed on Botton. If nothing is entered 'Shop Now' will be displayed.",
+            "type": "string",
+            "required": false
+          }
+        ]
+      }
+    ],
+    "region_definitions": [
+        {
+          "id":"awards",
+          "name":"Awards",
+          "component_type_exclusions": [
+            { "type_id": "layouts.keyFeatures" },
+            { "type_id": "assets.video" },
+            { "type_id": "assets.feature" },
+            { "type_id": "commerce_assets.categorytile" },
+            { "type_id": "commerce_assets.productListTile" },
+            { "type_id": "commerce_assets.category" },
+            { "type_id": "commerce_assets.editorialRichText" },
+            { "type_id": "commerce_assets.imageAndText" },
+            { "type_id": "commerce_assets.mainBanner" },
+            { "type_id": "commerce_assets.photoTile" },
+            { "type_id": "commerce_assets.popularCategory" },
+            { "type_id": "commerce_assets.campaignBanner" },
+            { "type_id": "commerce_assets.productTile" },
+            { "type_id": "commerce_assets.shopTheLook" },
+            { "type_id": "commerce_layouts.carousel" },
+            { "type_id": "commerce_layouts.mobileGrid1r1c" },
+            { "type_id": "commerce_layouts.mobileGrid2r1c" },
+            { "type_id": "commerce_layouts.mobileGrid2r2c" },
+            { "type_id": "commerce_layouts.mobileGrid2r3c" },
+            { "type_id": "commerce_layouts.mobileGrid3r1c" },
+            { "type_id": "commerce_layouts.mobileGrid3r2c" },
+            { "type_id": "commerce_layouts.popularCategories" },
+            { "type_id": "commerce_layouts.mobileGridLookBook" },
+            { "type_id": "dynamic.productDetail" },
+            { "type_id": "dynamic.productList" },
+            { "type_id": "dynamic.dynamicCategoryBanner" },
+            { "type_id": "einstein.einsteinCarousel" },
+            { "type_id": "einstein.einsteinCarouselCategory" },
+            { "type_id": "einstein.einsteinCarouselProduct" }
+          ]
+        }
+    ]
+}
