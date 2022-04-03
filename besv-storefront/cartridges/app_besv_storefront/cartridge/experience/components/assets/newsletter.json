@@ -1,0 +1,42 @@
+{
+    "name": "Newsletter Subscription",
+    "description": "Newsletter Subscription",
+    "group": "assets",
+    "attribute_definition_groups": [
+      {
+        "id": "promoText",
+        "name": "Promotional Text",
+        "description": "Promotional Text",
+        "attribute_definitions": [
+          {
+            "id": "newsletter_promoText",
+            "name": "Promotional Heading",
+            "type": "string",
+            "required": true
+          }
+        ]
+      },
+      {
+        "id": "form_spec",
+        "name": "Email Form Specification",
+        "description": "Specify the link for the 'Show Now' button.",
+        "attribute_definitions": [
+          {
+            "id": "field_placeholder",
+            "name": "Email Placeholder",
+            "description": "Email Placeholder",
+            "type": "string",
+            "required": false
+          },
+          {
+            "id": "button_name",
+            "name": "Button Name",
+              "description": "The text to be displayed on Botton",
+            "type": "string",
+            "required": false
+          }
+        ]
+      }
+    ],
+    "region_definitions": []
+}
