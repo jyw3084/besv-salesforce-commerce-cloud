@@ -1,0 +1,29 @@
+#footercontent {
+    background: $white;
+    padding: 96px 0 41px;
+    h6 {
+        margin-bottom: 18px;
+    }
+    ul {
+        li {
+            margin-bottom: 15px;
+            font: rem-calc(14) / rem-calc(17) $Karla-Regular;
+            color: $medium-gray;
+            text-transform: uppercase;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        &.footer-signup-links {
+            li {
+                margin-bottom: 20px;
+                .social-link{
+                    margin-right: 28px;
+                    &:last-of-type {
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+    }
+}
