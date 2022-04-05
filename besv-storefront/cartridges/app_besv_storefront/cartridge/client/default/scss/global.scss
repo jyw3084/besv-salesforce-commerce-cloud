@@ -1,9 +1,10 @@
 @charset "UTF-8";
 
 @import "variable";
-@import "typography";
 @import "fonts";
 @import "~base/global";
 @import "mixins";
 @import "reset";
+@import "_bootstrap-custom-import";
 @import "components/footer";
+@import "typography";

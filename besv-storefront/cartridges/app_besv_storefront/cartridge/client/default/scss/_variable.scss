@@ -4,9 +4,15 @@ $base-font-size: 16;
 $primary: #000;
 $secondary: #949494;
 $white: #fff !default;
+$medium-gray: #949494;
 
 $container-max-widths: (
     md: 720px,
     lg: 940px,
     xl: 1240px,
-) 
+);
+
+// Fonts variables
+$Gothic-A1black: "gothic_a1black";
+$Gothic-A1regular: "gothic_a1regular";
+$Karla-Regular: "Karla-Regular";
