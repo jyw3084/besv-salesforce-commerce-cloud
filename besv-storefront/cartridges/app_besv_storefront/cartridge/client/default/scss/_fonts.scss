@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'gothic_a1black';
+    src: url('../fonts/custom-fonts/gothica1-black-webfont.woff2') format('woff2'),
+         url('../fonts/custom-fonts/gothica1-black-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'gothic_a1regular';
+    src: url('../fonts/custom-fonts/gothica1-regular-webfont.woff2') format('woff2'),
+         url('../fonts/custom-fonts/gothica1-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Karla-Regular';
+    src: url('../fonts/custom-fonts/Karla-Regular.woff2') format('woff2'),
+         url('../fonts/custom-fonts/Karla-Regular.woff') format('woff'),
+         url('../fonts/custom-fonts/Karla-Regular.ttf')  format('truetype');
+
+    font-weight: normal;
+    font-style: normal;
+  }
