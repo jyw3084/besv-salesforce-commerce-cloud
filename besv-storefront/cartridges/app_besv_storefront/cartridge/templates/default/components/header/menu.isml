@@ -8,14 +8,19 @@
         </div>
         <div class="close-button pull-right">
             <button role="button" aria-label="${Resource.msg('label.header.menu.close', 'common', null)}">
-                ${Resource.msg('link.header.menu.close', 'common', null)}
-                <span aria-hidden="true">&times;</span>
+                <span aria-hidden="true"><svg width="26" height="25" viewBox="0 0 26 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="0.979492" y="23.2655" width="32" height="2" rx="1" transform="rotate(-45 0.979492 23.2655)" fill="#333333"/>
+                    <rect width="32" height="2" rx="1" transform="matrix(-0.707107 -0.707107 -0.707107 0.707107 25.0215 23.2655)" fill="#333333"/>
+                    </svg>
+                </span>
             </button>
         </div>
     </div>
     <div class="menu-group" role="navigation">
         <ul class="nav navbar-nav" role="menu">
-            <iscontentasset aid="besv-mega-menu" />
+            <li>
+                <iscontentasset aid="besv-mega-menu" />
+            </li>
             <iscomment> <li class="nav-item" role="presentation">
                 <a href="" id="shop-e-bike" class="nav-link" role="link" tabindex="0">SHOPE E-BIKE</a>
             </li>

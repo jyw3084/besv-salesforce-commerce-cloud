@@ -1,17 +1,19 @@
-<header>
+<header class="main-header">
     <isinclude template="/components/header/skipNav" />
     <nav role="navigation">
         <div class="header container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="navbar-header brand">
-                        <a class="logo-home" href="${URLUtils.url('Home-Show')}" title="${ Resource.msgf('global.homepage.tooltip', 'common', null, Resource.msg('global.storename', 'common', null), Resource.msg('global.home', 'common', null)) }">
-                            <img class="hidden-md-down" src="${URLUtils.staticURL('/images/logo-black.svg')}" alt="${Resource.msg('global.storename', 'common', null)}" />
-                            <img class="d-lg-none" src="${URLUtils.staticURL('/images/logo-black.svg')}" alt="${Resource.msg('global.storename', 'common', null)}" />
-                        </a>
-                    </div>
-                    <div class="navbar-header">
-                        <div class="pull-right">
+            <div class="header-wrapper">
+                <div class="logo">
+                    <a class="logo-home" href="${URLUtils.url('Home-Show')}" title="${ Resource.msgf('global.homepage.tooltip', 'common', null, Resource.msg('global.storename', 'common', null), Resource.msg('global.home', 'common', null)) }">
+                        <img class="hidden-md-down" src="${URLUtils.staticURL('/images/logo-black.svg')}" alt="${Resource.msg('global.storename', 'common', null)}" />
+                        <img class="d-lg-none" src="${URLUtils.staticURL('/images/logo-black.svg')}" alt="${Resource.msg('global.storename', 'common', null)}" />
+                    </a>
+                </div>
+                <div class="main-menu navbar-toggleable-sm menu-toggleable-left multilevel-dropdown d-none d-md-block" id="sg-navbar-collapse">
+                            <isinclude template="/components/header/menu" />
+                </div>
+                <div class="navbar-header">
+                        <div class="header-right">
                             <div class="hidden-md-down">
                                 <isinclude url="${URLUtils.url('Page-Locale')}" />
                                 <isinclude url="${URLUtils.url('Account-Header')}" />
@@ -20,19 +22,16 @@
                                 <isinclude url="${URLUtils.url('Cart-MiniCart')}" />
                             </div>
                             <button class="navbar-toggler d-md-none" type="button" aria-controls="sg-navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
-                                &#9776;
+                                <svg width="32" height="15" viewBox="0 0 32 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect y="0.658905" width="32" height="2" rx="1" fill="#333333"/>
+                                <rect x="10" y="6.65891" width="22" height="2" rx="1" fill="#333333"/>
+                                <rect y="12.6589" width="32" height="2" rx="1" fill="#333333"/>
+                                </svg>
+
                             </button>
                         </div>
                         <div class="pull-left">
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="main-menu navbar-toggleable-sm menu-toggleable-left multilevel-dropdown d-none d-md-block" id="sg-navbar-collapse">
-            <div class="container">
-                <div class="row">
-                    <isinclude template="/components/header/menu" />
                 </div>
             </div>
         </div>
