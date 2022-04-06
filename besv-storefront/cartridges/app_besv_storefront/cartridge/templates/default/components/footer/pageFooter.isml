@@ -1,25 +1,24 @@
 <footer id="footercontent">
     <div class="container">
-        <div class="footer-container row">
-            <div class="footer-item col collapsible-xs">
+        <div class="footer-container footer-top">
+            <div class="footer-item footer-item-besv">
                 <iscontentasset aid="footer-besv" />
             </div>
-            <div class="footer-item col collapsible-xs">
+            <div class="footer-item footer-item-collapsible collapsible-xs">
                 <iscontentasset aid="footer-shop" />
             </div>
-            <div class="footer-item col collapsible-xs">
+            <div class="footer-item footer-item-collapsible collapsible-xs">
                 <iscontentasset aid="footer-help-links" />
             </div>
-            <div class="footer-item col collapsible-xs">
+            <div class="footer-item footer-item-collapsible collapsible-xs">
                 <iscontentasset aid="footer-about-links" />
             </div>
-            <div class="footer-item col collapsible-xs">
+            <div class="footer-item footer-item-signup collapsible-xs">
                 <iscontentasset aid="footer-signup">
             </div>
         </div>
-        <hr class="hidden-xs-down" />
-        <div class="row">
-            <div class="col-lg-4 col-sm-5 push-sm-7 push-lg-8 social">
+        <div class="footer-bottom">
+            <iscomment> <div class="col-lg-4 col-sm-5 push-sm-7 push-lg-8 social">
                 <isslot id="footer-column-m" description="Content in column 1 of the Footer" context="global" />
                 <button class="back-to-top" title="${Resource.msg('button.back_to_top', 'common', null)}" aria-label="${Resource.msg('button.back_to_top', 'common', null)}">
                     <span class="fa-stack fa-lg" aria-hidden="true">
@@ -27,8 +26,8 @@
                         <i class="fa fa-arrow-up fa-stack-1x"></i>
                     </span>
                 </button>
-            </div>
-            <div class="col-lg-8 col-sm-7 pull-sm-5 pull-lg-4 copyright-notice">
+            </div> </iscomment>
+            <div class="footer-copyright">
                 <iscontentasset aid="footer-copy" />
             </div>
         </div>

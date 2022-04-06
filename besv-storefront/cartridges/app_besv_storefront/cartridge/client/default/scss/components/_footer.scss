@@ -1,6 +1,24 @@
 #footercontent {
     background: $white;
     padding: 96px 0 41px;
+    @include media-breakpoint-down(md) {
+        padding: 48px 0 32px;
+    }
+    .footer-container {
+        display: flex;
+        justify-content: space-between;
+        @include media-breakpoint-down(md) {
+            flex-flow: column;
+        }
+        .footer-item {
+            width: 18%;
+            max-width: 18%;
+            @include media-breakpoint-down(md) {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+    }
     h6 {
         margin-bottom: 18px;
     }
@@ -10,6 +28,9 @@
             font: rem-calc(14) / rem-calc(17) $Karla-Regular;
             color: $medium-gray;
             text-transform: uppercase;
+            @include media-breakpoint-down(md) {
+                margin-bottom: 24px;
+            }
             &:last-child {
                 margin-bottom: 0;
             }
@@ -23,6 +44,31 @@
                         margin-right: 0;
                     }
                 }
+            }
+        }
+    }
+    @include media-breakpoint-down(md) {
+        .footer-item {
+            border-bottom: none;
+        }
+        .footer-item-besv {
+            padding-bottom: 48px;
+            border-bottom: 1px solid $brand-light-gray;
+        }
+        .footer-item-collapsible {
+            h6 {
+                padding: 21px 0;
+                margin: 0;
+                border-bottom: 1px solid $brand-light-gray;
+            }
+            ul {
+                padding: 15px 25px;
+            }
+        }
+        .footer-item-signup {
+            h6 {
+                padding: 21px 0;
+                margin: 0;
             }
         }
     }

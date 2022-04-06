@@ -1,0 +1,84 @@
+.main-header {
+    padding: 28px 0;
+    border-bottom: 1px solid $light-gray;
+    @include media-breakpoint-down(md) {
+        padding: 24px 0;
+    }
+    .header-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        .logo {
+            width: 120px;
+            height: 21px;
+        }
+        .main-menu {
+            background-color: $white;
+            top: -3px;
+        }
+        .mega-menu {
+            display: flex;
+            @include media-breakpoint-down(md) {
+                flex-direction: column;
+                text-align: center;
+            }
+            .nav-item {
+                padding-right: 40px;
+                font: rem-calc(14) / rem-calc(14) $Gothic-A1regular;
+                @include media-breakpoint-down(md) {
+                    padding: 20px 0;
+                    border-bottom: 1px solid $light-gray;
+                    font: rem-calc(18) / rem-calc(20) $Gothic-A1regular;
+                }
+                &:last-child {
+                    padding-right: 0;
+                }
+                .nav-link {
+                        color: $primary;
+                        padding: 0;
+                }
+            }
+        }
+        .header-right {
+            display: flex;
+            .minicart, .user  {
+                margin: 0;
+                line-height: 0;
+            }
+            .minicart {
+                margin: 3px 0 0 22px;
+                .minicart-quantity {
+                    background-color: $orange;
+                    top: -3px;
+                }
+            }
+            .navbar-toggler  {
+                line-height: 0;
+            }
+        }
+    }
+    .navbar-header {
+        height: auto;
+    }
+    .menu-toggleable-left {
+        .close-menu {
+            background-color: $white;
+            svg {
+                height: 24px;
+                width: 24px;
+            }
+        }
+    }
+    .login-phone {
+        text-align: center;
+        a {
+            border-bottom: 1px solid $light-gray;
+            font: rem-calc(18) / rem-calc(20) $Gothic-A1regular;
+            padding: 20px 0;
+            color: $primary;
+        }
+    }
+    .navbar-toggleable-sm {
+        padding: 0 24px;
+    }
+}
