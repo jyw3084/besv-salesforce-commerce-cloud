@@ -84,6 +84,7 @@
 }
 
 
+
 /* Key Features */
 
 .key-features-wrapper__parent {
@@ -138,5 +139,89 @@
                 text-align: left;
             }
         }
+    }
+}
+
+
+/*Video Banner*/
+
+.video {
+    position: relative;
+    margin-bottom: 65px;
+    overflow: hidden;
+    @include media-breakpoint-down(md) {
+        margin-bottom: 28px;
+    }
+    .video-content {
+        position: absolute;
+        bottom: 71px;
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 770px;
+        text-align: center;
+        @include media-breakpoint-down(md) {
+            bottom: 24px;
+            left: 0;
+            right: 0;
+            max-width: none;
+            transform: none;
+            padding: 0 24px;
+        }
+        .video-subheading {
+            font: rem-calc(18) / rem-calc(19) $Gothic-A1regular;
+            font-weight: 700;
+            color: $brand-dark;
+            margin-bottom: 13px;
+            @include media-breakpoint-down(md) {
+                font: rem-calc(16) / rem-calc(18) $Gothic-A1regular;
+                font-weight: 700;
+            }
+        }
+        .video-heading {
+            font: rem-calc(105) / rem-calc(105) $Gothic-A1regular;
+            vertical-align: top;
+            color: $brand-dark;
+            margin-bottom: 13px;
+            font-weight: 700;
+            @include media-breakpoint-down(md) {
+                font: rem-calc(46) / rem-calc(46) $Gothic-A1regular;
+                font-weight: 700;
+
+            }
+        }
+        .video-text {
+            font: rem-calc(28) / rem-calc(34) $Karla-Regular;
+            color: $brand-dark;
+            margin-bottom: 34px;
+            font-weight: 500;
+            @include media-breakpoint-down(md) {
+                font: rem-calc(24) / rem-calc(28) $Gothic-A1regular;
+                font-weight: 500;
+            }
+        }
+    }
+}
+
+
+/* Award Winning */
+
+.award-winner-banner {
+    display: flex;
+    margin-bottom: 67px;
+    .award-banner-figure {
+        width: 50%;
+        max-width: 50%;
+    }
+    .award-banner-content {
+        background-color: $gray-background;
+        width: 50%;
+        max-width: 50%;
+        padding: 92px 82px 75px;
+        .banner-detail {
+            max-width: 5;
+        }
+    }
+    .award-icon {
+        display: inline-block;
     }
 }

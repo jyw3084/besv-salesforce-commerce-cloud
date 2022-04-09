@@ -1,0 +1,9 @@
+@import "bootstrap/scss/mixins/breakpoints";
+img {
+    width: 100%;
+    height: auto;
+    @include media-breakpoint-down(md) {
+        height: 100%;
+    }
+
+}

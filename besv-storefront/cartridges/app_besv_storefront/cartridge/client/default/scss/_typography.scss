@@ -1,9 +1,30 @@
+h3 {
+    font-family: $Gothic-A1regular;
+    font-size: rem-calc(48);
+    line-height: rem-calc(57);
+    color: $primary;
+    font-weight: 900;
+}
 h5 {
     font-family: $Gothic-A1regular;
     font-size: rem-calc(16);
     line-height: rem-calc(19);
     color: $primary;
     font-weight: bolder;
+}
+
+.btn-black {
+    display: inline-block;
+    font: rem-calc(14) / rem-calc(14) $Gothic-A1regular;
+    padding: 16px 40px;
+    background-color: $primary;
+    color: $white;
+    border-radius: 999px;
+    text-transform: uppercase;
+    &:hover {
+        outline: none;
+        color: $white;
+    }
 }
 
 img {

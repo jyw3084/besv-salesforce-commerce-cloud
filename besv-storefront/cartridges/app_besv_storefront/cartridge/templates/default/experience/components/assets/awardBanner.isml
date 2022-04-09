@@ -2,21 +2,9 @@
     var assets = require('*/cartridge/scripts/assets.js');
     <iscomment> add js and css here </iscomment>
 </isscript>
-<section class="award-winner-banner">
-    <div class="row">
-        <div class="banner-figure image-component">
-            <picture>
-                <source srcset="${pdict.bannerImage.src.tablet}" media="(min-width: 768px)"/>
-                <source srcset="${pdict.bannerImage.src.desktop}" media="(min-width: 1024px)"/>
-                <img
-                    class="banner-image image-fluid common-image-component"
-                    src="${pdict.bannerImage.src.mobile}"
-                    style="--focal-point-x:${pdict.bannerImage.focalPointX}; --focal-point-y:${pdict.bannerImage.focalPointY}"
-                    <isif condition="${pdict.bannerImage.alt}">alt="${pdict.bannerImage.alt}" title="${pdict.bannerImage.alt}"</isif>
-                />
-            </picture>
-        </div>
-        <div class="banner-text-area">
+<div class="container">
+    <section class="award-winner-banner">
+        <div class="award-banner-content">
             <div class="banner-detail">
                 <div class="banner-heading">
                     <h2>${pdict.heading}</h2>
@@ -36,5 +24,18 @@
                 </div>
             </div>
         </div>
-    </div>
-</section>
+        <div class="award-banner-figure image-component">
+            <picture>
+                <source srcset="${pdict.bannerImage.src.tablet}" media="(min-width: 768px)"/>
+                <source srcset="${pdict.bannerImage.src.desktop}" media="(min-width: 1024px)"/>
+                <img
+                    class="banner-image image-fluid common-image-component"
+                    src="${pdict.bannerImage.src.mobile}"
+                    style="--focal-point-x:${pdict.bannerImage.focalPointX}; --focal-point-y:${pdict.bannerImage.focalPointY}"
+                    <isif condition="${pdict.bannerImage.alt}">alt="${pdict.bannerImage.alt}" title="${pdict.bannerImage.alt}"</isif>
+                />
+            </picture>
+        </div>
+    </section>
+</div>
+
