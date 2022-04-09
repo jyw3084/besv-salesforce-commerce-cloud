@@ -12,6 +12,12 @@
     "compile:scss": "sgmf-scripts --compile css"
   },
   "devDependencies": {
+    "@babel/core": "^7.6.3",
+    "@babel/plugin-proposal-object-rest-spread": "^7.6.2",
+    "@babel/preset-env": "^7.6.3",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.6",
+    "babel-preset-env": "^1.7.0",
     "eslint": "^3.19.0",
     "eslint-config-airbnb-base": "^5.0.3",
     "eslint-plugin-import": "^1.16.0",
@@ -22,12 +28,15 @@
     "mocha": "^5.2.0",
     "sinon": "^1.17.7",
     "chai": "^3.5.0",
+    "chalk": "^1.1.3",
     "proxyquire": "1.7.4",
     "sgmf-scripts": "^2.3.0",
     "css-loader": "^0.28.11",
     "node-sass": "^4.12.0",
     "postcss-loader": "^2.1.6",
-    "sass-loader": "^7.3.1"
+    "sass-loader": "^7.3.1",
+    "style-loader": "^0.21.0",
+    "shelljs": "^0.8.3"
   },
   "dependencies": {
     "bootstrap": "4.3.1",
