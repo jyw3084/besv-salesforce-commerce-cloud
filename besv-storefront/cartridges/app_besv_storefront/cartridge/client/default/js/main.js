@@ -14,5 +14,5 @@ $(document).ready(function () {
     processInclude(require('base/components/toolTip'));
 });
 
-require('base/thirdParty/bootstrap');
+require('./thirdParty/bootstrap');
 require('base/components/spinner');
