@@ -26,8 +26,10 @@
             @include media-breakpoint-down(md) {
                 display: flex;
                 align-items: center;
+                justify-content: space-between;
                 border-bottom: 1px solid $brand-light-gray;
-                margin-bottom: 21px;
+                margin-bottom: 8px;
+                padding-bottom: 8px;
             }
             .feature-tile-icon {
                 width: 52px;
@@ -47,6 +49,7 @@
                     padding: 0;
                     margin: 0;
                     border: none;
+                    flex: 1;
 
                 }
             }
@@ -58,6 +61,7 @@
             @include media-breakpoint-down(md) {
                 font: rem-calc(15) / rem-calc(21) $Karla-Regular;
                 text-align: left;
+                padding-top: 16px;
             }
         }
     }
@@ -72,6 +76,8 @@
     overflow: hidden;
     @include media-breakpoint-down(md) {
         margin-bottom: 28px;
+        padding-bottom: 28px;
+        border-bottom: 1px solid $grey;
     }
     .video-content {
         position: absolute;
@@ -91,7 +97,6 @@
             position: static;
             padding-top: 20px;
             transform: none;
-            border-bottom: 1px solid $grey;
         }
         .video-subheading {
             font: rem-calc(18) / rem-calc(19) $Gothic-A1regular;
