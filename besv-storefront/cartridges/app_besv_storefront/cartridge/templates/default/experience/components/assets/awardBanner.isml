@@ -5,20 +5,14 @@
 <div class="container">
     <section class="award-winner-banner">
         <div class="award-banner-content">
-            <div class="banner-detail">
-                <div class="banner-heading">
-                    <h2>${pdict.heading}</h2>
-                </div>
-                <div class="banner-description">
+            <div class="award-banner-detail">
+                    <h3 class="award-banner-heading">${pdict.heading}</h3>
+                <div class="award-banner-description home-text">
                     <p>${pdict.description}</p>
                 </div>
-                <div class="banner-link">
-                    <a href="${pdict.buttonLink}">
-                        <button class="btn" type="button">
-                            ${pdict.buttonName}
-                        </button>
+                    <a class="btn-black" href="${pdict.buttonLink}">
+                        ${pdict.buttonName}
                     </a>
-                </div>
                 <div class="banner-awards">
                     <isprint value="${pdict.regions.awards.setClassName('awards-wrapper__parent').render()}" encoding="off" />
                 </div>

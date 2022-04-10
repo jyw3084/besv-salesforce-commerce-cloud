@@ -1,9 +1,10 @@
 h3 {
-    font-family: $Gothic-A1regular;
-    font-size: rem-calc(48);
-    line-height: rem-calc(57);
+    font: rem-calc(48) / rem-calc(57) $Gothic-A1regular;
     color: $primary;
     font-weight: 900;
+    @include media-breakpoint-down(md) {
+        font: rem-calc(32) / rem-calc(38) $Gothic-A1regular;
+    }
 }
 h5 {
     font-family: $Gothic-A1regular;
@@ -24,6 +25,15 @@ h5 {
     &:hover {
         outline: none;
         color: $white;
+    }
+}
+.home-text {
+    font: rem-calc(20) / rem-calc(30) $Karla-Regular;
+    font-weight: 300;
+    color: $grey;
+    margin-bottom: 28px;
+    @include media-breakpoint-down(md) {
+        margin-bottom: 36px;
     }
 }
 
