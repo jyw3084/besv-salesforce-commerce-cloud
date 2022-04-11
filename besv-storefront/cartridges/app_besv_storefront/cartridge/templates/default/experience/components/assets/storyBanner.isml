@@ -2,35 +2,27 @@
     var assets = require('*/cartridge/scripts/assets.js');
     <iscomment> add js and css here </iscomment>
 </isscript>
-<section class="story-banner ${pdict.bannerMargin}">
-    <div class="row">
-        <div class="banner-figure image-position-${pdict.imagePosition}">
-            <picture>
-                <source srcset="${pdict.bannerImage.src.tablet}" media="(min-width: 768px)"/>
-                <source srcset="${pdict.bannerImage.src.desktop}" media="(min-width: 1024px)"/>
-                <img
-                    class="banner-image image-fluid common-image-component"
-                    src="${pdict.bannerImage.src.mobile}"
-                    style="--focal-point-x:${pdict.bannerImage.focalPointX}; --focal-point-y:${pdict.bannerImage.focalPointY}"
-                    <isif condition="${pdict.bannerImage.alt}">alt="${pdict.bannerImage.alt}" title="${pdict.bannerImage.alt}"</isif>
-                />
-            </picture>
-        </div>
-        <div class="banner-text-area banner-position-${pdict.textPosition} ${pdict.gradientBackground}">
-            <div class="banner-detail">
-                <div class="banner-heading">
-                    <h2>${pdict.heading}</h2>
-                </div>
-                <div class="banner-description">
-                    <p>${pdict.description}</p>
-                </div>
-                <div class="banner-link">
-                    <a href="${pdict.buttonLink}">
-                        <button class="btn" type="button">
-                            ${pdict.buttonName}
-                        </button>
-                    </a>
-                </div>
+<section class="story-banner ${pdict.bannerMargin} image-position-${pdict.imagePosition}">
+    <div class="story-banner-image">
+        <picture>
+            <source srcset="${pdict.bannerImage.src.tablet}" media="(min-width: 768px)"/>
+            <source srcset="${pdict.bannerImage.src.desktop}" media="(min-width: 1024px)"/>
+            <img
+                class="banner-image image-fluid common-image-component"
+                src="${pdict.bannerImage.src.mobile}"
+                style="--focal-point-x:${pdict.bannerImage.focalPointX}; --focal-point-y:${pdict.bannerImage.focalPointY}"
+                <isif condition="${pdict.bannerImage.alt}">alt="${pdict.bannerImage.alt}" title="${pdict.bannerImage.alt}"</isif>
+            />
+        </picture>
+    </div>
+    <div class="story-banner-content  ${pdict.gradientBackground}">
+        <div class="story-banner-detail">
+            <h3 class="story-banner-heading">${pdict.heading}</h3>
+            <p class="story-banner-description home-text">${pdict.description}</p>
+            <div class="story-banner-link">
+                <a class="btn-black" href="${pdict.buttonLink}">
+                    ${pdict.buttonName}
+                </a>
             </div>
         </div>
     </div>

@@ -14,6 +14,7 @@
     margin-bottom: 123px;
     @include media-breakpoint-down(md) {
         flex-direction: column;
+        margin-bottom: 42px;
     }
     .experience-assets-feature {
         width: 23%;
@@ -114,6 +115,7 @@
             color: $brand-dark;
             margin-bottom: 13px;
             font-weight: 700;
+            letter-spacing: 5px;
             @include media-breakpoint-down(md) {
                 font: rem-calc(46) / rem-calc(46) $Gothic-A1regular;
                 font-weight: 700;
@@ -184,6 +186,91 @@
             }
             .award-icon {
                 display: inline-block;
+            }
+        }
+    }
+}
+
+/* Story Banner */
+
+.story-banner {
+    display: flex;
+    margin-bottom: 100px;
+    @include media-breakpoint-down(md) {
+        flex-direction: column-reverse;
+        margin-bottom: 0;
+    }
+    .story-banner-image {
+        width: 46%;
+        max-width: 46%;
+        @include media-breakpoint-down(md) {
+            width: 100%;
+            max-width: 100%;
+            margin-right: 24px;
+            position: relative;
+            top: -75px;
+        }
+        img {
+            border-radius: 8px;
+        }
+    }
+    .story-banner-content {
+        max-width: 54%;
+        width: 54%;
+        padding: 20px 80px;
+        margin-top: 31px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background: $white;
+        @include media-breakpoint-down(md) {
+            width: 100%;
+            max-width: 100%;
+            margin-top: 0;
+            margin-left: 24px;
+            padding: 38px 52px 145px 23px;
+        }
+
+        &.gradient-background-class {
+            background-color: $gray-background; /* For browsers that do not support gradients */
+            background: linear-gradient($gray-background, $white);
+        }
+        .story-banner-detail {
+            max-width: 503px;
+            .story-banner-heading {
+                margin-bottom: 28px;
+            }
+        }
+    }
+    &.image-position-right {
+        flex-direction: row-reverse;
+        @include media-breakpoint-down(md) {
+            flex-direction: column;
+        }
+    }
+    &.margin-class {
+        max-width: 1240px;
+        margin: 0 auto 100px;
+        @include media-breakpoint-down(md) {
+            margin-bottom: 0;
+        }
+        .story-banner-image {
+            width: 100%;
+            max-width: 100%;
+            @include media-breakpoint-down(md) {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+        .story-banner-content {
+            max-width: 100%;
+            width: 100%;
+            padding: 20px 80px 0 20px;
+            margin-top: 0;
+            @include media-breakpoint-down(md) {
+                width: 100%;
+                max-width: 100%;
+                padding: 0;
             }
         }
     }
