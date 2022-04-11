@@ -4,11 +4,18 @@
 </isscript>
 
 <div class="feature-tile">
-    <div class="feature-tile-icon">
-        <img src="${pdict.icon.src.desktop}" alt="key feature" />
+    <div class="feature-tile-top">
+        <div class="feature-tile-icon">
+            <img src="${pdict.icon.src.desktop}" alt="key feature" />
+        </div>
+        <h5 class="feature-tile-heading">${pdict.heading}</h5>
+        <span class="collapsible-arrow d-lg-none">
+            <svg width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8.08769 1.92188L4.7778 5.25521C4.5929 5.41927 4.37936 5.5 4.16582 5.5C3.95227 5.5 3.73925 5.41862 3.57649 5.25586L0.266598 1.92253C0.00499353 1.6849 -0.0663711 1.32552 0.0626393 1.01563C0.19165 0.705729 0.495764 0.5 0.832483 0.5H7.47571C7.81269 0.5 8.11686 0.70263 8.24602 1.01432C8.37519 1.32602 8.32727 1.6849 8.08769 1.92188Z" fill="black"/>
+            </svg>
+        </span>
     </div>
     <div class="feature-tile-detail">
-        <h3 class="feature-tile-heading">${pdict.heading}</h3>
         <p class="feature-tile-description">${pdict.description}</p>
     </div>
 </div>

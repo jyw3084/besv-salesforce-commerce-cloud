@@ -2,9 +2,23 @@
     var assets = require('*/cartridge/scripts/assets.js');
     <iscomment> add js and css here </iscomment>
 </isscript>
-<section class="award-winner-banner">
-    <div class="row">
-        <div class="banner-figure image-component">
+<div class="container">
+    <section class="award-winner-banner">
+        <div class="award-banner-content">
+            <div class="award-banner-detail">
+                    <h3 class="award-banner-heading">${pdict.heading}</h3>
+                <div class="award-banner-description home-text">
+                    <p>${pdict.description}</p>
+                </div>
+                    <a class="btn-black" href="${pdict.buttonLink}">
+                        ${pdict.buttonName}
+                    </a>
+                <div class="banner-awards">
+                    <isprint value="${pdict.regions.awards.setClassName('awards-wrapper__parent').render()}" encoding="off" />
+                </div>
+            </div>
+        </div>
+        <div class="award-banner-figure image-component">
             <picture>
                 <source srcset="${pdict.bannerImage.src.tablet}" media="(min-width: 768px)"/>
                 <source srcset="${pdict.bannerImage.src.desktop}" media="(min-width: 1024px)"/>
@@ -16,25 +30,6 @@
                 />
             </picture>
         </div>
-        <div class="banner-text-area">
-            <div class="banner-detail">
-                <div class="banner-heading">
-                    <h2>${pdict.heading}</h2>
-                </div>
-                <div class="banner-description">
-                    <p>${pdict.description}</p>
-                </div>
-                <div class="banner-link">
-                    <a href="${pdict.buttonLink}">
-                        <button class="btn" type="button">
-                            ${pdict.buttonName}
-                        </button>
-                    </a>
-                </div>
-                <div class="banner-awards">
-                    <isprint value="${pdict.regions.awards.setClassName('awards-wrapper__parent').render()}" encoding="off" />
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
+</div>
+

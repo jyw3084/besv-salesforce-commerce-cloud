@@ -1,25 +1,21 @@
 <isscript>
     var assets = require('*/cartridge/scripts/assets.js');
-	<iscomment> add css file here</iscomment>
+	assets.addCss('/css/experience/video.css');
 </isscript>
 
-<div class="video-content">
+<div class="video">
 	<video width="100%" height="auto" loop autoplay muted poster="${pdict.videoFallbackImg.src.desktop}">
 	  <source src="${pdict.videoUrl.src}" type="video/mp4">
 	</video>
-	<div class="hover-text">
-		<section>
-			<isif condition="${pdict.label}">
-				<p>${pdict.label}</p>
-			</isif>
-			<h2>${pdict.heading}</h2>
-			<p>${pdict.description}</p>
-			<a href="${pdict.buttonLink}">
-				<button id="trigger-overlay" type="button">
-					${pdict.buttonName}
-				</button>
-			</a>
-		</section>
-	</div>
+	<section class="video-content">
+		<isif condition="${pdict.label}">	
+			<p class="video-subheading">${pdict.label}</p>
+		</isif>
+		<h1 class="video-heading">${pdict.heading}</h1>
+		<p class="video-text">${pdict.description}</p>
+		<a class="btn-black" href="${pdict.buttonLink}">
+			${pdict.buttonName}
+		</a>
+	</section>
 </div>
 

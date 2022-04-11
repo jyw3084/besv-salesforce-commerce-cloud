@@ -1,0 +1,277 @@
+
+@import "../variable";
+@import "../mixins";
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins/breakpoints";
+
+
+/* Key Features */
+
+.key-features-wrapper__parent {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 123px;
+    @include media-breakpoint-down(md) {
+        flex-direction: column;
+        margin-bottom: 42px;
+    }
+    .experience-assets-feature {
+        width: 23%;
+        max-width: 23%;
+        @include media-breakpoint-down(md) {
+            width: 100%;
+            max-width: 100%;
+        }
+        .feature-tile-top {
+            @include media-breakpoint-down(md) {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                border-bottom: 1px solid $brand-light-gray;
+                margin-bottom: 8px;
+                padding-bottom: 8px;
+            }
+            .feature-tile-icon {
+                width: 52px;
+                height: 45px;
+                margin: 0 auto 24px;
+                @include media-breakpoint-down(md) {
+                    margin: 0;
+                }
+            }
+            .feature-tile-heading {
+                margin-bottom: 24px;
+                padding-bottom: 24px;
+                border-bottom: 1px solid $brand-light-gray;
+                text-align: center;
+                @include media-breakpoint-down(md) {
+                    text-align: left;
+                    padding: 0;
+                    margin: 0;
+                    border: none;
+                    flex: 1;
+
+                }
+            }
+        }
+        .feature-tile-description {
+            font: rem-calc(18) / rem-calc(20) $Karla-Regular;
+            color: $grey;
+            text-align: center;
+            @include media-breakpoint-down(md) {
+                font: rem-calc(15) / rem-calc(21) $Karla-Regular;
+                text-align: left;
+                padding-top: 16px;
+            }
+        }
+    }
+}
+
+
+/*Video Banner*/
+
+.video {
+    position: relative;
+    margin-bottom: 65px;
+    overflow: hidden;
+    @include media-breakpoint-down(md) {
+        margin-bottom: 28px;
+        padding-bottom: 28px;
+        border-bottom: 1px solid $grey;
+    }
+    .video-content {
+        position: absolute;
+        bottom: 71px;
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 770px;
+        text-align: center;
+        @include media-breakpoint-down(md) {
+            // bottom: 24px;
+            // left: 0;
+            // right: 0;
+            // max-width: none;
+            // transform: none;
+            padding: 0 24px;
+            transform: none;
+            position: static;
+            padding-top: 20px;
+            transform: none;
+        }
+        .video-subheading {
+            font: rem-calc(18) / rem-calc(19) $Gothic-A1regular;
+            font-weight: 700;
+            color: $brand-dark;
+            margin-bottom: 13px;
+            @include media-breakpoint-down(md) {
+                font: rem-calc(16) / rem-calc(18) $Gothic-A1regular;
+                font-weight: 700;
+            }
+        }
+        .video-heading {
+            font: rem-calc(105) / rem-calc(105) $Gothic-A1regular;
+            vertical-align: top;
+            color: $brand-dark;
+            margin-bottom: 13px;
+            font-weight: 700;
+            letter-spacing: 5px;
+            @include media-breakpoint-down(md) {
+                font: rem-calc(46) / rem-calc(46) $Gothic-A1regular;
+                font-weight: 700;
+
+            }
+        }
+        .video-text {
+            font: rem-calc(28) / rem-calc(34) $Karla-Regular;
+            color: $brand-dark;
+            margin-bottom: 34px;
+            font-weight: 500;
+            @include media-breakpoint-down(md) {
+                font: rem-calc(24) / rem-calc(28) $Gothic-A1regular;
+                font-weight: 500;
+            }
+        }
+    }
+}
+
+
+/* Award Winning */
+
+.award-winner-banner {
+    display: flex;
+    margin-bottom: 67px;
+    background-color: $gray-background;
+    border-radius: 8px;
+    @include media-breakpoint-down(md) {
+        flex-direction: column;
+        margin-bottom: 58px;
+    }
+    .award-banner-figure {
+        width: 50%;
+        max-width: 50%;
+        @include media-breakpoint-down(md) {
+            width: 100%;
+            max-width: 100%;
+        }
+    }
+    .award-banner-content {
+        width: 50%;
+        max-width: 50%;
+        padding: 92px 82px 72px;
+        @include media-breakpoint-down(md) {
+            width: 100%;
+            max-width: 100%;
+            padding: 38px 23px 18px;
+        }
+        .award-banner-heading {
+            margin-bottom: 28px;
+            max-width: 358px;
+            @include media-breakpoint-down(md) {
+                margin-bottom: 36px;
+            }
+        }
+        .banner-awards {
+            padding-top: 37px;
+            margin-top: 56px;
+            @include media-breakpoint-down(md) {
+                padding-top: 43px;
+                margin-top: 46px;
+            }
+            border-top: 1px solid $secondary;
+            .awards-wrapper__parent {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .award-icon {
+                display: inline-block;
+            }
+        }
+    }
+}
+
+/* Story Banner */
+
+.story-banner {
+    display: flex;
+    margin-bottom: 100px;
+    @include media-breakpoint-down(md) {
+        flex-direction: column-reverse;
+        margin-bottom: 0;
+    }
+    .story-banner-image {
+        width: 46%;
+        max-width: 46%;
+        @include media-breakpoint-down(md) {
+            width: 100%;
+            max-width: 100%;
+            margin-right: 24px;
+            position: relative;
+            top: -75px;
+        }
+        img {
+            border-radius: 8px;
+        }
+    }
+    .story-banner-content {
+        max-width: 54%;
+        width: 54%;
+        padding: 20px 80px;
+        margin-top: 31px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background: $white;
+        @include media-breakpoint-down(md) {
+            width: 100%;
+            max-width: 100%;
+            margin-top: 0;
+            margin-left: 24px;
+            padding: 38px 52px 145px 23px;
+        }
+
+        &.gradient-background-class {
+            background-color: $gray-background; /* For browsers that do not support gradients */
+            background: linear-gradient($gray-background, $white);
+        }
+        .story-banner-detail {
+            max-width: 503px;
+            .story-banner-heading {
+                margin-bottom: 28px;
+            }
+        }
+    }
+    &.image-position-right {
+        flex-direction: row-reverse;
+        @include media-breakpoint-down(md) {
+            flex-direction: column;
+        }
+    }
+    &.margin-class {
+        max-width: 1240px;
+        margin: 0 auto 100px;
+        @include media-breakpoint-down(md) {
+            margin-bottom: 0;
+        }
+        .story-banner-image {
+            width: 100%;
+            max-width: 100%;
+            @include media-breakpoint-down(md) {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+        .story-banner-content {
+            max-width: 100%;
+            width: 100%;
+            padding: 20px 80px 0 20px;
+            margin-top: 0;
+            @include media-breakpoint-down(md) {
+                width: 100%;
+                max-width: 100%;
+                padding: 0;
+            }
+        }
+    }
+}

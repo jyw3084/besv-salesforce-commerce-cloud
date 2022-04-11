@@ -1,8 +1,6 @@
 <isscript>
     var assets = require('*/cartridge/scripts/assets.js');
-    <iscomment>
-        add css or js here
-    </iscomment>
+    assets.addCss('/css/experience/keyFeatures.css');
 </isscript>
 <div class = "key-features">
     <div class="container">
