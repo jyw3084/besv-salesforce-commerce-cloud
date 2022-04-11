@@ -3,7 +3,7 @@
 	<isscript>
 	    var assets = require('*/cartridge/scripts/assets.js');
 		assets.addCss('/css/experience/dynamiclayout.css');
-		assets.addJs('/js/experience/dynamiclayout.js');
+		assets.addJs('/js/dynamiclayout.js');
 	</isscript>
 
 	<!--- the page markup --->
