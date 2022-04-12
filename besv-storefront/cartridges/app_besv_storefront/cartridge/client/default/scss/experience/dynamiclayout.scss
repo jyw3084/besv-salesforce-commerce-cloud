@@ -16,6 +16,11 @@
         flex-direction: column;
         margin-bottom: 42px;
     }
+    .feature-tile-detail {
+        @include media-breakpoint-down(md) {
+            display: none;
+        }
+    }
     .experience-assets-feature {
         width: 23%;
         max-width: 23%;
@@ -274,4 +279,74 @@
             }
         }
     }
+}
+
+/* Hero Banner */
+.hero-banner {
+    padding: 187px 0 61px;
+    display: flex;
+    background-color: $gray-background; /* For browsers that do not support gradients */
+    background: linear-gradient($gray-background, $white);
+    .hero-banner-figure {
+        width: 46%;
+        max-width: 46%;
+    }
+    .hero-banner-component {
+        width: 54%;
+        max-width: 54%;
+        padding: 50px 0 0 57px;
+        .hero-banner-detail {
+            max-width: 541px;
+        }
+    }
+}
+
+/* Sign Up */
+
+.home-email-signup {
+    background: linear-gradient(to right, rgb(18, 18, 18) 0%, rgb(49, 49, 48) 100%);
+    .email-signup-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 50px 0;
+        .email-description {
+            color: $white;
+            font: rem-calc(24) / rem-calc(34) $Karla-Regular;
+            font-weight: 400;
+        }
+        .input-group {
+           display: flex;
+           justify-content: space-between;
+           width: 470px;
+           max-width: 470px;
+           position: relative;
+           right: -50px;
+           .signup-input {
+                flex: 1;
+            }
+            input {
+                height: 54px;
+                max-height: 54px;
+                width: 100%;
+                border-radius: 999px;
+                padding: 10px 60px 10px 15px;
+                background-color: $primary;
+                color: $white;
+                border: 1px solid $white;
+                font: rem-calc(18) / rem-calc(27) $Karla-Regular;
+
+           }
+           .signup-button {
+               position: relative;
+               left: -50px;
+
+               button {
+                   border: none;
+                   border: 1px solid $white;
+               }
+           }
+        }
+    }
+
 }

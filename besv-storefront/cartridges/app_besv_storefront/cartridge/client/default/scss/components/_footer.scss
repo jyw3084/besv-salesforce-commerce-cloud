@@ -14,6 +14,9 @@
         }
     }
     .footer-bottom {
+        a {
+            color: $medium-gray;
+        }
         .footer-rights {
             display: flex;
             margin-bottom: 28px;
@@ -36,7 +39,6 @@
             li {
                 position: relative;
                 font: rem-calc(14) / rem-calc(14) $Karla-Regular;
-                color: $medium-gray;
                 padding: 8px 28px 8px 0;
                 margin-right: 28px;
                 @include media-breakpoint-down(md) {
@@ -84,8 +86,11 @@
             li {
                 margin-bottom: 15px;
                 font: rem-calc(14) / rem-calc(17) $Karla-Regular;
-                color: $medium-gray;
                 text-transform: uppercase;
+                color: $medium-gray;
+                a {
+                    color: $medium-gray;
+                }
                 @include media-breakpoint-down(md) {
                     margin-bottom: 24px;
                 }

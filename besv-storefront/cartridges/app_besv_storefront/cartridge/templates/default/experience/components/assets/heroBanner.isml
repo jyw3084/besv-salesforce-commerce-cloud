@@ -3,35 +3,25 @@
     <iscomment> add js and css here </iscomment>
 </isscript>
 <section class="hero-banner">
-    <div class="row">
-        <div class="banner-figure image-component">
-            <picture>
-                <source srcset="${pdict.bannerImage.src.tablet}" media="(min-width: 768px)"/>
-                <source srcset="${pdict.bannerImage.src.desktop}" media="(min-width: 1024px)"/>
-                <img
-                    class="banner-image image-fluid common-image-component"
-                    src="${pdict.bannerImage.src.mobile}"
-                    style="--focal-point-x:${pdict.bannerImage.focalPointX}; --focal-point-y:${pdict.bannerImage.focalPointY}"
-                    <isif condition="${pdict.bannerImage.alt}">alt="${pdict.bannerImage.alt}" title="${pdict.bannerImage.alt}"</isif>
-                />
-            </picture>
-        </div>
-        <div class="banner-text-area">
-            <div class="banner-detail">
-                <div class="banner-heading">
-                    <h2>${pdict.heading}</h2>
-                </div>
-                <div class="banner-description">
-                    <p>${pdict.description}</p>
-                </div>
-                <div class="banner-link">
-                    <a href="${pdict.buttonLink}">
-                        <button class="btn" type="button">
-                            ${pdict.buttonName}
-                        </button>
-                    </a>
-                </div>
-            </div>
+    <div class="hero-banner-figure image-component">
+        <picture>
+            <source srcset="${pdict.bannerImage.src.tablet}" media="(min-width: 768px)"/>
+            <source srcset="${pdict.bannerImage.src.desktop}" media="(min-width: 1024px)"/>
+            <img
+                class="banner-image image-fluid common-image-component"
+                src="${pdict.bannerImage.src.mobile}"
+                style="--focal-point-x:${pdict.bannerImage.focalPointX}; --focal-point-y:${pdict.bannerImage.focalPointY}"
+                <isif condition="${pdict.bannerImage.alt}">alt="${pdict.bannerImage.alt}" title="${pdict.bannerImage.alt}"</isif>
+            />
+        </picture>
+    </div>
+    <div class="hero-banner-component">
+        <div class="hero-banner-detail">
+            <h3 class="banner-heading">${pdict.heading}</h3>
+            <p class="hero-banner-description home-text">${pdict.description}</p>
+            <a class="banner-link btn-black" href="${pdict.buttonLink}">
+                ${pdict.buttonName}
+            </a>
         </div>
     </div>
 </section>

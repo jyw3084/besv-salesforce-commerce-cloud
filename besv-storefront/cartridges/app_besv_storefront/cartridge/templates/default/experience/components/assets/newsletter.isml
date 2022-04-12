@@ -1,17 +1,17 @@
 <div class="home-email-signup">
     <div class="container">
-        <form role="form">
-            <div class="row">
-                <div class="col-sm-7 email-description">${pdict.promoText}</div>
-                <div class="col-sm-5">
-                    <div class="input-group">
-                        <input type="text" class="form-control" name="hpEmailSignUp" placeholder="${pdict.placeholder}" aria-label="${Resource.msg('placeholdertext.form.emailsignup', 'homePage', null)}">
-                        <span class="input-group-append">
-                            <button type="submit" class="btn btn-primary subscribe-email" data-href="${URLUtils.url('EmailSubscribe-Subscribe')}">${pdict.buttonName}</button>
-                        </span>
+        <div class="email-signup-wrapper">
+            <div class="email-description">${pdict.promoText}</div>
+            <form role="form">
+                <div class="input-group">
+                    <div class="signup-input">
+                        <input type="text" name="hpEmailSignUp" placeholder="${pdict.placeholder}" aria-label="${Resource.msg('placeholdertext.form.emailsignup', 'homePage', null)}">
+                    </div>
+                    <div class="input-group-append signup-button">
+                        <button type="submit" class="btn-white subscribe-email" data-href="${URLUtils.url('EmailSubscribe-Subscribe')}">${pdict.buttonName}</button>
                     </div>
                 </div>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
 </div>
