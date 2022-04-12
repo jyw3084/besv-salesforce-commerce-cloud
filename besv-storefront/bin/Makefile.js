@@ -66,7 +66,8 @@ target.compileFonts = function () {
     var fontsDir = 'cartridges/app_besv_storefront/cartridge/static/default/fonts';
     mkdir('-p', fontsDir);
     cp('-r', 'node_modules/font-awesome/fonts/', 'cartridges/app_besv_storefront/cartridge/static/default');
-    cp('-r', 'cartridges/app_besv_storefront/cartridge/client/default/fonts', 'cartridges/app_besv_storefront/cartridge/static/default/fonts/');
+    cp('-r', 'cartridges/app_besv_storefront/cartridge/client/default/fonts/custom-fonts', 'cartridges/app_besv_storefront/cartridge/static/default/fonts/');
+    cp('-r', 'cartridges/app_besv_storefront/cartridge/client/default/fonts/static', 'cartridges/app_besv_storefront/cartridge/static/default/fonts/');
     cp('-r', 'node_modules/flag-icon-css/flags', fontsDir + '/flags');
     cp('-r', 'node_modules/slick-carousel/slick/fonts/', 'cartridges/app_besv_storefront/cartridge/static/default/');
 };
