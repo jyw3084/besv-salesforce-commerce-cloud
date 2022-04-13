@@ -232,7 +232,6 @@
             width: 100%;
             max-width: 100%;
             margin-top: 0;
-            margin-left: 24px;
             padding: 38px 52px 145px 23px;
         }
 
@@ -250,14 +249,16 @@
     &.image-position-right {
         flex-direction: row-reverse;
         @include media-breakpoint-down(md) {
-            flex-direction: column;
+            flex-direction: column-reverse;
+            align-items: self-end;
         }
     }
     &.margin-class {
         max-width: 1240px;
         margin: 0 auto 100px;
         @include media-breakpoint-down(md) {
-            margin-bottom: 0;
+            margin: 0;
+            max-width: none;
         }
         .story-banner-image {
             width: 100%;
@@ -272,6 +273,7 @@
             width: 100%;
             padding: 20px 80px 0 20px;
             margin-top: 0;
+            background-color: $gray-background;
             @include media-breakpoint-down(md) {
                 width: 100%;
                 max-width: 100%;
@@ -310,6 +312,9 @@
         justify-content: space-between;
         align-items: center;
         padding: 50px 0;
+        @include media-breakpoint-down(md) {
+            flex-direction: column;
+        }
         .email-description {
             color: $white;
             font: rem-calc(24) / rem-calc(34) $Karla-Regular;
@@ -322,6 +327,11 @@
            max-width: 470px;
            position: relative;
            right: -50px;
+           @include media-breakpoint-down(md) {
+               max-width: auto;
+               width: auto;
+               position: static;
+           }
            .signup-input {
                 flex: 1;
             }
