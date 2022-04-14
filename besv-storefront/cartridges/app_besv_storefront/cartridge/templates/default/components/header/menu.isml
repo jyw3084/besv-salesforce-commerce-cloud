@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md bg-inverse col-12">
+<nav class="navbar navbar-expand-lg bg-inverse col-12">
     <div class="close-menu clearfix d-lg-none">
         <div class="back pull-left">
             <button role="button" aria-label="${Resource.msg('label.header.menu.back', 'common', null)}">

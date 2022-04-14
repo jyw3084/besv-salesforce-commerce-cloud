@@ -20,12 +20,25 @@ h5 {
     font: rem-calc(14) / rem-calc(14) $Gothic-A1regular;
     padding: 16px 40px;
     background-color: $primary;
-    color: $white;
+    color: $white !important;
     border-radius: 999px;
     text-transform: uppercase;
     &:hover {
         outline: none;
         color: $white;
+    }
+}
+.btn-white {
+    display: inline-block;
+    font: rem-calc(14) / rem-calc(14) $Gothic-A1regular;
+    padding: 16px 40px;
+    background-color: $white;
+    color: $primary;
+    border-radius: 999px;
+    text-transform: uppercase;
+    &:hover {
+        outline: none;
+        color: $primary;
     }
 }
 .home-text {

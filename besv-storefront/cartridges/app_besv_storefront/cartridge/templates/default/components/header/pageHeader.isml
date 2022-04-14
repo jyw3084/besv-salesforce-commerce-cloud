@@ -5,23 +5,23 @@
             <div class="header-wrapper">
                 <div class="logo">
                     <a class="logo-home" href="${URLUtils.url('Home-Show')}" title="${ Resource.msgf('global.homepage.tooltip', 'common', null, Resource.msg('global.storename', 'common', null), Resource.msg('global.home', 'common', null)) }">
-                        <img class="hidden-md-down" src="${URLUtils.staticURL('/images/logo-black.svg')}" alt="${Resource.msg('global.storename', 'common', null)}" />
+                        <img class="hidden-lg-down" src="${URLUtils.staticURL('/images/logo-black.svg')}" alt="${Resource.msg('global.storename', 'common', null)}" />
                         <img class="d-lg-none" src="${URLUtils.staticURL('/images/logo-black.svg')}" alt="${Resource.msg('global.storename', 'common', null)}" />
                     </a>
                 </div>
-                <div class="main-menu navbar-toggleable-sm menu-toggleable-left multilevel-dropdown d-none d-md-block" id="sg-navbar-collapse">
+                <div class="main-menu navbar-toggleable-md menu-toggleable-left multilevel-dropdown d-none d-lg-block" id="sg-navbar-collapse">
                             <isinclude template="/components/header/menu" />
                 </div>
                 <div class="navbar-header">
                         <div class="header-right">
-                            <div class="hidden-md-down">
+                            <div class="hidden-lg-down">
                                 <isinclude url="${URLUtils.url('Page-Locale')}" />
                                 <isinclude url="${URLUtils.url('Account-Header')}" />
                             </div>
                             <div class="minicart" data-action-url="${URLUtils.url('Cart-MiniCartShow')}">
                                 <isinclude url="${URLUtils.url('Cart-MiniCart')}" />
                             </div>
-                            <button class="navbar-toggler d-md-none" type="button" aria-controls="sg-navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                            <button class="navbar-toggler d-lg-none" type="button" aria-controls="sg-navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
                                 <svg width="32" height="15" viewBox="0 0 32 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect y="0.658905" width="32" height="2" rx="1" fill="#333333"/>
                                 <rect x="10" y="6.65891" width="22" height="2" rx="1" fill="#333333"/>

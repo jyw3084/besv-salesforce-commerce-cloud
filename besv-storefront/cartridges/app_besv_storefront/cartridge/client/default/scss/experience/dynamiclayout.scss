@@ -16,6 +16,11 @@
         flex-direction: column;
         margin-bottom: 42px;
     }
+    .feature-tile-detail {
+        @include media-breakpoint-down(md) {
+            display: none;
+        }
+    }
     .experience-assets-feature {
         width: 23%;
         max-width: 23%;
@@ -54,6 +59,11 @@
 
                 }
             }
+            &.open {
+                .collapsible-arrow {
+                    transform: rotate(180deg);
+                }
+            }
         }
         .feature-tile-description {
             font: rem-calc(18) / rem-calc(20) $Karla-Regular;
@@ -75,11 +85,31 @@
     position: relative;
     margin-bottom: 65px;
     overflow: hidden;
-    @include media-breakpoint-down(md) {
+    @include media-breakpoint-down(sm) {
         margin-bottom: 28px;
         padding-bottom: 28px;
         border-bottom: 1px solid $grey;
     }
+    .video-holder {
+        position: relative;
+        .play-video-button {
+            position: absolute;
+            top: 55%;
+            left: 50%;
+            transform: translate(-50% , -50%);
+            svg {
+                width: 100px;
+                height: 100px;
+            }
+            @include media-breakpoint-down(md) { 
+                top: 50%;
+                transform: translate(-50% , -50%);
+                width: 80px;
+                height: 80px;
+            }
+        }
+    }
+   
     .video-content {
         position: absolute;
         bottom: 71px;
@@ -87,17 +117,13 @@
         transform: translateX(-50%);
         max-width: 770px;
         text-align: center;
-        @include media-breakpoint-down(md) {
-            // bottom: 24px;
-            // left: 0;
-            // right: 0;
-            // max-width: none;
-            // transform: none;
+        @include media-breakpoint-down(sm) {
             padding: 0 24px;
             transform: none;
             position: static;
             padding-top: 20px;
             transform: none;
+            text-align: center;
         }
         .video-subheading {
             font: rem-calc(18) / rem-calc(19) $Gothic-A1regular;
@@ -153,6 +179,10 @@
         @include media-breakpoint-down(md) {
             width: 100%;
             max-width: 100%;
+            img {
+                border-bottom-left-radius: 8px;
+                border-bottom-right-radius: 8px;
+            }
         }
     }
     .award-banner-content {
@@ -204,8 +234,8 @@
         width: 46%;
         max-width: 46%;
         @include media-breakpoint-down(md) {
-            width: 100%;
-            max-width: 100%;
+            width: 94%;
+            max-width: 94%;
             margin-right: 24px;
             position: relative;
             top: -75px;
@@ -227,7 +257,6 @@
             width: 100%;
             max-width: 100%;
             margin-top: 0;
-            margin-left: 24px;
             padding: 38px 52px 145px 23px;
         }
 
@@ -245,21 +274,24 @@
     &.image-position-right {
         flex-direction: row-reverse;
         @include media-breakpoint-down(md) {
-            flex-direction: column;
+            flex-direction: column-reverse;
+            align-items: center;
         }
     }
     &.margin-class {
         max-width: 1240px;
         margin: 0 auto 100px;
         @include media-breakpoint-down(md) {
-            margin-bottom: 0;
+            margin: 0;
+            max-width: none;
+            align-items: flex-end;
         }
         .story-banner-image {
             width: 100%;
             max-width: 100%;
             @include media-breakpoint-down(md) {
-                width: 100%;
-                max-width: 100%;
+                width: 90%;
+                max-width: 90%;
             }
         }
         .story-banner-content {
@@ -267,11 +299,106 @@
             width: 100%;
             padding: 20px 80px 0 20px;
             margin-top: 0;
+            background-color: $gray-background;
             @include media-breakpoint-down(md) {
                 width: 100%;
                 max-width: 100%;
-                padding: 0;
+                padding: 52px 47px 133px;
             }
         }
     }
+}
+
+/* Hero Banner */
+.hero-banner {
+    padding: 187px 0 61px;
+    display: flex;
+    background-color: $gray-background; /* For browsers that do not support gradients */
+    background: linear-gradient($gray-background, $white);
+    @include media-breakpoint-down(md) {
+        flex-direction: column;
+        padding: 77px 0 131px;
+    }
+    .hero-banner-figure {
+        width: 46%;
+        max-width: 46%;
+        @include media-breakpoint-down(md) {
+            width: 100%;
+            max-width: 100%;
+        }
+    }
+    .hero-banner-component {
+        width: 54%;
+        max-width: 54%;
+        padding: 50px 0 0 57px;
+        @include media-breakpoint-down(md) {
+            width: 100%;
+            max-width: 100%;
+            padding: 24px 47 0;
+        }
+        .hero-banner-detail {
+            max-width: 541px;
+            @include media-breakpoint-down(md) {
+                max-width: 100%;
+            }
+        }
+    }
+}
+
+/* Sign Up */
+
+.home-email-signup {
+    background: linear-gradient(to right, rgb(18, 18, 18) 0%, rgb(49, 49, 48) 100%);
+    .email-signup-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 50px 0;
+        @include media-breakpoint-down(md) {
+            flex-direction: column;
+            padding: 40px 26px 50px;
+        }
+        .email-description {
+            color: $white;
+            font: rem-calc(24) / rem-calc(34) $Karla-Regular;
+            font-weight: 400;
+            @include media-breakpoint-down(md) {
+                font: rem-calc(20) / rem-calc(30) $Karla-Regular;
+                margin-bottom: 24px;
+            }
+        }
+        form {
+            width: 33.9%;
+            @include media-breakpoint-down(md) {
+                width: 100%;
+            }
+        }
+        .input-group {
+           position: relative;
+           .signup-input {
+                width: 100%;
+                input {
+                   height: 54px;
+                   max-height: 54px;
+                   width: 100%;
+                   border-radius: 999px;
+                   padding: 10px 163px 10px 15px;
+                   background-color: $primary;
+                   color: $white;
+                   border: 1px solid $white;
+                   font: rem-calc(18) / rem-calc(27) $Karla-Regular;
+                }
+            }
+           .signup-button {
+                position: absolute;
+                right: 0;
+                height: 100%;
+               button {
+                   border: none;
+                   border: 1px solid $white;
+               }
+           }
+        }
+    }
+
 }

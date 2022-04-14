@@ -1,4 +1,5 @@
 .main-header {
+    background: $white;
     padding: 28px 0;
     border-bottom: 1px solid $light-gray;
     @include media-breakpoint-down(md) {
@@ -25,6 +26,7 @@
             .nav-item {
                 padding-right: 40px;
                 font: rem-calc(14) / rem-calc(14) $Gothic-A1regular;
+                font-weight: 600;
                 @include media-breakpoint-down(md) {
                     padding: 20px 0;
                     border-bottom: 1px solid $light-gray;
