@@ -89,7 +89,7 @@ $slide-out-animation: left 0.5s cubic-bezier(0, 1, 0.5, 1);
 
 .main-menu.menu-toggleable-left {
 
-    @include media-breakpoint-down($breakpoint-name) {
+    @include media-breakpoint-down(lg) {
         background-color: $white;
         z-index: 4;
     }
@@ -102,7 +102,7 @@ $slide-out-animation: left 0.5s cubic-bezier(0, 1, 0.5, 1);
         border-bottom: 1px solid $grey3;
         flex: 0 0 100%;
 
-        @include media-breakpoint-up($next-breakpoint) {
+        @include media-breakpoint-up(lg) {
             display: none;
         }
     }
