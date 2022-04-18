@@ -5,7 +5,7 @@
         </a>
     </li>
 <iselse/>
-    <li class="nav-item d-lg-none dropdown" role="menuitem">
+    <li class="nav-item d-lg-none dropdown mobile-signin-wrapper" role="menuitem">
         <span class="nav-link dropdown-toggle" role="button" data-toggle="dropdown">
             <i class="fa fa-sign-in" aria-hidden="true"></i>
             <span class="user-message">${pdict.name}</span>
