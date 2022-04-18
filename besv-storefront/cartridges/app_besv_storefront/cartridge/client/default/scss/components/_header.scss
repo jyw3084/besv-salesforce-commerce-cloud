@@ -14,8 +14,11 @@
             height: 21px;
         }
         .main-menu {
-            background-color: transparent;
+            background-color: $white;
             top: -3px;
+            @include media-breakpoint-up(lg) {
+                background-color: transparent;
+            }
         }
         .mega-menu {
             display: flex;

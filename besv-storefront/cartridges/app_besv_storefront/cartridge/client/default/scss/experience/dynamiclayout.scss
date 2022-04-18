@@ -68,7 +68,12 @@
                     margin: 0;
                     border: none;
                     flex: 1;
-
+                }
+            }
+            .collapsible-arrow {
+                display: none;
+                @include media-breakpoint-down(sm) {
+                    display: block;
                 }
             }
             &.open {
@@ -231,6 +236,14 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
+                flex-wrap: wrap;
+                @include media-breakpoint-down(md) {
+                    padding: 0 23px;
+                    .experience-assets-award {
+                        width: 50%;
+                        max-width: 50%;
+                    }
+                }
             }
             .award-icon {
                 display: inline-block;
