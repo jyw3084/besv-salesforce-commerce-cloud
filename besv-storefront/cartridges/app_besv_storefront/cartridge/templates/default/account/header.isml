@@ -9,11 +9,17 @@
     </div>
 <iselse/>
     <div class="user hidden-md-down nav-item">
-        <a href="${'#'}" id="myaccount" aria-haspopup="true" aria-label="${Resource.msg('link.header.myaccount', 'account', null)}" role="button">
-            <i class="fa fa-sign-in" aria-hidden="true"></i><span class="user-message btn dropdown-toggle">${pdict.name}</span>
+        <a href="${URLUtils.https('Account-Show')}" id="myaccount" aria-haspopup="true" aria-label="${Resource.msg('link.header.myaccount', 'account', null)}" role="button">
+            <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8.99282 11.3658C7.91098 11.3658 6.85344 11.0482 5.95393 10.4532C5.05441 9.85818 4.35332 9.01244 3.93932 8.02295C3.52532 7.03346 3.417 5.94465 3.62805 4.89421C3.83911 3.84378 4.36006 2.87888 5.12504 2.12156C5.89002 1.36423 6.86466 0.84849 7.92571 0.639545C8.98676 0.4306 10.0866 0.537839 11.0861 0.9477C12.0855 1.35756 12.9398 2.05163 13.5409 2.94215C14.1419 3.83267 14.4627 4.87964 14.4627 5.95066C14.4627 7.38685 13.8864 8.76422 12.8606 9.77976C11.8348 10.7953 10.4435 11.3658 8.99282 11.3658ZM8.99282 1.73887C8.15139 1.73887 7.32887 1.98588 6.62924 2.44868C5.92962 2.91148 5.38431 3.56927 5.06231 4.33888C4.74031 5.10848 4.65608 5.95533 4.82023 6.77234C4.98439 7.58935 5.38957 8.33982 5.98455 8.92885C6.57953 9.51788 7.33758 9.91901 8.16284 10.0815C8.9881 10.244 9.84352 10.1606 10.6209 9.84185C11.3983 9.52307 12.0627 8.98323 12.5302 8.2906C12.9977 7.59798 13.2472 6.78368 13.2472 5.95066C13.248 5.39705 13.1385 4.84872 12.9251 4.33703C12.7116 3.82533 12.3984 3.36032 12.0032 2.96858C11.6081 2.57684 11.1389 2.26607 10.6223 2.05403C10.1057 1.84199 9.55202 1.73285 8.99282 1.73285V1.73887Z" fill="#333333" stroke="#333333"/>
+                <path d="M15.9579 19.4645C15.7967 19.4645 15.6421 19.4011 15.5281 19.2883C15.4141 19.1754 15.3501 19.0224 15.3501 18.8628V18.3755C15.3485 17.0387 14.8114 15.7571 13.8566 14.8119C12.9018 13.8667 11.6073 13.3349 10.257 13.3333H7.72874C6.37742 13.3333 5.08134 13.8644 4.12524 14.8098C3.16914 15.7552 2.6312 17.0377 2.62959 18.3755V18.8628C2.62959 19.0224 2.56557 19.1754 2.45159 19.2883C2.33761 19.4011 2.18302 19.4645 2.02183 19.4645C1.86064 19.4645 1.70606 19.4011 1.59208 19.2883C1.4781 19.1754 1.41406 19.0224 1.41406 18.8628V18.3755C1.41728 16.719 2.08381 15.1314 3.26751 13.9606C4.45122 12.7899 6.05553 12.1316 7.72874 12.13H10.257C11.9292 12.1332 13.5319 12.7922 14.7143 13.9628C15.8967 15.1333 16.5624 16.72 16.5656 18.3755V18.8628C16.5656 19.0224 16.5016 19.1754 16.3876 19.2883C16.2736 19.4011 16.119 19.4645 15.9579 19.4645Z" fill="#333333" stroke="#333333"/>
+            </svg>
         </a>
         <div class="popover popover-bottom">
             <ul class="nav" role="menu" aria-label="${Resource.msg('label.profile.myaccountlink', 'account', null)}" aria-hidden="true">
+                <li class="nav-item" role="presentation">
+                    <i class="fa fa-sign-in" aria-hidden="true"> ${pdict.name} </i>
+                </li>
                 <li class="nav-item" role="presentation"><a href="${URLUtils.https('Account-Show')}" role="menuitem" tabindex="-1">${Resource.msg('link.header.myaccount', 'account', null)}</a></li>
                 <li class="nav-item" role="presentation"><a href="${URLUtils.url('Order-History')}" role="menuitem" tabindex="-1">${Resource.msg('label.myorders', 'account', null)}</a></li>
                 <li class="nav-item" role="presentation"><a href="${URLUtils.url('Login-Logout')}" role="menuitem" tabindex="-1">${Resource.msg('link.header.logout', 'account', null)}</a></li>
