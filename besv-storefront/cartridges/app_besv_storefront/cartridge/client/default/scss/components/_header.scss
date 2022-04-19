@@ -1,6 +1,6 @@
 .main-header {
     background: $white;
-    padding: 28px 0;
+    padding: 28px 0 18px;
     border-bottom: 1px solid $light-gray;
     @include media-breakpoint-down(md) {
         padding: 24px 0;
@@ -16,6 +16,9 @@
         .main-menu {
             background-color: $white;
             top: -3px;
+            @include media-breakpoint-up(lg) {
+                background-color: transparent;
+            }
         }
         .mega-menu {
             display: flex;
@@ -41,11 +44,23 @@
                 }
             }
         }
+        .mobile-signin-wrapper {
+            text-align: center;
+            .user-message {
+                padding: 20px 0;
+                border-bottom: 1px solid $light-gray;
+                font: rem-calc(18) / rem-calc(20) $Gothic-A1regular;
+            }
+        }
         .header-right {
             display: flex;
             .minicart, .user  {
                 margin: 0;
                 line-height: 0;
+                padding-bottom: 10px;
+                @include media-breakpoint-down(md) {
+                    padding-bottom: 0;
+                }
             }
             .minicart {
                 margin: 3px 0 0 22px;
@@ -82,5 +97,13 @@
     }
     .navbar-toggleable-sm {
         padding: 0 24px;
+    }
+}
+.navbar-header .user .popover {
+    top: 25px;
+    left: -22px;
+    .fa-sign-in {
+        color: #444;
+        font-size: 14px;
     }
 }
