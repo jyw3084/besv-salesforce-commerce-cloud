@@ -10,146 +10,138 @@
     <isset name="isQuickView" value="${false}" scope="page" />
     <isset name="isProductSet" value="${pdict.product.productType === 'set'}" scope="page" />
     <isobject object="${product.raw}" view="detail" />
-        <div class="container product-detail product-wrapper" data-pid="${product.id}">
-            <!--PDP Sticky Header-->
-            <div class="row">
-                <div class="col-12">
-                    <ul class="pdp-menu">
-                        <li class="pdp-item" role="presentation">
-                            <a href="#">${Resource.msg('label.pdpheader.top', 'product', null)}</a>
-                        </li>
-                        <li class="pdp-item" role="presentation">
-                            <a href="#">${Resource.msg('label.pdpheader.features', 'product', null)}</a>
-                        </li>
-                        <li class="pdp-item" role="presentation">
-                            <a href="#">${Resource.msg('label.pdpheader.geometry', 'product', null)}</a>
-                        </li>
-                        <li class="pdp-item" role="presentation">
-                            <a href="#">${Resource.msg('label.pdpheader.specs', 'product', null)}</a>
-                        </li>
-                        <li class="pdp-item" role="presentation">
-                            <a href="#">${Resource.msg('label.pdpheader.faq', 'product', null)}</a>
-                        </li>
-                        <li class="pdp-item" role="presentation">
-                            <a href="#">${Resource.msg('label.pdpheader.buy', 'product', null)}</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <!--Breadcrumbs-->
-                    <div class="product-breadcrumb d-md-none">
-                        <isinclude template="components/breadcrumbs/pageBreadcrumbs"/>
-                    </div>
 
-                    <!-- Product Name -->
-                    <div class="row">
-                        <div class="d-md-none col-sm-12">
-                            <h1 class="product-name">${product.productName}</h1>
-                        </div>
+        <iscomment> PDP Sticky Header </iscomment>
+
+        <div class="pdp-header-menu-wrapper">
+            <ul class="pdp-header-menu">
+                <li class="pdp-item" role="presentation">
+                    <a href="#">${Resource.msg('label.pdpheader.top', 'product', null)}</a>
+                </li>
+                <li class="pdp-item" role="presentation">
+                    <a href="#">${Resource.msg('label.pdpheader.features', 'product', null)}</a>
+                </li>
+                <li class="pdp-item" role="presentation">
+                    <a href="#">${Resource.msg('label.pdpheader.geometry', 'product', null)}</a>
+                </li>
+                <li class="pdp-item" role="presentation">
+                    <a href="#">${Resource.msg('label.pdpheader.specs', 'product', null)}</a>
+                </li>
+                <li class="pdp-item" role="presentation">
+                    <a href="#">${Resource.msg('label.pdpheader.faq', 'product', null)}</a>
+                </li>
+                <li class="pdp-item" role="presentation">
+                    <a href="#">${Resource.msg('label.pdpheader.buy', 'product', null)}</a>
+                </li>
+            </ul>
+        </div>
+        <div class="product-detail product-wrapper" data-pid="${product.id}">
+                <!--Breadcrumbs-->
+                <div class="product-breadcrumb d-md-none">
+                    <isinclude template="components/breadcrumbs/pageBreadcrumbs"/>
+                </div>
+
+                <!-- Product Name -->
+                <div class="row">
+                    <div class="d-md-none col-sm-12">
+                        <h1 class="product-name">${product.productName}</h1>
                     </div>
                 </div>
-            </div>
 
             <div class="row">
                 <!-- Product Images Carousel -->
                 <isinclude template="product/components/imageCarousel" />
 
-                <div class="col-12 col-sm-6">
-                    <!--Breadcrumbs-->
-                    <div class="row">
-                        <div class="col hidden-sm-down">
-                            <span class="product-id">${product.id}</span>
-                        </div>
-                    </div>
-
-                    <!-- Product Name -->
-                    <div class="row">
-                        <div class="col">
-                            <h1 class="product-name hidden-sm-down">${product.productName}</h1>
-                        </div>
-                    </div>
-
-                    <div class="attributes">
-                        <!-- Attributes and Quantity -->
-                        <isinclude template="product/components/mainAttributes" />
-
-                        <isset name="isBundle" value="${false}" scope="page" />
-                        <isset name="loopState" value="${{count: 1}}" scope="page" />
-                        <isloop items="${product.variationAttributes}" var="attr" status="attributeStatus">
-                            <div class="row" data-attr="${attr.id}">
-                                <div class="col-8">
-                                    <isinclude template="product/components/variationAttribute" />
-                                </div>
-
-                                <isif condition="${attributeStatus.last && !isBundle}">
-                                    <!-- Quantity Drop Down Menu -->
-                                    <div class="attribute quantity col-4">
-                                        <isinclude template="product/components/quantity" />
-                                    </div>
-                                </isif>
+                <div class="pdp-main-right">
+                    <div class="pdp-main-right-content">
+                        <!--Breadcrumbs-->
+                            <div class="col hidden-sm-down">
+                                <span class="product-id">${product.id}</span>
                             </div>
-                        </isloop>
 
-                        <div class="product-options">
-                            <isif condition="${product.options && product.options.length > 0}">
-                                <isinclude template="product/components/options" />
-                            </isif>
-                        </div>
-
-                        <!-- Size Chart -->
-                        <iscomment> <isif condition="${product.variationAttributes && product.sizeChartId}">
-                            <div class="row">
-                                <div class="size-chart col-12">
-                                    <isinclude template="product/components/sizeChart" />
-                                </div>
-                            </div>
-                        </isif> </iscomment>
-
-                        <!-- Product Availability -->
-                        <iscomment> <isinclude template="product/components/productAvailability" /> </iscomment>
-
-                        <!-- Applicable Promotions -->
+                        <!-- Product Name -->
                         <div class="row">
-                            <div class="col-12 promotions">
-                                <isinclude template="product/components/promotions" />
+                            <div class="col">
+                                <h1 class="product-name hidden-sm-down">${product.productName}</h1>
                             </div>
                         </div>
 
-                        <div class="prices-add-to-cart-actions">
-                            <div class="row">
-                                <div class="col-12">
-                                    <!-- Prices -->
-                                    <div class="prices">
-                                        <isset name="price" value="${product.price}" scope="page" />
-                                        <isinclude template="product/components/pricing/main" />
+                        <div class="attributes">
+                            <!-- Attributes and Quantity -->
+                            <isinclude template="product/components/mainAttributes" />
+
+                            <isset name="isBundle" value="${false}" scope="page" />
+                            <isset name="loopState" value="${{count: 1}}" scope="page" />
+                            <isloop items="${product.variationAttributes}" var="attr" status="attributeStatus">
+                                <div class="row" data-attr="${attr.id}">
+                                    <div class="col-8">
+                                        <isinclude template="product/components/variationAttribute" />
                                     </div>
-                                </div>
-                            </div>
-                            <isif condition="${!product.variationAttributes}">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <div class="simple-quantity">
+
+                                    <isif condition="${attributeStatus.last && !isBundle}">
+                                        <!-- Quantity Drop Down Menu -->
+                                        <div class="attribute quantity col-4">
                                             <isinclude template="product/components/quantity" />
                                         </div>
+                                    </isif>
+                                </div>
+                            </isloop>
+
+                            <div class="product-options">
+                                <isif condition="${product.options && product.options.length > 0}">
+                                    <isinclude template="product/components/options" />
+                                </isif>
+                            </div>
+
+                            <!-- Size Chart -->
+                            <iscomment> <isif condition="${product.variationAttributes && product.sizeChartId}">
+                                <div class="row">
+                                    <div class="size-chart col-12">
+                                        <isinclude template="product/components/sizeChart" />
                                     </div>
                                 </div>
-                            </isif>
+                            </isif> </iscomment>
 
-                            <!-- Cart and [Optionally] Apple Pay -->
-                            <isinclude template="product/components/addToCartProduct" />
+                            <!-- Product Availability -->
+                            <iscomment> <isinclude template="product/components/productAvailability" /> </iscomment>
+
+                            <!-- Applicable Promotions -->
+                            <div class="row">
+                                <div class="col-12 promotions">
+                                    <isinclude template="product/components/promotions" />
+                                </div>
+                            </div>
+
+                            <div class="prices-add-to-cart-actions">
+                                        <!-- Prices -->
+                                <div class="prices pdp-content-price">
+                                    <isset name="price" value="${product.price}" scope="page" />
+                                    <isinclude template="product/components/pricing/main" />
+                                </div>
+                                <isif condition="${!product.variationAttributes}">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="simple-quantity">
+                                                <isinclude template="product/components/quantity" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </isif>
+
+                                <!-- Cart and [Optionally] Apple Pay -->
+                                <isinclude template="product/components/addToCartProduct" />
+                            </div>
+
+                            <!-- Social Sharing Icons -->
+                            <iscomment> <div class="row">
+                                <isinclude template="product/components/socialIcons" />
+                            </div> </iscomment>
+
+                            <isset name="loopState" value="${{count: 1}}" scope="page" />
+                            <isinclude template="product/components/descriptionAndDetails" />
                         </div>
-
-                        <!-- Social Sharing Icons -->
-                        <iscomment> <div class="row">
-                            <isinclude template="product/components/socialIcons" />
-                        </div> </iscomment>
-
-                        <isset name="loopState" value="${{count: 1}}" scope="page" />
-                        <isinclude template="product/components/descriptionAndDetails" />
                     </div>
-                </div>
+                 </div>
             </div>
 
             <div>

@@ -1,0 +1,66 @@
+@import "../variable";
+@import "../mixins";
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins/breakpoints";
+
+.pdp-header-menu-wrapper {
+    position: sticky;
+    top: 0;
+    border-bottom: 1px solid $light-gray;
+    z-index: 101;
+    background-color: $white;
+    .pdp-header-menu {
+        display: flex;
+        justify-content: flex-end;
+        padding: 16px 15px 16px 0;
+        .pdp-item {
+            margin-right: 40px;
+            &:last-child {
+                margin-right: 0;
+            }
+            a {
+                font: rem-calc(14) / rem-calc(14) $Karla-Regular;
+                color: $primary;
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+.product-detail {
+    display: flex;
+    .pdp-main-left {
+        width: 60%;
+        max-width: 60%;
+    }
+    .pdp-main-right {
+        width: 40%;
+        max-width: 40%;
+    }
+}
+.pdp-main-right {
+    padding: 51px 0 0 54px;
+    .pdp-main-right-content {
+        max-width: 430px;
+        margin-right: auto;
+        .product-id {
+            font: rem-calc(16) / rem-calc(22) $Karla-Regular;
+            color: $secondary;
+            margin-bottom: 8px;
+            display: inline-block;
+        }
+        .product-name {
+            font: rem-calc(32) / rem-calc(32) $Gothic-A1black;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+        .pdp-content-price {
+            padding: 0;
+            .price {
+                text-align: left;
+            }
+        }
+    }
+}
