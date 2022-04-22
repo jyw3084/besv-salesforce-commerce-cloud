@@ -1,0 +1,23 @@
+'use strict';
+var baseDetail = require('base/product/detail');
+
+var exportBase = $.extend({}, baseDetail, {
+
+    initDetailsAccordian: function() {
+        var acc = $(".pdp-details").find(".accordion");
+        var i;
+        for (i = 0; i < acc.length; i++) {
+            $(acc[i]).on("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                panel.style.display = "none";
+                } else {
+                panel.style.display = "block";
+                }
+            });
+        }
+    }
+});
+
+module.exports = exportBase;
