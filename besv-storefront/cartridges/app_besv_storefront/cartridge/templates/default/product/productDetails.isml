@@ -5,7 +5,7 @@
         assets.addJs('/js/productDetail.js');
         assets.addCss('/css/product/detail.css');
     </isscript>
-
+    <isinclude template="/components/modules" sf-toolkit="off" />
     <isset name="product" value="${pdict.product}" scope="page" />
     <isset name="isQuickView" value="${false}" scope="page" />
     <isset name="isProductSet" value="${pdict.product.productType === 'set'}" scope="page" />
@@ -143,14 +143,13 @@
                     </div>
                  </div>
             </div>
+        </div>
+        <div class="product-static-content">
+            <iscomment> PDP product specification 1 </iscomment>
+            <iscontentasset aid="product-specification-1" />
 
-            <div>
-                <isslot id="cts-recommendations-m" description="Complete the set products" context="global" context-object="${pdict.product.raw}" />
-            </div>
-
-            <div class="recommendations">
-                <isslot id="product-recommendations-m" description="Recommended products" context="global" context-object="${pdict.product.raw}" />
-            </div>
+            <iscomment> PDP product video </iscomment>
+            <iscontentasset aid="product-video" />
         </div>
     </isobject>
 </isdecorate>
