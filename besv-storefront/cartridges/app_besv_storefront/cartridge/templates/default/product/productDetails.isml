@@ -150,6 +150,15 @@
 
             <iscomment> PDP product video </iscomment>
             <iscontentasset aid="product-video" />
+
+            <iscomment> PDP product stories banner - zig zag layout </iscomment>
+            <iscontentasset aid="product-stories" />
+
+            <iscomment> PDP product frame geometry </iscomment>
+            <iscontentasset aid="product-frame-geometry" />
+
+            <iscomment> PDP product specification 2 </iscomment>
+            <iscontentasset aid="product-specification-2" />
         </div>
     </isobject>
 </isdecorate>
