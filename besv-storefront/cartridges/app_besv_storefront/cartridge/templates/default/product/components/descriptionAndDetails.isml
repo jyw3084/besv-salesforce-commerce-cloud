@@ -7,7 +7,7 @@
         <hr class="d-sm-none">
     </isif>
 
-    <div class="row description collapsible-xs <isif condition="${!product.shortDescription}">hidden-xl-down</isif>">
+    <div class="<isif condition="${!product.shortDescription}">hidden-xl-down</isif>">
         <isinclude template="product/components/description" />
     </div>
 
@@ -15,7 +15,8 @@
         <hr class="d-sm-none">
     </isif>
 
-    <div class="row details collapsible-xs <isif condition="${!product.longDescription}">hidden-xl-down</isif>">
+    <div class="pdp-collapsible <isif condition="${!product.longDescription}">hidden-xl-down</isif>">
         <isinclude template="product/components/details" />
     </div>
 </div>
+

@@ -48,23 +48,19 @@
                     </div>
                 </div>
 
-            <div class="row">
+            <div class="pdp-main-wrapper">
                 <!-- Product Images Carousel -->
                 <isinclude template="product/components/imageCarousel" />
 
                 <div class="pdp-main-right">
                     <div class="pdp-main-right-content">
                         <!--Breadcrumbs-->
-                            <div class="col hidden-sm-down">
+                            <div class="hidden-sm-down">
                                 <span class="product-id">${product.id}</span>
                             </div>
 
                         <!-- Product Name -->
-                        <div class="row">
-                            <div class="col">
-                                <h1 class="product-name hidden-sm-down">${product.productName}</h1>
-                            </div>
-                        </div>
+                        <h1 class="product-name hidden-sm-down">${product.productName}</h1>
 
                         <div class="attributes">
                             <!-- Attributes and Quantity -->
@@ -118,18 +114,17 @@
                                     <isset name="price" value="${product.price}" scope="page" />
                                     <isinclude template="product/components/pricing/main" />
                                 </div>
-                                <isif condition="${!product.variationAttributes}">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <div class="simple-quantity">
-                                                <isinclude template="product/components/quantity" />
-                                            </div>
-                                        </div>
+                                <div class="pdd-quantity-addToCart">
+                                     <isif condition="${!product.variationAttributes}">
+                                    <div class="simple-quantity">
+                                        <isinclude template="product/components/quantity" />
                                     </div>
-                                </isif>
+                                    </isif>
 
-                                <!-- Cart and [Optionally] Apple Pay -->
-                                <isinclude template="product/components/addToCartProduct" />
+                                    <!-- Cart and [Optionally] Apple Pay -->
+                                    <isinclude template="product/components/addToCartProduct" />
+                                </div>
+                               
                             </div>
 
                             <!-- Social Sharing Icons -->
