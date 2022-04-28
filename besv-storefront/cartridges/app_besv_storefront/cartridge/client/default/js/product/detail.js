@@ -17,6 +17,16 @@ var exportBase = $.extend({}, baseDetail, {
                 }
             });
         }
+    },
+
+    initializeFrameGeometry: function() {
+        $('.frame-geometry-btn').on('click', function(){
+            $('.frame-geometry-btn').removeClass('active');
+            $(this).addClass('active');
+            var activeDiv = '.' + $(this).data('active');
+            $('.geo-metary-content').addClass('d-none');
+            $(activeDiv).removeClass('d-none');
+        });
     }
 });
 
