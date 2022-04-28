@@ -154,6 +154,9 @@
 
             <iscomment> PDP product specification 2 </iscomment>
             <iscontentasset aid="product-specification-2" />
+
+            <iscomment> PDP product bottom accordian </iscomment>
+            <iscontentasset aid="product-bottom-accordian" />
         </div>
     </isobject>
 </isdecorate>
