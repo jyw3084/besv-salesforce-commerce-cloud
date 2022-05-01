@@ -1,9 +1,9 @@
 h3 {
-    font: rem-calc(48) / rem-calc(57) $Gothic-A1regular;
+    font: rem-calc(48) / rem-calc(57) $Gothic-A1black;
     color: $primary;
     font-weight: 900;
     @include media-breakpoint-down(md) {
-        font: rem-calc(32) / rem-calc(38) $Gothic-A1regular;
+        font: rem-calc(32) / rem-calc(38) $Gothic-A1black;
         font-weight: 900;
     }
 }
@@ -21,6 +21,9 @@ h5 {
     font-weight: 700;
     max-height: 54px;
     width: 100%;
+    &:focus {
+        box-shadow: none !important;
+    }
 }
 
 .btn-black {

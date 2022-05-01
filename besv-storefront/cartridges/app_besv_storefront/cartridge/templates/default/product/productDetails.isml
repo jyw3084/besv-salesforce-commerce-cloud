@@ -43,7 +43,7 @@
 
                 <!-- Product Name -->
                 <div class="row">
-                    <div class="d-md-none col-sm-12">
+                    <div class="d-none col-sm-12">
                         <h1 class="product-name">${product.productName}</h1>
                     </div>
                 </div>
@@ -55,12 +55,12 @@
                 <div class="pdp-main-right">
                     <div class="pdp-main-right-content">
                         <!--Breadcrumbs-->
-                            <div class="hidden-sm-down">
+                            <div>
                                 <span class="product-id">${product.id}</span>
                             </div>
 
                         <!-- Product Name -->
-                        <h1 class="product-name hidden-sm-down">${product.productName}</h1>
+                        <h1 class="product-name">${product.productName}</h1>
 
                         <div class="attributes">
                             <!-- Attributes and Quantity -->

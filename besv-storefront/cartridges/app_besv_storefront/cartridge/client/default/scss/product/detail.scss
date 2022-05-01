@@ -14,8 +14,14 @@
         display: flex;
         justify-content: flex-end;
         padding: 16px 15px 16px 0;
+        @include media-breakpoint-down(sm) {
+            padding-left: 15px;
+        }
         .pdp-item {
             margin-right: 40px;
+            @include media-breakpoint-down(sm) {
+                margin-right: 20px;
+            }
             &:last-child {
                 margin-right: 0;
             }
@@ -32,13 +38,27 @@
 .pdp-main-wrapper {
     display: flex;
     margin-bottom: 134px;
+    @include media-breakpoint-down(sm) {
+        flex-direction: column;
+        margin-bottom: 220px;
+    }
     .pdp-main-left {
         width: 60%;
         max-width: 60%;
+        @include media-breakpoint-down(sm) {
+            width: 100%;
+            max-width: 100%;
+            margin-bottom: 28px;
+        }
     }
     .pdp-main-right {
         width: 40%;
         max-width: 40%;
+        @include media-breakpoint-down(sm) {
+            width: 100%;
+            max-width: 100%;
+            padding: 0 23px;
+        }
     }
 }
 .pdp-main-right {
@@ -56,10 +76,16 @@
             font: rem-calc(32) / rem-calc(32) $Gothic-A1regular;
             margin-bottom: 30px;
             font-weight: 700;
+            @include media-breakpoint-down(sm) {
+                font: rem-calc(23) / rem-calc(24) $Gothic-A1regular;
+            }
         }
         .pdp-content-price {
             padding: 0;
             margin-bottom: 68px;
+            @include media-breakpoint-down(sm) {
+                margin-bottom: 115px;
+            }
             .price {
                 text-align: left;
                 font: rem-calc(16) / rem-calc(19) $Gothic-A1regular;
@@ -74,7 +100,9 @@
         }
         .prices-add-to-cart-actions {
             padding: 0;
-            margin-bottom: 46px;
+            margin-bottom: 48px;
+            position: static;
+            box-shadow: none;
             .pdd-quantity-addToCart {
                 display: flex;
                 justify-content: space-between;
@@ -102,6 +130,7 @@
                 }
                 .cart-and-ipay {
                     flex: 1;
+                    padding-bottom: 0;
                 }
             }
         }
@@ -115,6 +144,7 @@
             }
             .pdp-key-points{
                 margin:0 0 36px 20px;
+                padding-left: 10px;
                 li {
                     font: rem-calc(20) / rem-calc(30) $Karla-Regular;
                     font-weight: 500;
@@ -151,10 +181,14 @@
                     content: "";
                     position: absolute;
                     background:  url(../../images/Vector.png) no-repeat;
-                    width: 20px;
-                    height: 20px;
+                    width: 9px;
+                    height: 10px;
                     right: 0;
-                   
+                }
+                &.active {
+                    &::after {
+                        transform: rotate(180deg);
+                    }
                 }
             }
             .panel {
@@ -181,18 +215,33 @@
         background-color: $white;
         width: 60px;
         height: 60px;
+        @include media-breakpoint-down(sm) {
+            width: 40px;
+            height: 40px;
+        }
+        svg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
     }
     .carousel-control-prev {
         left: 20px;
+        opacity: 1;
     }
     .carousel-control-next {
         right: 20px;
+        opacity: 1;
 
     }
     .carousel-indicators {
         position: static;
         margin: 0;
         margin-right: -16px;
+        @include media-breakpoint-down(sm) {
+            display: none;
+        }
         li {
             width: 158px;
             margin: 0 16px 0 0;
@@ -220,15 +269,25 @@
         text-align: center;
         border-right: 1px solid $light-gray;
         padding: 40px 0;
+        @include media-breakpoint-down(sm) {
+            border-right: none;
+            padding-bottom: 29px;
+        }
         &:last-of-type {
             border: none;
         }
         h3 {
             margin-bottom: 8px;
+            @include media-breakpoint-down(sm) {
+                font: rem-calc(22) / rem-calc(26) $Gothic-A1regular;
+            }
         }
         p {
             font: rem-calc(16) / rem-calc(22) $Karla-Regular;
-
+            @include media-breakpoint-down(sm) {
+                max-width: 82px;
+                margin: 0 auto;
+            }
         }
     }
 }
@@ -352,3 +411,303 @@
     }
 }
 
+
+/* Frame Geometry */
+
+.geometry {
+    background:  url(../../images/frame-geometry-image.png) no-repeat;
+    background-size: cover;
+    padding: 224px 0 63px;
+    @include media-breakpoint-down(sm) {
+        padding: 184px 0 50px;
+    }
+    .geometry-content {
+        h3 {
+            margin-bottom: 56px;
+            text-align: center;
+            @include media-breakpoint-down(sm) {
+                margin-bottom: 56px;
+            }
+        }
+        .geo-metary-image {
+            max-width: 662px;
+            margin: 0 auto;
+        }
+        .frame-geometary-tab {
+            max-width: 262px;
+            margin: 0 auto;
+            display: flex;
+            margin-bottom: 72px;
+            position: relative;
+            left: -30px;
+            @include media-breakpoint-down(sm) {
+                margin-bottom: 48px;
+            }
+            .frame-geometry-btn {
+                min-width: 157px;
+                position: relative;
+                background-color: $white;
+                color: $primary;
+                &:first-of-type {
+                    right: -30px;
+                }
+                &.active {
+                    background-color: $primary;
+                    color: $white;
+                    z-index: 1;
+                }
+                @include media-breakpoint-down(sm) {
+                    min-width: 154px;
+                }
+            }
+        }
+        .geo-metary-table {
+            background: $white;
+            max-width: 1240px;
+            margin: 0 auto;
+            border: 1px solid #E1E1E1;
+            @include media-breakpoint-down(sm) {
+                margin: 0 24px;
+            }
+            span {
+                display: block;
+                text-transform: uppercase;
+            }
+            .geo-metary-table-holder {
+                display: flex;
+                @include media-breakpoint-down(sm) {
+                    flex-direction: column;
+                }
+                .geo-metary-table-data {
+                    border-right: 1px solid #e1e1e1;
+                    width: 50%;
+                    max-width: 50%;
+                    @include media-breakpoint-down(sm) {
+                        width: 100%;
+                        max-width: 100%;
+                    }
+                    &:last-of-type {
+                        border-right: none;
+                    }
+                    .geo-metary-table-tile {
+                        display: flex;
+                        border-top: 1px solid #E1E1E1;
+                        ;
+                        .geo-metary-table-count {
+                            width: 37px;
+                            align-self: center;
+                            background-color: $gray-background;
+                            height: 77px;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            border-right: 1px solid #e1e1e1;
+                            text-align: center;
+                            &.bg-white {
+                                background-color: $white;
+                            }
+                        } 
+                        .geometry-table-heading {
+                            font: rem-calc(18) / rem-calc(21) $Gothic-A1regular;
+                            font-weight: 700;
+                            padding: 27px 20px;
+                            flex: 1;
+                            height: 77px;
+                            max-height: 77px;
+                            @include media-breakpoint-down(sm) {
+                                font: rem-calc(16) / rem-calc(19) $Gothic-A1regular;
+                            }
+                        }
+                        .geometry-table-info {
+                            font: rem-calc(16) / rem-calc(19) $Gothic-A1regular;
+                            width: 170px;
+                            align-self: center;
+                            height: 77px;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            padding: 0 20px;
+                            border-left: 1px solid #e1e1e1;
+                            color: $grey;
+                            @include media-breakpoint-down(sm) {
+                                width: 100px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* PDP Collapsible */
+
+.product-bottom-accordian {
+    h3 {
+        padding: 48px 5px;
+        border-bottom: 1px solid $light-gray;
+        position: relative;
+        @include media-breakpoint-down(sm) {
+            padding: 28px 30px 24px 0;
+            &.asked-question-heading {
+                border-top: 1px solid $light-gray;
+            }
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            background:  url(../../images/close-collapse.svg) no-repeat;
+            width: 25px;
+            height: 25px;
+            right: 0;
+            background-position: center;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        &.active {
+            &::after {
+                background:  url(../../images/open-collapse.svg) no-repeat;
+                width: 25px;
+                height: 6px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+    }
+}
+
+/* What Under Hood */
+
+.what-under-hood {
+    span {
+        display: block;
+    }
+    .under-hood-top {
+        display: flex;
+        border-bottom: 1px solid $light-gray;
+        span {
+            font: rem-calc(32) / rem-calc(60) $Gothic-A1regular;
+            font-weight: 600;
+            padding: 9px 40px;
+            padding-right: 40px;
+            border-right: 1px solid $light-gray;
+            color: $brand-dark;
+            opacity: 0.4;
+            @include media-breakpoint-down(sm) {
+                font: rem-calc(20) / rem-calc(38) $Gothic-A1regular;
+                padding: 9px 15px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            &.key-specification {
+                opacity: 1;
+                padding-left: 0;
+            }
+            &.electronics {
+                border-right: none;
+            }
+        }
+    }
+    .under-hood-specification{
+
+        .specification-wrapper {
+            display: flex;
+            padding: 24px 0;
+            border-bottom: 1px solid $light-gray;
+            @include media-breakpoint-down(sm) {
+                padding: 17px 0;
+                flex-direction: column;
+            }
+            .heading {
+                width: 33%;
+                max-width: 33%;
+                font: rem-calc(18) / rem-calc(21) $Gothic-A1regular;
+                font-weight: 700;
+                @include media-breakpoint-down(sm) {
+                    width: 100%;
+                    max-width: 100%;
+                    padding-bottom: 10px;
+                }
+            }
+            .detail {
+                width: 66%;
+                max-width: 66%;
+                @include media-breakpoint-down(sm) {
+                    width: 100%;
+                    max-width: 100%;
+                }
+                font: rem-calc(16) / rem-calc(19) $Gothic-A1regular;
+                font-weight: 400;
+                color: $grey;
+            }
+        }
+        .additional-info {
+            padding: 55px 0 0;
+            @include media-breakpoint-down(sm) {
+                padding: 36px 0;
+            }
+            .additional-info-wrapper {
+                display: flex;
+                margin-bottom: 19px;
+                align-items: flex-start;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+                .number {
+                    min-width: 30px;
+                    min-height: 30px;
+                    border-radius: 50%;
+                    margin-right: 10px;
+                    color: $white;
+                    background-color: $primary;
+                    font: rem-calc(16) / rem-calc(23) $Karla-Regular;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                }
+                .additional-info-detail {
+                    font: rem-calc(14) / rem-calc(14) $Karla-Regular;
+                    padding-top: 5px;
+                    color: $grey;
+                    padding-right: 172px;
+                    @include media-breakpoint-down(sm) {
+                        padding-right: 0;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+  /* Answer Question */
+
+.frequenttly-asked-questions {
+    .asked-question-content {
+        padding: 48px 0;
+        border-bottom: 1px solid #E1E1E1;
+        .question-answer {
+            margin-bottom: 30px;
+            .question {
+                font: rem-calc(32) / rem-calc(32) $Gothic-A1regular;
+                font-weight: 700;
+                margin-bottom: 14px;
+                @include media-breakpoint-down(sm) {
+                    font: rem-calc(20) / rem-calc(24) $Gothic-A1regular;
+                }
+            }
+            .answer {
+                font: rem-calc(16) / rem-calc(25) $Karla-Regular;
+                font-weight: 500;
+                color: $brand-dark;
+                .answer-link {
+                    text-decoration: underline;
+                    color: $primary;
+                }
+            }
+        }
+    }
+}
