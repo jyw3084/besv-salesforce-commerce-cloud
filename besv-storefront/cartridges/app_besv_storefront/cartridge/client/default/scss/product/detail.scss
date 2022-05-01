@@ -78,6 +78,7 @@
             font-weight: 700;
             @include media-breakpoint-down(sm) {
                 font: rem-calc(23) / rem-calc(24) $Gothic-A1regular;
+                font-weight: 700;
             }
         }
         .pdp-content-price {
@@ -174,6 +175,7 @@
                 text-align: left;
                 border-top: 1px solid $light-gray;
                 position: relative;
+                font-weight: 900;
                 &:focus {
                     outline: none;
                 }
@@ -279,7 +281,8 @@
         h3 {
             margin-bottom: 8px;
             @include media-breakpoint-down(sm) {
-                font: rem-calc(22) / rem-calc(26) $Gothic-A1regular;
+                font: rem-calc(22) / rem-calc(26) $Gothic-A1black;
+                font-weight: 900;
             }
         }
         p {
@@ -826,6 +829,7 @@
                 margin-bottom: 14px;
                 @include media-breakpoint-down(sm) {
                     font: rem-calc(20) / rem-calc(24) $Gothic-A1regular;
+                    font-weight: 700;
                 }
             }
             .answer {
