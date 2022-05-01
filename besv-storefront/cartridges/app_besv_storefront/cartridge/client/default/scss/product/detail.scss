@@ -13,9 +13,9 @@
     .pdp-header-menu {
         display: flex;
         justify-content: flex-end;
-        padding: 16px 15px 16px 0;
+        padding: 16px 15px 16px 15px;
         @include media-breakpoint-down(sm) {
-            padding-left: 15px;
+            justify-content: space-between;
         }
         .pdp-item {
             margin-right: 40px;
@@ -204,7 +204,7 @@
     .pdp-zoom-icon {
         position: absolute;
         right: 33px;
-        bottom: 33px;
+        bottom: 45px;
     }
     .carousel-control-prev, .carousel-control-next {
         top: 50%;
@@ -294,7 +294,6 @@
 
 /* Video Banner */
 .video-banner {
-    margin-bottom: 55px;
     .video-holder {
         position: relative;
         .play-icon {
@@ -323,15 +322,27 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        @include media-breakpoint-down(sm) {
+            flex-direction: column-reverse;
+        }
     }
     .story-left {
         width: 47%;
         max-width: 47%;
+        @include media-breakpoint-down(sm) {
+            width: 100%;
+            max-width: 100%;
+        }
     }
     .story-right {
         width: 49%;
         max-width: 49%;
         padding-right: 100px;
+        @include media-breakpoint-down(sm) {
+            width: 100%;
+            max-width: 100%;
+            padding-right: 0;
+        }
     }
     .story-banner-detail {
         p {
@@ -342,28 +353,51 @@
         h3 {
             max-width: 520px;
             margin-bottom: 28px;
+            text-transform: capitalize;
         }
     }
     .story-1 {
         background: linear-gradient(175deg, rgb(253, 253, 250) 0%, rgb(229, 229, 227) 100%);
         align-items: stretch;
+        padding-top: 55px;
+        @include media-breakpoint-down(sm) {
+            padding-top: 0;
+            // margin: 26px 0 0 23px;
+        }
         .story-1-banner-content {
             padding-top: 60px;
+            @include media-breakpoint-down(sm) {
+                padding: 38px 0 60px 23px;
+            }
             .story-banner-description {
                 max-width: 355px;
+                @include media-breakpoint-down(sm) {
+                    max-width: none;
+                }
             }
         }
         .story-1-image {
             z-index: 1;
+            margin-left: -24px;
         }
     }
     .story-2 {
         position: relative;
-        top: -225px;
         background: white;
-        padding-top: 50px;
+        margin-top: -200px;
+        padding-top: 60px;
+        margin-bottom: 59px;
+        align-items: flex-start;
+        @include media-breakpoint-down(sm) {
+            flex-direction: column;
+            margin-top: 0;
+        }
         .story-2-banner-content {
-            padding: 230px 0 0 100px;
+            padding: 214px 0 0 100px;
+            @include media-breakpoint-down(sm) {
+                padding: 0 47px;
+                // margin: 0 47px;
+            }
         }
         .story-2-banner-overlay-content {
             position: absolute;
@@ -376,6 +410,12 @@
             box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
             border-right: 2px solid $orange;
             z-index: 1;
+            @include media-breakpoint-down(sm) {
+                padding: 24px;
+                bottom: -55px;
+                left: 50%;
+                min-width: 295px;
+            }
             p {
                 font: rem-calc(16) / rem-calc(24) $Karla-Regular;
                 font-weight: 300;
@@ -383,31 +423,119 @@
             }
         }
         .story-2-image {
-            z-index: 1
-            ;
+            z-index: 1;
+            @include media-breakpoint-down(sm) {
+                width: 90%;
+                max-width: 90%;
+                margin: 0 auto;
+            }
         }
-        &::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            right: 0;
-            background: rgb(250, 250, 247);
-            height: 225px;
-            bottom: -225px;
+        .story-banner-detail-2 {
+            max-width: 520px;
+            margin-left: auto;
+            @include media-breakpoint-down(sm) {
+                max-width: none;
+                margin-left: 0;
+                padding-bottom: 40px;
+            }
         }
     }
     .story-3 {
         background: rgb(250, 250, 247);
         align-items: center;
+        position: relative;
+        .story-banner-detail {
+            padding: 70px 47px 50px;
+        }
         .story-banner-heading {
             max-width: 485px;
+            @include media-breakpoint-down(sm) {
+                max-width: none;
+            }
         }
         .story-banner-description {
             max-width: 520px;
+            @include media-breakpoint-down(sm) {
+                max-width: none;
+            }
+        }
+           &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            background: rgb(250, 250, 247);
+            height: 163px;
+            bottom: -162px;
+            @include media-breakpoint-down(sm) {
+               display: none;
+            }
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            background: rgb(250, 250, 247);
+            height: 219px;
+            top: -218px;
+        }
+        .story-3-image {
+            @include media-breakpoint-down(sm) {
+                margin-right: 47px;
+            }
         }
     }
-    .story-4-banner-content {
-        padding-left: 100px;
+    .story-4 {
+        @include media-breakpoint-down(sm) {
+            flex-direction: column;
+        }
+        .story-4-banner-content {
+            padding-left: 100px;
+            @include media-breakpoint-down(sm) {
+                padding-left: 0;
+            }
+        }
+        .story-banner-detail {
+            max-width: 541px;
+            margin-left: auto;
+            @include media-breakpoint-down(sm) {
+                max-width: none;
+                margin: 0;
+                padding: 60px 47px;
+            }
+        }
+        .story-banner-heading {
+            max-width: 358px;
+            @include media-breakpoint-down(sm) {
+                max-width: none;
+            }
+        }
+        .story-4-image {
+            z-index: 1;
+            @include media-breakpoint-down(sm) {
+                width: 90%;
+            }
+           
+        }
+    }
+    .story-5 {
+        .story-banner-description {
+            max-width: 520px;
+            margin-right: auto;
+            @include media-breakpoint-down(sm) {
+                max-width: none;
+                margin: 0;
+            }
+        }
+        .story-banner-detail  {
+            @include media-breakpoint-down(sm) {
+               padding: 80px 47px 40px;
+            }
+        }
+        .story-5-image {
+            margin-right: 44px;
+        }
     }
 }
 
@@ -418,6 +546,7 @@
     background:  url(../../images/frame-geometry-image.png) no-repeat;
     background-size: cover;
     padding: 224px 0 63px;
+    margin-top: -50px;
     @include media-breakpoint-down(sm) {
         padding: 184px 0 50px;
     }
@@ -714,4 +843,26 @@
 /* PDP Zoom */
 .products-zoom-model {
     width: 100%;
+    .modal-dialog {
+        max-width: none;
+        margin: 0;
+        .zoom-close-btn {
+            float: right;
+            margin: 16px;
+            background: none;
+            border: none;
+            font-size: 18px;
+        }
+        .modal-body {
+            padding: 0;
+            img {
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
+
+.pdp-zoom-icon-btn {
+    background: none;
+    border: none;
 }
