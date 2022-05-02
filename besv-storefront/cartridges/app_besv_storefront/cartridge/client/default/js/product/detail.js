@@ -7,13 +7,18 @@ function addZoomClose() {
     })
 }
 
-function showpZoomModel() {
+function showpZoomModel(index) {
     var imgs = $('.carousel-inner').children().find('img');
     var imagesToDisplay = '';
     for (var i=0; i<imgs.length; i++) {
-        imagesToDisplay += imgs[i].outerHTML;
+        if (index == i) {
+            imagesToDisplay += '<div class="zoom-scroll-to">';
+            imagesToDisplay += imgs[i].outerHTML;
+            imagesToDisplay += '</div>';
+        } else {
+            imagesToDisplay += imgs[i].outerHTML;
+        }
     }
-
     var htmlString = '<!-- Modal -->'
         + '<div class="modal show products-zoom-model" id="pdp-zoom" aria-modal="true" role="dialog" style="display: block;">'
         + '<div class="modal-dialog">'
@@ -30,6 +35,12 @@ function showpZoomModel() {
 
     $('.products-zoom-model').modal('toggle');
     addZoomClose();
+
+    // scroll
+    //var $container = $("html,body");
+    //var $scrollTo = $('.zoom-scroll-to');
+
+    //$container.animate({scrollTop: $scrollTo.offset().top - $container.offset().top + $container.scrollTop(), scrollLeft: 0},300);
 }
 
 var exportBase = $.extend({}, baseDetail, {
@@ -62,7 +73,8 @@ var exportBase = $.extend({}, baseDetail, {
 
     initializePDPZoom: function(){
         $('.pdp-zoom-icon-btn').on('click', function(){
-            showpZoomModel();
+            var currentIndex = $('.carousel-inner .carousel-item.active').data('index');
+            showpZoomModel(currentIndex);
         });
     },
 
