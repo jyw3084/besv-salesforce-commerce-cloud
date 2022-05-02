@@ -86,6 +86,34 @@ var exportBase = $.extend({}, baseDetail, {
 
         });
 
+    },
+    updateCarousalIndex: function() {
+        $('.carousel .carousel-control-prev, .carousel .carousel-control-next').on('click', function(e){
+            e.preventDefault();
+            var isNext = $(this).hasClass('carousel-control-next') ? true : false;
+            var currentIndex = $('.carousel-inner .carousel-item.active').data('index');
+            var totalImages =  $(".pdp-zoom-icon .zoom-index").data('total');
+            if (currentIndex>=0) {
+                currentIndex=currentIndex+1;
+            }
+            if (isNext) {
+                currentIndex = currentIndex==totalImages ? 1: (currentIndex+1);
+            } else { // prev clicked
+                currentIndex = currentIndex==1 ? totalImages : (currentIndex-1);
+            }
+            $(".pdp-zoom-icon .zoom-index").text(currentIndex+'/'+totalImages);
+
+        });
+
+        $('.carousel .carousel-indicators').on('click','li', function(e){
+            e.preventDefault();
+            var currentIndex = $(this).data('slide-to');
+            var totalImages =  $(".pdp-zoom-icon .zoom-index").data('total');
+            if (currentIndex>=0) {
+                currentIndex=currentIndex+1;
+            }
+            $(".pdp-zoom-icon .zoom-index").text(currentIndex+'/'+totalImages);
+        });
     }
 });
 
