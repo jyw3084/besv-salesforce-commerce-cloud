@@ -1,4 +1,4 @@
-<select class="quantity-select custom-select form-control d-none" id="quantity-${loopState && loopState.count ? loopState.count : '1' }">
+<select class="custom-select form-control d-none" id="quantity-${loopState && loopState.count ? loopState.count : '1' }">
     <isloop items="${product.quantities}" var="quantity">
         <option value="${quantity.value}"
                 <isif condition="${product.productType !== 'bundle'}">data-url="${quantity.url}"</isif>
@@ -10,7 +10,7 @@
 </select>
 
 <div class="quantity-wrapper">
-        <button class="decrease-quantity">
+        <button class="decrease-quantity product-quantity-update">
             <svg width="10px" height="2px" viewBox="0 0 10 2" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>decrement</title>
                 <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -22,8 +22,8 @@
                 </g>
             </svg>
         </button>
-        <input class="quantity-field" type="text" disabled="" value="1" min="1" max="3">
-        <button class="increase-quantity">
+        <input class="quantity-field quantity-select" type="text" disabled="" value="1" min="1">
+        <button class="increase-quantity product-quantity-update">
             <svg width="10px" height="10px" viewBox="0 0 10 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>increment</title>
                 <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">

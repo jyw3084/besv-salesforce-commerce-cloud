@@ -64,6 +64,28 @@ var exportBase = $.extend({}, baseDetail, {
         $('.pdp-zoom-icon-btn').on('click', function(){
             showpZoomModel();
         });
+    },
+
+    updateQuantity: function() {
+        $(document).on('click', '.product-quantity-update', function (e) {
+            e.preventDefault();
+            var isDecrease = $(this).hasClass('decrease-quantity') ? true : false;
+            var needChangeTrigger = false;
+            var quantityValue = parseInt($('.quantity-field').val());
+            if (isDecrease && quantityValue>1) {
+                quantityValue = quantityValue - 1;
+                needChangeTrigger = true;
+            } else if (!isDecrease && quantityValue<=10) {
+                quantityValue = quantityValue + 1;
+                needChangeTrigger = true;
+            }
+
+            if (needChangeTrigger) {
+                $('.quantity-field').val(quantityValue);
+            }
+
+        });
+
     }
 });
 
