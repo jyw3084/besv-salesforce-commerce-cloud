@@ -1,0 +1,16 @@
+<div class="card ghost customer">
+    <div class="card-header">
+        <h2 class="card-header-custom">${Resource.msg('heading.checkout.youremail', 'checkout', null)}</h2>
+    </div>
+</div>
+
+<div class="card customer-section">
+    <div class="card-header">
+        <h2 class="card-header-custom">
+            <span>1/3</span>
+            ${Resource.msg('heading.checkout.youremail', 'checkout', null)}
+        </h2>
+    </div>
+    <div class="customer-error"></div>
+    <isinclude template="checkout/customer/customerCard" />
+</div>
