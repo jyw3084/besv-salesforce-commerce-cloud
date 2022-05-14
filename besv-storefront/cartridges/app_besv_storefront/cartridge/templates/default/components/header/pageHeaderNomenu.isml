@@ -31,13 +31,15 @@
                 </div>
                 </iscomment>
                 <div class="navbar-header">
-                    <div class="header-right">
-                        <div class="col-sm-4 hidden-xs-down">
-                            <a class="continue-shopping-link" href="${URLUtils.url('Home-Show')}" title="${Resource.msg('link.continue.shopping','cart',null)}">
-                                ${Resource.msg('link.continue.shopping','cart',null)}
-                            </a>
+                    <isif condition="${pdict.isCartPage == true}">
+                        <div class="header-right">
+                            <div class="col-sm-4 hidden-xs-down">
+                                <a class="continue-shopping-link" href="${URLUtils.url('Home-Show')}" title="${Resource.msg('link.continue.shopping','cart',null)}">
+                                    ${Resource.msg('link.continue.shopping','cart',null)}
+                                </a>
+                            </div>
                         </div>
-                    </div>
+                    </isif>
                     <div class="pull-left">
                     </div>
                 </div>

@@ -21,24 +21,24 @@ module.exports = function () {
         // if ($('.search:visible').length === 0) {
         //     return;
         // }
-        var url = $('.minicart').data('action-url');
-        var count = parseInt($('.minicart .minicart-quantity').text(), 10);
+        // var url = $('.minicart').data('action-url');
+        // var count = parseInt($('.minicart .minicart-quantity').text(), 10);
 
-        if (count !== 0 && $('.minicart .popover.show').length === 0) {
-            if (!updateMiniCart) {
-                $('.minicart .popover').addClass('show');
-                return;
-            }
+        // if (count !== 0 && $('.minicart .popover.show').length === 0) {
+        //     if (!updateMiniCart) {
+        //         $('.minicart .popover').addClass('show');
+        //         return;
+        //     }
 
-            $('.minicart .popover').addClass('show');
-            $('.minicart .popover').spinner().start();
-            $.get(url, function (data) {
-                $('.minicart .popover').empty();
-                $('.minicart .popover').append(data);
-                updateMiniCart = false;
-                $.spinner().stop();
-            });
-        }
+        //     $('.minicart .popover').addClass('show');
+        //     $('.minicart .popover').spinner().start();
+        //     $.get(url, function (data) {
+        //         $('.minicart .popover').empty();
+        //         $('.minicart .popover').append(data);
+        //         updateMiniCart = false;
+        //         $.spinner().stop();
+        //     });
+        // }
     });
     $('body').on('touchstart click', function (e) {
         if ($('.minicart').has(e.target).length <= 0) {
