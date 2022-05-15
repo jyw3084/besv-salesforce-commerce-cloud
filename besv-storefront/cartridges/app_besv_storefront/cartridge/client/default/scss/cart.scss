@@ -1,0 +1,101 @@
+@import "./variable";
+@import "./mixins";
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins/breakpoints";
+@import "utilities/deleteCardButton";
+@import "components/quickView";
+
+.cart-head {
+    padding: 28px 0 18px;
+    border-bottom: 1px solid $light-gray;
+    .header-wrapper {
+        display: flex;
+        justify-content: space-between;
+        .logo {
+            width: 120px;
+            height: 21px;
+        }
+        .navbar-header {
+            height: auto;
+            .continue-shopping-link {
+                font-family: $Gothic-A1regular;
+                color: $orange;
+            }
+        }
+    }
+}
+#cart-title {
+    position: static;
+    background: none;
+    color: $primary;
+    margin-bottom: 25px;
+    font-family: $Gothic-A1black;
+}
+.cart-page {
+    padding-left: 15px;
+    .coupon-code-holder {
+        margin-bottom: 50px;
+        .cart-coupon-wrapper {
+            position: relative;
+            .promo-code-field {
+                margin-bottom: 10px;
+                .coupon-code-field {
+                    height: 54px;
+                    max-height: 54px;
+                    width: 100%;
+                    border-radius: 999px;
+                    padding: 10px 163px 10px 15px;
+                    border: 1px solid $light-gray;
+                    font: 1.125rem/1.6875rem "Karla-Regular";
+                }
+            }
+            .promo-code-submit {
+                position: absolute;
+                right: 0;
+                top: 0;
+                width: 38%;
+            }
+        }
+    }
+    .cart-total-amount {
+        padding-top: 15px;
+        border-top: 1px solid $light-gray;
+    }
+}
+.quantity-wrapper {
+    display: flex;
+    justify-content: space-between;
+    height: 54px;
+    border: 1px solid $light-gray;
+    border-radius: 999px;
+    padding: 0 10px;
+    .decrease-quantity, .increase-quantity,.quantity-field {
+        background: none;
+        border: none;
+        outline: none;
+    }
+    .quantity-field {
+        width: 30px;
+        text-align: center;
+    }
+}
+.cart-product-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px;
+    background-color: $brand-light-gray;
+}
+.product-card-footer {
+    width: 18%;
+    max-width: 18%;
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.cart-product-holder {
+    width: 70%;
+    max-width: 70%;
+    display: flex;
+}

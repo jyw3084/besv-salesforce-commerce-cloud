@@ -1,6 +1,6 @@
 <header>
     <isinclude template="/components/header/skipNav" />
-    <nav role="navigation">
+    <nav role="navigation" class="cart-head">
         <div class="header container">
             <div class="header-wrapper">
                 <div class="logo">
@@ -33,15 +33,15 @@
                 <div class="navbar-header">
                     <isif condition="${pdict.isCartPage == true}">
                         <div class="header-right">
-                            <div class="col-sm-4 hidden-xs-down">
+                            <div class="hidden-xs-down">
                                 <a class="continue-shopping-link" href="${URLUtils.url('Home-Show')}" title="${Resource.msg('link.continue.shopping','cart',null)}">
                                     ${Resource.msg('link.continue.shopping','cart',null)}
                                 </a>
                             </div>
                         </div>
                     </isif>
-                    <div class="pull-left">
-                    </div>
+                    <iscomment> <div class="pull-left">
+                    </div> </iscomment>
                 </div>
             </div>
         </div>

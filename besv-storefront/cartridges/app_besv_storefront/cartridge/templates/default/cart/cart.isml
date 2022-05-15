@@ -20,10 +20,9 @@
     </div>
 
     <div class="container">
-        <h1 class="page-title">${Resource.msg('title.cart','cart',null)} (${pdict.items.length})</h1>
+        <h1 class="page-title" id="cart-title">${Resource.msg('title.cart','cart',null)} (${pdict.items.length})</h1>
         <div class="row cart-header">
         </div>
-        <hr class="no-margin-top">
     </div>
 
     <isif condition="${pdict.items.length === 0}">
@@ -58,7 +57,7 @@
                     <div class="coupons-and-promos">
                         <isinclude template="cart/cartCouponDisplay" />
                     </div>
-                    <div class="row">
+                    <div class="row mb-3 cart-total-amount">
                         <isinclude template="cart/cartShippingMethodSelection" />
                     </div>
                     <isinclude template="cart/cartTotals" />

@@ -1,6 +1,5 @@
-<div class="col-lg-7 product-card-footer">
+<div class="product-card-footer">
     <isif condition="${!lineItem.isBonusProductLineItem}"/>
-        <div class="row">
             <!---item price--->
             <iscomment> <div class="col-4 line-item-price-${lineItem.UUID}">
                 <p class="line-item-price-info">${Resource.msg('label.each.item.price','cart',null)}</p>
@@ -11,24 +10,23 @@
             </div> </iscomment>
 
             <!--- quantity --->
-            <div class="col-4 col-lg-3 line-item-quantity">
+            <div class="line-item-quantity">
                 <isinclude template="cart/productCard/productCardQuantitySelector" />
             </div>
 
             <!--- line item total price --->
-            <div class="col-4 line-item-total-price">
+            <div class="line-item-total-price">
                 <div class="item-total-${lineItem.UUID} price">
                     <isinclude template="checkout/productCard/productCardProductTotalPrice" />
                 </div>
             </div>
 
             <!--- extra slot for spacing reasons due to large remove button --->
-            <div class="col-lg-1 hidden-md-down remove-line-item-lg"></div>
-        </div>
+            <iscomment> <div class="col-lg-1 hidden-md-down remove-line-item-lg"></div> </iscomment>
 
         <!--- promotions --->
-        <div class="line-item-promo item-${lineItem.UUID}">
+        <iscomment> <div class="line-item-promo item-${lineItem.UUID}">
             <isinclude template="checkout/productCard/productCardProductPromotions" />
-        </div>
+        </div> </iscomment>
     </isif>
 </div>
