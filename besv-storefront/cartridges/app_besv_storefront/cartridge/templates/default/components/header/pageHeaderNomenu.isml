@@ -1,47 +1,49 @@
 <header>
     <isinclude template="/components/header/skipNav" />
     <nav role="navigation" class="cart-head">
-        <div class="header container">
-            <div class="header-wrapper">
-                <div class="logo">
-                    <a class="logo-home" href="${URLUtils.url('Home-Show')}" title="${ Resource.msgf('global.homepage.tooltip', 'common', null, Resource.msg('global.storename', 'common', null), Resource.msg('global.home', 'common', null)) }">
-                        <img class="logo-image" src="${URLUtils.staticURL('/images/logo-black.svg')}" alt="${Resource.msg('global.storename', 'common', null)}" />
-                    </a>
-                </div>
-                <iscomment>
-                <div class="progress-bar">
-                    <div class="progress-bar-cart active">
-                        <span>1</span>
-                        <span>YOUR CART</span>
+        <div class="header checkout-header">
+            <div class=" container">
+                <div class="header-wrapper">
+                    <div class="logo">
+                        <a class="logo-home" href="${URLUtils.url('Home-Show')}" title="${ Resource.msgf('global.homepage.tooltip', 'common', null, Resource.msg('global.storename', 'common', null), Resource.msg('global.home', 'common', null)) }">
+                            <img class="logo-image" src="${URLUtils.staticURL('/images/logo-black.svg')}" alt="${Resource.msg('global.storename', 'common', null)}" />
+                        </a>
                     </div>
-                    <div class="progress-bar-net">
-                        <span>></span>
-                    </div>
-                    <div class="progress-bar-checkout">
-                        <span>2</span>
-                        <span>CHECKOUT</span>
-                    </div>
-                    <div class="progress-bar-net">
-                        <span>></span>
-                    </div>
-                    <div class="progress-bar-confirmed">
-                        <span>3</span>
-                        <span>CONFIRMED</span>
-                    </div>
-                </div>
-                </iscomment>
-                <div class="navbar-header">
-                    <isif condition="${pdict.isCartPage == true}">
-                        <div class="header-right">
-                            <div class="hidden-xs-down">
-                                <a class="continue-shopping-link" href="${URLUtils.url('Home-Show')}" title="${Resource.msg('link.continue.shopping','cart',null)}">
-                                    ${Resource.msg('link.continue.shopping','cart',null)}
-                                </a>
-                            </div>
+                    <iscomment>
+                    <div class="progress-bar">
+                        <div class="progress-bar-cart active">
+                            <span>1</span>
+                            <span>YOUR CART</span>
                         </div>
-                    </isif>
-                    <iscomment> <div class="pull-left">
-                    </div> </iscomment>
+                        <div class="progress-bar-net">
+                            <span>></span>
+                        </div>
+                        <div class="progress-bar-checkout">
+                            <span>2</span>
+                            <span>CHECKOUT</span>
+                        </div>
+                        <div class="progress-bar-net">
+                            <span>></span>
+                        </div>
+                        <div class="progress-bar-confirmed">
+                            <span>3</span>
+                            <span>CONFIRMED</span>
+                        </div>
+                    </div>
+                    </iscomment>
+                    <div class="navbar-header">
+                        <isif condition="${pdict.isCartPage == true}">
+                            <div class="header-right">
+                                <div class="hidden-xs-down">
+                                    <a class="continue-shopping-link" href="${URLUtils.url('Home-Show')}" title="${Resource.msg('link.continue.shopping','cart',null)}">
+                                        ${Resource.msg('link.continue.shopping','cart',null)}
+                                    </a>
+                                </div>
+                            </div>
+                        </isif>
+                        <iscomment> <div class="pull-left">
+                        </div> </iscomment>
+                    </div>
                 </div>
             </div>
         </div>

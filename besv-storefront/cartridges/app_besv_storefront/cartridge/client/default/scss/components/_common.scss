@@ -4,4 +4,9 @@ header ~ #maincontent .container a:not(.btn-primary, .btn-outline-primary) {
 }
 input {
     border-radius: 999px !important;
+    font-family: $Gothic-A1regular;
+}
+label {
+    font-family: $Gothic-A1regular;
+    margin-bottom: 10px;
 }

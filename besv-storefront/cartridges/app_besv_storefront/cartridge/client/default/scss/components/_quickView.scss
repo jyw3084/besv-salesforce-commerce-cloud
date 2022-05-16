@@ -122,3 +122,60 @@
         margin-bottom: 0.5rem;
     }
 }
+.pdp-main-left {
+    .pdp-zoom-icon {
+        position: absolute;
+        right: 33px;
+        bottom: 45px;
+        @include media-breakpoint-down(sm) {
+            right: 22px;
+            bottom: 22px;
+        }
+    }
+    .carousel-control-prev, .carousel-control-next {
+        top: 50%;
+        transform: translateY(-50%);
+        bottom: auto;
+        border-radius: 50%;
+        overflow: hidden;
+        background-color: $white;
+        width: 60px;
+        height: 60px;
+        @include media-breakpoint-down(sm) {
+            width: 40px;
+            height: 40px;
+        }
+        svg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+    .carousel-control-prev {
+        left: 20px;
+        opacity: 1;
+    }
+    .carousel-control-next {
+        right: 20px;
+        opacity: 1;
+
+    }
+    .carousel-indicators {
+        position: static;
+        margin: 0;
+        margin-right: -16px;
+        @include media-breakpoint-down(sm) {
+            display: none;
+        }
+        li {
+            width: 158px;
+            margin: 0 16px 0 0;
+            opacity: 1;
+        }
+    }
+    .pdp-zoom-icon-btn {
+        background: none;
+        border: none;
+    }
+}

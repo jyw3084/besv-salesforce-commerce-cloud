@@ -31,6 +31,10 @@
     color: $primary;
     margin-bottom: 25px;
     font-family: $Gothic-A1black;
+    @include media-breakpoint-down(sm) {
+        width: 100%;
+        text-align: center;
+    }
 }
 .cart-page {
     padding-left: 15px;
@@ -70,6 +74,14 @@
     border: 1px solid $light-gray;
     border-radius: 999px;
     padding: 0 10px;
+    background-color: $white;
+    @include media-breakpoint-down(sm) {
+        flex-direction: column;
+        padding: 10px 0;
+        align-items: center;
+        height: 125px;
+
+    }
     .decrease-quantity, .increase-quantity,.quantity-field {
         background: none;
         border: none;
@@ -81,10 +93,12 @@
     }
 }
 .cart-product-wrapper {
-    display: flex;
-    justify-content: space-between;
     padding: 25px;
     background-color: $brand-light-gray;
+    .cart-product-inner {
+        display: flex;
+        justify-content: space-between;
+    }
 }
 .product-card-footer {
     width: 18%;
@@ -98,4 +112,24 @@
     width: 70%;
     max-width: 70%;
     display: flex;
+    .line-item-name {
+        white-space: initial;
+    }
+}
+.checkout-summary-text {
+    margin-bottom: 15px;
+    &.checkout-summary-total {
+        padding: 15px 0;
+        border-top: 1px solid $light-gray
+    }
+    p {
+        font-family: $Gothic-A1regular;
+    }
+}
+.cart-product-mobile {
+    display: flex;
+    margin-right: 30px;
+    .line-item-total-price {
+        margin-right: 43px;
+    }
 }

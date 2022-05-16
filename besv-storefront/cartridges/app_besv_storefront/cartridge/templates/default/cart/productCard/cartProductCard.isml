@@ -6,39 +6,54 @@
     <!--- name and remove buttons --->
 
     <div class="cart-product-wrapper ${bonuslineitemrow}">
-            <div class="cart-product-holder">
-                <div class="item-image">
-                    <img class="product-image" src="${lineItem.images.small[0].url}" alt="${lineItem.images.small[0].alt}" title="${lineItem.images.small[0].title}">
-                </div>
-                <div class="item-details">
-                    <isinclude template="cart/productCard/cartProductCardHeader" />
-                    <div class="item-attributes d-flex flex-column">
-                        <isloop items="${lineItem.variationAttributes}" var="attribute">
-                            <p class="line-item-attributes ${attribute.displayName}-${lineItem.UUID}">${attribute.displayName}: ${attribute.displayValue}</p>
-                        </isloop>
-                        <isloop items="${lineItem.options}" var="option">
-                            <isif condition="${!!option}" />
-                                <div class="lineItem-options-values" data-option-id="${option.optionId}" data-value-id="${option.selectedValueId}">
-                                    <p class="line-item-attributes">${option.displayName}</p>
-                                </div>
-                            </isif>
-                        </isloop>
-                        <iscomment>
-                        <isinclude template="cart/productCard/cartProductCardAvailability" />
-                        </iscomment>
-                        <isinclude template="cart/productCard/cartProductCardEdit" />
+        <div class="cart-product-inner">
+                <div class="cart-product-holder">
+                    <div class="item-image">
+                        <img class="product-image" src="${lineItem.images.small[0].url}" alt="${lineItem.images.small[0].alt}" title="${lineItem.images.small[0].title}">
+                    </div>
+                    <div class="item-details">
+                        <isinclude template="cart/productCard/cartProductCardHeader" />
+                        <div class="item-attributes d-flex flex-column">
+                            <isloop items="${lineItem.variationAttributes}" var="attribute">
+                                <p class="line-item-attributes ${attribute.displayName}-${lineItem.UUID}">${attribute.displayName}: ${attribute.displayValue}</p>
+                            </isloop>
+                            <isloop items="${lineItem.options}" var="option">
+                                <isif condition="${!!option}" />
+                                    <div class="lineItem-options-values" data-option-id="${option.optionId}" data-value-id="${option.selectedValueId}">
+                                        <p class="line-item-attributes">${option.displayName}</p>
+                                    </div>
+                                </isif>
+                            </isloop>
+                            <iscomment>
+                            <isinclude template="cart/productCard/cartProductCardAvailability" />
+                            </iscomment>
+                            <div class="d-none d-sm-block">
+                                <isinclude template="cart/productCard/cartProductCardEdit" />
+                            </div>
+                        
+                        </div>
                     </div>
                 </div>
-            </div>
-        <div class="col-12 d-lg-none"><hr class="line-item-divider"></div>
 
-        <isinclude template="cart/productCard/cartProductCardProductPrice" />
+            <isinclude template="cart/productCard/cartProductCardProductPrice" />
 
-        <isif condition="${!lineItem.isBonusProductLineItem}"/>
-            <div class="hidden-md-down">
-                <isinclude template="components/deleteButton" />
+            <isif condition="${!lineItem.isBonusProductLineItem}"/>
+                <div class="hidden-md-down">
+                    <isinclude template="components/deleteButton" />
+                </div>
+            </isif>
+        </div>
+        <div class="d-flex d-sm-none cart-product-mobile">
+            <div class="line-item-total-price d-block">
+                <div class="item-total-${lineItem.UUID} price">
+                    <isinclude template="checkout/productCard/productCardProductTotalPrice" />
+                </div>
             </div>
-        </isif>
+            <div class="d-block">
+                <isinclude template="cart/productCard/cartProductCardEdit" />
+            </div>
+        </div>
+
     </div>
 
     <isif condition="${lineItem.bonusProductLineItemUUID === 'bonus'}">
