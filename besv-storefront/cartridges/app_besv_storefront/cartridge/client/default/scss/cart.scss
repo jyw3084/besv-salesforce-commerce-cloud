@@ -31,7 +31,7 @@
     color: $primary;
     margin-bottom: 25px;
     font-family: $Gothic-A1black;
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-down(md) {
         width: 100%;
         text-align: center;
     }
@@ -39,6 +39,9 @@
 .cart-page {
     padding-left: 15px;
     .coupon-code-holder {
+        @include media-breakpoint-down(md) {
+            margin-bottom: 2px;
+        }
         margin-bottom: 50px;
         .cart-coupon-wrapper {
             position: relative;
@@ -64,7 +67,27 @@
     }
     .cart-total-amount {
         padding-top: 15px;
-        border-top: 1px solid $light-gray;
+    }
+    .item-image {
+        width: 120px;
+        @include media-breakpoint-down(md) {
+            width: 90px;
+        }
+
+    }
+    .item-details {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .product-edit {
+            border-bottom: 1px solid $secondary;
+            a {
+                color: $secondary !important;
+            }
+        }
+        .line-item-name {
+            font-family: $Gothic-A1black;
+        }
     }
 }
 .quantity-wrapper {
@@ -75,7 +98,7 @@
     border-radius: 999px;
     padding: 0 10px;
     background-color: $white;
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-down(md) {
         flex-direction: column;
         padding: 10px 0;
         align-items: center;
@@ -93,11 +116,22 @@
     }
 }
 .cart-product-wrapper {
-    padding: 25px;
-    background-color: $brand-light-gray;
+    padding: 18px;
+    background-color: $gray-background;
+    border-radius: 8px;
     .cart-product-inner {
         display: flex;
         justify-content: space-between;
+    }
+    .line-item-total-price-amount {
+        font-family: $Gothic-A1regular;
+    }
+    .edit-remove-wrapper {
+        font-family: $Gothic-A1regular;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 14px;
     }
 }
 .product-card-footer {
@@ -112,15 +146,23 @@
     width: 70%;
     max-width: 70%;
     display: flex;
+    @include media-breakpoint-down(md) {
+        width: 80%;
+        max-width: 80%;
+    }
     .line-item-name {
         white-space: initial;
     }
 }
 .checkout-summary-text {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    font-weight: 600;
     &.checkout-summary-total {
         padding: 15px 0;
-        border-top: 1px solid $light-gray
+        border-top: 1px solid $light-gray;
+        font-family: $Gothic-A1black !important;
+        font-weight: 900;
+        font-size: 20px;
     }
     p {
         font-family: $Gothic-A1regular;
@@ -130,6 +172,49 @@
     display: flex;
     margin-right: 30px;
     .line-item-total-price {
-        margin-right: 43px;
+        margin-right: 66px;
     }
+}
+.product-info  {
+    border: none;
+    margin-bottom: 25px;
+}
+.cart-empty {
+    font: rem-calc(22) / rem-calc(28) $Gothic-A1black;
+
+}
+.optional-promo {
+    margin-bottom: 10px;
+}
+.remove-product {
+    padding: 0;
+    border: none;
+    background: none;
+    border-bottom: 1px solid $secondary;
+    color: $secondary;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 14px;
+    margin-left: 15px;
+    font-family: $Gothic-A1regular;
+    @include media-breakpoint-down(md) {
+        margin-top: -4px;
+    }
+
+}
+.product-edit {
+    font-family: $Gothic-A1regular;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 14px;
+    border-bottom: 1px solid $secondary;
+    color: $secondary;
+    a {
+        color: $secondary !important;
+    }
+}
+.remove-mobile {
+    margin-top: -3px;
 }

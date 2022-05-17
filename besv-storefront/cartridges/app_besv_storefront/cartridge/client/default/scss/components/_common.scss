@@ -9,4 +9,34 @@ input {
 label {
     font-family: $Gothic-A1regular;
     margin-bottom: 10px;
+    font-weight: 600;
+}
+a:hover {
+    text-decoration: none;
+}
+select {
+    border-radius: 999px !important;
+    font-family: $Gothic-A1regular;
+    font-weight: 600;
+}
+.card {
+    border: none;
+    border-bottom: 1px solid $brand-light-gray;
+}
+.card-header {
+    border: none;
+}
+.custom-checkbox .custom-control-label {
+    &::before {
+        background: $white !important;
+        border-radius: 50%;
+        height: 20px;
+        width: 20px;
+        margin-right: 5px;
+        top: 0;
+    }
+    &::after {
+        top: 2px;
+        width: 20px;
+    }
 }
