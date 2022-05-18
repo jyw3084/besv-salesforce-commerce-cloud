@@ -1,0 +1,91 @@
+@import "../variable";
+@import "../mixins";
+@import "../variables";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins/breakpoints";
+@import "account";
+
+.card-footer-border {
+    border-top: 1px dashed $horizontal-border-grey;
+}
+
+.card-make-default-link {
+    margin-top: 1rem;
+}
+
+.dashboard-cards-block-title {
+    font-weight: bold;
+}
+
+.dashboard-order-card-status {
+    text-transform: capitalize;
+}
+
+.dashboard-order-card-image {
+    width: 7rem;
+}
+
+.account-landing-ordercard {
+    padding: 0;
+    height: 1rem;
+    margin-left: 1.25rem;
+    border-bottom: 0 none;
+    margin-top: 1rem;
+
+    h4 {
+        font-size: 1.2rem;
+    }
+}
+
+div.order-number {
+    padding-top: 0.2rem;
+}
+
+.dashboard-cards-block-title {
+    margin-bottom: 1em;
+}
+
+/* Custom Style */
+
+h1.page-title {
+    position: static;
+    background: none;
+    color: #000;
+    margin-bottom: 25px;
+    font-family: "gothic_a1black";
+    width: 100%;
+    text-align: center;
+}
+.my-account {
+    .card-header {
+        font-family: $Gothic-A1black;
+        font-size: 22px;
+    }
+    dl {
+        margin-bottom: 15px;
+    }
+    .edit {
+        color: $primary;
+        border-bottom: 1px solid $orange;
+        padding-bottom: 1px;
+        font-size: 14px;
+        text-decoration: none;
+    }
+    dd {
+        font-family: $Karla-Regular;
+        font-size: 14px;
+    }
+    .my-account-profile-heading {
+        font-family: $Gothic-A1black;
+        font-size: 15px;
+        font-weight: 900;
+        margin-bottom: 3px;
+        color: $primary;
+    }
+    .card-link {
+        font-family: $Gothic-A1regular;
+    }
+    .dashboard-info {
+        font-family: $Gothic-A1regular;
+    }
+}

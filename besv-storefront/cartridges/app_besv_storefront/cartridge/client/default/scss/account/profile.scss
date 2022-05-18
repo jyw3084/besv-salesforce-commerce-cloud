@@ -1,0 +1,55 @@
+@import "../variable";
+@import "../mixins";
+@import "../variables";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins/breakpoints";
+@import "account";
+
+.profile-back-to-account-link {
+    color: #{var(--skin-primary-color-1)};
+    text-decoration: underline;
+    display: block;
+    text-align: center;
+}
+
+.tracking-consent {
+    color: #{var(--skin-link-color-1)};
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Custom Style */
+.card-header {
+    font-family: $Gothic-A1black;
+    font-size: 22px;
+}
+.profile-back-to-account-link {
+    font-family: $Gothic-A1regular;
+}
+.cancel {
+    font: rem-calc(14) / rem-calc(14) $Gothic-A1regular;
+    padding: 20px 30px;
+    border-radius: 999px;
+    font-weight: 700;
+    max-height: 54px;
+    width: 100%;
+    border: 1px solid $primary;
+    &:focus {
+        box-shadow: none !important;
+        color: $white;
+        background-color: $primary;
+    }
+    &:hover {
+        color: $white !important;
+        background-color: $primary;
+    }
+}
+h1.page-title {
+    position: static;
+    background: none;
+    color: #000;
+    margin-bottom: 25px;
+    font-family: "gothic_a1black";
+    width: 100%;
+    text-align: center;
+}

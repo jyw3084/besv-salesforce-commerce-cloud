@@ -90,10 +90,10 @@
                             </div>
 
                             <!--- contact us submit --->
-                            <div class="row contact-us-submnit">
-                                <div class="col-sm-6">
-                                </div>
-                                <div class="col">
+                            <div class="contact-us-submit">
+                                <iscomment> <div class="col-sm-6">
+                                </div> </iscomment>
+                                <div class="contact-us-submit-wrapper">
                                     <div class="form-group">
                                         <button class="btn btn-block btn-primary subscribe-contact-us" type="submit" name="submit" value="submit">
                                             ${Resource.msg('label.input.contact-us-submit', 'contactUs', null)}

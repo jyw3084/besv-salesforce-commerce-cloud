@@ -3,3 +3,54 @@
 .contact-us-banner {
     background-image: url('../images/contact-us.png');
 }
+
+/* Custom style */
+.subscribe-contact-us {
+    max-width: 50%;
+    margin: 0 auto;
+}
+#contact-comment {
+    border-radius: 18px;
+    resize: none;
+}
+.hero.contact-us-banner {
+    position: relative;
+    margin-bottom: 15px;
+    margin-bottom: 20px;
+    @include media-breakpoint-down(md) {
+        height: 50vh;
+    }
+    h1.page-title {
+        background: none;
+        color: #000;
+        margin-bottom: 25px;
+        font-family: "gothic_a1black";
+        text-align: center;
+        font-size: 28px;
+        line-height: 42px;
+        left: auto;
+        right: 60px;
+        position: absolute;
+        transform: translateY(-50%);
+        margin: 0;
+        max-width: 315px;
+        @include media-breakpoint-down(md) {
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+        }
+        &::before {
+            position: static;
+        }
+        span {
+            font-size: 52px;
+            line-height: 72px;
+            padding: 0 5px;
+        }
+    }
+    &::after {
+        position: static;
+        display: none;
+    }
+}
