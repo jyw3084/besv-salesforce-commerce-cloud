@@ -1,6 +1,6 @@
 'use strict';
 
-var cart = require('base/cart/cart');
+var cart = require('../cart/cart');
 
 var updateMiniCart = true;
 

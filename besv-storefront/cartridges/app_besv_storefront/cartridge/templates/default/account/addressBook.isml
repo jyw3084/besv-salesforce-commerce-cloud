@@ -3,6 +3,7 @@
         var assets = require('*/cartridge/scripts/assets.js');
         assets.addJs('/js/addressBook.js');
         assets.addCss('/css/account/addressBook.css');
+        assets.addCss('/css/account/profile.css');
     </isscript>
     <isinclude template="account/deleteAddressModal"/>
     <div>
@@ -24,17 +25,17 @@
                 <div class="col-sm-8 col-md-6">
                     <div class="card">
                         <div class="card-header">
-                            <h2 class="address-heading pull-left">${address.address.ID == pdict.addressBook[0].address.ID ? pdict.addressBook[0].address.ID+' ('+Resource.msg('label.addressbook.defaultaddress','account',null)+')' : address.address.ID}</h2>
-                            <a href="${URLUtils.url('Address-EditAddress', 'addressId', address.address.ID)}" class="pull-right" aria-label="${Resource.msg('label.addressbook.editaddress','account',null)} : ${address.address.ID == pdict.addressBook[0].address.ID ? pdict.addressBook[0].address.ID+' ('+Resource.msg('label.addressbook.defaultaddress','account',null)+')' : address.address.ID}">${Resource.msg('link.edit','account',null)}</a>
+                            <h2 class="address-heading pull-left">${Resource.msg('label.addressbook.defaultaddress','account',null)}</h2>
+                            <a href="${URLUtils.url('Address-EditAddress', 'addressId', address.address.ID)}" class="pull-right btn-ab-edit" aria-label="${Resource.msg('label.addressbook.editaddress','account',null)} : ${address.address.ID == pdict.addressBook[0].address.ID ? pdict.addressBook[0].address.ID+' ('+Resource.msg('label.addressbook.defaultaddress','account',null)+')' : address.address.ID}">${Resource.msg('link.edit','account',null)}</a>
                         </div>
                         <div class="card-body card-body-positioning">
-                            <div>${address.address.firstName} ${address.address.lastName}</div>
-                            <div>${address.address.address1}</div>
+                            <div class="dashboard-info">${address.address.firstName} ${address.address.lastName}</div>
+                            <div class="dashboard-info">${address.address.address1}</div>
                             <isif condition="${address.address.address2 !== null}">
-                                <div>${address.address.address2}</div>
+                                <div class="dashboard-info">${address.address.address2}</div>
                             </isif>
-                            <div>${address.address.city}, ${address.address.stateCode} ${address.address.postalCode}</div>
-                            <div>${address.address.phone}</div>
+                            <div class="dashboard-info">${address.address.city}, ${address.address.stateCode} ${address.address.postalCode}</div>
+                            <div class="dashboard-info">${address.address.phone}</div>
                             <isif condition="${address.address.ID !== pdict.addressBook[0].address.ID}">
                                 <div class="card-make-default-link">
                                     <a href="${URLUtils.url('Address-SetDefault', 'addressId', address.address.ID)}" class="normal" aria-label="${Resource.msg('label.addressbook.makedefaultaddress','account',null)}">${Resource.msg('link.addressbook.makedefault','account',null)}</a>
@@ -60,7 +61,7 @@
             <div class="col-6">
                 <div class="row">
                     <div class="col text-center">
-                        <a href="${URLUtils.url('Account-Show')}" class="normal" aria-label="${Resource.msg('label.addressbook.myaccount','account',null)}">
+                        <a href="${URLUtils.url('Account-Show')}" class="profile-back-to-account-link" aria-label="${Resource.msg('label.addressbook.myaccount','account',null)}">
                             ${Resource.msg('link.profile.backtomyaccount','account',null)}
                         </a>
                     </div>

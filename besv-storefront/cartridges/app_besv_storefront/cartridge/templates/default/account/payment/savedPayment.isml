@@ -1,0 +1,3 @@
+<p class="my-account-profile-heading">${Resource.msg('label.payment.credit','account',null)} ${payment.creditCardType}</p>
+<p class="dashboard-info">${payment.maskedCreditCardNumber}</p>
+<p class="dashboard-info">${Resource.msg('label.payment.ending','account',null)} ${payment.creditCardExpirationMonth}/${payment.creditCardExpirationYear}</p>

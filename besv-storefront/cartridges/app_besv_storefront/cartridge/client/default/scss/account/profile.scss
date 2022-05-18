@@ -53,3 +53,31 @@ h1.page-title {
     width: 100%;
     text-align: center;
 }
+
+.pull-right.btn-ab-edit {
+    color: $primary;
+    border-bottom: 1px solid $orange;
+    padding-bottom: 1px;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.card-body-positioning {
+    .remove-address,
+    .remove-payment {
+        height: 50px;
+        background: none;
+    }
+}
+
+.dashboard-info {
+    font-family: $Gothic-A1regular;
+}
+
+.my-account-profile-heading {
+    font-family: $Gothic-A1black;
+    font-size: 15px;
+    font-weight: 900;
+    margin-bottom: 3px;
+    color: $primary;
+}

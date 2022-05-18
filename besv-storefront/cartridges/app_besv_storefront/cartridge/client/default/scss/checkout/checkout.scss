@@ -504,6 +504,13 @@ h1.page-title {
         background: none;
     }
 }
+.order-email {
+    font-family: $Gothic-A1black;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    display: inline-block;
+    margin-right: 5px;
+}
 .confirm-details {
     .order-number-label, .order-date-label, .shipping-addr-label, .shipping-method-label, .billing-addr-label, .payment-info-label{
         font-family: $Gothic-A1black;
