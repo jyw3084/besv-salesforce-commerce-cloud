@@ -1,3 +1,80 @@
-body {
-    background-color: red;
+@import "../scss/variable";
+@import "../scss/mixins";
+@import "../scss/variables";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins/breakpoints";
+.besv-content-wrapper {
+    .short-container {
+        max-width: 440px;
+        margin: 0 auto;
+        @include media-breakpoint-down(md) {
+            max-width: 100%;
+            margin: 0 20px;
+        }
+
+        div {
+            margin-bottom: 35px;
+        }
+    }
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        @include media-breakpoint-down(md) {
+            max-width: 100%;
+            margin: 0 20px;
+        }
+
+        div {
+            margin-bottom: 35px;
+        }
+    }
+    h1 {
+        font: rem-calc(48) / rem-calc(57) $Gothic-A1black;
+        color: $primary;
+        font-weight: 900;
+        text-align: center;
+        padding-top: 35px;
+        margin-bottom: 35px;
+        @include media-breakpoint-down(sm) {
+            font: rem-calc(32) / rem-calc(38) $Gothic-A1black;
+            font-weight: 900;
+        }
+    }
+    h2 {
+        font: rem-calc(22) / rem-calc(30) $Gothic-A1black;
+        color: $primary;
+        font-weight: 900;
+        margin-bottom: 10px;
+        @include media-breakpoint-down(md) {
+            font: rem-calc(18) / rem-calc(28) $Gothic-A1black;
+            font-weight: 900;
+        }
+    }
+    p {
+        font: rem-calc(14) / rem-calc(17) $Karla-Regular;
+        color: $secondary;
+        margin-bottom: 20px;
+    }
+   a {
+        font: rem-calc(14) / rem-calc(17) $Karla-Regular;
+       text-decoration: none;
+       border-bottom: 1px solid $orange;
+       color: $primary;
+       font-weight: 900;
+   }
+    p {
+        span {
+            font-weight: 900;
+            color: $primary;
+            line-height: 19px;
+        }
+    }
+    .gray-background {
+        background-color: $gray-background;
+    }
+    ul {
+        li {
+            list-style-type: lower-alpha;
+        }
+    }
 }

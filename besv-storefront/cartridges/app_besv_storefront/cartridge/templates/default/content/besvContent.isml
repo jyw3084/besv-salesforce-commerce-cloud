@@ -4,7 +4,7 @@
         assets.addCss('/css/besvContent.css');
     </isscript>
     <!-- dwMarker="content" dwContentID="${pdict.content.UUID}" -->
-    <div class="container">
+    <div class="besv-content-wrapper">
         <isprint value="${pdict.content.body}" encoding="off" />
     </div>
     <!-- END_dwmarker -->
