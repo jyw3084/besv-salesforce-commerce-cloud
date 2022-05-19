@@ -69,12 +69,42 @@
             line-height: 19px;
         }
     }
+    span {
+        font-weight: 900;
+        color: $secondary;
+        font: rem-calc(14) / rem-calc(17) $Karla-Regular;
+
+    }
     .gray-background {
         background-color: $gray-background;
     }
     ul {
         li {
-            list-style-type: lower-alpha;
+            font: rem-calc(14) / rem-calc(17) $Karla-Regular;
+            color: $secondary;
+            margin-left: 30px;
+        }
+    }
+    .faq-top {
+        border-bottom: 1px solid $light-gray;
+        text-align: center;
+        .orange {
+            font-size: 16px;
+            font-family: $Gothic-A1black;
+            line-height: 35px;
+        }
+    }
+    .orange {
+        color: $orange;
+    }
+    h3 {
+        font: rem-calc(28) / rem-calc(36) $Gothic-A1black;
+        color: $primary;
+        font-weight: 900;
+        margin-bottom: 10px;
+        @include media-breakpoint-down(md) {
+            font: rem-calc(22) / rem-calc(30) $Gothic-A1black;
+            font-weight: 900;
         }
     }
 }
