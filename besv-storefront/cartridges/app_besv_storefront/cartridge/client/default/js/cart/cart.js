@@ -251,8 +251,6 @@ function fillModalElement(editProductUrl) {
 
             $('#editProductModal .modal-body').empty();
             $('#editProductModal .modal-body').html(parsedHtml.body);
-            $('#editProductModal .modal-body').append(parsedHtml.footer);
-            // $('#editProductModal .modal-footer').html(parsedHtml.footer);
             $('#editProductModal .modal-header .close .sr-only').text(data.closeButtonText);
             $('#editProductModal .enter-message').text(data.enterDialogMessage);
             $('#editProductModal').modal('show');
