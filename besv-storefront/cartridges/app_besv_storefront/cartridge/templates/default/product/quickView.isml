@@ -6,7 +6,7 @@
 <isset name="loopState" value="${{count: 1}}" scope="page" />
 <div class="product-quickview product-${product.productType} col product-wrapper product-detail" data-pid="${product.id}">
     <div class="row">
-        <div class="col">
+        <div class="col-6">
             <!-- Product Images Carousel -->
             <isinclude template="product/components/imageCarousel" />
         </div>
