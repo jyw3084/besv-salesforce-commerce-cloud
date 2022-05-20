@@ -6,25 +6,27 @@
 <isset name="loopState" value="${{count: 1}}" scope="page" />
 <div class="product-quickview product-${product.productType} col product-wrapper product-detail" data-pid="${product.id}">
     <div class="row">
-        <div class="col-6">
+        <div class="col-12 col-md-6">
             <!-- Product Images Carousel -->
             <isinclude template="product/components/imageCarousel" />
         </div>
         <div class="col">
-            <section>
+            <section class="product-name-wrapper">
                 <h1 class="product-name">${product.productName}</h1>
             </section>
-            <div class="hidden-xs-down col availability align-self-end global-availability"
+            <div class=" col availability align-self-end global-availability"
                 data-ready-to-order="${product.readyToOrder}" data-available="${product.available}">
-                <div class="row">
+                <div class="row availability-holder">
                     <isinclude template="product/components/availability" />
                 </div>
             </div>
             <div class="align-items-end">
                 <!-- Quantity -->
-                <div class="hidden-xs-down col-4">
+                <div class="hidden-xs-down quantity-holder">
                     <isif condition="${pdict.addToCartUrl || pdict.updateCartUrl}">
-                        <span>Quantity:</span>
+                        <div class="quantity-heading">
+                            <span>Quantity:</span>
+                        </div>
                         <isinclude template="product/components/quantity" />
                     </isif>
                 </div>
@@ -70,7 +72,7 @@
                             </div>
                         </isloop>
 
-                        <div class="d-sm-none row availability align-self-end "
+                        <div class="d-none row availability align-self-end "
                             data-ready-to-order="${product.readyToOrder}" data-available="${product.available}">
                             <isinclude template="product/components/availability" />
                         </div>

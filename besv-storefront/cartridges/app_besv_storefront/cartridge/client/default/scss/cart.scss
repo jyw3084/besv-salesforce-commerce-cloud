@@ -172,7 +172,7 @@
     display: flex;
     margin-right: 30px;
     .line-item-total-price {
-        margin-right: 66px;
+        margin-right: 36px;
     }
 }
 .product-info  {
@@ -265,9 +265,79 @@
     .modal-header {
         background: $white;
         border-bottom: none;
-        padding: 10px 10px;
+        padding: 10px 30px 10px 10px;
         button:focus {
             outline: none;
+        }
+    }
+    .product-name-wrapper {
+        padding-bottom: 15px;
+        border-bottom: 1px solid $light-gray;
+        .product-name {
+            font-family: $Gothic-A1black;
+            @include media-breakpoint-down(md) {
+               font-size: 18px;
+            }
+        }
+      
+    }
+    .global-availability {
+        font-family: $Gothic-A1regular;
+    }
+    .availability-holder {
+        padding-bottom: 7px;
+        border-bottom: 1px solid $light-gray;
+        margin-bottom: 15px;
+    }
+    .quantity-holder {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+        .quantity-wrapper {
+            min-width: 31%;
+            @include media-breakpoint-down(md) {
+                flex-direction: row;
+                height: 54px;
+            }
+        }
+        .quantity-heading {
+            font-family: $Gothic-A1regular;
+        }
+    } 
+    .price {
+        font-family: $Gothic-A1regular;
+        margin-bottom: 10px;
+    }
+    .pdp-main-left  {
+        .carousel-control-next, .carousel-control-prev {
+            width: 40px;
+            height: 40px;
+        }
+    }
+    .carousel-indicators {
+        position: absolute;
+        bottom: 15px;
+        @include media-breakpoint-down(md) {
+            display: block;
+        }
+        li {
+            border: none;
+            height: 7px;
+            width: 7px;
+            border-radius: 50%;
+            border: 1px solid $light-gray;
+            background-color: $white;
+            margin-right: 6px;
+            &.active {
+                background-color: $primary;
+                border-color: $primary;
+            }
+        }
+    }
+    @include media-breakpoint-down(md) {
+        .primary-images {
+            margin-bottom: 30px;
         }
     }
 }
