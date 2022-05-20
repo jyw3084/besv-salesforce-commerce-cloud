@@ -84,6 +84,12 @@
             color: $secondary;
             margin-left: 30px;
         }
+        &.disc {
+            list-style: disc;
+        }
+        &.alpha {
+            list-style: lower-alpha;
+        }
     }
     .faq-top {
         border-bottom: 1px solid $light-gray;
