@@ -1,0 +1,11 @@
+<isdecorate template="common/layout/page">
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets.js');
+        assets.addCss('/css/aboutUs.css');
+    </isscript>
+    <!-- dwMarker="content" dwContentID="${pdict.content.UUID}" -->
+    <div class="about-us-wrapper">
+        <isprint value="${pdict.content.body}" encoding="off" />
+    </div>
+    <!-- END_dwmarker -->
+</isdecorate>
