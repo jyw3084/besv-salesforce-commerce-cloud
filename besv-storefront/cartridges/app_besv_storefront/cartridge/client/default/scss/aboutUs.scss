@@ -221,7 +221,6 @@
             @include media-breakpoint-down(sm) {
                 width: 90%;
             }
-           
         }
     }
 }
@@ -234,17 +233,39 @@
 
 /*Stores Globally*/
 .aboutus-stores-globally {
+    margin-bottom: 30px;
+    @include media-breakpoint-down(sm) {
+        margin-top: 285px;
+    }
    .stores-globally-top {
-       display: flex;
        background: linear-gradient(to right, rgb(18, 18, 18) 0%, rgb(49, 49, 48) 100%);
+       @media screen and (max-width: 1199.98px)  {
+            padding-bottom: 125px;
+        }
+
+       .container {
+           display: flex;
+           @include media-breakpoint-down(sm) {
+               flex-direction: column-reverse;
+           }
+       }
        .banner-content {
            width: 60%;
            max-width: 60%;
+           @include media-breakpoint-down(sm) {
+               width: 100%;
+               max-width: 100%;
+           }
            .banner-content-wrapper {
                 max-width: 600px;
                 margin-left: auto;
                 padding-top: 130px;
                 padding-right: 81px;
+                @include media-breakpoint-down(sm) {
+                    width: 100%;
+                    max-width: 100%;
+                    padding: 0 24px 194px;
+                }
                .banner-heading {
                    margin-bottom: 28px;
                    color: $white;
@@ -261,7 +282,7 @@
                            font-weight: bolder;
                            opacity: 1;
                            font-weight: 700;
-                           color: $white;
+                           color: $white !important;
                            border-bottom: 1px solid $white;
                            &:hover {
                                color: $white
@@ -277,6 +298,31 @@
             margin-right: auto;
             position: relative;
             top: -50px;
+            @include media-breakpoint-down(sm) {
+                width: 100%;
+                max-width: 100%;
+                margin-top: -200px;
+                right: -24px;
+            }
+        }
+    }
+    .stores-globally-bottom {
+        .overlay-banner-image-section {
+            width: 686px;
+            margin-left: auto;
+            margin-top: -60px;
+            position: relative;
+            right: 410px;
+            top: -56px;
+            @media screen and (max-width: 1199px) {
+                right: auto;
+            }
+
+            @include media-breakpoint-down(sm) {
+                width: 100%;
+                max-width: 100%;
+                left: -24px;
+            }
         }
     }
 }
