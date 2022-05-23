@@ -40,13 +40,14 @@ h5 {
     }
 }
 .btn-white {
-    display: inline-block;
     font: rem-calc(14) / rem-calc(14) $Gothic-A1regular;
-    padding: 16px 40px;
+    padding: 20px 30px;
+    border-radius: 999px;
+    font-weight: 700;
+    max-height: 54px;
+    width: 100%;
     background-color: $white;
     color: $primary;
-    border-radius: 999px;
-    text-transform: uppercase;
     &:hover {
         outline: none;
         color: $primary;

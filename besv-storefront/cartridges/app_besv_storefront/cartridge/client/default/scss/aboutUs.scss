@@ -226,35 +226,104 @@
     }
 }
 
+/* Aboutus Awards*/
+
+.aboutus-awards {
+    margin-bottom: 64px;
+}
+
 /*Stores Globally*/
 .aboutus-stores-globally {
-    .banner-content {
-        .banner-detail {
-            background-color: #333333;
-            color: white;
-            .banner-heading {
-                font-family: "gothic_a1regular";
-                color: white;
-            }
-            .banner-description {
-                font-family: 'Karla';
-                font-style: normal;
-                font-weight: 300;
-                font-size: 20px;
-                line-height: 150%
-            }
+   .stores-globally-top {
+       display: flex;
+       background: linear-gradient(to right, rgb(18, 18, 18) 0%, rgb(49, 49, 48) 100%);
+       .banner-content {
+           width: 60%;
+           max-width: 60%;
+           .banner-content-wrapper {
+                max-width: 600px;
+                margin-left: auto;
+                padding-top: 130px;
+                padding-right: 81px;
+               .banner-heading {
+                   margin-bottom: 28px;
+                   color: $white;
+               }
+              .banner-description {
+                   font: rem-calc(20) / rem-calc(30) $Karla-Regular;
+                   opacity: 0.9;
+                   p {
+                       margin-bottom: 15px;
+                       color: $white;
+                       font-weight: 300;
+                       line-height: 30px;
+                       a {
+                           font-weight: bolder;
+                           opacity: 1;
+                           font-weight: 700;
+                           color: $white;
+                           border-bottom: 1px solid $white;
+                           &:hover {
+                               color: $white
+                           }
+                       }
+                   }
+               }
+           }
+        }
+        .banner-image-left {
+            width: 479px;
+            max-width: 479px;
+            margin-right: auto;
+            position: relative;
+            top: -50px;
         }
     }
 }
 
 /* Bottom Links*/
-.aboutus-links {
-    .grey{
-       background-color: #F7F7F7;
-       color: #333333;
+.aboutus-links-wrapper {
+    display: flex;
+    border-top: 1px solid $brand-light-gray;
+    border-bottom: 1px solid $brand-light-gray;
+    .aboutus-link {
+        width: 33.33%;
+        max-width: 33.33%;
+        padding: 100px 48px 110px;
+        text-align: center;
+        @include media-breakpoint-down(sm) {
+            width: 100%;
+            max-width: 100%;
+            padding: 68px 24px 48px;
+
+        }
+        &.grey{
+           background-color: $gray-background;
+           color: $brand-dark;
+        }
+        &.dark {
+            background: linear-gradient(to right, rgb(18, 18, 18) 0%, rgb(49, 49, 48) 100%);
+           color: $white;
+        }
+        .aboutus-link-heading {
+            font: rem-calc(32) / rem-calc(32) $Gothic-A1regular;
+            font-weight: 700;
+            margin-bottom: 18px;
+            @include media-breakpoint-down(sm) {
+                font: rem-calc(24) / rem-calc(24) $Gothic-A1regular;
+
+            }
+        }
+        .aboutus-link-subheading {
+            font: rem-calc(24) / rem-calc(36) $Karla-Regular;
+            font-weight: 400;
+            margin-bottom: 36px;
+        }
+        a {
+            width: auto;
+        }
     }
-    .dark {
-        background-color: #333333;
-       color: #FFFFFF;
+    @include media-breakpoint-down(sm) {
+        flex-direction: column;
     }
 }
