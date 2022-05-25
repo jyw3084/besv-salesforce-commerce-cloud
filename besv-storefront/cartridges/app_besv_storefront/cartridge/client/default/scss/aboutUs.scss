@@ -7,17 +7,17 @@
 /*Video Banner*/
 
 .video {
-    position: relative;
+    position: static;
     overflow: hidden;
-    top: -81px;
     z-index: -1;
-    @include media-breakpoint-down(md) {
-        top: -73px;
-    }
     @include media-breakpoint-down(sm) {
         margin-bottom: 28px;
         padding-bottom: 28px;
         border-bottom: 1px solid $grey;
+    }
+    video {
+        min-height: 550px;
+        object-fit: cover;
     }
 }
 
