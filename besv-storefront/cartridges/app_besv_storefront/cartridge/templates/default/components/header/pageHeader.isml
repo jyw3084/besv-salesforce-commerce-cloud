@@ -9,11 +9,11 @@
                     </a>
                 </div>
                 <div class="main-menu navbar-toggleable-md menu-toggleable-left multilevel-dropdown d-none d-lg-block" id="sg-navbar-collapse">
-                            <isinclude template="/components/header/menu" />
+                    <isinclude template="/components/header/menu" />
                 </div>
                 <div class="navbar-header">
                         <div class="header-right">
-                            <div class="hidden-lg-down">
+                            <div class="hidden-md-down">
                                 <isinclude url="${URLUtils.url('Page-Locale')}" />
                                 <isinclude url="${URLUtils.url('Account-Header')}" />
                             </div>

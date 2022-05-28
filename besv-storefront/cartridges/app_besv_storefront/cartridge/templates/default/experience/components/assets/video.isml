@@ -8,17 +8,9 @@
 		<video width="100%" height="auto" loop autoplay muted poster="${pdict.videoFallbackImg.src.desktop}">
 		<source src="${pdict.videoUrl.src}" type="video/mp4">
 		</video>
-		<div class="play-video-button">
-			<svg width="144" height="144" viewBox="0 0 144 144" fill="none" xmlns="http://www.w3.org/2000/svg">
-				<g opacity="0.3">
-				<circle cx="72" cy="72" r="70" stroke="white" stroke-width="4"/>
-				<path d="M59.25 47V97.23L64.0312 94.0335L92.7188 75.3115L97.5 72.115L92.7188 68.9185L64.0312 50.1965L59.25 47Z" fill="white"/>
-				</g>
-			</svg>
-		</div>
 	</div>
 	<section class="video-content">
-		<isif condition="${pdict.label}">	
+		<isif condition="${pdict.label}">
 			<p class="video-subheading">${pdict.label}</p>
 		</isif>
 		<h1 class="video-heading">${pdict.heading}</h1>

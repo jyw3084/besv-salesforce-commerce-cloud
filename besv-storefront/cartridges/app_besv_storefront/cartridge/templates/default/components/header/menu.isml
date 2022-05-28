@@ -1,12 +1,20 @@
 <nav class="navbar navbar-expand-lg bg-inverse col-12">
     <div class="close-menu clearfix d-lg-none">
         <div class="back pull-left">
-            <button role="button" aria-label="${Resource.msg('label.header.menu.back', 'common', null)}">
+            <div class="logo">
+                <a class="logo-home" href="${URLUtils.url('Home-Show')}" title="${ Resource.msgf('global.homepage.tooltip', 'common', null, Resource.msg('global.storename', 'common', null), Resource.msg('global.home', 'common', null)) }">
+                    <img class="logo-image" src="${URLUtils.staticURL('/images/logo-black.svg')}" alt="${Resource.msg('global.storename', 'common', null)}" />
+                </a>
+            </div>
+            <iscomment> <button role="button" aria-label="${Resource.msg('label.header.menu.back', 'common', null)}">
                 <span class="caret-left"></span>
                 ${Resource.msg('link.header.menu.back', 'common', null)}
-            </button>
+            </button> </iscomment>
         </div>
         <div class="close-button pull-right">
+            <div class="minicart" data-action-url="${URLUtils.url('Cart-MiniCartShow')}">
+                <isinclude url="${URLUtils.url('Cart-MiniCart')}" />
+            </div>
             <button role="button" aria-label="${Resource.msg('label.header.menu.close', 'common', null)}">
                 <span aria-hidden="true"><svg width="26" height="25" viewBox="0 0 26 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect x="0.979492" y="23.2655" width="32" height="2" rx="1" transform="rotate(-45 0.979492 23.2655)" fill="#333333"/>
