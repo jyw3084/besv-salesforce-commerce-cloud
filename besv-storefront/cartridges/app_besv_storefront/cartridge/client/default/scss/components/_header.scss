@@ -45,8 +45,12 @@
                     padding-right: 0;
                 }
                 .nav-link {
-                        color: $primary;
-                        padding: 0;
+                    color: $primary;
+                    padding: 0;
+                    &::after {
+                        content: '';
+                        display: none;
+                    }
                 }
             }
         }
@@ -122,6 +126,13 @@
         font-size: 14px;
     }
 }
+
+// Remove Global Header Styles 
+
 .menu-toggleable-left.in .nav-item + .nav-item {
     border: none;
+}
+.menu-toggleable-left.in .dropdown-toggle.no-icon::after {
+    display: none;
+    content: "";
 }

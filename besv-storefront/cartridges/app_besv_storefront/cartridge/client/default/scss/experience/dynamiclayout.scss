@@ -74,11 +74,12 @@
                 display: none;
                 @include media-breakpoint-down(sm) {
                     display: block;
+                    transform: rotate(180deg);
                 }
             }
             &.open {
                 .collapsible-arrow {
-                    transform: rotate(180deg);
+                    transform: none;
                 }
             }
         }
@@ -190,6 +191,11 @@
     .award-banner-figure {
         width: 50%;
         max-width: 50%;
+        @media (max-width:1259.68px) and (min-width:992px) {
+            .banner-image {
+                height: 100%;
+            }
+        }
         @include media-breakpoint-down(md) {
             width: 100%;
             max-width: 100%;
@@ -343,13 +349,17 @@
     @include media-breakpoint-down(md) {
         flex-direction: column;
         padding: 77px 0 131px;
+        overflow: hidden;
     }
     .hero-banner-figure {
         width: 46%;
         max-width: 46%;
         @include media-breakpoint-down(md) {
-            width: 100%;
-            max-width: 100%;
+            width: 115%;
+            max-width: 115%;
+            position: relative;
+            left: -55px;
+    
         }
     }
     .hero-banner-component {
