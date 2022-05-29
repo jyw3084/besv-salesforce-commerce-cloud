@@ -21,7 +21,7 @@
         @include media-breakpoint-down(sm) {
             display: none;
         }
-        @include media-breakpoint-up(sm) {
+        @include media-breakpoint-up(md) {
             display: block !important;
             height: auto !important;
             visibility: visible;
@@ -109,12 +109,15 @@
         top: 0;
     }
     @include media-breakpoint-down(sm) {
-        margin-bottom: 28px;
-        padding-bottom: 28px;
-        border-bottom: 1px solid $grey;
+        margin-bottom: 8px;
+
     }
     .video-holder {
         position: relative;
+        video {
+            min-height: 550px;
+            object-fit: cover;
+        }
     }
    
     .video-content {
@@ -126,11 +129,10 @@
         text-align: center;
         @include media-breakpoint-down(sm) {
             padding: 0 24px;
-            transform: none;
-            position: static;
             padding-top: 20px;
-            transform: none;
-            text-align: center;
+            bottom: 34px;
+
+
         }
         .video-subheading {
             font: rem-calc(18) / rem-calc(19) $Gothic-A1regular;
@@ -163,6 +165,11 @@
             @include media-breakpoint-down(md) {
                 font: rem-calc(24) / rem-calc(28) $Gothic-A1regular;
                 font-weight: 500;
+            }
+        }
+        .btn-black {
+            @include media-breakpoint-down(md) {
+                width: 100%;
             }
         }
     }
@@ -268,16 +275,18 @@
         flex-direction: column;
         justify-content: center;
         background: $white;
+        &.gradient-background-class {
+            background-color: $gray-background; /* For browsers that do not support gradients */
+            background: linear-gradient($gray-background, $white);
+        }
         @include media-breakpoint-down(md) {
             width: 100%;
             max-width: 100%;
             margin-top: 0;
             padding: 38px 52px 145px 23px;
-        }
-
-        &.gradient-background-class {
-            background-color: $gray-background; /* For browsers that do not support gradients */
-            background: linear-gradient($gray-background, $white);
+            &.gradient-background-class {
+                background: $gray-background;
+            }
         }
         .story-banner-detail {
             max-width: 503px;
