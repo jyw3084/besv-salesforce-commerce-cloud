@@ -8,7 +8,7 @@
     position: sticky;
     top: 0;
     border-bottom: 1px solid $light-gray;
-    z-index: 101;
+    z-index: 3;
     background-color: $white;
     .pdp-header-menu {
         display: flex;
@@ -183,13 +183,14 @@
                     content: "";
                     position: absolute;
                     background:  url(../../images/Vector.png) no-repeat;
+                    transform: rotate(180deg);
                     width: 9px;
                     height: 10px;
                     right: 0;
                 }
                 &.active {
                     &::after {
-                        transform: rotate(180deg);
+                        transform: none;
                     }
                 }
             }
@@ -303,20 +304,9 @@
 .video-banner {
     .video-holder {
         position: relative;
-        .play-icon {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50% , -50%);
-            svg {
-                width: 100px;
-                height: 100px;
-                @include media-breakpoint-down(md) {
-                    width: 80px;
-                    height: 80px;
-                }
-            }
-
+        video {
+            min-height: 450px;
+            object-fit: cover;
         }
     }
 }
@@ -369,6 +359,7 @@
         padding-top: 55px;
         @include media-breakpoint-down(sm) {
             padding-top: 0;
+            background: $gray-background;
             // margin: 26px 0 0 23px;
         }
         .story-1-banner-content {
@@ -710,6 +701,9 @@
                 transform: translateY(-50%);
             }
         }
+    }
+    .under-hood-heading, .asked-question-heading, .assembly-guide-heading {
+        cursor: pointer;
     }
 }
 

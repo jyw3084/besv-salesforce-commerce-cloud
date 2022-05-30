@@ -25,7 +25,7 @@ function showpZoomModel(index) {
         + '<!-- Modal content-->'
         + '<div class="modal-content">'
         + '<div class="modal-body">'
-        + '<button type="button" class="zoom-close-btn" aria-label="Close">X</button>'
+        + '<button type="button" class="zoom-close-btn" aria-label="Close"><svg width="20" height="20" viewBox="0 0 26 25" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0.979492" y="23.2655" width="32" height="2" rx="1" transform="rotate(-45 0.979492 23.2655)" fill="#333333"></rect><rect width="32" height="2" rx="1" transform="matrix(-0.707107 -0.707107 -0.707107 0.707107 25.0215 23.2655)" fill="#333333"></rect></svg></button>'
         + imagesToDisplay
         + '</div>'
         + '</div>'

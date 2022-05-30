@@ -115,7 +115,9 @@
     }
     .navbar-toggleable-md {
         padding: 0 24px;
-        width: 100%;
+        @include media-breakpoint-down(md) {
+            width: 100%;
+        }
     }
 }
 .navbar-header .user .popover {
@@ -135,4 +137,9 @@
 .menu-toggleable-left.in .dropdown-toggle.no-icon::after {
     display: none;
     content: "";
+}
+
+.menu-logo-mobile{
+    position: relative;
+    top: 5px;
 }

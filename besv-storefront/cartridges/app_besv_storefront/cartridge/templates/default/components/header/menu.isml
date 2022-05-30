@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-inverse col-12">
     <div class="close-menu clearfix d-lg-none">
-        <div class="back pull-left">
+        <div class="pull-left menu-logo-mobile">
             <div class="logo">
                 <a class="logo-home" href="${URLUtils.url('Home-Show')}" title="${ Resource.msgf('global.homepage.tooltip', 'common', null, Resource.msg('global.storename', 'common', null), Resource.msg('global.home', 'common', null)) }">
                     <img class="logo-image" src="${URLUtils.staticURL('/images/logo-black.svg')}" alt="${Resource.msg('global.storename', 'common', null)}" />
