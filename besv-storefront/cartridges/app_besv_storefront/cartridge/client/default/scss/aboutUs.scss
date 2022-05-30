@@ -229,6 +229,27 @@
 /*Stores Globally*/
 .aboutus-stores-globally {
     margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+    &::before {
+        content: 'BERLIN • LONDON * NEW YORK * PARIS';
+        position: absolute;
+        bottom: 190px;
+        left: -50px;
+        font: rem-calc(200) / rem-calc(200) $Gothic-A1regular;
+        letter-spacing: 5px;
+        font-weight: 700;
+        color: $brand-light-gray;
+        width: 4423px;
+        z-index: -1;
+        @include media-breakpoint-down(sm) {
+            left: -195px;
+            font: rem-calc(100) / rem-calc(100) $Gothic-A1regular;
+            font-weight: 700;
+            bottom: 0;
+
+        }
+    }
     @include media-breakpoint-down(sm) {
         margin-top: 285px;
     }

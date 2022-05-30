@@ -204,6 +204,27 @@
     }
 }
 .pdp-main-left {
+    .carousel-inner {
+        .carousel-item {
+            position: relative;
+            max-height: 655px;
+            height: 655px;
+            @media (min-width:768px) and (max-width:1260px) {
+                max-height: 400px;
+                height: 400px;
+            }
+            @include media-breakpoint-down(sm) {
+                max-height: 315px;
+                height: 315px;
+            }
+            img {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
     .pdp-zoom-icon {
         position: absolute;
         right: 33px;
@@ -545,6 +566,27 @@
     background-size: cover;
     padding: 224px 0 63px;
     margin-top: -50px;
+    position: relative;
+    overflow: hidden;
+    &::before {
+        content: 'GEOMETRY • GE';
+        position: absolute;
+        top: 490px;
+        left: -114px;
+        font: rem-calc(200) / rem-calc(200) $Gothic-A1regular;
+        letter-spacing: 5px;
+        font-weight: 700;
+        color: $brand-light-gray;
+        width: 3590px;
+        z-index: -1;
+        @include media-breakpoint-down(sm) {
+            left: -195px;
+            font: rem-calc(100) / rem-calc(100) $Gothic-A1regular;
+            font-weight: 700;
+            bottom: 0;
+
+        }
+    }
     @include media-breakpoint-down(sm) {
         padding: 184px 0 50px;
     }
@@ -566,7 +608,7 @@
             display: flex;
             margin-bottom: 72px;
             position: relative;
-            left: -30px;
+            left: -45px;
             @include media-breakpoint-down(sm) {
                 margin-bottom: 48px;
             }
@@ -574,12 +616,13 @@
                 min-width: 157px;
                 position: relative;
                 background-color: $white;
-                color: $primary;
+                color: $brand-dark;
+                border-color: $brand-dark;
                 &:first-of-type {
-                    right: -30px;
+                    right: -45px;
                 }
                 &.active {
-                    background-color: $primary;
+                    background-color: $brand-dark;
                     color: $white;
                     z-index: 1;
                 }
@@ -622,9 +665,7 @@
                         ;
                         .geo-metary-table-count {
                             width: 37px;
-                            align-self: center;
                             background-color: $gray-background;
-                            height: 77px;
                             display: flex;
                             flex-direction: column;
                             justify-content: center;
@@ -639,8 +680,7 @@
                             font-weight: 700;
                             padding: 27px 20px;
                             flex: 1;
-                            height: 77px;
-                            max-height: 77px;
+                            min-height: 77px;
                             @include media-breakpoint-down(sm) {
                                 font: rem-calc(16) / rem-calc(19) $Gothic-A1regular;
                             }
@@ -648,8 +688,7 @@
                         .geometry-table-info {
                             font: rem-calc(16) / rem-calc(19) $Gothic-A1regular;
                             width: 170px;
-                            align-self: center;
-                            height: 77px;
+                            min-height: 77px;
                             display: flex;
                             flex-direction: column;
                             justify-content: center;
