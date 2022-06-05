@@ -289,7 +289,7 @@
             width: 100%;
             max-width: 100%;
             margin-top: 0;
-            padding: 38px 52px 145px 23px;
+            padding: 38px 47px 145px;
             &.gradient-background-class {
                 background: $gray-background;
             }
@@ -346,6 +346,25 @@
     display: flex;
     background-color: $gray-background; /* For browsers that do not support gradients */
     background: linear-gradient($gray-background, $white);
+    position: relative;
+    overflow: hidden;
+    &::before {
+        content: 'BERLIN • LONDON * NEW YORK * PARIS';
+        position: absolute;
+        top: 23px;
+        left: -157px;
+        font: rem-calc(200) / rem-calc(200) $Gothic-A1regular;
+        letter-spacing: 5px;
+        font-weight: 700;
+        color: $white;
+        width: 4423px;
+        @include media-breakpoint-down(md) {
+            left: -71px;
+            font: rem-calc(100) / rem-calc(100) $Gothic-A1regular;
+            font-weight: 700;
+            bottom: 0;
+        }
+    }
     @include media-breakpoint-down(md) {
         flex-direction: column;
         padding: 77px 0 131px;
@@ -365,11 +384,11 @@
     .hero-banner-component {
         width: 54%;
         max-width: 54%;
-        padding: 50px 0 0 57px;
+        padding: 50px 47px 0;
         @include media-breakpoint-down(md) {
             width: 100%;
             max-width: 100%;
-            padding: 24px 47 0;
+            padding: 24px 47px 0;
         }
         .hero-banner-detail {
             max-width: 541px;

@@ -6,7 +6,7 @@
 <isset name="loopState" value="${{count: 1}}" scope="page" />
 <div class="product-quickview product-${product.productType} col product-wrapper product-detail" data-pid="${product.id}">
     <div class="row">
-        <div class="col-12 col-md-6">
+        <div class="col-12 col-md-6 product-quickview-carousel">
             <!-- Product Images Carousel -->
             <isinclude template="product/components/imageCarousel" />
         </div>
@@ -14,15 +14,9 @@
             <section class="product-name-wrapper">
                 <h1 class="product-name">${product.productName}</h1>
             </section>
-            <div class=" col availability align-self-end global-availability"
-                data-ready-to-order="${product.readyToOrder}" data-available="${product.available}">
-                <div class="row availability-holder">
-                    <isinclude template="product/components/availability" />
-                </div>
-            </div>
             <div class="align-items-end">
                 <!-- Quantity -->
-                <div class="hidden-xs-down quantity-holder">
+                <div class="quantity-holder">
                     <isif condition="${pdict.addToCartUrl || pdict.updateCartUrl}">
                         <div class="quantity-heading">
                             <span>Quantity:</span>
@@ -30,6 +24,12 @@
                         <isinclude template="product/components/quantity" />
                     </isif>
                 </div>
+                 <div class=" col availability align-self-end global-availability"
+                data-ready-to-order="${product.readyToOrder}" data-available="${product.available}">
+                <div class="row availability-holder">
+                    <isinclude template="product/components/availability" />
+                </div>
+            </div>
 
                 <div class="col-8 mx-auto">
                     <!-- Prices -->

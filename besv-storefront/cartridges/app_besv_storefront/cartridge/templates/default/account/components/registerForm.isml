@@ -121,28 +121,32 @@
         <div class="invalid-feedback" id="form-password-confirm-error"></div>
     </div>
 
-    <div class="form-group custom-control custom-checkbox">
-        <input
-            type="checkbox"
-            class="custom-control-input" id="add-to-email-list"
-            <isprint value=${pdict.profileForm.customer.addtoemaillist.attributes} encoding="off" />
-        >
-        <label class="custom-control-label" for="add-to-email-list">
-            ${Resource.msg('label.createaccount.addtoemaillist', 'registration', null)}
-        </label>
+    <div class="create-account-wrapper">
+        <div class="form-group custom-control custom-checkbox create-account-newsletter">
+            <input
+                type="checkbox"
+                class="custom-control-input" id="add-to-email-list"
+                <isprint value=${pdict.profileForm.customer.addtoemaillist.attributes} encoding="off" />
+            >
+            <label class="custom-control-label" for="add-to-email-list">
+                ${Resource.msg('label.createaccount.addtoemaillist', 'registration', null)}
+            </label>
+        </div>
+        <div class="create-account-submit">
+            <input type="hidden" name="${pdict.csrf.tokenName}" value="${pdict.csrf.token}"/>
+
+            <button type="submit" class="btn btn-block btn-primary">
+                ${Resource.msg('button.createaccount.registration', 'registration', null)}
+            </button>
+        </div>
     </div>
 
-    <input type="hidden" name="${pdict.csrf.tokenName}" value="${pdict.csrf.token}"/>
-
-    <button type="submit" class="btn btn-block btn-primary">
-        ${Resource.msg('button.createaccount.registration', 'registration', null)}
-    </button>
-    <div class="privacy-policy">
+    <div class="privacy-policy create-account-privacy">
         ${Resource.msg('description.privacypolicy.registration', 'registration', null)}
-        <a href="${'#'}">
+        <a href="${URLUtils.url('Account-Show')}">
             ${Resource.msg('link.privacypolicy.tou', 'registration', null)}
         </a> and
-        <a href="${'#'}">
+        <a href="${URLUtils.url('Account-Show')}">
             ${Resource.msg('link.privacypolicy.pp', 'registration', null)}
         </a>
     </div>

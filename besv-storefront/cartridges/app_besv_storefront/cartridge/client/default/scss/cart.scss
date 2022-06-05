@@ -262,13 +262,32 @@
     }
 }
 #editProductModal {
+    .modal-body {
+        padding-left: 0;
+        @include media-breakpoint-down(md) {
+            padding-left: 15px;
+        }
+        .product-quickview-carousel {
+            padding-left: 0;
+            @include media-breakpoint-down(md) {
+                padding: 0;
+            }
+        }
+    }
+    .modal-content {
+        border-radius: 12px;
+    }
     .modal-header {
         background: $white;
         border-bottom: none;
         padding: 10px 30px 10px 10px;
+        border-radius: 12px;
         button:focus {
             outline: none;
         }
+    }
+    .modal-footer {
+        border-radius: 12px;
     }
     .product-name-wrapper {
         padding-bottom: 15px;
@@ -288,12 +307,21 @@
         padding-bottom: 7px;
         border-bottom: 1px solid $light-gray;
         margin-bottom: 15px;
+        justify-content: end;
+        color: $secondary;
+        .availability-msg {
+            margin-right: 35px;
+            @include media-breakpoint-down(md) {
+                margin-right: 22px;
+             }
+        }
     }
     .quantity-holder {
         display: flex;
         justify-content: space-between;
         align-items: center;
         margin-bottom: 15px;
+        padding-top: 20px;
         .quantity-wrapper {
             min-width: 31%;
             @include media-breakpoint-down(md) {
@@ -319,7 +347,7 @@
         position: absolute;
         bottom: 15px;
         @include media-breakpoint-down(md) {
-            display: block;
+            display: flex;
         }
         li {
             border: none;

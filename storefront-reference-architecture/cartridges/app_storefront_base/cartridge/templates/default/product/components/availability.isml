@@ -1,9 +1,9 @@
-<div class="col-4">
+<iscomment> <div class="col-4">
     <span class="availability non-input-label">
         ${Resource.msg('label.availability', 'common', null)}:
     </span>
-</div>
-<div class="col-8">
+</div> </iscomment>
+<div>
     <ul class="list-unstyled availability-msg">
         <li>
             <isif condition="${!product.readyToOrder}">

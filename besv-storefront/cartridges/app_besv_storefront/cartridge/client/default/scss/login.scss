@@ -98,3 +98,34 @@
     margin-bottom: 10px;
     font-size: 14px;
 }
+.create-account-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    align-items: center;
+    padding-top: 10px;
+    .create-account-newsletter {
+        width: 50%;
+        max-width: 50%;
+        margin-bottom: 0;
+        @include media-breakpoint-down(md) {
+            width: 100%;
+            max-width: 100%;
+            margin-bottom: 20px;
+        }
+    }
+    .create-account-submit {
+        width: 50%;
+        max-width: 50%;
+        @include media-breakpoint-down(md) {
+            width: 100%;
+            max-width: 100%;
+        }
+    }
+}
+.create-account-privacy {
+    a {
+        border-bottom: 1px solid $primary;
+        padding-bottom: 1px;
+    }
+}
