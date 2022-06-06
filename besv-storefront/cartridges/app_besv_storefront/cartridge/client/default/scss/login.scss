@@ -129,3 +129,24 @@
         padding-bottom: 1px;
     }
 }
+#requestPasswordResetModal {
+    .modal-content {
+        width: 538px;
+        padding: 10px;
+        border-radius: 8px;
+    }
+    .modal-header {
+        border-bottom: none;
+        h2 {
+            font-family: $Gothic-A1black;
+        }
+    }
+    .request-password-body {
+        color: $secondary;
+        font-family: $Karla-Regular;
+        .form-control-label {
+            color: $primary;
+            padding-top: 10px;
+        }
+    }
+}
