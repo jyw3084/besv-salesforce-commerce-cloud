@@ -9,6 +9,9 @@
             <div class="card">
                 <div class="card-body">
                     <div class="login-form-nav">
+						<div>
+							<h1 class="page-title"> Subscription </h1>
+						</div>
 						<form action="${pdict.actionUrl}" method="POST" class="newsletter-form" <isprint value="${pdict.newsletterForm.attributes}" encoding="off" />>
 						    <div class="form-group required">
 						        <label class="form-control-label">
