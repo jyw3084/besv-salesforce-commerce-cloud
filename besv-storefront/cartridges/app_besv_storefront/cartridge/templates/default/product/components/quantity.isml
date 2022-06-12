@@ -22,7 +22,7 @@
                 </g>
             </svg>
         </button>
-        <input class="quantity-field quantity-select" type="text" disabled="" value="1" min="1">
+        <input class="quantity-field quantity-select quantity-field-update" type="text" disabled="" value="${pdict.selectedQuantity ? pdict.selectedQuantity : '1'}" min="1">
         <button class="increase-quantity product-quantity-update">
             <svg width="10px" height="10px" viewBox="0 0 10 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>increment</title>

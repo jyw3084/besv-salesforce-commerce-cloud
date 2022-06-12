@@ -19,7 +19,7 @@
         </isloop>
     </select> </iscomment>
     <div class="quantity-wrapper">
-        <button class="decrease-quantity product-quantity-update">
+        <button class="decrease-quantity product-quantity-update-cart">
             <svg width="10px" height="2px" viewBox="0 0 10 2" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>decrement</title>
                 <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -31,8 +31,14 @@
                 </g>
             </svg>
         </button>
-        <input class="quantity-field quantity-select" type="text" disabled="" value="1" min="1">
-        <button class="increase-quantity product-quantity-update">
+        <input id="quantity-${lineItem.UUID}"
+            data-uuid="${lineItem.UUID}"
+            data-pid="${lineItem.id}"
+            data-pre-select-qty="${lineItem.quantity.toFixed()}"
+            data-action="${pdict.actionUrls.updateQuantityUrl}"
+            class="quantity-field quantity-select" type="text" value="${lineItem.quantity.toFixed()}" min="1" disabled
+        >
+        <button class="increase-quantity product-quantity-update-cart">
             <svg width="10px" height="10px" viewBox="0 0 10 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <title>increment</title>
                 <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
