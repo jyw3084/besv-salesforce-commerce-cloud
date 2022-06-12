@@ -23,15 +23,17 @@
         justify-content: space-between;
         align-items: center;
         @include media-breakpoint-down(sm) {
-            flex-direction: column-reverse;
+            flex-direction: column;
         }
     }
     .story-left {
         width: 47%;
         max-width: 47%;
+        padding-left: 100px;
         @include media-breakpoint-down(sm) {
             width: 100%;
             max-width: 100%;
+            padding: 0 23px;
         }
     }
     .story-right {
@@ -41,7 +43,7 @@
         @include media-breakpoint-down(sm) {
             width: 100%;
             max-width: 100%;
-            padding-right: 0;
+            padding: 0 23px;
         }
     }
     .story-banner-detail {
@@ -51,7 +53,7 @@
             color: $grey;
         }
         h3 {
-            max-width: 520px;
+            max-width: 400px;
             margin-bottom: 28px;
             text-transform: capitalize;
         }
@@ -63,14 +65,16 @@
         @include media-breakpoint-down(sm) {
             padding-top: 0;
             // margin: 26px 0 0 23px;
+            background: none;
+            padding-top: 20px;
         }
         .story-1-banner-content {
             padding-top: 60px;
             @include media-breakpoint-down(sm) {
-                padding: 38px 0 60px 23px;
+                padding: 38px 47px 60px;
             }
             .story-banner-description {
-                max-width: 355px;
+                max-width: 400px;
                 @include media-breakpoint-down(sm) {
                     max-width: none;
                 }
@@ -79,6 +83,7 @@
         .story-1-image {
             z-index: 1;
             margin-left: -24px;
+            padding: 0;
         }
     }
     .story-2 {
@@ -89,14 +94,15 @@
         margin-bottom: 59px;
         align-items: flex-start;
         @include media-breakpoint-down(sm) {
-            flex-direction: column;
+            flex-direction: column-reverse;
             margin-top: 0;
+            padding-top: 0;
         }
         .story-2-banner-content {
             padding: 214px 0 0 100px;
             @include media-breakpoint-down(sm) {
                 padding: 0 47px;
-                // margin: 0 47px;
+                padding-top: 30px;
             }
         }
         .story-2-banner-overlay-content {
@@ -125,13 +131,13 @@
         .story-2-image {
             z-index: 1;
             @include media-breakpoint-down(sm) {
-                width: 90%;
-                max-width: 90%;
+                width: 100%;
+                max-width: 100%;
                 margin: 0 auto;
             }
         }
         .story-banner-detail-2 {
-            max-width: 520px;
+            max-width: 400px;
             margin-left: auto;
             @include media-breakpoint-down(sm) {
                 max-width: none;
@@ -141,11 +147,14 @@
         }
     }
     .story-3 {
-        background: rgb(250, 250, 247);
-        align-items: center;
+        align-items: flex-start;
         position: relative;
         .story-banner-detail {
-            padding: 70px 47px 50px;
+            max-width: 400px;
+            padding-top: 50px;
+            .content-story-bold {
+                font-weight: 700;
+            }
         }
         .story-banner-heading {
             max-width: 485px;
@@ -159,62 +168,78 @@
                 max-width: none;
             }
         }
-           &::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            right: 0;
-            background: rgb(250, 250, 247);
-            height: 163px;
-            bottom: -162px;
-            @include media-breakpoint-down(sm) {
-               display: none;
-            }
-        }
-        &::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            right: 0;
-            background: rgb(250, 250, 247);
-            height: 219px;
-            top: -218px;
-        }
         .story-3-image {
             @include media-breakpoint-down(sm) {
                 margin-right: 47px;
             }
         }
+        .story-3-banner-content {
+            @include media-breakpoint-down(sm) {
+                padding: 0 47px;
+            }
+        }
     }
-    .story-4 {
+    .story-4-wrapper {
+        position: relative;
+        padding-bottom: 180px;
+        margin-right: 100px;
+        overflow: hidden;
+        background: linear-gradient(175deg, rgb(253, 253, 250) 0%, rgb(229, 229, 227) 100%);
         @include media-breakpoint-down(sm) {
-            flex-direction: column;
+           margin-right: 0;
+           padding-top: 50px;
+           margin-bottom: 40px;
         }
-        .story-4-banner-content {
-            padding-left: 100px;
+        .story-4 {
+            align-items: flex-start;
+            &::before {
+                content: 'BESV';
+                position: absolute;
+                bottom: 30px;
+                left: -56px;
+                font: rem-calc(200) / rem-calc(200) $Karla-Regular;
+                letter-spacing: 8px;
+                font-weight: 700;
+                color: $white;
+                width: 852px;
+                @include media-breakpoint-down(md) {
+                    left: -35px;
+                    font: rem-calc(100) / rem-calc(100) $Gothic-A1regular;
+                    font-weight: 700;
+                    bottom: 40;
+                }
+            }
             @include media-breakpoint-down(sm) {
+                flex-direction: column-reverse;
+            }
+            .story-4-banner-content {
                 padding-left: 0;
+                padding-top: 145px;
+                @include media-breakpoint-down(sm) {
+                    padding-top: 0;
+                }
             }
-        }
-        .story-banner-detail {
-            max-width: 541px;
-            margin-left: auto;
-            @include media-breakpoint-down(sm) {
-                max-width: none;
-                margin: 0;
-                padding: 60px 47px;
+            .story-banner-detail {
+                max-width: 400px;
+                margin-left: auto;
+                @include media-breakpoint-down(sm) {
+                    max-width: none;
+                    margin: 0;
+                    padding: 60px 47px 0;
+                }
             }
-        }
-        .story-banner-heading {
-            max-width: 358px;
-            @include media-breakpoint-down(sm) {
-                max-width: none;
+            .story-banner-heading {
+                max-width: 358px;
+                @include media-breakpoint-down(sm) {
+                    max-width: none;
+                }
             }
-        }
-        .story-4-image {
-            z-index: 1;
-            @include media-breakpoint-down(sm) {
-                width: 90%;
+            .story-4-image {
+                z-index: 1;
+                padding-right: 0;
+                @include media-breakpoint-down(sm) {
+                    width: 90%;
+                }
             }
         }
     }
