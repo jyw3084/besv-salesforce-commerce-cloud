@@ -57,7 +57,7 @@
     <!-- Cancel and Save Buttons -->
     <div class="row">
         <div class="col">
-            <a href="${URLUtils.url('PaymentInstruments-List')}" class="btn btn-block btn-outline-primary">${Resource.msg('button.cancel','account',null)}</a>
+            <a href="${URLUtils.url('PaymentInstruments-List')}" class="btn btn-block btn-outline-primary cancel">${Resource.msg('button.cancel','account',null)}</a>
         </div>
         <div class="col">
             <button type="submit" name="save" class="btn btn-save btn-block btn-primary">${Resource.msg('button.save','account',null)}</button>

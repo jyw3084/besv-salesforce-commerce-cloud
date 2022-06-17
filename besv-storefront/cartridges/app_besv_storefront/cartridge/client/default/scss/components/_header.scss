@@ -146,3 +146,14 @@
     position: relative;
     top: 5px;
 }
+
+.minicart {
+    margin: 3px 0 0 22px;
+    .minicart-quantity {
+        background-color: transparent;
+    }
+    .minicart-quantity-indicator {
+        background-color: $orange;
+        top: -3px;
+    }
+}

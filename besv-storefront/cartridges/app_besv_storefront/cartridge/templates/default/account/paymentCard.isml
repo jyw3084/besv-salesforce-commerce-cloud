@@ -12,7 +12,7 @@
         </div>
     </isif>
     <isif condition="${pdict.addPaymentUrl}">
-        <div class="card-footer card-footer-border text-center d-none">
+        <div class="card-footer card-footer-border text-center">
             <a href="${pdict.addPaymentUrl}" class="card-link" aria-label="${Resource.msg('label.payment.addnewpayment','payment',null)}">${Resource.msg('link.addnew','account',null)}</a>
         </div>
     </isif>
