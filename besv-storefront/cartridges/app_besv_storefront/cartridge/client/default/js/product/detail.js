@@ -121,6 +121,16 @@ var exportBase = $.extend({}, baseDetail, {
             }
             $(".pdp-zoom-icon .zoom-index").text(currentIndex+'/'+totalImages);
         });
+    },
+    tabsUnderHood: function() {
+        $('.tab-under-hood').on('click', function(){
+            $('.tab-under-hood').removeClass('selected');
+            $(this).addClass('selected');
+            var openDiv = ".under-hood-" + $(this).data("key");
+            $(".under-hood-specification").addClass('d-none');
+            $(openDiv).removeClass('d-none');
+
+        });
     }
 });
 

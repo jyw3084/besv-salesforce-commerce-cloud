@@ -819,6 +819,7 @@
             border-right: 1px solid $light-gray;
             color: $brand-dark;
             opacity: 0.4;
+            cursor: pointer;
             @include media-breakpoint-down(sm) {
                 font: rem-calc(20) / rem-calc(38) $Gothic-A1regular;
                 padding: 9px 15px;
@@ -827,11 +828,13 @@
                 justify-content: center;
             }
             &.key-specification {
-                opacity: 1;
                 padding-left: 0;
             }
             &.electronics {
                 border-right: none;
+            }
+            &.selected {
+                opacity: 1;
             }
         }
     }
