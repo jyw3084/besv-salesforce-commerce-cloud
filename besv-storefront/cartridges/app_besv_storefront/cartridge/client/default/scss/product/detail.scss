@@ -884,6 +884,9 @@
                     border-right: none;
                 }
             }
+            &.selected {
+                opacity: 1;
+            }
         }
     }
     .under-hood-specification{
