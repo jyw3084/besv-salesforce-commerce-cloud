@@ -1,9 +1,11 @@
 'use strict';
 var baseDetail = require('base/product/detail');
+var pdpheaderTop = $('.pdp-header-menu-wrapper').offset().top;
 
 function addZoomClose() {
     $('.zoom-close-btn').on('click', function() {
         $('.products-zoom-model').modal('toggle');
+        $('.products-zoom-model').remove();
     })
 }
 
@@ -37,10 +39,12 @@ function showpZoomModel(index) {
     addZoomClose();
 
     // scroll
-    //var $container = $("html,body");
-    //var $scrollTo = $('.zoom-scroll-to');
-
-    //$container.animate({scrollTop: $scrollTo.offset().top - $container.offset().top + $container.scrollTop(), scrollLeft: 0},300);
+    var zoomToPic = $('.zoom-scroll-to').offset().top;
+    if (zoomToPic) {
+        $('.products-zoom-model').animate({
+            scrollTop: zoomToPic
+        }, 0);
+    }
 }
 
 var exportBase = $.extend({}, baseDetail, {
@@ -78,23 +82,14 @@ var exportBase = $.extend({}, baseDetail, {
         });
     },
 
-    updateQuantity: function() {
-        $(document).on('click', '.product-quantity-update', function (e) {
-            // e.preventDefault();
-            // var isDecrease = $(this).hasClass('decrease-quantity') ? true : false;
-            // var needChangeTrigger = false;
-            // var quantityValue = parseInt($('.quantity-field').val());
-            // if (isDecrease && quantityValue>1) {
-            //     quantityValue = quantityValue - 1;
-            //     needChangeTrigger = true;
-            // } else if (!isDecrease && quantityValue<10) {
-            //     quantityValue = quantityValue + 1;
-            //     needChangeTrigger = true;
-            // }
-
-            // if (needChangeTrigger) {
-            //     $('.quantity-field').val(quantityValue);
-            // }
+    scrollPdp: function() {
+        $(document).on('click', '.pdp-menu-link', function (e) {
+            var scrollToDiv = $(this).data('scroll');
+            var scrollToDivTop = $(scrollToDiv).offset().top;
+            var scrollTill = scrollToDivTop && pdpheaderTop ? scrollToDivTop - pdpheaderTop : scrollToDivTop;
+            $('html, body').animate({
+                scrollTop: scrollTill
+            }, 2000);
 
         });
 

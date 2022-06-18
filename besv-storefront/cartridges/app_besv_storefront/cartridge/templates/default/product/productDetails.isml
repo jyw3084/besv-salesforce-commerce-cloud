@@ -16,22 +16,22 @@
         <div class="pdp-header-menu-wrapper">
             <ul class="pdp-header-menu">
                 <li class="pdp-item" role="presentation">
-                    <a href="#">${Resource.msg('label.pdpheader.top', 'product', null)}</a>
+                    <a class="pdp-menu-link" data-scroll=".main-header" href="#product-top">${Resource.msg('label.pdpheader.top', 'product', null)}</a>
                 </li>
                 <li class="pdp-item" role="presentation">
-                    <a href="#">${Resource.msg('label.pdpheader.features', 'product', null)}</a>
+                    <a class="pdp-menu-link" data-scroll=".product-static-content" href="#product-features">${Resource.msg('label.pdpheader.features', 'product', null)}</a>
                 </li>
                 <li class="pdp-item" role="presentation">
-                    <a href="#">${Resource.msg('label.pdpheader.geometry', 'product', null)}</a>
+                    <a class="pdp-menu-link" data-scroll=".geometry" href="#product-geometry">${Resource.msg('label.pdpheader.geometry', 'product', null)}</a>
                 </li>
                 <li class="pdp-item" role="presentation">
-                    <a href="#">${Resource.msg('label.pdpheader.specs', 'product', null)}</a>
+                    <a class="pdp-menu-link" data-scroll=".what-under-hood" href="#product-specs">${Resource.msg('label.pdpheader.specs', 'product', null)}</a>
                 </li>
                 <li class="pdp-item" role="presentation">
-                    <a href="#">${Resource.msg('label.pdpheader.faq', 'product', null)}</a>
+                    <a class="pdp-menu-link" data-scroll=".frequenttly-asked-questions" href="#product-faq">${Resource.msg('label.pdpheader.faq', 'product', null)}</a>
                 </li>
                 <li class="pdp-item" role="presentation">
-                    <a href="#">${Resource.msg('label.pdpheader.buy', 'product', null)}</a>
+                    <a class="pdp-menu-link" data-scroll=".pdd-quantity-addToCart" href="#product-add">${Resource.msg('label.pdpheader.buy', 'product', null)}</a>
                 </li>
             </ul>
         </div>
