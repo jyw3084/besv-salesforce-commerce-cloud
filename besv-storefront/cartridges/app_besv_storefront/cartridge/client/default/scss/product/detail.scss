@@ -67,13 +67,13 @@
         max-width: 430px;
         margin-right: auto;
         .product-id {
-            font: rem-calc(16) / rem-calc(22) $Karla-Regular;
+            font: rem-calc(16) / rem-calc(22) $Karla-Light;
             color: $secondary;
             margin-bottom: 8px;
             display: inline-block;
         }
         .product-name {
-            font: rem-calc(32) / rem-calc(32) $Gothic-A1regular;
+            font: rem-calc(32) / rem-calc(32) $GothicA1-Bold;
             margin-bottom: 30px;
             font-weight: 700;
             @include media-breakpoint-down(sm) {
@@ -89,7 +89,7 @@
             }
             .price {
                 text-align: left;
-                font: rem-calc(16) / rem-calc(19) $Gothic-A1regular;
+                font: rem-calc(16) / rem-calc(19) $GothicA1-ExtraBold;
                 font-weight: 800;
                 .strike-through {
                     color: $secondary;
@@ -138,7 +138,7 @@
         .description-pdp-detail {
             margin-bottom: 96px;
             .pdp-product-descreption {
-                font: rem-calc(20) / rem-calc(30) $Karla-Regular;
+                font: rem-calc(20) / rem-calc(30) $Karla-Light;
                 font-weight: 300;
                 color: $grey;
                 margin-bottom: 35px;
@@ -155,10 +155,11 @@
                 }
             }
             .pdp-learn-more {
-                font: rem-calc(14) / rem-calc(14) $Gothic-A1regular;
+                font: rem-calc(14) / rem-calc(14) $GothicA1-Bold;
                 color: #444;
                 padding-bottom: 6px;
                 border-bottom: 1px solid $orange;
+                text-transform: uppercase;
                 &:hover {
                     text-decoration: none;
                 }
@@ -195,16 +196,21 @@
                 }
             }
             .panel {
-                font: rem-calc(16) / rem-calc(22) $Karla-Regular;
+                font: rem-calc(16) / rem-calc(22) $Karla-Light;
                 padding: 40px 0;
                 border-top: 1px solid $light-gray;
                 display: none;
+                a {
+                    font: rem-calc(16) / rem-calc(22) $Karla-Medium;
+                    text-decoration: underline;
+                }
             }
         }
     }
 }
 .pdp-main-left {
     .carousel-inner {
+        border-radius: 0 8px 8px 0;
         .carousel-item {
             position: relative;
             max-height: 655px;
@@ -229,6 +235,9 @@
         position: absolute;
         right: 33px;
         bottom: 45px;
+        .zoom-index {
+            font: rem-calc(20) / rem-calc(26) $Karla-Light;
+        }
         @include media-breakpoint-down(sm) {
             right: 22px;
             bottom: 22px;
@@ -274,9 +283,11 @@
             width: 158px;
             margin: 0 16px 0 0;
             opacity: 1;
+            img {
+                border-radius: 8px;
+            }
         }
     }
-    
 }
 
 
@@ -312,7 +323,7 @@
             }
         }
         p {
-            font: rem-calc(16) / rem-calc(22) $Karla-Regular;
+            font: rem-calc(16) / rem-calc(22) $Karla-Light;
             @include media-breakpoint-down(sm) {
                 max-width: 82px;
                 margin: 0 auto;
@@ -365,7 +376,7 @@
     }
     .story-banner-detail {
         p {
-            font: rem-calc(20) / rem-calc(30) $Karla-Regular;
+            font: rem-calc(20) / rem-calc(30) $Karla-Light;
             font-weight: 300;
             color: $grey;
         }
@@ -376,7 +387,7 @@
         }
     }
     .story-1 {
-        background: linear-gradient(175deg, rgb(253, 253, 250) 0%, rgb(229, 229, 227) 100%);
+        background: linear-gradient(180deg, rgb(247, 247, 247) 0%, rgb(247, 247, 247) 100%);
         align-items: stretch;
         padding-top: 55px;
         position: relative;
@@ -393,7 +404,6 @@
             width: 4423px;
             @media (max-width:1080px) {
                 display: none;
-    
             }
         }
         @include media-breakpoint-down(sm) {
@@ -416,6 +426,9 @@
         .story-1-image {
             z-index: 1;
             margin-left: -24px;
+            img {
+                border-radius: 0 8px 8px 0;
+            }
         }
     }
     .story-2 {
@@ -439,7 +452,6 @@
             @media (min-width:768px) and (max-width:1080px) {
                padding-top: 20px;
                margin-bottom: 130px;
-     
              }
             @include media-breakpoint-down(sm) {
                 padding: 0 47px;
@@ -459,7 +471,6 @@
             z-index: 1;
             @media (min-width:768px) and (max-width:1260px) {
                bottom: -20px;
-    
             }
             @include media-breakpoint-down(sm) {
                 padding: 24px;
@@ -589,7 +600,6 @@
             @include media-breakpoint-down(sm) {
                 width: 90%;
             }
-           
         }
     }
     .story-5 {

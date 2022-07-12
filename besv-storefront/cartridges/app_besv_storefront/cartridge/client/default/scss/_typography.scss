@@ -15,12 +15,14 @@ h5 {
     font-weight: bolder;
 }
 .btn-primary {
-    font: rem-calc(14) / rem-calc(14) $Gothic-A1regular;
+    font: rem-calc(14) / rem-calc(14) $GothicA1-Bold;
     padding: 20px 30px;
     border-radius: 999px;
     font-weight: 700;
     max-height: 54px;
     width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     &:focus {
         box-shadow: none !important;
     }
@@ -28,12 +30,13 @@ h5 {
 
 .btn-black {
     display: inline-block;
-    font: rem-calc(14) / rem-calc(14) $Gothic-A1regular;
+    font: rem-calc(14) / rem-calc(14) $GothicA1-Bold;
     padding: 16px 40px;
     background-color: $primary;
     color: $white !important;
     border-radius: 999px;
     text-transform: uppercase;
+    letter-spacing: 1px;
     &:hover {
         outline: none;
         color: $white;
@@ -54,7 +57,7 @@ h5 {
     }
 }
 .home-text {
-    font: rem-calc(20) / rem-calc(30) $Karla-Regular;
+    font: rem-calc(20) / rem-calc(30) $Karla-Light;
     font-weight: 300;
     color: $grey;
     margin-bottom: 28px;
