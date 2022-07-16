@@ -10,12 +10,17 @@
     border-bottom: 1px solid $light-gray;
     z-index: 3;
     background-color: $white;
+    @include media-breakpoint-down(sm){
+        position: relative;
+        overflow-x: scroll;
+    }
     .pdp-header-menu {
         display: flex;
         justify-content: flex-end;
         padding: 16px 15px 16px 15px;
         @include media-breakpoint-down(sm) {
             justify-content: space-between;
+            width: 150%;
         }
         .pdp-item {
             margin-right: 40px;
@@ -348,6 +353,9 @@
 
 .product-stories-section {
     overflow: hidden;
+    @include media-breakpoint-down(sm){
+        padding-top: 26px;
+    }
     .pdp-story {
         display: flex;
         justify-content: space-between;
@@ -397,19 +405,23 @@
             position: absolute;
             bottom: 150px;
             left: 28%;
-            font: rem-calc(200) / rem-calc(200) $Gothic-A1regular;
+            font: rem-calc(200) / rem-calc(200) $GothicA1-Bold;
             letter-spacing: 5px;
             font-weight: 700;
             color: $white;
             width: 4423px;
-            @media (max-width:1080px) {
-                display: none;
+            @include media-breakpoint-down(sm){
+                bottom: -60px;
+                left: -20px;
+                color: $gray-background;
+                font: rem-calc(100) / rem-calc(100) $GothicA1-Bold;
             }
         }
         @include media-breakpoint-down(sm) {
             padding-top: 0;
             background: $gray-background;
-            // margin: 26px 0 0 23px;
+            overflow: visible;
+            margin-bottom: 55px;
         }
         .story-1-banner-content {
             padding-top: 60px;
@@ -441,10 +453,10 @@
         @media (min-width:768px) and (max-width:991px) {
             margin-top: 20px;
             margin-bottom: 50px;
-
         }
         @include media-breakpoint-down(sm) {
             flex-direction: column;
+            padding-top: 0;
             margin-top: 0;
         }
         .story-2-banner-content {
@@ -477,15 +489,21 @@
                 bottom: -55px;
                 left: 50%;
                 min-width: 295px;
+                border-right: 0;
+                border-top: 2px solid $orange;
+                border-radius: 0 0 8px 8px;
             }
             p {
-                font: rem-calc(16) / rem-calc(24) $Karla-Regular;
+                font: rem-calc(16) / rem-calc(24) $Karla-Light;
                 font-weight: 300;
                 color: $grey;
             }
         }
         .story-2-image {
             z-index: 1;
+            img {
+                border-radius: 8px;
+            }
             @include media-breakpoint-down(sm) {
                 width: 90%;
                 max-width: 90%;
@@ -503,7 +521,7 @@
         }
     }
     .story-3 {
-        background: rgb(250, 250, 247);
+        background: $gray-background;
         align-items: center;
         position: relative;
         .story-banner-detail {
@@ -521,31 +539,34 @@
                 max-width: none;
             }
         }
-           &::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            right: 0;
-            background: rgb(250, 250, 247);
-            height: 163px;
-            bottom: -162px;
-            @include media-breakpoint-down(xl) {
-               display: none;
-            }
-        }
         &::before {
             content: "";
             position: absolute;
             left: 0;
             right: 0;
-            background: rgb(250, 250, 247);
+            background: $gray-background;
             height: 219px;
             top: -218px;
             @media (min-width:768px) and (max-width:1260px) {
                 display: none;
             }
         }
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            background: $gray-background;
+            height: 163px;
+            bottom: -162px;
+            @include media-breakpoint-down(md) {
+                display: none;
+            }
+        }
         .story-3-image {
+            img {
+                border-radius: 0 8px 8px 0;
+            }
             @include media-breakpoint-down(sm) {
                 margin-right: 47px;
             }
@@ -558,7 +579,7 @@
             position: absolute;
             bottom: -70px;
             left: -490px;
-            font: rem-calc(200) / rem-calc(200) $Gothic-A1regular;
+            font: rem-calc(200) / rem-calc(200) $GothicA1-Bold;
             letter-spacing: 5px;
             font-weight: 700;
             color: $gray-background;
@@ -566,9 +587,9 @@
             z-index: -1;
             @media (max-width:1080px) {
                 left: -120px;
-                font: rem-calc(100) / rem-calc(100) $Gothic-A1regular;
+                font: rem-calc(100) / rem-calc(100) $GothicA1-Bold;
                 font-weight: 700;
-                bottom: -40;
+                bottom: -40px;
             }
         }
         @include media-breakpoint-down(sm) {
@@ -597,6 +618,9 @@
         }
         .story-4-image {
             z-index: 1;
+            img {
+                border-radius: 8px;
+            }
             @include media-breakpoint-down(sm) {
                 width: 90%;
             }
@@ -642,7 +666,7 @@
         font: rem-calc(200) / rem-calc(200) $Gothic-A1regular;
         letter-spacing: 5px;
         font-weight: 700;
-        color: $brand-light-gray;
+        color: $gray-background;
         width: 3590px;
         z-index: -1;
         @include media-breakpoint-down(sm) {
@@ -655,6 +679,7 @@
     }
     @include media-breakpoint-down(sm) {
         padding: 184px 0 50px;
+        margin-top: -100px;
     }
     .geometry-content {
         h3 {
@@ -667,6 +692,9 @@
         .geo-metary-image {
             max-width: 662px;
             margin: 0 auto;
+            @include media-breakpoint-down(sm){
+                margin: 0 27px;
+            }
         }
         .frame-geometary-tab {
             max-width: 262px;
@@ -683,12 +711,13 @@
                 position: relative;
                 background-color: $white;
                 color: $brand-dark;
-                border-color: $brand-dark;
+                border-color: $light-gray;
                 &:first-of-type {
                     right: -45px;
                 }
                 &.active {
                     background-color: $brand-dark;
+                    border-color: $brand-dark;
                     color: $white;
                     z-index: 1;
                 }
@@ -726,6 +755,7 @@
                         border-right: none;
                     }
                     .geo-metary-table-tile {
+                        font-family: $GothicA1-Bold;
                         display: flex;
                         border-top: 1px solid #E1E1E1;
                         ;
@@ -742,17 +772,21 @@
                             }
                         } 
                         .geometry-table-heading {
-                            font: rem-calc(18) / rem-calc(21) $Gothic-A1regular;
+                            font: rem-calc(18) / rem-calc(21) $GothicA1-Bold;
+                            letter-spacing: 0.5px;
                             font-weight: 700;
                             padding: 27px 20px;
                             flex: 1;
-                            min-height: 77px;
+                            min-height: 96px;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
                             @include media-breakpoint-down(sm) {
-                                font: rem-calc(16) / rem-calc(19) $Gothic-A1regular;
+                                font: rem-calc(16) / rem-calc(19);
                             }
                         }
                         .geometry-table-info {
-                            font: rem-calc(16) / rem-calc(19) $Gothic-A1regular;
+                            font: rem-calc(16) / rem-calc(19) $Karla-Light;
                             width: 170px;
                             min-height: 77px;
                             display: flex;
@@ -819,29 +853,36 @@
         display: block;
     }
     .under-hood-top {
-        display: flex;
-        border-bottom: 1px solid $light-gray;
-        span {
-            font: rem-calc(32) / rem-calc(60) $Gothic-A1regular;
-            font-weight: 600;
-            padding: 9px 40px;
-            padding-right: 40px;
-            border-right: 1px solid $light-gray;
-            color: $brand-dark;
-            opacity: 0.4;
-            @include media-breakpoint-down(sm) {
-                font: rem-calc(20) / rem-calc(38) $Gothic-A1regular;
-                padding: 9px 15px;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
+        overflow-x: scroll;
+        .under-hood-top-wrapper {
+            display: flex;
+            border-bottom: 1px solid $light-gray;
+            @include media-breakpoint-down(sm){
+                width: 150%;
             }
-            &.key-specification {
-                opacity: 1;
-                padding-left: 0;
-            }
-            &.electronics {
-                border-right: none;
+            span {
+                font: rem-calc(32) / rem-calc(60) $Gothic-A1regular;
+                font-weight: 600;
+                padding: 9px 40px;
+                padding-right: 40px;
+                border-right: 1px solid $light-gray;
+                color: #33333366;
+                @include media-breakpoint-down(sm) {
+                    font: rem-calc(20) / rem-calc(38) $Gothic-A1regular;
+                    padding: 9px 15px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                }
+                &.key-specification {
+                    padding-left: 0;
+                }
+                &.selected {
+                    color: $brand-dark
+                }
+                &.electronics {
+                    border-right: none;
+                }
             }
         }
     }
@@ -858,7 +899,8 @@
             .heading {
                 width: 33%;
                 max-width: 33%;
-                font: rem-calc(18) / rem-calc(21) $Gothic-A1regular;
+                font: rem-calc(18) / rem-calc(21) $GothicA1-Bold;
+                letter-spacing: 0.5px;
                 font-weight: 700;
                 @include media-breakpoint-down(sm) {
                     width: 100%;
@@ -873,7 +915,7 @@
                     width: 100%;
                     max-width: 100%;
                 }
-                font: rem-calc(16) / rem-calc(19) $Gothic-A1regular;
+                font: rem-calc(16) / rem-calc(19) $Karla-Light;
                 font-weight: 400;
                 color: $grey;
             }
@@ -897,14 +939,14 @@
                     margin-right: 10px;
                     color: $white;
                     background-color: $primary;
-                    font: rem-calc(16) / rem-calc(23) $Karla-Regular;
+                    font: rem-calc(16) / rem-calc(23) $Karla-Light;
                     display: flex;
                     flex-direction: column;
                     align-items: center;
                     justify-content: center;
                 }
                 .additional-info-detail {
-                    font: rem-calc(14) / rem-calc(14) $Karla-Regular;
+                    font: rem-calc(14) / rem-calc(14) $Karla-Light;
                     padding-top: 5px;
                     color: $grey;
                     padding-right: 172px;
@@ -927,19 +969,20 @@
         .question-answer {
             margin-bottom: 30px;
             .question {
-                font: rem-calc(32) / rem-calc(32) $Gothic-A1regular;
+                font: rem-calc(32) / rem-calc(32) $GothicA1-Bold;
                 font-weight: 700;
                 margin-bottom: 14px;
                 @include media-breakpoint-down(sm) {
-                    font: rem-calc(20) / rem-calc(24) $Gothic-A1regular;
+                    font: rem-calc(20) / rem-calc(24) $GothicA1-Bold;
                     font-weight: 700;
                 }
             }
             .answer {
-                font: rem-calc(16) / rem-calc(25) $Karla-Regular;
+                font: rem-calc(16) / rem-calc(25) $Karla-Light;
                 font-weight: 500;
                 color: $brand-dark;
                 .answer-link {
+                    font-family: $Karla-Medium;
                     text-decoration: underline;
                     color: $primary;
                 }
@@ -947,6 +990,20 @@
         }
     }
 }
+
+// Assembly Guide
+.assembly-guide {
+    .panel {
+        iframe {
+            width: 100%;
+            height: 810px;
+            @include media-breakpoint-down(sm){
+                height: 315px;
+            }
+        }
+    }
+}
+
 /* PDP Zoom */
 .products-zoom-model {
     width: 100%;
