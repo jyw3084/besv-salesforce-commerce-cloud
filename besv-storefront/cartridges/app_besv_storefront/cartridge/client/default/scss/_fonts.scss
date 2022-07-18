@@ -29,6 +29,13 @@
 }
 
 @font-face {
+    font-family: 'Karla-Bold';
+    src: url('../fonts/custom-fonts/Karla-Bold.woff2') format('woff2'),
+         url('../fonts/custom-fonts/Karla-Bold.woff') format('woff'),
+         url('../fonts/custom-fonts/Karla-Bold.ttf')  format('truetype');
+}
+
+@font-face {
     font-family: 'Karla-Medium';
     src: url('../fonts/custom-fonts/Karla-Medium.woff2') format('woff2'),
          url('../fonts/custom-fonts/Karla-Medium.woff') format('woff'),
