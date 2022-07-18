@@ -363,7 +363,7 @@
 
 /* Hero Banner */
 .hero-banner {
-    padding: 187px 0 61px;
+    padding: 66px 0 61px;
     display: flex;
     background-color: $gray-background; /* For browsers that do not support gradients */
     background: linear-gradient($gray-background, $white);
@@ -372,16 +372,17 @@
     &::before {
         content: 'CF1 LINO';
         position: absolute;
-        top: 0;
-        left: -135px;
-        font: rem-calc(400) / rem-calc(400) $Gothic-A1regular;
+        top: 43px;
+        left: -150px;
+        font: rem-calc(400) / rem-calc(400) $GothicA1-Bold;
         letter-spacing: 5px;
         font-weight: 700;
         color: $white;
         width: 4423px;
-        @include media-breakpoint-down(md) {
+        @include media-breakpoint-down(sm) {
+            top: 24px;
             left: -30px;
-            font: rem-calc(100) / rem-calc(100) $Gothic-A1regular;
+            font: rem-calc(100) / rem-calc(100) $GothicA1-Bold;
             font-weight: 700;
             bottom: 0;
         }
@@ -392,12 +393,14 @@
         overflow: hidden;
     }
     .hero-banner-figure {
-        width: 46%;
-        max-width: 46%;
+        width: 959px;
+        max-width: 959px;
+        margin-left: -328px;
         z-index: 1;
         @include media-breakpoint-down(md) {
             width: 115%;
             max-width: 115%;
+            margin-left: 0;
             position: relative;
             left: -55px;
         }
@@ -405,7 +408,7 @@
     .hero-banner-component {
         width: 54%;
         max-width: 54%;
-        padding: 50px 50px 0;
+        padding: 146px 50px 0;
         z-index: 1;
         @include media-breakpoint-down(md) {
             width: 100%;
