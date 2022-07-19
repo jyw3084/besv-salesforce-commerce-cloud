@@ -6,7 +6,7 @@
 @import "account";
 
 .card-footer-border {
-    border-top: 1px dashed $horizontal-border-grey;
+    display: none;
 }
 
 .card-make-default-link {
@@ -60,6 +60,14 @@ h1.page-title {
     .card-header {
         font-family: $Gothic-A1black;
         font-size: 22px;
+        @include media-breakpoint-down(sm) {
+            padding: 0.75rem 0;
+        }
+    }
+    @include media-breakpoint-down(sm) {
+        .card-body {
+            padding: 1.25rem 0;
+        }
     }
     dl {
         margin-bottom: 15px;
@@ -70,6 +78,7 @@ h1.page-title {
         padding-bottom: 1px;
         font-size: 14px;
         text-decoration: none;
+        font-family: $Gothic-A1regular;
     }
     dd {
         font-family: $Karla-Regular;
