@@ -10,7 +10,7 @@
     </isif>
 
     <div class="container receipt <isif condition="${pdict.order.shipping.length > 1}">multi-ship</isif>">
-            <div class="thankyou-header" data-d="${JSON.strinigify(pdict.order)}">
+            <div class="thankyou-header">
                 <h1 class="order-thank-you-msg">${Resource.msg('msg.placed.order.thank.you','confirmation',null)} ${pdict.order.shipping[0].shippingAddress.firstName}</h1>
                 <isif condition="${pdict.order.orderEmail}">
                     <p class="order-thank-you-email-msg"><isprint value="${Resource.msg('info.receive.email.confirmation', 'confirmation', null)}" encoding="htmlcontent" /></p>
