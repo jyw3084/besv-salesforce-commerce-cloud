@@ -375,12 +375,27 @@ module.exports = function () {
         });
     });
 
-    $('body').on('change', '.quantity-form > .quantity', function () {
-        var preSelectQty = $(this).data('pre-select-qty');
-        var quantity = $(this).val();
-        var productID = $(this).data('pid');
-        var url = $(this).data('action');
-        var uuid = $(this).data('uuid');
+    $('body').on('click', '.product-quantity-update-cart', function () {
+        var isDecrease = $(this).hasClass('decrease-quantity') ? true : false;
+        var qtyField = $(this).siblings('.quantity-field');
+        var quantity = parseInt($(qtyField).val());
+        var productID =  $(qtyField).data('pid');
+        var url =  $(qtyField).data('action');
+        var uuid =  $(qtyField).data('uuid');
+        var preSelectQty = $(qtyField).data('pre-select-qty');
+        var needChangeTrigger = false;
+
+        if (isDecrease && quantity>1) {
+            quantity = quantity - 1;
+            needChangeTrigger = true;
+        } else if (!isDecrease && quantity<10) {
+            quantity = quantity + 1;
+            needChangeTrigger = true;
+        }
+
+        if (!needChangeTrigger) {
+            return false;
+        }
 
         var urlParams = {
             pid: productID,
@@ -399,7 +414,7 @@ module.exports = function () {
             context: this,
             dataType: 'json',
             success: function (data) {
-                $('.quantity[data-uuid="' + uuid + '"]').val(quantity);
+                $(qtyField).val(quantity);
                 $('.coupons-and-promos').empty().append(data.totals.discountsHtml);
                 updateCartTotals(data);
                 updateApproachingDiscounts(data.approachingDiscounts);
@@ -424,6 +439,24 @@ module.exports = function () {
                 }
             }
         });
+    });
+
+    $('body').on('click', '.product-quantity-update', function (e) {
+        e.preventDefault();
+        var isDecrease = $(this).hasClass('decrease-quantity') ? true : false;
+        var needChangeTrigger = false;
+        var quantityValue = parseInt($('.quantity-field').val());
+        if (isDecrease && quantityValue>1) {
+            quantityValue = quantityValue - 1;
+            needChangeTrigger = true;
+        } else if (!isDecrease && quantityValue<10) {
+            quantityValue = quantityValue + 1;
+            needChangeTrigger = true;
+        }
+
+        if (needChangeTrigger) {
+            $('.quantity-field').val(quantityValue);
+        }
     });
 
     $('.shippingMethods').change(function () {
@@ -699,9 +732,9 @@ module.exports = function () {
         e.preventDefault();
 
         var updateProductUrl = $(this).closest('.cart-and-ipay').find('.update-cart-url').val();
-        var selectedQuantity = $(this).closest('.cart-and-ipay').find('.update-cart-url').data('selected-quantity');
         var selectedOptionValueId = $(this).closest('.cart-and-ipay').find('.update-cart-url').data('selected-option');
         var uuid = $(this).closest('.cart-and-ipay').find('.update-cart-url').data('uuid');
+        var selectedQuantity = $('.quantity-field-update').val();
 
         var form = {
             uuid: uuid,

@@ -87,7 +87,7 @@ var exportBase = $.extend({}, baseDetail, {
             if (isDecrease && quantityValue>1) {
                 quantityValue = quantityValue - 1;
                 needChangeTrigger = true;
-            } else if (!isDecrease && quantityValue<=10) {
+            } else if (!isDecrease && quantityValue<10) {
                 quantityValue = quantityValue + 1;
                 needChangeTrigger = true;
             }

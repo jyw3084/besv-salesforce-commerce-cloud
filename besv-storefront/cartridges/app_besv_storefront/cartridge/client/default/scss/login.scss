@@ -151,3 +151,24 @@
         }
     }
 }
+
+h1.page-title {
+    position: static;
+    background: none;
+    color: #000;
+    margin-bottom: 25px;
+    font-family: "gothic_a1black";
+    width: 100%;
+    text-align: center;
+    &::before {
+        width: 0 !important;
+    }
+}
+
+.subscription-back-btn-link {
+    color: #{var(--skin-primary-color-1)};
+    text-decoration: underline;
+    display: block;
+    text-align: center;
+    margin-top: 0.5rem;
+}

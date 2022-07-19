@@ -9,7 +9,9 @@ module.exports = function () {
 
     $('.minicart').on('count:update', function (event, count) {
         if (count && $.isNumeric(count.quantityTotal)) {
-            $('.minicart .minicart-quantity').text(count.quantityTotal);
+            if (count.quantityTotal > 0 ) {
+                $('.minicart .minicart-quantity').addClass('minicart-quantity-indicator');
+            }
             $('.minicart .minicart-link').attr({
                 'aria-label': count.minicartCountOfItems,
                 title: count.minicartCountOfItems
