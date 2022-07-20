@@ -1033,3 +1033,27 @@
     background: none;
     border: none;
 }
+
+.color-attribute {
+    width: 36px;
+    height: 36px;
+    border-radius: 100px;
+    background: none;
+    float: right;
+    margin-left: 10px;
+    padding: 0;
+
+    .swatch-circle {
+        width: 36px;
+        height: 36px;
+        background: #fff;
+        border-radius: 1.25em;
+        border: 0.063em solid rgba(0,0,0,.3);
+        display: inline-block;
+        margin-right: 0.313em;
+        position: relative;
+    }
+}
+.attribute-variation {
+    margin-bottom: 30px
+}
