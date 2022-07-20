@@ -33,6 +33,7 @@
                 padding-right: 40px;
                 font: rem-calc(14) / rem-calc(14) $Gothic-A1regular;
                 font-weight: 600;
+                letter-spacing: 1px;
                 @include media-breakpoint-down(md) {
                     padding: 20px 0;
                     border-bottom: 1px solid $light-gray;

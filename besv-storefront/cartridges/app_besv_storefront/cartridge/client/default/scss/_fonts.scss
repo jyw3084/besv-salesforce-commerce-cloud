@@ -21,6 +21,13 @@
 }
 
 @font-face {
+    font-family: 'GothicA1-Medium';
+    src: url('../fonts/custom-fonts/GothicA1-Medium.woff2') format('woff2'),
+         url('../fonts/custom-fonts/GothicA1-Medium.woff') format('woff'),
+         url('../fonts/custom-fonts/GothicA1-Medium.ttf')  format('truetype');
+}
+
+@font-face {
     font-family: 'gothic_a1regular';
     src: url('../fonts/custom-fonts/gothica1-regular-webfont.woff2') format('woff2'),
          url('../fonts/custom-fonts/gothica1-regular-webfont.woff') format('woff');

@@ -1,9 +1,9 @@
 h3 {
-    font: rem-calc(48) / rem-calc(57) $Gothic-A1black;
+    font: rem-calc(48) / rem-calc(57) $GothicA1-Bold;
     color: $primary;
     font-weight: 900;
     @include media-breakpoint-down(md) {
-        font: rem-calc(32) / rem-calc(38) $Gothic-A1black;
+        font: rem-calc(32) / rem-calc(38) $GothicA1-Bold;
         font-weight: 900;
     }
 }
@@ -13,9 +13,11 @@ h5 {
     line-height: rem-calc(19);
     color: $primary;
     font-weight: bolder;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 .btn-primary {
-    font: rem-calc(14) / rem-calc(14) $GothicA1-Bold;
+    font: rem-calc(14) / rem-calc(14) $GothicA1-Medium;
     padding: 20px 30px;
     border-radius: 999px;
     font-weight: 700;
@@ -30,7 +32,7 @@ h5 {
 
 .btn-black {
     display: inline-block;
-    font: rem-calc(14) / rem-calc(14) $GothicA1-Bold;
+    font: rem-calc(14) / rem-calc(14) $GothicA1-Medium;
     padding: 16px 40px;
     background-color: $primary;
     color: $white !important;
@@ -43,7 +45,7 @@ h5 {
     }
 }
 .btn-white {
-    font: rem-calc(14) / rem-calc(14) $GothicA1-Bold;
+    font: rem-calc(14) / rem-calc(14) $GothicA1-Medium;
     padding: 20px 30px;
     border-radius: 999px;
     font-weight: 700;
@@ -62,7 +64,7 @@ h5 {
     font: rem-calc(20) / rem-calc(30) $Karla-Light;
     font-weight: 300;
     color: $grey;
-    margin-bottom: 28px;
+    margin-bottom: 38px;
     @include media-breakpoint-down(md) {
         margin-bottom: 36px;
         font-weight: 300;
