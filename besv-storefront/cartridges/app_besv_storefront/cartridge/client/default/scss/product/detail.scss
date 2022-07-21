@@ -79,6 +79,7 @@
         }
         .product-name {
             font: rem-calc(32) / rem-calc(32) $GothicA1-Bold;
+            color: $primary;
             margin-bottom: 30px;
             font-weight: 700;
             @include media-breakpoint-down(sm) {
@@ -88,19 +89,33 @@
         }
         .pdp-content-price {
             padding: 0;
-            margin-bottom: 68px;
+            margin-bottom: 44px;
             @include media-breakpoint-down(sm) {
                 margin-bottom: 115px;
             }
             .price {
                 text-align: left;
-                font: rem-calc(16) / rem-calc(19) $GothicA1-ExtraBold;
+                font: rem-calc(16) / rem-calc(19) $GothicA1-Bold;
+                color: $primary;
                 font-weight: 800;
                 .strike-through {
                     color: $secondary;
                 }
                 .sales {
                     margin-right: 5px;
+                }
+            }
+        }
+        .attribute-variation {
+            padding-top: 20px;
+            border-top: 1px solid $brand-light-gray;
+            margin-bottom: 30px;
+            .attribute {
+                height: 36px;
+                .non-input-label {
+                    font: rem-calc(18) / rem-calc(36) $GothicA1-Bold;
+                    letter-spacing: 1px;
+                    text-transform: uppercase;
                 }
             }
         }
@@ -118,7 +133,7 @@
                     max-width: 110px;
                     .quantity-wrapper {
                         display: flex;
-                        justify-content: space-between;
+                        justify-content: center;
                         height: 54px;
                         border: 1px solid $light-gray;
                         border-radius: 999px;
@@ -131,6 +146,9 @@
                         .quantity-field {
                             width: 30px;
                             text-align: center;
+                            font-family: $GothicA1-Bold;
+                            color: $primary;
+                            margin-top: 3px;
                         }
                     }
                 }
@@ -900,9 +918,9 @@
                 flex-direction: column;
             }
             .heading {
-                width: 33%;
-                max-width: 33%;
-                font: rem-calc(18) / rem-calc(21) $GothicA1-Bold;
+                width: 25%;
+                max-width: 25%;
+                font: rem-calc(16) / rem-calc(20) $Gothic-A1regular;
                 letter-spacing: 0.5px;
                 font-weight: 700;
                 @include media-breakpoint-down(sm) {
@@ -931,7 +949,7 @@
             .additional-info-wrapper {
                 display: flex;
                 margin-bottom: 19px;
-                align-items: flex-start;
+                align-items: center;
                 &:last-child {
                     margin-bottom: 0;
                 }
@@ -939,7 +957,7 @@
                     min-width: 30px;
                     min-height: 30px;
                     border-radius: 50%;
-                    margin-right: 10px;
+                    margin-right: 20px;
                     color: $white;
                     background-color: $primary;
                     font: rem-calc(16) / rem-calc(23) $Karla-Light;
@@ -950,9 +968,8 @@
                 }
                 .additional-info-detail {
                     font: rem-calc(14) / rem-calc(14) $Karla-Light;
-                    padding-top: 5px;
                     color: $grey;
-                    padding-right: 172px;
+                    padding-right: 172px;;
                     @include media-breakpoint-down(sm) {
                         padding-right: 0;
                     }
@@ -972,11 +989,11 @@
         .question-answer {
             margin-bottom: 30px;
             .question {
-                font: rem-calc(32) / rem-calc(32) $GothicA1-Bold;
+                font: rem-calc(26) / rem-calc(26) $Gothic-A1regular;
                 font-weight: 700;
                 margin-bottom: 14px;
                 @include media-breakpoint-down(sm) {
-                    font: rem-calc(20) / rem-calc(24) $GothicA1-Bold;
+                    font: rem-calc(20) / rem-calc(24) $Gothic-A1regular;
                     font-weight: 700;
                 }
             }
@@ -1042,18 +1059,25 @@
     float: right;
     margin-left: 10px;
     padding: 0;
-
+    border: none;
     .swatch-circle {
         width: 36px;
         height: 36px;
-        background: #fff;
+        background-size: cover;
         border-radius: 1.25em;
-        border: 0.063em solid rgba(0,0,0,.3);
         display: inline-block;
-        margin-right: 0.313em;
         position: relative;
+        &.selected {
+            border: 4px solid $white;
+            outline: 2px solid $brand-dark;
+        }
     }
 }
-.attribute-variation {
-    margin-bottom: 30px
-}
+
+// .product-bottom-accordian {
+//     .pdp-details {
+//         h3 {
+            // font: rem-calc(16) / rem-calc(32) $Gothic-A1regular;
+//         }
+//     }
+// }

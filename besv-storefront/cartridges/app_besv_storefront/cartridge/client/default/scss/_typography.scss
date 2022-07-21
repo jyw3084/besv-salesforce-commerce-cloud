@@ -28,6 +28,9 @@ h5 {
     &:focus {
         box-shadow: none !important;
     }
+    &:disabled {
+        opacity: 0.15;
+    }
 }
 
 .btn-black {
