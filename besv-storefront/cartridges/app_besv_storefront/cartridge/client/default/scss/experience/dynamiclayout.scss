@@ -52,12 +52,13 @@
             .feature-tile-icon {
                 width: 52px;
                 height: 45px;
-                margin: 0 auto 24px;
+                margin: 0 auto 12px;
                 @include media-breakpoint-down(sm) {
                     margin: 0;
                 }
             }
             .feature-tile-heading {
+                font-family: $GothicA1-Bold;
                 margin-bottom: 24px;
                 padding-bottom: 24px;
                 border-bottom: 1px solid $brand-light-gray;
@@ -84,14 +85,14 @@
             }
         }
         .feature-tile-description {
-            font: rem-calc(18) / rem-calc(20) $Karla-Regular;
+            font: rem-calc(18) / rem-calc(20) $Karla-Light;
             color: $grey;
             text-align: center;
+            line-height: 140%;
             @include media-breakpoint-down(sm) {
-                font: rem-calc(15) / rem-calc(21) $Karla-Regular;
+                font: rem-calc(16) / rem-calc(21) $Karla-Light;
                 text-align: left;
-                padding-top: 16px;
-                padding-bottom: 24px;
+                padding: 24px;
             }
         }
     }
@@ -102,10 +103,9 @@
 
 .video {
     position: relative;
-    margin-bottom: 65px;
+    margin-bottom: 38px;
     overflow: hidden;
     top: -81px;
-    z-index: -1;
     @include media-breakpoint-down(md) {
         top: 0;
     }
@@ -120,7 +120,6 @@
             object-fit: cover;
         }
     }
-   
     .video-content {
         position: absolute;
         bottom: 71px;
@@ -136,12 +135,14 @@
 
         }
         .video-subheading {
-            font: rem-calc(18) / rem-calc(19) $Gothic-A1regular;
+            font: rem-calc(20) / rem-calc(20) $Gothic-A1regular;
             font-weight: 700;
             color: $brand-dark;
             margin-bottom: 13px;
+            letter-spacing: 0.5px;
+            opacity: 70%;
             @include media-breakpoint-down(md) {
-                font: rem-calc(16) / rem-calc(18) $Gothic-A1regular;
+                font: rem-calc(16) / rem-calc(16) $Gothic-A1regular;
                 font-weight: 700;
             }
         }
@@ -159,12 +160,14 @@
             }
         }
         .video-text {
-            font: rem-calc(28) / rem-calc(34) $Karla-Regular;
+            font: rem-calc(20) / rem-calc(20) $Karla-Regular;
             color: $brand-dark;
             margin-bottom: 34px;
             font-weight: 500;
+            letter-spacing: 0.5px;
+            opacity: 70%;
             @include media-breakpoint-down(md) {
-                font: rem-calc(24) / rem-calc(28) $Gothic-A1regular;
+                font: rem-calc(16) / rem-calc(16) $Karla-Regular;
                 font-weight: 500;
             }
         }
@@ -191,18 +194,17 @@
     .award-banner-figure {
         width: 50%;
         max-width: 50%;
-        @media (max-width:1259.68px) and (min-width:992px) {
-            .banner-image {
-                height: 100%;
+        overflow: hidden;
+        .banner-image {
+            height: 100%;
+            border-radius: 0 8px 8px 0;
+            @include media-breakpoint-down(md) {
+                border-radius: 0 0 8px 8px;
             }
         }
         @include media-breakpoint-down(md) {
             width: 100%;
             max-width: 100%;
-            img {
-                border-bottom-left-radius: 8px;
-                border-bottom-right-radius: 8px;
-            }
         }
     }
     .award-banner-content {
@@ -215,7 +217,7 @@
             padding: 38px 23px 18px;
         }
         .award-banner-heading {
-            margin-bottom: 28px;
+            margin-bottom: 22px;
             max-width: 358px;
             @include media-breakpoint-down(md) {
                 margin-bottom: 36px;
@@ -228,7 +230,7 @@
                 padding-top: 43px;
                 margin-top: 46px;
             }
-            border-top: 1px solid $secondary;
+            border-top: 1px solid #94949433;
             .awards-wrapper__parent {
                 display: flex;
                 justify-content: space-between;
@@ -266,16 +268,15 @@
             max-width: 94%;
             margin-right: 24px;
             position: relative;
-            top: -75px;
         }
         img {
-            border-radius: 8px;
+            border-radius: 0 8px 8px 0;
         }
     }
     .story-banner-content {
         max-width: 54%;
         width: 54%;
-        padding: 20px 80px;
+        padding: 20px 55px;
         margin-top: 31px;
         display: flex;
         flex-direction: column;
@@ -289,7 +290,7 @@
             width: 100%;
             max-width: 100%;
             margin-top: 0;
-            padding: 38px 47px 145px;
+            padding: 38px 47px;
             &.gradient-background-class {
                 background: $gray-background;
             }
@@ -297,16 +298,31 @@
         .story-banner-detail {
             max-width: 503px;
             .story-banner-heading {
-                margin-bottom: 28px;
+                margin-bottom: 22px;
             }
         }
     }
     &.image-position-right {
+        // position: relative;
         flex-direction: row-reverse;
         @include media-breakpoint-down(md) {
             flex-direction: column-reverse;
             align-items: center;
         }
+        // &::before {
+        //     content: 'CF1 LINO';
+        //     position: absolute;
+        //     top: -103px;
+        //     right: -393px;
+        //     font: rem-calc(200) / rem-calc(200) $GothicA1-Bold;
+        //     letter-spacing: 5px;
+        //     color: $brand-dark;
+        //     opacity: 0.05;
+        //     z-index: -1;
+        //     @include media-breakpoint-down(md) {
+        //         bottom: 0;
+        //     }
+        // }
     }
     &.margin-class {
         max-width: 1240px;
@@ -319,21 +335,24 @@
         .story-banner-image {
             width: 100%;
             max-width: 100%;
+            img {
+                border-radius: 8px;
+            }
             @include media-breakpoint-down(md) {
-                width: 90%;
-                max-width: 90%;
+                width: 88%;
+                max-width: 88%;
             }
         }
         .story-banner-content {
             max-width: 100%;
             width: 100%;
-            padding: 20px 80px 0 20px;
+            padding: 0;
             margin-top: 0;
             background-color: $white;
             @include media-breakpoint-down(md) {
                 width: 100%;
                 max-width: 100%;
-                padding: 52px 47px 133px;
+                padding: 52px 47px;
                 background-color: $gray-background;
             }
         }
@@ -342,25 +361,26 @@
 
 /* Hero Banner */
 .hero-banner {
-    padding: 187px 0 61px;
+    padding: 66px 0 61px;
     display: flex;
     background-color: $gray-background; /* For browsers that do not support gradients */
     background: linear-gradient($gray-background, $white);
     position: relative;
     overflow: hidden;
     &::before {
-        content: 'BERLIN • LONDON * NEW YORK * PARIS';
+        content: 'CF1 LINO';
         position: absolute;
-        top: 23px;
-        left: -157px;
-        font: rem-calc(200) / rem-calc(200) $Gothic-A1regular;
+        top: 43px;
+        left: -150px;
+        font: rem-calc(400) / rem-calc(400) $GothicA1-Bold;
         letter-spacing: 5px;
         font-weight: 700;
         color: $white;
         width: 4423px;
-        @include media-breakpoint-down(md) {
-            left: -71px;
-            font: rem-calc(100) / rem-calc(100) $Gothic-A1regular;
+        @include media-breakpoint-down(sm) {
+            top: 24px;
+            left: -30px;
+            font: rem-calc(100) / rem-calc(100) $GothicA1-Bold;
             font-weight: 700;
             bottom: 0;
         }
@@ -371,20 +391,23 @@
         overflow: hidden;
     }
     .hero-banner-figure {
-        width: 46%;
-        max-width: 46%;
+        width: 959px;
+        max-width: 959px;
+        margin-left: -328px;
+        z-index: 1;
         @include media-breakpoint-down(md) {
             width: 115%;
             max-width: 115%;
+            margin-left: 0;
             position: relative;
             left: -55px;
-    
         }
     }
     .hero-banner-component {
         width: 54%;
         max-width: 54%;
-        padding: 50px 47px 0;
+        padding: 146px 50px 0;
+        z-index: 1;
         @include media-breakpoint-down(md) {
             width: 100%;
             max-width: 100%;
@@ -392,6 +415,9 @@
         }
         .hero-banner-detail {
             max-width: 541px;
+            .banner-heading {
+                margin-bottom: 22px;
+            }
             @include media-breakpoint-down(md) {
                 max-width: 100%;
             }
@@ -414,10 +440,10 @@
         }
         .email-description {
             color: $white;
-            font: rem-calc(24) / rem-calc(34) $Karla-Regular;
+            font: rem-calc(24) / rem-calc(34) $Karla-Light;
             font-weight: 400;
             @include media-breakpoint-down(md) {
-                font: rem-calc(20) / rem-calc(30) $Karla-Regular;
+                font: rem-calc(20) / rem-calc(30) $Karla-Light;
                 margin-bottom: 24px;
             }
         }
@@ -436,7 +462,7 @@
                    max-height: 54px;
                    width: 100%;
                    border-radius: 999px;
-                   padding: 10px 163px 10px 15px;
+                   padding: 10px 163px 10px 24px;
                    background-color: $primary;
                    color: $white;
                    border: 1px solid $white;
@@ -463,6 +489,7 @@
         z-index: 101;
         background: transparent;
         border: none;
+        position: relative;
         .header-wrapper
         .main-menu {
             .nav-item {

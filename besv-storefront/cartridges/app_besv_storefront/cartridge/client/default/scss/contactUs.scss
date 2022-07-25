@@ -1,19 +1,23 @@
 @import "base/contactUs";
 
 .contact-us-banner {
-    background-image: url('../images/contact-us.png');
+    background-image: url('../images/contact-us-banner.jpg');
 }
 
 /* Custom style */
 .subscribe-contact-us {
     max-width: 50%;
     margin: 0 auto;
+    @include media-breakpoint-down(sm) {
+        max-width: 100%;
+    }
 }
 #contact-comment {
     border-radius: 18px;
     resize: none;
 }
 .hero.contact-us-banner {
+    height: 529px;
     position: relative;
     margin-bottom: 15px;
     margin-bottom: 20px;
@@ -52,5 +56,21 @@
     &::after {
         position: static;
         display: none;
+    }
+}
+
+.contact-us-landing-page {
+    border-bottom: 1px solid #F0F0F0;
+    .card {
+        border-bottom: none;
+    }
+}
+
+.contact-us-submit {
+    .contact-us-submit-wrapper {
+        .submit-note {
+            font-family: "Karla-Light";
+            color: #949494;
+        }
     }
 }

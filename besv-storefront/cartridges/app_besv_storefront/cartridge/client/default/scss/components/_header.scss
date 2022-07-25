@@ -33,6 +33,7 @@
                 padding-right: 40px;
                 font: rem-calc(14) / rem-calc(14) $Gothic-A1regular;
                 font-weight: 600;
+                letter-spacing: 1px;
                 @include media-breakpoint-down(md) {
                     padding: 20px 0;
                     border-bottom: 1px solid $light-gray;
@@ -74,6 +75,10 @@
             }
             .minicart {
                 margin: 3px 0 0 22px;
+                @include media-breakpoint-down(md) {
+                    padding-bottom: 0;
+                    margin: auto 15px;
+                }
                 .minicart-quantity {
                     background-color: transparent;
                 }
@@ -94,7 +99,7 @@
         .close-menu {
             background-color: $white;
             border-bottom: 1px solid $light-gray;
-            padding: 15px 0;
+            padding: 24px 0;
             svg {
                 height: 24px;
                 width: 24px;
@@ -102,7 +107,7 @@
             .close-button {
                 display: flex;
                 .minicart {
-                    margin-right: 15px;
+                    margin: auto 15px;
                 }
             }
         }

@@ -48,7 +48,11 @@
     }
     .story-banner-detail {
         p {
-            font: rem-calc(20) / rem-calc(30) $Karla-Regular;
+            font: rem-calc(20) / rem-calc(30) $Karla-Light;
+            .content-story-bold {
+                font: rem-calc(20) / rem-calc(30) $Karla-Bold;
+                color: rgb(68,68,68);
+            }
             font-weight: 300;
             color: $grey;
         }
@@ -59,17 +63,16 @@
         }
     }
     .story-1 {
-        background: linear-gradient(175deg, rgb(253, 253, 250) 0%, rgb(229, 229, 227) 100%);
+        background: linear-gradient(132deg, rgba(247, 247, 247, 1) 0%, rgba(247, 247, 247, 0) 100%);
         align-items: stretch;
-        padding-top: 55px;
+        padding-top: 115px;
+        margin-left: 100px;
         @include media-breakpoint-down(sm) {
             padding-top: 0;
-            // margin: 26px 0 0 23px;
-            background: none;
+            margin-left: 0;
             padding-top: 20px;
         }
         .story-1-banner-content {
-            padding-top: 60px;
             @include media-breakpoint-down(sm) {
                 padding: 38px 47px 60px;
             }
@@ -82,16 +85,15 @@
         }
         .story-1-image {
             z-index: 1;
-            margin-left: -24px;
+            margin-left: -100px;
             padding: 0;
         }
     }
     .story-2 {
         position: relative;
-        background: white;
-        margin-top: -200px;
+        background: transparent;
+        margin-top: -360px;
         padding-top: 60px;
-        margin-bottom: 59px;
         align-items: flex-start;
         @include media-breakpoint-down(sm) {
             flex-direction: column-reverse;
@@ -149,6 +151,7 @@
     .story-3 {
         align-items: flex-start;
         position: relative;
+        z-index: 1;
         .story-banner-detail {
             max-width: 400px;
             padding-top: 50px;
@@ -181,32 +184,31 @@
     }
     .story-4-wrapper {
         position: relative;
-        padding-bottom: 180px;
-        margin-right: 100px;
+        margin-right: 191px;
         overflow: hidden;
-        background: linear-gradient(175deg, rgb(253, 253, 250) 0%, rgb(229, 229, 227) 100%);
+        background: linear-gradient(180deg, rgba(247, 247, 247, 0) 0%, rgba(247, 247, 247, 1) 100%);
+        margin-top: -400px;
+        padding-bottom: 188px;
         @include media-breakpoint-down(sm) {
            margin-right: 0;
-           padding-top: 50px;
+           margin-top: 50px;
            margin-bottom: 40px;
         }
         .story-4 {
             align-items: flex-start;
             &::before {
-                content: 'BESV';
+                content: '';
+                background: url(../../images/logo-white.png) no-repeat;
+                background-size: contain;
                 position: absolute;
-                bottom: 30px;
-                left: -56px;
-                font: rem-calc(200) / rem-calc(200) $Karla-Regular;
-                letter-spacing: 8px;
-                font-weight: 700;
-                color: $white;
-                width: 852px;
-                @include media-breakpoint-down(md) {
-                    left: -35px;
-                    font: rem-calc(100) / rem-calc(100) $Gothic-A1regular;
-                    font-weight: 700;
-                    bottom: 40;
+                bottom: 82px;
+                left: 0;
+                width: 853px;
+                height: 162px;
+                @include media-breakpoint-down(sm) {
+                    bottom: 50px;
+                    width: 306px;
+                    height: 59px;
                 }
             }
             @include media-breakpoint-down(sm) {
@@ -214,7 +216,7 @@
             }
             .story-4-banner-content {
                 padding-left: 0;
-                padding-top: 145px;
+                padding-top: 400px;
                 @include media-breakpoint-down(sm) {
                     padding-top: 0;
                 }
@@ -255,26 +257,6 @@
 .aboutus-stores-globally {
     margin-bottom: 30px;
     position: relative;
-    overflow: hidden;
-    &::before {
-        content: 'BERLIN • LONDON * NEW YORK * PARIS';
-        position: absolute;
-        bottom: 190px;
-        left: -50px;
-        font: rem-calc(200) / rem-calc(200) $Gothic-A1regular;
-        letter-spacing: 5px;
-        font-weight: 700;
-        color: $brand-light-gray;
-        width: 4423px;
-        z-index: -1;
-        @include media-breakpoint-down(sm) {
-            left: -195px;
-            font: rem-calc(100) / rem-calc(100) $Gothic-A1regular;
-            font-weight: 700;
-            bottom: 0;
-
-        }
-    }
     @include media-breakpoint-down(sm) {
         margin-top: 285px;
     }
@@ -305,24 +287,26 @@
                 @include media-breakpoint-down(sm) {
                     width: 100%;
                     max-width: 100%;
-                    padding: 0 24px 194px;
+                    padding: 0 24px 94px;
                 }
                .banner-heading {
                    margin-bottom: 28px;
                    color: $white;
                }
               .banner-description {
-                   font: rem-calc(20) / rem-calc(30) $Karla-Regular;
+                   font: rem-calc(20) / rem-calc(30) $Karla-Light;
                    opacity: 0.9;
                    p {
                        margin-bottom: 15px;
                        color: $white;
                        font-weight: 300;
                        line-height: 30px;
+                       @include media-breakpoint-down(sm) {
+                        margin-bottom: 30px;
+                       }
                        a {
-                           font-weight: bolder;
+                            font: rem-calc(20) / rem-calc(30) $Karla-Bold;
                            opacity: 1;
-                           font-weight: 700;
                            color: $white !important;
                            border-bottom: 1px solid $white;
                            &:hover {
@@ -345,6 +329,9 @@
                 margin-top: -200px;
                 right: -24px;
             }
+            img {
+                border-radius: 8px;
+            }
         }
     }
     .stores-globally-bottom {
@@ -358,11 +345,39 @@
             @media screen and (max-width: 1199px) {
                 right: auto;
             }
-
             @include media-breakpoint-down(sm) {
                 width: 100%;
                 max-width: 100%;
                 left: -24px;
+            }
+            img {
+                border-radius: 8px;
+            }
+        }
+    }
+    .stores-globally-bg {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 400px;
+        overflow: hidden;
+        &::before {
+            content: 'BERLIN • LONDON * NEW YORK * PARIS';
+            position: absolute;
+            bottom: 180px;
+            left: -50px;
+            font: rem-calc(200) / rem-calc(200) $Gothic-A1regular;
+            letter-spacing: 5px;
+            font-weight: 700;
+            color: $brand-light-gray;
+            width: 4423px;
+            z-index: -1;
+            @include media-breakpoint-down(sm) {
+                left: -195px;
+                font: rem-calc(100) / rem-calc(100) $Gothic-A1regular;
+                font-weight: 700;
+                bottom: 10px;
             }
         }
     }
@@ -381,7 +396,7 @@
         @include media-breakpoint-down(sm) {
             width: 100%;
             max-width: 100%;
-            padding: 68px 24px 48px;
+            padding: 48px 24px;
 
         }
         &.grey{
@@ -393,18 +408,18 @@
            color: $white;
         }
         .aboutus-link-heading {
-            font: rem-calc(32) / rem-calc(32) $Gothic-A1regular;
+            font: rem-calc(32) / rem-calc(32) $GothicA1-Bold;
             font-weight: 700;
-            margin-bottom: 18px;
+            margin-bottom: 12px;
             @include media-breakpoint-down(sm) {
-                font: rem-calc(24) / rem-calc(24) $Gothic-A1regular;
+                font: rem-calc(24) / rem-calc(24) $GothicA1-Bold;
 
             }
         }
         .aboutus-link-subheading {
-            font: rem-calc(24) / rem-calc(36) $Karla-Regular;
+            font: rem-calc(20) / rem-calc(36) $Karla-Regular;
             font-weight: 400;
-            margin-bottom: 36px;
+            margin-bottom: 38px;
         }
         a {
             width: auto;

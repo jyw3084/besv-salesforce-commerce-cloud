@@ -1,6 +1,6 @@
 'use strict';
 
-var base = require('base/product/base');
+var base = require('../product/base');
 var focusHelper = require('base/components/focus');
 
 /**
@@ -388,7 +388,7 @@ module.exports = function () {
         if (isDecrease && quantity>1) {
             quantity = quantity - 1;
             needChangeTrigger = true;
-        } else if (!isDecrease && quantity<10) {
+        } else if (!isDecrease && quantity<99) {
             quantity = quantity + 1;
             needChangeTrigger = true;
         }
@@ -449,7 +449,7 @@ module.exports = function () {
         if (isDecrease && quantityValue>1) {
             quantityValue = quantityValue - 1;
             needChangeTrigger = true;
-        } else if (!isDecrease && quantityValue<10) {
+        } else if (!isDecrease && quantityValue<99) {
             quantityValue = quantityValue + 1;
             needChangeTrigger = true;
         }

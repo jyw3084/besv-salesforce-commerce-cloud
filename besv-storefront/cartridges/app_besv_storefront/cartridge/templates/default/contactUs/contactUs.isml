@@ -5,11 +5,7 @@
         assets.addCss('/css/contactUs.css');
     </isscript>
 
-    <div class="hero slant-down contact-us-banner">
-        <h1 class="page-title">
-            ${Resource.msg('title1.contact.us.page', 'contactUs', null)} <span>${Resource.msg('title2.contact.us.page', 'contactUs', null)}</span> ${Resource.msg('title3.contact.us.page', 'contactUs', null)}
-        </h1>
-    </div>
+    <div class="hero slant-down contact-us-banner"></div>
 
     <div class="container contact-us-landing-page">
         <div class="row justify-content-center">
@@ -98,6 +94,9 @@
                                         <button class="btn btn-block btn-primary subscribe-contact-us" type="submit" name="submit" value="submit">
                                             ${Resource.msg('label.input.contact-us-submit', 'contactUs', null)}
                                         </button>
+                                    </div>
+                                    <div class="form-group submit-note text-center">
+                                        <p>By entering my data and clicking the button "Get in touch" I agree to my e-mail address and my name being used to answer my contact request.</p>
                                     </div>
                                 </div>
                             </div>

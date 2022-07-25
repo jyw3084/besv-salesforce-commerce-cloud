@@ -51,12 +51,12 @@
         }
     }
     p {
-        font: rem-calc(14) / rem-calc(17) $Karla-Regular;
+        font: rem-calc(14) / rem-calc(17) $Karla-Light;
         color: $secondary;
         margin-bottom: 20px;
     }
    a {
-        font: rem-calc(14) / rem-calc(17) $Karla-Regular;
+        font: rem-calc(14) / rem-calc(17) $GothicA1-Bold;
        text-decoration: none;
        border-bottom: 1px solid $orange;
        color: $primary;
@@ -79,8 +79,10 @@
         background-color: $gray-background;
     }
     ul {
+        list-style: disc;
+        margin-bottom: 20px;
         li {
-            font: rem-calc(14) / rem-calc(17) $Karla-Regular;
+            font: rem-calc(14) / rem-calc(17) $Karla-Light;
             color: $secondary;
             margin-left: 30px;
         }

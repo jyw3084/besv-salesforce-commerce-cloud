@@ -1,9 +1,9 @@
 h3 {
-    font: rem-calc(48) / rem-calc(57) $Gothic-A1black;
+    font: rem-calc(48) / rem-calc(57) $GothicA1-Bold;
     color: $primary;
     font-weight: 900;
     @include media-breakpoint-down(md) {
-        font: rem-calc(32) / rem-calc(38) $Gothic-A1black;
+        font: rem-calc(32) / rem-calc(38) $GothicA1-Bold;
         font-weight: 900;
     }
 }
@@ -13,34 +13,42 @@ h5 {
     line-height: rem-calc(19);
     color: $primary;
     font-weight: bolder;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 .btn-primary {
-    font: rem-calc(14) / rem-calc(14) $Gothic-A1regular;
+    font: rem-calc(14) / rem-calc(14) $GothicA1-Medium;
     padding: 20px 30px;
     border-radius: 999px;
     font-weight: 700;
     max-height: 54px;
     width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     &:focus {
         box-shadow: none !important;
+    }
+    &:disabled {
+        opacity: 0.15;
     }
 }
 
 .btn-black {
     display: inline-block;
-    font: rem-calc(14) / rem-calc(14) $Gothic-A1regular;
+    font: rem-calc(14) / rem-calc(14) $GothicA1-Medium;
     padding: 16px 40px;
     background-color: $primary;
     color: $white !important;
     border-radius: 999px;
     text-transform: uppercase;
+    letter-spacing: 1px;
     &:hover {
         outline: none;
         color: $white;
     }
 }
 .btn-white {
-    font: rem-calc(14) / rem-calc(14) $Gothic-A1regular;
+    font: rem-calc(14) / rem-calc(14) $GothicA1-Medium;
     padding: 20px 30px;
     border-radius: 999px;
     font-weight: 700;
@@ -48,16 +56,18 @@ h5 {
     width: 100%;
     background-color: $white;
     color: $primary;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     &:hover {
         outline: none;
         color: $primary;
     }
 }
 .home-text {
-    font: rem-calc(20) / rem-calc(30) $Karla-Regular;
+    font: rem-calc(20) / rem-calc(30) $Karla-Light;
     font-weight: 300;
     color: $grey;
-    margin-bottom: 28px;
+    margin-bottom: 38px;
     @include media-breakpoint-down(md) {
         margin-bottom: 36px;
         font-weight: 300;
