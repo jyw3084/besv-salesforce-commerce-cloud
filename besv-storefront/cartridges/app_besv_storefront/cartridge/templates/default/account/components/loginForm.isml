@@ -25,14 +25,10 @@
             </label>
         </div>
 
-        <div class="pull-right forgot-password text-right">
-            <a class="d-sm-none" href="${URLUtils.url('Account-PasswordReset')}" title="${Resource.msg('link.login.forgotpassword', 'login', null)}">
-                ${Resource.msg('link.login.forgotpassword', 'login', null)}
-            </a>
-
+        <div class="form-group pull-right forgot-password text-right">
             <a
                 id="password-reset"
-                class="hidden-xs-down"
+                class=""
                 title="${Resource.msg('link.login.forgotpassword', 'login', null)}"
                 data-toggle="modal"
                 href="${URLUtils.url('Account-PasswordResetDialogForm')}"
