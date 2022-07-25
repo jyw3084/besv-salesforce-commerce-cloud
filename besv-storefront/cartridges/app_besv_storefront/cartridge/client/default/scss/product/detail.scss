@@ -1031,7 +1031,8 @@
         max-width: none;
         margin: 0;
         .zoom-close-btn {
-            float: right;
+            position: fixed;
+            right: 0;
             margin: 16px;
             background: none;
             border: none;
