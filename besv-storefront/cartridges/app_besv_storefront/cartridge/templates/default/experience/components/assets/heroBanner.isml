@@ -9,9 +9,9 @@
             <source srcset="${pdict.bannerImage.src.desktop}" media="(min-width: 1024px)"/>
             <img
                 class="banner-image image-fluid common-image-component"
-                src="${pdict.bannerImage.src.mobile}"
-                style="--focal-point-x:${pdict.bannerImage.focalPointX}; --focal-point-y:${pdict.bannerImage.focalPointY}"
-                <isif condition="${pdict.bannerImage.alt}">alt="${pdict.bannerImage.alt}" title="${pdict.bannerImage.alt}"</isif>
+                src="${pdict.bannerImageMobile.src.mobile}"
+                style="--focal-point-x:${pdict.bannerImageMobile.focalPointX}; --focal-point-y:${pdict.bannerImageMobile.focalPointY}"
+                <isif condition="${pdict.bannerImageMobile.alt}">alt="${pdict.bannerImageMobile.alt}" title="${pdict.bannerImageMobile.alt}"</isif>
             />
         </picture>
     </div>

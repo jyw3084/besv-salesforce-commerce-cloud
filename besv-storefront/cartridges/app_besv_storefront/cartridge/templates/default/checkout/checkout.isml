@@ -21,14 +21,14 @@
         <!----------------------------------------------------------------------------------->
         <!-- Help and Phone -->
         <!----------------------------------------------------------------------------------->
-        <iscomment> <div class="row hidden-xs-down">
+        <div class="row hidden-xs-down">
             <div class="col-12 col-sm-5 offset-sm-7 col-md-5 offset-md-7">
                 <div class="text-center">
                     <span>${Resource.msg('info.need.help','cart',null)}</span>
-                    <span><a href="tel:${Resource.msg('info.phone.number','common',null)}">${Resource.msg('info.phone.number','common',null)}</a></span>
+                    <iscomment> <span><a href="tel:${Resource.msg('info.phone.number','common',null)}">${Resource.msg('info.phone.number','common',null)}</a></span> </iscomment>
                 </div>
             </div>
-        </div> </iscomment>
+        </div>
 
         <div class="row d-sm-none">
             <div class="col-12">
