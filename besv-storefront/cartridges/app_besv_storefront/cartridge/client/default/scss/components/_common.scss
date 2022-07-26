@@ -40,3 +40,29 @@ select {
         width: 20px;
     }
 }
+
+#consent-tracking {
+    .modal-content {
+        padding: 20px;
+        .modal-header {
+            font-family: $Gothic-A1regular;
+        }
+        .modal-body {
+            font-family: $Gothic-A1regular;
+            color: $secondary;
+            a {
+                font-family: $GothicA1-Bold;
+                color: $primary;
+                border-bottom: 1px solid $orange;
+            }
+        }
+        .modal-footer {
+            border-top: none;
+            .button-wrapper {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+            }
+        }
+    }
+}

@@ -19,7 +19,7 @@ function showConsentModal() {
 
     var htmlString = '<!-- Modal -->'
         + '<div class="modal show" id="consent-tracking" aria-modal="true" role="dialog" style="display: block;">'
-        + '<div class="modal-dialog">'
+        + '<div class="modal-dialog modal-dialog-centered">'
         + '<!-- Modal content-->'
         + '<div class="modal-content">'
         + '<div class="modal-header">'
@@ -28,11 +28,11 @@ function showConsentModal() {
         + '<div class="modal-body"></div>'
         + '<div class="modal-footer">'
         + '<div class="button-wrapper">'
+        + '<button class="decline btn btn-outline-secondary" data-url="' + urlReject + '" data-dismiss="modal" >'
+        + textNo
+        + '</button>'
         + '<button class="affirm btn btn-primary" data-url="' + urlAccept + '" autofocus data-dismiss="modal">'
         + textYes
-        + '</button>'
-        + '<button class="decline btn btn-primary" data-url="' + urlReject + '" data-dismiss="modal" >'
-        + textNo
         + '</button>'
         + '</div>'
         + '</div>'
