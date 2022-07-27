@@ -149,3 +149,11 @@
         }
     }
 }
+html {
+    scroll-behavior: smooth;
+}
+
+strong {
+    font-weight: 900;
+    color: $primary;
+}

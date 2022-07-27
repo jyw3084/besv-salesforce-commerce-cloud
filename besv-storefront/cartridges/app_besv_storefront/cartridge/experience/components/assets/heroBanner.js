@@ -14,6 +14,7 @@ module.exports.render = function (context) {
     var content = context.content;
     // image
     model.bannerImage = ImageTransformation.getScaledImage(content.banner_image);
+    model.bannerImageMobile = ImageTransformation.getScaledImage(content.banner_image_mobile);
     // text
     model.heading = content.text_heading;
     model.description = content.text_description;

@@ -535,3 +535,61 @@ h1.page-title {
 .grand-total-label, .grand-total-price {
     font-family: $Gothic-A1regular;
 }
+
+.payment-privacy {
+    padding-top: 15px;
+    padding-left: 10px;
+    color: $secondary;
+
+    .custom-control-label {
+        font-weight: normal;
+        font-family: $Gothic-A1regular;
+        font-size: 14px;
+        padding-left: 10px;
+        &::before {
+            background: $white !important;
+            border-radius: 50%;
+            height: 20px;
+            width: 20px;
+            margin-right: 5px;
+            top: 0;
+        }
+        &::after {
+            top: 2px;
+            width: 20px;
+        }
+        a {
+            border-bottom: 1px solid $secondary;
+            color: $secondary !important;
+        }
+    }
+    .custom-control-input:checked ~ .custom-control-label::after {
+        background-image: $svg-check;
+    }
+}
+
+.payment-options {
+    li {
+        font-family: $Gothic-A1black;
+        a.active {
+            border-bottom: 0.188em solid $orange;
+        }
+    }
+}
+.nav-tabs .nav-link.active {
+    border-bottom: 0.188em solid $orange;
+}
+
+.btn-show-details, .btn-add-new {
+    color: $orange;
+    font-family: $Gothic-A1regular;
+    &:hover {
+        color: $orange;
+    }
+}
+
+.info-icon {
+    span.icon {
+        background-color: $orange;
+    }
+}

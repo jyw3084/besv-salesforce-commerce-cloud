@@ -10,7 +10,13 @@
         "attribute_definitions": [
           {
             "id": "banner_image",
-            "name": "Image",
+            "name": "Desktop Image",
+            "type": "image",
+            "required": true
+          },
+          {
+            "id": "banner_image_mobile",
+            "name": "Moile Image",
             "type": "image",
             "required": true
           }
