@@ -396,11 +396,11 @@
         margin-left: -328px;
         z-index: 1;
         @include media-breakpoint-down(md) {
-            width: 115%;
-            max-width: 115%;
+            width: 150%;
+            max-width: 150%;
             margin-left: 0;
             position: relative;
-            left: -55px;
+            left: -28%;
         }
     }
     .hero-banner-component {
