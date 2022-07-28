@@ -22,7 +22,7 @@
 
             <div class="shipping-error"></div>
 
-            <isinclude template="checkout/shipping/multiShipCheckbox" />
+            <iscomment> <isinclude template="checkout/shipping/multiShipCheckbox" /> </iscomment>
 
             <isinclude template="checkout/shipping/shipmentCard" />
         </div>

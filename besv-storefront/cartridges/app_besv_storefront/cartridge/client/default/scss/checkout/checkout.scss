@@ -13,6 +13,12 @@ $checkout-font-weight: 600;
     opacity: 0.5;
 }
 
+.need-help {
+    margin-bottom: 16px;
+    font-family: $GothicA1-Medium;
+    color: $cart-light-gray;
+}
+
 .arrival-time {
     white-space: pre;
 }
@@ -25,10 +31,22 @@ $checkout-font-weight: 600;
     font-size: 0.875em;
 }
 
-.customer-information-block .btn-link {
-    color: #{var(--skin-link-color-2)};
-    padding: 0;
-    vertical-align: baseline;
+.customer-information-block  {
+    .js-cancel-login {
+        font: 0.875rem/0.875rem "GothicA1-Medium";
+        padding: 20px 30px;
+        border-radius: 999px;
+        font-weight: 700;
+        max-height: 54px;
+        width: 100%;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    .btn-link {
+        color: #{var(--skin-link-color-2)};
+        padding: 0;
+        vertical-align: baseline;
+    }
 }
 
 .edit-button,
@@ -333,7 +351,7 @@ span.ship-to-city-st-zip {
 }
 
 .btn-show-details {
-    padding-top: 0;
+    padding-left: 31px;
 }
 
 .multi-ship-address-actions .btn-save-multi-ship {
@@ -357,9 +375,9 @@ span.ship-to-city-st-zip {
 h1.page-title {
     position: static;
     background: none;
-    color: #000;
+    color: $primary;
     margin-bottom: 25px;
-    font-family: "gothic_a1black";
+    font-family: $GothicA1-Bold;
     @include media-breakpoint-down(md) {
         width: 100%;
         text-align: center;
@@ -370,6 +388,7 @@ h1.page-title {
 }
 .card-header-custom {
     font-family: $Gothic-A1regular;
+    color: $primary;
 }
 .order-summary-card {
     border: none;
@@ -384,6 +403,13 @@ h1.page-title {
             span {
                 font-family: $Gothic-A1regular;
             }
+            .attribute {
+                font-size: 12px;
+                line-height: 15px;
+                color: $cart-light-gray;
+                margin-top: 0;
+                margin-bottom: 14px;
+            }
             &.grand-total {
                 border-top: 1px solid $brand-light-gray;
                 padding-top: 15px;
@@ -392,6 +418,9 @@ h1.page-title {
             }
         }
     }
+}
+.leading-lines .start-lines::before {
+    content: '';
 }
 .continue-to-shipping {
     position: relative;
@@ -451,16 +480,21 @@ h1.page-title {
 }
 .or-sign-up {
     font-family: $Karla-Regular;
-    color: $secondary;
+    color: #cccccc;
     button {
-        color: $orange !important;
+        color: $primary !important;
     }
 }
 .customer-summary, .shipping-summary, .payment-summary {
     .edit-button {
-        color: $primary;
-        border-bottom: 1px solid $orange;
+        color: $secondary;
+        border-bottom: 1px solid $secondary;
         padding-bottom: 4px;
+        font-family: $Gothic-A1regular;
+        text-transform: uppercase;
+        &:hover {
+            text-decoration: none;
+        }
     }
 }
 .payment-summary {
@@ -484,12 +518,12 @@ h1.page-title {
     margin-bottom: 60px;
     padding-top: 90px;
     .order-thank-you-msg {
-        font: rem-calc(42) / rem-calc(50) $Gothic-A1black;
+        font: rem-calc(42) / rem-calc(50) $GothicA1-Bold;
         color: $primary;
         font-weight: 900;
         margin-bottom: 15px;
         @include media-breakpoint-down(md) {
-            font: rem-calc(22) / rem-calc(32) $Gothic-A1black;
+            font: rem-calc(22) / rem-calc(32) $GothicA1-Bold;
             font-weight: 900;
         }
     }
@@ -498,24 +532,23 @@ h1.page-title {
     font-family: $Gothic-A1regular;
 }
 .order-confirm-create-account {
-    background-color: $gray-background;
+    background-color: $cart-gray-background;
     border-radius: 8px;
     .card-header {
         background: none;
     }
 }
 .order-email {
-    font-family: $Gothic-A1black;
-    letter-spacing: 1px;
+    font-family: $GothicA1-Bold;
     margin-bottom: 10px;
     display: inline-block;
     margin-right: 5px;
 }
+
 .confirm-details {
+    border-bottom: none;
     .order-number-label, .order-date-label, .shipping-addr-label, .shipping-method-label, .billing-addr-label, .payment-info-label{
-        font-family: $Gothic-A1black;
-        letter-spacing: 1px;
-        margin-bottom: 10px;
+        font-family: $GothicA1-Bold;
         display: inline-block;
         margin-right: 5px;
     }
@@ -526,11 +559,55 @@ h1.page-title {
         padding-top: 15px;
     }
 }
+
 .order-product-summary {
-    font-family: $Karla-Regular;
+    border: none;
+    .product-line-item {
+        border: 1px solid #DDDDDC;
+        border-radius: 8px;
+        .product-wrapper {
+            padding: 20px 40px;
+            .line-item-header {
+                font-family: $GothicA1-Medium;
+                .line-item-name {
+                    margin-bottom: 1rem;
+                }
+            }
+            .line-item-attributes {
+                font-family: $Gothic-A1regular;
+                color: #767676;
+            }
+        }
+    }
 }
 .checkout-order-total-summary {
+    border: none;
     font-family: $Gothic-A1regular;
+    .order-total-summary {
+        h3 {
+            font-size: 16px;
+        }
+        .checkout-summary-detail {
+            span {
+                font-size: 14px;
+            }
+            .attribute {
+                margin-top: 0;
+                font-size: 12px;
+                color: $cart-light-gray;
+                span {
+                    margin-right: 10px;
+                }
+            }
+        }
+        .grand-total {
+            font-size: 16px;
+            font-family: $GothicA1-Bold;
+        }
+        .end-lines {
+            font-family: $GothicA1-Medium;
+        }
+    }
 }
 .grand-total-label, .grand-total-price {
     font-family: $Gothic-A1regular;
@@ -570,10 +647,7 @@ h1.page-title {
 
 .payment-options {
     li {
-        font-family: $Gothic-A1black;
-        a.active {
-            border-bottom: 0.188em solid $orange;
-        }
+        display: none;
     }
 }
 .nav-tabs .nav-link.active {
@@ -581,7 +655,7 @@ h1.page-title {
 }
 
 .btn-show-details, .btn-add-new {
-    color: $orange;
+    color: $secondary;
     font-family: $Gothic-A1regular;
     &:hover {
         color: $orange;
