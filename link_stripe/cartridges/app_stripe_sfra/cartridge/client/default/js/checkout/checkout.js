@@ -56,4 +56,10 @@ base.enableButton = function () {
     });
 }
 
+base.editPaymentButton = function () {
+    $('body').on('click', '.edit-payment-btn', function (e) {
+        location.reload(true);
+    });
+}
+
 module.exports = base;
