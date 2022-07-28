@@ -16,6 +16,11 @@ h5 {
     text-transform: uppercase;
     letter-spacing: 1px;
 }
+#consent-tracking {
+    .btn-primary, .btn-outline-secondary {
+        width: auto;
+    }
+}
 .btn-primary {
     font: rem-calc(14) / rem-calc(14) $GothicA1-Medium;
     padding: 20px 30px;
@@ -32,7 +37,24 @@ h5 {
         opacity: 0.15;
     }
 }
-
+.btn-outline-secondary {
+    font: rem-calc(14) / rem-calc(14) $GothicA1-Medium;
+    color: $primary;
+    padding: 20px 30px;
+    border-radius: 999px;
+    border-color: $brand-light-gray;
+    font-weight: 700;
+    max-height: 54px;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    &:focus {
+        box-shadow: none !important;
+    }
+    &:disabled {
+        opacity: 0.15;
+    }
+}
 .btn-black {
     display: inline-block;
     font: rem-calc(14) / rem-calc(14) $GothicA1-Medium;

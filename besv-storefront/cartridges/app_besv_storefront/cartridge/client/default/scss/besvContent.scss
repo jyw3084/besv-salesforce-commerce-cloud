@@ -5,7 +5,7 @@
 @import "bootstrap/scss/mixins/breakpoints";
 .besv-content-wrapper {
     .short-container {
-        max-width: 440px;
+        max-width: 500px;
         margin: 0 auto;
         @include media-breakpoint-down(md) {
             max-width: 100%;
@@ -29,24 +29,26 @@
         }
     }
     h1 {
-        font: rem-calc(48) / rem-calc(57) $Gothic-A1black;
+        font: rem-calc(48) / rem-calc(57) $GothicA1-Bold;
         color: $primary;
         font-weight: 900;
         text-align: center;
         padding-top: 35px;
         margin-bottom: 35px;
+        letter-spacing: 1px;
         @include media-breakpoint-down(sm) {
-            font: rem-calc(32) / rem-calc(38) $Gothic-A1black;
+            font: rem-calc(32) / rem-calc(38) $GothicA1-Bold;
             font-weight: 900;
         }
     }
     h2 {
-        font: rem-calc(22) / rem-calc(30) $Gothic-A1black;
+        font: rem-calc(22) / rem-calc(30) $GothicA1-Bold;
         color: $primary;
         font-weight: 900;
         margin-bottom: 10px;
+        letter-spacing: 0.5px;
         @include media-breakpoint-down(md) {
-            font: rem-calc(18) / rem-calc(28) $Gothic-A1black;
+            font: rem-calc(18) / rem-calc(28) $GothicA1-Bold;
             font-weight: 900;
         }
     }
@@ -106,12 +108,12 @@
         color: $orange;
     }
     h3 {
-        font: rem-calc(28) / rem-calc(36) $Gothic-A1black;
+        font: rem-calc(28) / rem-calc(36) $GothicA1-Bold;
         color: $primary;
         font-weight: 900;
         margin-bottom: 10px;
         @include media-breakpoint-down(md) {
-            font: rem-calc(22) / rem-calc(30) $Gothic-A1black;
+            font: rem-calc(22) / rem-calc(30) $GothicA1-Bold;
             font-weight: 900;
         }
     }
