@@ -33,4 +33,27 @@ base.updateCheckoutView = function () {
     });
 };
 
+base.addPrivacyCheck = function() {
+    $('#check-payment-privacy').on('click', function() {
+        var checkVal = window.getComputedStyle(document.querySelector('.label-payment-privacy'), ':after') 
+           .getPropertyValue('background-image');
+
+        if (checkVal && checkVal!='none') {
+            $('button.submit-payment').prop("disabled", false);
+        } else {
+            $('button.submit-payment').prop("disabled", true);
+        }
+    })
+}
+
+base.enableButton = function () {
+    $('body').on('checkout:enableButton', function (e, button) {
+        if (!$(button).hasClass('submit-payment')) {
+            $(button).prop('disabled', false);
+        } else {
+            $(button).prop('disabled', true);
+        }
+    });
+}
+
 module.exports = base;

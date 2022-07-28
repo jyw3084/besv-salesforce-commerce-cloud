@@ -119,9 +119,8 @@
     <input
         type="checkbox"
         class="custom-control-input" id="check-payment-privacy"
-        value="true"
     />
-    <label class="custom-control-label" for="check-payment-privacy">
+    <label class="custom-control-label label-payment-privacy" for="check-payment-privacy">
         ${Resource.msg('agee.payment.privacy', 'checkout', null)}
         <a href="${URLUtils.url('Page-Show', 'cid', 'terms-of-sale')}">
             ${Resource.msg('link.privacypolicy.tac', 'checkout', null)}
