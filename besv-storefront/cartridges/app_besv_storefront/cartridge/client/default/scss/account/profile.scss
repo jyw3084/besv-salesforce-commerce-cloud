@@ -20,14 +20,16 @@
 
 /* Custom Style */
 .card-header {
-    font-family: $Gothic-A1black;
+    font-family: $GothicA1-Bold;
     font-size: 22px;
+    letter-spacing: 0.5px;
 }
 .profile-back-to-account-link {
     font-family: $Gothic-A1regular;
 }
 .cancel {
-    font: rem-calc(14) / rem-calc(14) $Gothic-A1regular;
+    font: rem-calc(14) / rem-calc(14) $GothicA1-Medium;
+    text-transform: uppercase;
     padding: 20px 30px;
     border-radius: 999px;
     font-weight: 700;
@@ -49,9 +51,10 @@ h1.page-title {
     background: none;
     color: #000;
     margin-bottom: 25px;
-    font-family: "gothic_a1black";
+    font-family: $GothicA1-Bold;
     width: 100%;
     text-align: center;
+    letter-spacing: 1px;
 }
 
 .pull-right.btn-ab-edit {
@@ -75,7 +78,7 @@ h1.page-title {
 }
 
 .my-account-profile-heading {
-    font-family: $Gothic-A1black;
+    font-family: $GothicA1-Bold;
     font-size: 15px;
     font-weight: 900;
     margin-bottom: 3px;

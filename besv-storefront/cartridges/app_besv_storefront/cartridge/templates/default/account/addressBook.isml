@@ -60,13 +60,15 @@
         <div class="row justify-content-center">
             <div class="col-6">
                 <div class="row">
+                    <div class="col">
+                        <a href="${URLUtils.url('Address-AddAddress')}" class="btn btn-save btn-block btn-primary" aria-label="${Resource.msg('label.addressbook.addnewaddress','account',null)}">${Resource.msg('button.addnew','account',null)}</a>
+                    </div>
+                </div>
+                <div class="row mt-4">
                     <div class="col text-center">
                         <a href="${URLUtils.url('Account-Show')}" class="profile-back-to-account-link" aria-label="${Resource.msg('label.addressbook.myaccount','account',null)}">
                             ${Resource.msg('link.profile.backtomyaccount','account',null)}
                         </a>
-                    </div>
-                    <div class="col">
-                        <a href="${URLUtils.url('Address-AddAddress')}" class="btn btn-save btn-block btn-primary" aria-label="${Resource.msg('label.addressbook.addnewaddress','account',null)}">${Resource.msg('button.addnew','account',null)}</a>
                     </div>
                 </div>
             </div>

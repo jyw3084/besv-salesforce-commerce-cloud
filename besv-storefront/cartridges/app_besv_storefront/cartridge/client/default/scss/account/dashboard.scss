@@ -52,14 +52,16 @@ h1.page-title {
     background: none;
     color: #000;
     margin-bottom: 25px;
-    font-family: "gothic_a1black";
+    font-family: $GothicA1-Bold;
     width: 100%;
     text-align: center;
+    letter-spacing: 1px;
 }
 .my-account {
     .card-header {
-        font-family: $Gothic-A1black;
+        font-family: $GothicA1-Bold;
         font-size: 22px;
+        letter-spacing: 0.5px;
         @include media-breakpoint-down(sm) {
             padding: 0.75rem 0;
         }
@@ -85,11 +87,12 @@ h1.page-title {
         font-size: 14px;
     }
     .my-account-profile-heading {
-        font-family: $Gothic-A1black;
+        font-family: $GothicA1-Bold;
         font-size: 15px;
         font-weight: 900;
         margin-bottom: 3px;
         color: $primary;
+        letter-spacing: 0.5px;
     }
     .card-link {
         font-family: $Gothic-A1regular;

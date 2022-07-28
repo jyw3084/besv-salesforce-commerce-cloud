@@ -6,12 +6,12 @@
     </li>
 <iselse/>
     <ul class="mega-menu my-account-menu d-lg-none">
-        <li class="nav-item" role="menuitem">
+        <iscomment> <li class="nav-item" role="menuitem">
             <span class="nav-link dropdown-toggle no-icon" role="button" data-toggle="dropdown">
                 <i class="fa fa-sign-in" aria-hidden="true"></i>
                 <span class="user-message">${pdict.name}</span>
             </span>
-        </li>
+        </li> </iscomment>
         <li class="nav-item" role="menuitem">
             <a href="${URLUtils.https('Account-Show')}" class="dropdown-link" role="button">${Resource.msg('link.header.myaccount', 'account', null)}</a>
         </li>
