@@ -28,11 +28,11 @@
                         </span>
                     </p>
                 </div>
-                <div class="col-4 end-lines">
+                <iscomment> <div class="col-4 end-lines">
                     <p class="text-right pricing shipping-method-price">
                         ${shippingModel.selectedShippingMethod.shippingCost}
                     </p>
-                </div>
+                </div> </iscomment>
             </div>
             <isinclude template="checkout/shipping/giftMessageSummary" />
         </div>
