@@ -17,10 +17,10 @@
                     ${Resource.msg('label.orderhistory.mostrecentorder','account',null)}
                 </div>
             </isif> </iscomment>
-            <div class="col-4 hidden-xs-down">
+            <div class="col-4">
                 <img class="img-fluid" src="${order.firstLineItem.imageURL}" alt="${order.firstLineItem.alt}" title="${order.firstLineItem.title}">
             </div>
-            <div class="col-sm-8 col-12">
+            <div class="col-8">
                 <isif condition="${pdict.accountlanding}">
                     <div>
                         <p class="my-account-profile-heading">${Resource.msg('label.orderhistory.ordernumber','account',null)}</p>

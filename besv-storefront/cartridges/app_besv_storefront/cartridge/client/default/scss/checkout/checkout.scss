@@ -389,6 +389,10 @@ h1.page-title {
 .card-header-custom {
     font-family: $Gothic-A1regular;
     color: $primary;
+    @include media-breakpoint-down(sm){
+        text-align: center;
+        font-size: 0.8rem;
+    }
 }
 .order-summary-card {
     border: none;
@@ -576,6 +580,23 @@ h1.page-title {
             .line-item-attributes {
                 font-family: $Gothic-A1regular;
                 color: #767676;
+            }
+            @include media-breakpoint-down(sm){
+                padding: 15px;
+                .product-line-item-details {
+                    overflow-y: initial;
+                    .item-image {
+                        width: 20%;
+                        height: auto;
+                    }
+                    .item-attributes {
+                        width: 75%;
+                        .line-item-name {
+                            text-overflow: initial;
+                            overflow: initial;
+                        }
+                    }
+                }
             }
         }
     }

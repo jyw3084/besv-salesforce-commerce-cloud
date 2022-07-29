@@ -45,18 +45,6 @@ $stored-payment-spacing: 1rem;
     }
 }
 
-.product-line-item + .product-line-item::before,
-.multi-shipping + .product-line-item::before {
-    content: "";
-    display: block;
-    border-bottom: 0.063em dashed $horizontal-rule-grey;
-    margin: $receipt-spacing -0.625em;
-
-    @include media-breakpoint-up(lg) {
-        margin: $receipt-spacing -1.225em;
-    }
-}
-
 .shipment-block + .shipment-block::before {
     content: "";
     display: block;
