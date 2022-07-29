@@ -1,6 +1,8 @@
 'use strict';
 var focusHelper = require('base/components/focus');
-
+var zoomBtn = $('.pdp-zoom-icon-btn').html();
+var prevBtn = $('.carousel-control-prev').html();
+var nextBtn = $('.carousel-control-next').html();
 /**
  * Retrieves the relevant pid value
  * @param {jquery} $el - DOM container for a given add to cart button
@@ -228,14 +230,21 @@ function updateOptions(optionsHtml, $productContainer) {
  * @param {Object[]} imgs - Array of large product images,along with related information
  * @param {jQuery} $productContainer - DOM element for a given product
  */
-function createCarousel(imgs, $productContainer) {
+function createCarousel(images, $productContainer) {
+    var imgs = images['large'];
+    var smallImages = images['small'];
     var carousel = $productContainer.find('.carousel');
     $(carousel).carousel('dispose');
+    
     var carouselId = $(carousel).attr('id');
-    $(carousel).empty().append('<ol class="carousel-indicators"></ol><div class="carousel-inner" role="listbox"></div><a class="carousel-control-prev" href="#' + carouselId + '" role="button" data-slide="prev"><span class="fa icon-prev" aria-hidden="true"></span><span class="sr-only">' + $(carousel).data('prev') + '</span></a><a class="carousel-control-next" href="#' + carouselId + '" role="button" data-slide="next"><span class="fa icon-next" aria-hidden="true"></span><span class="sr-only">' + $(carousel).data('next') + '</span></a>');
+    $(carousel).empty().append('<div class="carousel-inner" role="listbox"></div><a class="carousel-control-prev" href="#' + carouselId + '" role="button" data-slide="prev"></a><a class="carousel-control-next" href="#' + carouselId + '" role="button" data-slide="next"></a><ol class="carousel-indicators"></ol><div class="pdp-zoom-icon"><span class="zoom-index" data-total="'+imgs.length+'">1/'+imgs.length+'</span> <button class="pdp-zoom-icon-btn" type="button"></button></div>');
+    $('.carousel-control-prev').append(prevBtn);
+    $('.carousel-control-next').append(nextBtn);
+    $('.pdp-zoom-icon-btn').append(zoomBtn);
+
     for (var i = 0; i < imgs.length; i++) {
-        $('<div class="carousel-item"><img src="' + imgs[i].url + '" class="d-block img-fluid" alt="' + imgs[i].alt + ' image number ' + parseInt(imgs[i].index, 10) + '" title="' + imgs[i].title + '" itemprop="image" /></div>').appendTo($(carousel).find('.carousel-inner'));
-        $('<li data-target="#' + carouselId + '" data-slide-to="' + i + '" class=""></li>').appendTo($(carousel).find('.carousel-indicators'));
+        $('<div class="carousel-item" data-index="'+i+'"><img src="' + imgs[i].url + '" class="d-block img-fluid" alt="' + imgs[i].alt + ' image number ' + parseInt(imgs[i].index, 10) + '" title="' + imgs[i].title + '" itemprop="image" /></div>').appendTo($(carousel).find('.carousel-inner'));
+        $('<li data-target="#' + carouselId + '" data-slide-to="' + i + '" class=""><img src="'+ smallImages[i].url +'" class="d-block img-fluid" alt="'+ smallImages[i].alt +' image number '+ i +'" itemprop="image" /></li>').appendTo($(carousel).find('.carousel-indicators'));
     }
     $($(carousel).find('.carousel-item')).first().addClass('active');
     $($(carousel).find('.carousel-indicators > li')).first().addClass('active');
@@ -244,6 +253,8 @@ function createCarousel(imgs, $productContainer) {
     }
     $(carousel).carousel();
     $($(carousel).find('.carousel-indicators')).attr('aria-hidden', true);
+
+    $('body').trigger('updateImageCarousal');
 }
 
 /**
@@ -273,6 +284,10 @@ function handleVariantResponse(response, $productContainer) {
                 .data('ready-to-order', response.product.readyToOrder);
         }
     }
+
+    // Update primary images
+    var primaryImageUrls = response.product.images;
+    createCarousel(primaryImageUrls, $productContainer);
 
     // Update pricing
     if (!isChoiceOfBonusProducts) {
