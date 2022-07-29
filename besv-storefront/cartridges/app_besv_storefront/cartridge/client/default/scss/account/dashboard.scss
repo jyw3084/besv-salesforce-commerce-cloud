@@ -56,11 +56,19 @@ h1.page-title {
     width: 100%;
     text-align: center;
     letter-spacing: 1px;
+    @include media-breakpoint-down(sm) {
+        font-size: 30px;
+    }
 }
 .my-account {
     .card-header {
         font-family: $GothicA1-Bold;
-        font-size: 22px;
+        h2 {
+            font-size: 34px;
+            @include media-breakpoint-down(sm) {
+                font-size: 18px;
+            }
+        }
         letter-spacing: 0.5px;
         @include media-breakpoint-down(sm) {
             padding: 0.75rem 0;
@@ -68,31 +76,35 @@ h1.page-title {
     }
     @include media-breakpoint-down(sm) {
         .card-body {
-            padding: 1.25rem 0;
+            padding: 0 0 1.25rem 0;
         }
     }
     dl {
         margin-bottom: 15px;
     }
     .edit {
-        color: $primary;
-        border-bottom: 1px solid $orange;
+        color: $grey !important;
+        border-bottom: 1px solid $grey;
         padding-bottom: 1px;
-        font-size: 14px;
+        font-size: 12px;
         text-decoration: none;
-        font-family: $Gothic-A1regular;
+        font-family: $GothicA1-Medium;
+        letter-spacing: 0.5px;
     }
     dd {
-        font-family: $Karla-Regular;
-        font-size: 14px;
+        font-family: $Gothic-A1regular;
+        font-size: 16px;
     }
     .my-account-profile-heading {
         font-family: $GothicA1-Bold;
-        font-size: 15px;
+        font-size: 16px;
         font-weight: 900;
         margin-bottom: 3px;
         color: $primary;
         letter-spacing: 0.5px;
+        @include media-breakpoint-down(sm) {
+            font-size: 14px;
+        }
     }
     .card-link {
         font-family: $Gothic-A1regular;

@@ -8,7 +8,6 @@
     </div>
 </div> </iscomment>
 
-<h3>Order summary</h3>
 <div class="row leading-lines checkout-summary-detail mb-3">
     <isloop items="${pdict.order.shipping}" var="shippingModel">
         <isloop items="${shippingModel.productLineItems.items}" var="lineItem">
@@ -73,8 +72,6 @@
         <p class="text-right"><span class="tax-total">${pdict.order.totals.totalTax}</span></p>
     </div>
 </div>
-
-<div><hr class="line-item-divider"></div>
 
 <!--- Grand Total --->
 <div class="row grand-total leading-lines checkout-summary-detail">

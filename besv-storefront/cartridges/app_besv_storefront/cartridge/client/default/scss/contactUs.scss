@@ -2,6 +2,9 @@
 
 .contact-us-banner {
     background-image: url('../images/contact-us-banner.jpg');
+    @include media-breakpoint-down(sm) {
+        background-image: url('../images/contact-us-banner-mobile.jpg');
+    }
 }
 
 /* Custom style */
@@ -22,7 +25,7 @@
     margin-bottom: 15px;
     margin-bottom: 20px;
     @include media-breakpoint-down(md) {
-        height: 50vh;
+        height: 608px;
     }
     h1.page-title {
         background: none;
