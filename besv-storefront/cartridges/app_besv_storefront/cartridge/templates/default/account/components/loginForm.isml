@@ -1,17 +1,11 @@
 <form action="${pdict.actionUrl}" class="login" method="POST" name="login-form">
     <div class="form-group required">
-        <label class="form-control-label" for="login-form-email">
-            ${Resource.msg('label.input.login.email', 'login', null)}
-        </label>
-        <input type="email" id="login-form-email" required aria-required="true" class="form-control required" aria-describedby="form-email-error" name="loginEmail" value="${pdict.userName}">
+        <input type="email" id="login-form-email" required aria-required="true" class="form-control required" aria-describedby="form-email-error" name="loginEmail" value="${pdict.userName}" placeholder="${Resource.msg('label.input.login.email', 'login', null)}">
         <div class="invalid-feedback" id="form-email-error"></div>
     </div>
 
     <div class="form-group required">
-        <label class="form-control-label" for="login-form-password">
-                ${Resource.msg('label.input.login.password', 'login', null)}
-        </label>
-        <input type="password" id="login-form-password" required aria-required="true" class="form-control required" aria-describedby="form-password-error" name="loginPassword">
+        <input type="password" id="login-form-password" required aria-required="true" class="form-control required" aria-describedby="form-password-error" name="loginPassword" placeholder="${Resource.msg('label.input.login.password', 'login', null)}">
         <div class="invalid-feedback" id="form-password-error"></div>
     </div>
 

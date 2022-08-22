@@ -6,7 +6,7 @@
 
 <div class="card customer-section">
     <div class="card-header">
-        <h2 class="card-header-custom">
+        <h2 class="card-header-custom heading-email-my-account">
             <span>1/3</span>
             ${Resource.msg('heading.checkout.youremail', 'checkout', null)}
         </h2>

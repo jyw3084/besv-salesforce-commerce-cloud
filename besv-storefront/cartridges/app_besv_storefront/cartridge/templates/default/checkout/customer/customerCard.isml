@@ -15,7 +15,7 @@
                 </button>
             </isif>
         </div>
-             <strong class="or-sign-up">or <button type="button" class="btn btn-link js-login-customer">${Resource.msg('action.customer.login', 'checkout', null)}</button></strong>
+            <strong class="or-sign-up">or <button type="button" class="btn btn-link js-login-customer switch-guest-register">${Resource.msg('action.customer.login', 'checkout', null)}</button></strong>
         </fieldset>
         <input type="hidden" name="${pdict.csrf.tokenName}" value="${pdict.csrf.token}"/>
     </form>
@@ -23,21 +23,17 @@
         <isprint value=${pdict.forms.registeredCustomerForm.attributes} encoding="off" /> novalidate>
         <fieldset class="customer-information-block">
             <div class="row">
-                <div class="col-sm-12">
+                <div class="col-sm-6">
                     <div class="form-group">
-                        <label class="form-control-label">
-                            ${Resource.msg('field.customer.email','checkout',null)}
-                        </label>
-                        <input type="text" class="form-control email" id="email"
+                        <input type="text" class="form-control email" id="email" placeholder="${Resource.msg('field.customer.email','checkout',null)}"
                                     value="${(pdict.customer.registeredUser && pdict.customer.profile && pdict.customer.profile.email) ? pdict.customer.profile.email : ''}" <isprint value=${pdict.forms.registeredCustomerForm.email.attributes} encoding="off"/>
                                     aria-describedby="emailInvalidMessage" >
                         <div class="invalid-feedback" id="emailInvalidMessage"></div>
                     </div>
+                </div>
+                <div class="col-sm-6">
                     <div class="form-group password-form">
-                        <label class="form-control-label">
-                            ${Resource.msg('field.customer.password','checkout',null)}
-                        </label>
-                        <input type="password" class="form-control password" id="password"
+                        <input type="password" class="form-control password" id="password" placeholder="${Resource.msg('field.customer.password','checkout',null)}"
                                     <isprint value=${pdict.forms.registeredCustomerForm.password.attributes} encoding="off"/>
                                     aria-describedby="passwordInvalidMessage" >
                         <div class="invalid-feedback" id="passwordInvalidMessage"></div>
@@ -45,13 +41,16 @@
                 </div>
             </div>
             <div class="row">
-                    <div class="col-12">
+                    <div class="col-6">
                         <div class="mb-sm-3">
                             <button class="btn btn-primary btn-block submit-customer-login" type="submit" name="submit" value="submit-login">
                                 ${Resource.msg('button.customer.login', 'checkout', null)}
                             </button>
-
-                            <button class="btn btn-light btn-block js-cancel-login" name="submit" value="cancel-login">
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="mb-sm-3">
+                            <button class="btn btn-light btn-block js-cancel-login switch-guest-register" name="submit" value="cancel-login">
                                 ${Resource.msg('button.customer.login.cancel', 'checkout', null)}
                             </button>
                         </div>

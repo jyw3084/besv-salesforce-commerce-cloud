@@ -70,7 +70,7 @@
 
 <!--- make drop down--->
 <div class="row">
-    <div class="col-sm-6">
+    <div class="col-sm-6 d-none">
         <div class="form-group
             ${billingFields.country.mandatory === true ? 'required' : ''}
             ${billingFields.country.htmlName}">
@@ -78,20 +78,30 @@
             <select class="form-control billingCountry custom-select" id="billingCountry"
                 <isprint value=${billingFields.country.attributes} encoding="off"/>
                 autocomplete="billing country">
-                    <option label=" "></option>
                     <isloop items=${billingFields.country.options} var="country">
-                        <option id="${country.id}" value="${country.htmlValue}"
-                            ${pdict.order.billing.billingAddress.address
-                                && country.id === pdict.order.billing.billingAddress.address.countryCode.value
-                                ? "selected"
-                                : "" }
-                        >
+                        <option id="${country.id}" value="${country.htmlValue}" ${country.id === "US" ? "selected": "" }>
                             ${country.label}
                         </option>
                     </isloop>
             </select>
             <div class="invalid-feedback"></div>
 
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="form-group
+            ${billingFields.postalCode.mandatory === true ? 'required' : ''}
+            ${billingFields.postalCode.htmlName}">
+            <label class="form-control-label" for="billingZipCode">${Resource.msg('field.billing.address.zip.code','address',null)}</label>
+            <input type="text" class="form-control billingZipCode" id="billingZipCode"
+                value="${pdict.order.billing.billingAddress.address
+                    && pdict.order.billing.billingAddress.address.postalCode
+                    ? pdict.order.billing.billingAddress.address.postalCode
+                    : ''}"
+                <isprint value=${billingFields.postalCode.attributes} encoding="off"/>
+                autocomplete="billing postal-code">
+            <div class="invalid-feedback"></div>
+            <iscomment> <span>${Resource.msg('example.postalcode','forms',null)}</span> </iscomment>
         </div>
     </div>
     <div class="col-sm-6">
@@ -136,18 +146,16 @@
     </div>
     <div class="col-sm-6">
         <div class="form-group
-            ${billingFields.postalCode.mandatory === true ? 'required' : ''}
-            ${billingFields.postalCode.htmlName}">
-            <label class="form-control-label" for="billingZipCode">${Resource.msg('field.billing.address.zip.code','address',null)}</label>
-            <input type="text" class="form-control billingZipCode" id="billingZipCode"
+            <isif condition=${pdict.forms.billingForm.contactInfoFields.phone.mandatory === true}>required</isif>
+            ${pdict.forms.billingForm.contactInfoFields.phone.htmlName}">
+            <label class="form-control-label" for="phoneNumber">${Resource.msg('field.customer.phone.number','checkout',null)}</label>
+
+            <input type="tel" class="form-control phone" id="phoneNumber"
                 value="${pdict.order.billing.billingAddress.address
-                    && pdict.order.billing.billingAddress.address.postalCode
-                    ? pdict.order.billing.billingAddress.address.postalCode
-                    : ''}"
-                <isprint value=${billingFields.postalCode.attributes} encoding="off"/>
-                autocomplete="billing postal-code">
-            <div class="invalid-feedback"></div>
-            <iscomment> <span>${Resource.msg('example.postalcode','forms',null)}</span> </iscomment>
+                ? pdict.order.billing.billingAddress.address.phone||''
+                : ''}" <isprint value=${pdict.forms.billingForm.contactInfoFields.phone.attributes} encoding="off"/>
+                aria-describedby="phoneInvalidMessage" >
+            <div class="invalid-feedback" id="phoneInvalidMessage"></div>
         </div>
     </div>
 </div>
