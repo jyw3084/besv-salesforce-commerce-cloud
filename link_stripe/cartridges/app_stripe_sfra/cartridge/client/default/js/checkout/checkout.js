@@ -55,17 +55,21 @@ base.addPrivacyCheck = function() {
 
 base.enableButton = function () {
     $('body').on('checkout:enableButton', function (e, button) {
-        if (!$(button).hasClass('submit-payment')) {
-            $(button).prop('disabled', false);
-        } else {
-            $(button).prop('disabled', true);
-        }
+        $(button).prop('disabled', false);
+        $('.submit-payment').prop('disabled', true);
     });
 }
 
 base.editPaymentButton = function () {
     $('body').on('click', '.edit-payment-btn', function (e) {
-        location.reload(true);
+        var checkVal = window.getComputedStyle(document.querySelector('.label-payment-privacy'), ':after') 
+           .getPropertyValue('background-image');
+
+        if (checkVal && checkVal!='none') {
+            $('button.submit-payment').prop("disabled", false);
+        } else {
+            $('button.submit-payment').prop("disabled", true);
+        }
     });
 }
 

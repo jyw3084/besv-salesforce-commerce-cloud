@@ -69,6 +69,15 @@ var csrfProtection = require('*/cartridge/scripts/middleware/csrf');
             res.setViewData(registrationObj);
             res.setViewData({ passwordForm: passwordForm });
 
+            var email = registrationObj && registrationObj.email ? registrationObj.email : null;
+            if (email && CustomerMgr.getCustomerByLogin(email)) {
+                res.json({
+                    success: false,
+                    error: [Resource.msgf('error.message.account.exist', 'forms', null, email)]
+                });
+                return next();
+            }
+
             this.on('route:BeforeComplete', function (req, res) { // eslint-disable-line no-shadow
                 var Transaction = require('dw/system/Transaction');
                 var accountHelpers = require('*/cartridge/scripts/helpers/accountHelpers');

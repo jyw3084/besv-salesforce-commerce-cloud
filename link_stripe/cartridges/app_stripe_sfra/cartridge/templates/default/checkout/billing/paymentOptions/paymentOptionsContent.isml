@@ -43,7 +43,6 @@
 
 <input type="hidden" id="stripe_site_locale" value="${require('*/cartridge/scripts/stripe/helpers/checkoutHelper').getSiteLocale()}">
 
-
 <isloop items="${pdict.order.billing.payment.applicablePaymentMethods}" var="paymentOption">
     <isif condition="${paymentOption.ID === 'CREDIT_CARD'}">
         <isif condition="${stripeEnabled}">
@@ -92,7 +91,7 @@
             			value="${paymentOption.ID}">
         			<input type="hidden" name="stripe_source_id" id="stripe_source_id">
         			<div class="row">
-            			<div id="payment-element" style="width:100%">
+            			<div id="payment-element" style="width:100%; margin:0 1rem">
             			</div>
         			</div>
         		</fieldset>

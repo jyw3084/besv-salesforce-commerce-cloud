@@ -185,7 +185,7 @@ function capitalize(text) {
 function copySelectedSaveCardDetails() {
     var savedCard = document.querySelector('input[name=saved_card_id]:checked');
     cardIdInput.forEach(function (input) {
-        input.value = savedCard.value;
+        input.value = savedCard ? savedCard.value : false;
     });
     cardNumberInput.value = savedCard.dataset.cardnumber;
     cardHolderInput.value = savedCard.dataset.cardholder;

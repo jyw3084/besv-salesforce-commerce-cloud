@@ -26,7 +26,7 @@
 		<div id="card-errors" role="alert"></div>
 	</div>
 	<isif condition="${canSaveCard}">
-		<div class="form-group custom-control custom-checkbox">
+		<div class="form-group custom-control custom-checkbox d-none">
 			<input class="input-checkbox custom-control-input" type="checkbox" name="stripe_save_card" id="stripe_save_card">
 			<label class="custom-control-label" for="stripe_save_card"><span>${Resource.msg('label.save.card','forms',null)}</span></label>
 		</div>

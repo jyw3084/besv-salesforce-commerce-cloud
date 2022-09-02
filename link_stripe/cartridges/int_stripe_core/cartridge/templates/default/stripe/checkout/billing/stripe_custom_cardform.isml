@@ -1,16 +1,26 @@
 <div class="stripe-custom-card-group" id="stripe-custom-card-group"
   data-elementstyle="${JSON.stringify(require('*/cartridge/scripts/stripe/helpers/stripeHelper').getStripeCardFormStyle())}">
-  <div>
-    <span>${Resource.msg('customcardform.cardnumber', 'stripe', null)}</span>
-    <div id="card-number-element" class="field"></div>
-    <span class="brand"><i class="pf pf-credit-card" id="brand-icon"></i></span>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="form-group required">
+        <label class="form-control-label"> ${Resource.msg('customcardform.cardnumber', 'stripe', null)}</label>
+        <div id="card-number-element" class="field form-control" style="border-radius: 999px !important;"></div>
+        <span class="brand"><i class="pf pf-credit-card" id="brand-icon"></i></span>
+      </div>
+    </div>
   </div>
-  <div>
-    <span>${Resource.msg('customcardform.expirydate', 'stripe', null)}</span>
-    <div id="card-expiry-element" class="field"></div>
-  </div>
-  <div>
-    <span>${Resource.msg('customcardform.cvc', 'stripe', null)}</span>
-    <div id="card-cvc-element" class="field"></div>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="form-group required">
+        <label  class="form-control-label"> ${Resource.msg('customcardform.expirydate', 'stripe', null)}</label>
+        <div id="card-expiry-element" class="field form-group form-control" style="border-radius: 999px !important;"></div>
+      </div>
+    </div>
+     <div class="col-sm-6">
+      <div class="form-group required">
+        <label  class="form-control-label"> ${Resource.msg('customcardform.cvc', 'stripe', null)}</label>
+        <div id="card-cvc-element" class="field form-group form-control" style="border-radius: 999px !important;"></div>
+      </div>
+    </div>
   </div>
 </div>
