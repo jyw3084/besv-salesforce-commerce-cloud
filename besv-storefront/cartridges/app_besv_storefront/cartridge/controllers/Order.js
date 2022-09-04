@@ -167,4 +167,12 @@ var csrfProtection = require('*/cartridge/scripts/middleware/csrf');
     }
 );
 
+server.append('Confirm', function (req, res, next) {
+    var viewData = res.getViewData();
+    viewData.isConfirm = true;
+    res.setViewData(viewData);
+
+    next();
+});
+
 module.exports = server.exports();
