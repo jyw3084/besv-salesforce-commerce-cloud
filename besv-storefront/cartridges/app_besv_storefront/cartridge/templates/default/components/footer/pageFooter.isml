@@ -1,20 +1,22 @@
 <footer id="footercontent">
     <div class="container">
-        <div class="footer-container footer-top">
-            <div class="footer-item footer-item-besv">
-                <iscontentasset aid="footer-besv" />
-            </div>
-            <div class="footer-item footer-item-collapsible collapsible-xs">
-                <iscontentasset aid="footer-shop" />
-            </div>
-            <div class="footer-item footer-item-collapsible collapsible-xs">
-                <iscontentasset aid="footer-help-links" />
-            </div>
-            <div class="footer-item footer-item-collapsible collapsible-xs">
-                <iscontentasset aid="footer-about-links" />
-            </div>
-            <div class="footer-item footer-item-signup collapsible-xs">
-                <iscontentasset aid="footer-signup">
+        <div class="footer-top">
+            <div class="row footer-container">
+                <div class="col-12 col-md-3 footer-item footer-item-besv">
+                    <iscontentasset aid="footer-besv" />
+                </div>
+                <div class="col-12 col-md-2 footer-item footer-item-collapsible collapsible-xs">
+                    <iscontentasset aid="footer-shop" />
+                </div>
+                <div class="col-12 col-md-2 footer-item footer-item-collapsible collapsible-xs">
+                    <iscontentasset aid="footer-help-links" />
+                </div>
+                <div class="col-12 col-md-2 footer-item footer-item-collapsible collapsible-xs">
+                    <iscontentasset aid="footer-about-links" />
+                </div>
+                <div class="col-12 col-md-2 footer-item footer-item-signup collapsible-xs">
+                    <iscontentasset aid="footer-signup">
+                </div>
             </div>
         </div>
         <div class="footer-bottom">

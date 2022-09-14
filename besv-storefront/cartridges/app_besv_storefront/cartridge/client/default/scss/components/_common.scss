@@ -1,16 +1,36 @@
-
 header ~ #maincontent .container a:not(.btn-primary, .btn-outline-primary) {
     color: $primary;
 }
+
 input {
     border-radius: 999px !important;
+    border-color: $dark-600;
     font-family: $Gothic-A1regular;
 }
+
+textarea {
+    font-family: $Gothic-A1regular;
+}
+
+.form-control {
+    height: 54px;
+    border-color: $dark-600;
+    padding: 21px 20px;
+    @include media-breakpoint-down(md) {
+        height: 44px;
+    }
+}
+
+.form-group {
+    margin-bottom: 26px;
+}
+
 label {
+    color: $primary;
     font-family: $Gothic-A1regular;
-    margin-bottom: 10px;
-    font-weight: 600;
+    margin-bottom: 13px;
 }
+
 a:hover {
     text-decoration: none;
 }
