@@ -54,7 +54,7 @@ a.btn-primary {
     border-color: $brand-light-gray;
     font-weight: 700;
     width: 100%;
-    letter-spacing: 1px;
+    letter-spacing: 0.02em;
     &:focus {
         box-shadow: none !important;
     }
@@ -67,13 +67,14 @@ a.btn-primary {
     }
 }
 .btn-black {
+    max-height: 54px;
     display: inline-block;
     font: rem-calc(14) / rem-calc(54) $GothicA1-Medium;
-    padding: 16px 40px;
+    padding: 0 40px;
     background-color: $primary;
     color: $white !important;
     border-radius: 999px;
-    letter-spacing: 1px;
+    letter-spacing: 0.02em;
     &:hover {
         outline: none;
         color: $white;
@@ -84,15 +85,15 @@ a.btn-primary {
     }
 }
 .btn-white {
+    max-height: 54px;
     font: rem-calc(14) / rem-calc(54) $GothicA1-Medium;
-    padding: 20px 30px;
+    padding: 0 30px;
     border-radius: 999px;
     font-weight: 700;
-    max-height: 54px;
     width: 100%;
     background-color: $white;
     color: $primary;
-    letter-spacing: 1px;
+    letter-spacing: 0.02em;
     &:hover {
         outline: none;
         color: $primary;
