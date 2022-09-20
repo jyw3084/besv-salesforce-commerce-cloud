@@ -22,10 +22,10 @@ h5 {
     }
 }
 .btn-primary {
-    font: rem-calc(14) / rem-calc(14) $GothicA1-Medium;
-    padding: 20px 60px;
-    border-radius: 999px;
     max-height: 54px;
+    font: rem-calc(14) / rem-calc(54) $GothicA1-Medium;
+    padding: 0 60px;
+    border-radius: 999px;
     width: 100%;
     letter-spacing: 0.02em;
     &:focus {
@@ -34,15 +34,25 @@ h5 {
     &:disabled {
         opacity: 0.15;
     }
+    @include media-breakpoint-down(sm) {
+        max-height: 44px;
+        font: rem-calc(14) / rem-calc(44) $GothicA1-Medium;
+    }
+}
+a.btn-primary {
+    padding: 20px 60px;
+    @include media-breakpoint-down(sm) {
+        padding: 15px 30px;
+    }
 }
 .btn-outline-secondary {
-    font: rem-calc(14) / rem-calc(14) $GothicA1-Medium;
+    max-height: 54px;
+    font: rem-calc(14) / rem-calc(54) $GothicA1-Medium;
     color: $primary;
-    padding: 20px 30px;
+    padding: 0 30px;
     border-radius: 999px;
     border-color: $brand-light-gray;
     font-weight: 700;
-    max-height: 54px;
     width: 100%;
     letter-spacing: 1px;
     &:focus {
@@ -51,10 +61,14 @@ h5 {
     &:disabled {
         opacity: 0.15;
     }
+    @include media-breakpoint-down(sm) {
+        max-height: 44px;
+        font: rem-calc(14) / rem-calc(44) $GothicA1-Medium;
+    }
 }
 .btn-black {
     display: inline-block;
-    font: rem-calc(14) / rem-calc(14) $GothicA1-Medium;
+    font: rem-calc(14) / rem-calc(54) $GothicA1-Medium;
     padding: 16px 40px;
     background-color: $primary;
     color: $white !important;
@@ -64,9 +78,13 @@ h5 {
         outline: none;
         color: $white;
     }
+    @include media-breakpoint-down(sm) {
+        max-height: 44px;
+        font: rem-calc(14) / rem-calc(44) $GothicA1-Medium;
+    }
 }
 .btn-white {
-    font: rem-calc(14) / rem-calc(14) $GothicA1-Medium;
+    font: rem-calc(14) / rem-calc(54) $GothicA1-Medium;
     padding: 20px 30px;
     border-radius: 999px;
     font-weight: 700;
@@ -78,6 +96,10 @@ h5 {
     &:hover {
         outline: none;
         color: $primary;
+    }
+    @include media-breakpoint-down(sm) {
+        max-height: 44px;
+        font: rem-calc(14) / rem-calc(44) $GothicA1-Medium;
     }
 }
 .home-text {
