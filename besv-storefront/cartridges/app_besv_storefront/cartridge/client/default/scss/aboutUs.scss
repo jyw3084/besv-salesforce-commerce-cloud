@@ -78,7 +78,9 @@
 			}
 		}
 		.story-1 {
+			gap: 165px;
 			@include media-breakpoint-down(sm) {
+				gap: inherit;
 				padding-top: 70px;
 			}
 			.story-image {
@@ -97,6 +99,10 @@
 			}
 		}
 		.story-3 {
+			gap: 165px;
+			@include media-breakpoint-down(sm) {
+				gap: inherit;
+			}
 			.story-image {
 				max-width: 555px;
 				@include media-breakpoint-down(sm) {
@@ -306,7 +312,7 @@
 		.aboutus-link-subheading {
 			font: rem-calc(20) / rem-calc(36) $Karla-Regular;
 			font-weight: 400;
-			margin-bottom: 38px;
+			margin-bottom: 36px;
 		}
 		a {
 			width: auto;
@@ -314,5 +320,11 @@
 	}
 	@include media-breakpoint-down(sm) {
 		flex-direction: column;
+	}
+}
+
+#footercontent {
+	.footer-top {
+		border-top: none;
 	}
 }
