@@ -40,9 +40,9 @@ h5 {
     }
 }
 a.btn-primary {
-    padding: 20px 60px;
+    padding: 0 60px;
     @include media-breakpoint-down(sm) {
-        padding: 15px 30px;
+        padding: 0 30px;
     }
 }
 .btn-outline-secondary {

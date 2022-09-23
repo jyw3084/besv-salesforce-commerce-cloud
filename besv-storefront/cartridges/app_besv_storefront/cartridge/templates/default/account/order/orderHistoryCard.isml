@@ -11,26 +11,26 @@
         </div>
     </isif>
     <div class="card-body card-info-group">
-        <div class="row">
+        <div class="row w-100 mb-30px">
             <iscomment> <isif condition="${pdict.accountlanding}">
                 <div class="col-12">
                     ${Resource.msg('label.orderhistory.mostrecentorder','account',null)}
                 </div>
             </isif> </iscomment>
-            <div class="col-4">
+            <div class="col w-40">
                 <img class="img-fluid" src="${order.firstLineItem.imageURL}" alt="${order.firstLineItem.alt}" title="${order.firstLineItem.title}">
             </div>
-            <div class="col-8">
+            <div class="col w-60 d-flex flex-column justify-content-between d-sm-block">
+                <div class="mb-30px">
+                    <p class="my-account-profile-heading">${Resource.msg('label.orderhistory.dateordered','account',null)}</p>
+                    <p class="dashboard-info"> <isprint value="${order.creationDate}"/></p>
+                </div>
                 <isif condition="${pdict.accountlanding}">
                     <div>
                         <p class="my-account-profile-heading">${Resource.msg('label.orderhistory.ordernumber','account',null)}</p>
                         <p class="dashboard-info"><isprint value="${order.orderNumber}"/></p>
                     </div>
                 </isif>
-                <div>
-                    <p class="my-account-profile-heading">${Resource.msg('label.orderhistory.dateordered','account',null)}</p>
-                    <p class="dashboard-info"> <isprint value="${order.creationDate}"/></p>
-                </div>
                 <iscomment> <p>${Resource.msg('label.orderhistory.orderstatus','account',null)} <span class="dashboard-order-card-status">${order.orderStatus}</span></p> </iscomment>
                 <iscomment> <isinclude template="account/order/shippingTitle"/> </iscomment>
             </div>

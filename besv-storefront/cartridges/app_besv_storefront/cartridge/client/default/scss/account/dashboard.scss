@@ -31,7 +31,6 @@
     margin-left: 1.25rem;
     border-bottom: 0 none;
     margin-top: 1rem;
-
     h4 {
         font-size: 1.2rem;
     }
@@ -47,69 +46,90 @@ div.order-number {
 
 /* Custom Style */
 
-h1.page-title {
-    position: static;
-    background: none;
-    color: #000;
-    margin-bottom: 25px;
-    font-family: $GothicA1-Bold;
-    width: 100%;
-    text-align: center;
-    letter-spacing: 1px;
+#maincontent {
+    padding-top: 125px;
+    padding-bottom: 79px;
     @include media-breakpoint-down(sm) {
-        font-size: 30px;
+        padding-top: 45px;
+        padding-bottom: 34px;
     }
-}
-.my-account {
-    .card-header {
-        font-family: $GothicA1-Bold;
-        h2 {
-            font-size: 34px;
-            @include media-breakpoint-down(sm) {
-                font-size: 18px;
+    h1.page-title {
+        position: static;
+        background: none;
+        color: $primary;
+        margin-top: 0;
+        margin-bottom: 90px;
+        padding: 0;
+        font: 64px/64px $GothicA1-Bold;
+        width: 100%;
+        text-align: center;
+        @include media-breakpoint-down(sm) {
+            font: 28px/28px $GothicA1-Bold;
+            margin-bottom: 21px;
+        }
+    }
+    .my-account {
+        @include media-breakpoint-down(sm) {
+            .row .offset-sm-2 {
+                .card:last-of-type {
+                        margin-bottom: 0;
+                        border-bottom: none;
+                }
             }
         }
-        letter-spacing: 0.5px;
-        @include media-breakpoint-down(sm) {
-            padding: 0.75rem 0;
+        .card {
+            margin-bottom: 30px;
+            border-bottom: 1px solid $dark-500;
         }
-    }
-    @include media-breakpoint-down(sm) {
         .card-body {
-            padding: 0 0 1.25rem 0;
+            padding: 0;
         }
-    }
-    dl {
-        margin-bottom: 15px;
-    }
-    .edit {
-        color: $grey !important;
-        border-bottom: 1px solid $grey;
-        padding-bottom: 1px;
-        font-size: 12px;
-        text-decoration: none;
-        font-family: $GothicA1-Medium;
-        letter-spacing: 0.5px;
-    }
-    dd {
-        font-family: $Gothic-A1regular;
-        font-size: 16px;
-    }
-    .my-account-profile-heading {
-        font-family: $GothicA1-Bold;
-        font-size: 16px;
-        font-weight: 900;
-        margin-bottom: 3px;
-        color: $primary;
-        letter-spacing: 0.5px;
-        @include media-breakpoint-down(sm) {
-            font-size: 14px;
+        .card-header {
+            padding: 0;
+            margin-bottom: 30px;
+            h2 {
+                font: 28px/28px $GothicA1-Bold;
+                color: $primary;
+                @include media-breakpoint-down(sm) {
+                    font: 18px/25px $GothicA1-Bold;
+                }
+            }
         }
-    }
-    .card-link {
-        font-family: $Gothic-A1regular;
-    }
-    .dashboard-info {
-        font-family: $Gothic-A1regular;
+        dl {
+            margin-bottom: 30px;
+        }
+        .edit {
+            font: 13px/13px $GothicA1-Medium;
+            color: $dark-700 !important;
+            letter-spacing: 0.02em;
+            border-bottom: 1px solid $orange;
+            padding-bottom: 5px;
+            text-decoration: none;
+        }
+        dd {
+            font: 16px/16px $Gothic-A1regular;
+            letter-spacing: 0.02em;
+        }
+        .my-account-profile-heading {
+            font: 16px/16px $GothicA1-Bold;
+            margin-bottom: 10px;
+            color: $primary;
+            letter-spacing: 0.02em;
+        }
+        .card-link {
+            font-family: $Gothic-A1regular;
+        }
+        .dashboard-info {
+            font-family: $Gothic-A1regular;
+        }
+        .mb-30px {
+            margin-bottom: 30px;
+        }
+        .w-40 {
+            width: 40%;
+        }
+        .w-60 {
+            width: 60%;
+        }
     }
 }

@@ -111,6 +111,11 @@
                 }
             }
         }
+        .create-account-privacy {
+            a {
+                text-decoration: underline;
+            }
+        }
     }
     .trackorder {
         background-color: $dark-400;
@@ -161,9 +166,17 @@
     background-image: url('../images/account.jpg');
     background-position-y: 40%;
 }
+
+// Newsletter subscription page
 .equal-height .card {
     width: 100%;
+    border-bottom: none;
+    margin-bottom: 44px;
+    @include media-breakpoint-down(sm) {
+        margin-bottom: 6px;
+    }
 }
+
 .track-order-header {
     font-size: 1.75rem;
 }

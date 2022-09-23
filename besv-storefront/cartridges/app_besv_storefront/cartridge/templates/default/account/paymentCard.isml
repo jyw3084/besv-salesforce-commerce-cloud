@@ -6,7 +6,7 @@
         </isif>
     </div>
     <isif condition="${pdict.payment}">
-        <div class="card-body card-info-group">
+        <div class="card-body card-info-group mb-30px">
             <isset name="payment" value="${pdict.payment}" scope="page">
             <isinclude template="account/payment/savedPayment"/>
         </div>
