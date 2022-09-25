@@ -286,7 +286,7 @@
 	.aboutus-link {
 		width: 33.33%;
 		max-width: 33.33%;
-		padding: 100px 48px 110px;
+		padding: 100px 48px;
 		text-align: center;
 		@include media-breakpoint-down(sm) {
 			width: 100%;
@@ -304,15 +304,15 @@
 		.aboutus-link-heading {
 			font: rem-calc(32) / rem-calc(32) $GothicA1-Bold;
 			font-weight: 700;
-			margin-bottom: 12px;
+			margin-bottom: 20px;
 			@include media-breakpoint-down(sm) {
 				font: rem-calc(24) / rem-calc(24) $GothicA1-Bold;
 			}
 		}
 		.aboutus-link-subheading {
-			font: rem-calc(20) / rem-calc(36) $Karla-Regular;
+			font: rem-calc(20) / rem-calc(20) $Karla-Regular;
 			font-weight: 400;
-			margin-bottom: 36px;
+			margin-bottom: 24px;
 		}
 		a {
 			width: auto;
