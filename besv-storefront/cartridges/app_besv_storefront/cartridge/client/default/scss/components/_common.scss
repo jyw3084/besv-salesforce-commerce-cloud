@@ -28,7 +28,11 @@ textarea {
 label {
     color: $primary;
     font-family: $Gothic-A1regular;
+    line-height: 16px;
     margin-bottom: 13px;
+    @include media-breakpoint-down(sm) {
+        font-size: 14px;
+    }
 }
 
 a:hover {
