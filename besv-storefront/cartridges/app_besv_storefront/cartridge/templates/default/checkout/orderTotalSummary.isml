@@ -13,12 +13,12 @@
         <isloop items="${shippingModel.productLineItems.items}" var="lineItem">
             <div class="col-6 start-lines">
                 <span>${lineItem.productName}</span>
-                <div class="attribute">
+                <iscomment> <div class="attribute">
                     <isloop items="${lineItem.variationAttributes}" var="attribute">
                         <span>${attribute.displayName} : ${attribute.displayValue}</span>
                     </isloop>
                     <span>${Resource.msg('field.selectquantity','cart',null)} : <isprint value="${lineItem.quantity}" formatter="##" /></span>
-                </div>
+                </div> </iscomment>
             </div>
             <div class="col-6 end-lines">
                 <isif condition="${lineItem.priceTotal.price}">

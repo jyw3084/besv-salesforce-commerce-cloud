@@ -58,19 +58,104 @@
     }
 }
 
-// .card-header {
-//     font-family: $GothicA1-Bold;
-//     font-size: 22px;
-//     letter-spacing: 0.5px;
-// }
+.page {
+    background: none;
+    .summary-section-label {
+        font: 18px/25px $GothicA1-Bold;
+        margin-bottom: 10px;
+        color: $primary;
+    }
+    .summary-details {
+        font: 16px/25px $Karla-Regular;
+        margin-bottom: 30px;
+        .address-summary {
+            margin-bottom: 0;
+        }
+    }
+    .leading-lines .start-lines::before {
+        content: "";
+    }
+}
+
+.receipt {
+    .card {
+        margin-bottom: 30px !important;
+    }
+    .payment {
+        margin-bottom: 0;
+    }
+    .order-product-summary {
+        border-bottom: 1px solid $dark-500 !important;
+        padding-bottom: 20px;
+        .product-summary-block {
+            margin: 0;
+            .product-line-item {
+                background-color: $dark-400;
+                border-radius: 8px;
+                padding: 20px 10px;
+                margin-bottom: 10px !important;
+                @include media-breakpoint-down(sm) {
+                    padding: 10px 20px;
+                }
+                .product-line-item-details {
+                    overflow-y: inherit;
+                    .item-image {
+                        margin-right: 30px;
+                        max-width: 40%;
+                    }
+                    .item-attributes {
+                        padding: 10px 0;
+                        max-width: 60%;
+                        @include media-breakpoint-down(sm) {
+                            padding: 0;
+                        }
+                        .line-item-name {
+                            font: 18px/25px $GothicA1-Bold;
+                            color: $primary;
+                            text-overflow: inherit;
+                            white-space: inherit;
+                            overflow: inherit;
+                        }
+                        .line-item-attributes {
+                            font: 14px/24px $Karla-Regular;
+                            color: $dark-700;
+                            letter-spacing: 0.02em;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .order-total-summary {
+        .start-lines {
+            padding: 0;
+            font: 16px/20px $Gothic-A1regular;
+            color: $primary;
+            letter-spacing: 0.02em;
+        }
+        .end-lines {
+            padding: 0;
+            font: 16px/20px $GothicA1-Bold;
+            color: $primary;
+            letter-spacing: 0.02em;
+        }
+        .mb-3 {
+            margin-bottom: 30px !important;
+        }
+        .grand-total {
+            padding-top: 30px;
+            border-top: 1px solid $dark-500 !important;
+            .start-lines {
+                font-family: $GothicA1-Bold;
+            }
+        }
+    }
+}
 .cancel {
     max-height: 54px;
     font: rem-calc(14) / rem-calc(54) $GothicA1-Medium;
-    // text-transform: uppercase;
     padding: 0 30px;
     border-radius: 999px;
-    // font-weight: 700;
-    // max-height: 54px;
     width: 100%;
     letter-spacing: 0.02em;
     border: 1px solid $primary;
