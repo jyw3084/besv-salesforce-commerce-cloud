@@ -8,7 +8,7 @@
     <div class="container login-page">
         <!---Breadcrumbs--->
         <iscomment> <isinclude template="components/breadcrumbs/pageBreadcrumbs"/> </iscomment>
-        <div class="row justify-content-center equal-height">
+        <div class="row justify-content-center">
             <div class="col-12 col-md-5">
                 <div class="card">
                     <div class="card-body">

@@ -1,4 +1,4 @@
-<span class="summary-section-label billing-addr-label">${Resource.msg('label.order.billing.address', 'confirmation', null)}</span><br/>
+<p class="summary-section-label billing-addr-label">${Resource.msg('label.order.billing.address', 'confirmation', null)}</p>
 <isif condition="${pdict.order.billing.billingAddress.address !== null}">
     <isset name="address" value="${pdict.order.billing.billingAddress.address}" scope="page"/>
     <iselse>
@@ -18,6 +18,6 @@
 
 <!--- Payment information --->
 <div class="summary-details payment">
-    <span class="summary-section-label payment-info-label">${Resource.msg('label.order.payment.info', 'confirmation', null)}</span><br/>
+    <p class="summary-section-label payment-info-label">${Resource.msg('label.order.payment.info', 'confirmation', null)}</p>
     <isinclude template="checkout/billing/paymentOptions/paymentOptionsSummary" />
 </div>
