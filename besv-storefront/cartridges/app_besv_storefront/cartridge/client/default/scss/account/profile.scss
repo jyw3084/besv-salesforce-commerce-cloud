@@ -66,8 +66,12 @@
         color: $primary;
     }
     .summary-details {
-        font: 16px/25px $Karla-Regular;
+        font: 16px/25px $Karla-Light;
         margin-bottom: 30px;
+        color: $dark-700;
+        @include media-breakpoint-down(sm) {
+            font: 14px/24px $Karla-Light;
+        }
         .address-summary {
             margin-bottom: 0;
         }
@@ -101,7 +105,14 @@
                     overflow-y: inherit;
                     .item-image {
                         margin-right: 30px;
-                        max-width: 40%;
+                        width: 166px;
+                        height: auto;
+                        @include media-breakpoint-down(sm) {
+                            width: 100px;
+                        }
+                        .product-image {
+                            max-height: none;
+                        }
                     }
                     .item-attributes {
                         padding: 10px 0;
@@ -151,6 +162,7 @@
         .grand-total {
             padding-top: 30px;
             border-top: 1px solid $dark-500 !important;
+            margin-bottom: 0;
             .start-lines {
                 font-family: $GothicA1-Bold;
             }
