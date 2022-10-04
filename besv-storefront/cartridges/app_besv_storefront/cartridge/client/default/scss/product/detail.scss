@@ -112,6 +112,8 @@
             margin-bottom: 30px;
             .attribute {
                 height: 36px;
+                display: flex;
+                justify-content: space-between;
                 .non-input-label {
                     font: rem-calc(18) / rem-calc(36) $GothicA1-Bold;
                     letter-spacing: 1px;
@@ -409,7 +411,6 @@
         h3 {
             max-width: 520px;
             margin-bottom: 28px;
-            text-transform: capitalize;
         }
     }
     .story-1 {
