@@ -45,6 +45,26 @@ a.btn-primary {
         padding: 0 30px;
     }
 }
+.btn-outline-primary {
+    max-height: 54px;
+    font: rem-calc(14) / rem-calc(54) $GothicA1-Medium;
+    color: $primary;
+    padding: 0 60px;
+    border-radius: 999px;
+    border-color: $primary;
+    width: 100%;
+    letter-spacing: 0.02em;
+    &:focus {
+        box-shadow: none !important;
+    }
+    &:disabled {
+        opacity: 0.15;
+    }
+    @include media-breakpoint-down(sm) {
+        max-height: 44px;
+        font: rem-calc(14) / rem-calc(44) $GothicA1-Medium;
+    }
+}
 .btn-outline-secondary {
     max-height: 54px;
     font: rem-calc(14) / rem-calc(54) $GothicA1-Medium;

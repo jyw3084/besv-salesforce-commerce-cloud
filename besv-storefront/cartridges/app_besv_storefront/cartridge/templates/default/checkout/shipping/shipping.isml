@@ -41,4 +41,23 @@
             </isloop>
         </isloop>
     </div>
+
+    <!----------------------------------------------------------------------------------->
+    <!-- Checkout Workflow Buttons -->
+    <!----------------------------------------------------------------------------------->
+    <div class="row form-group">
+        <div class="col-12 col-md-auto next-step-button">
+            <button class="btn btn-primary btn-block submit-shipping" type="submit" name="submit" value="submit-shipping" <isif condition="${pdict.order.usingMultiShipping && !pdict.order.shippable}">disabled</isif>>
+                ${Resource.msg('button.next.payment', 'checkout', null)}
+            </button>
+
+            <iscomment> <button class="btn btn-primary btn-block submit-payment" type="submit" name="submit" value="submit-payment" disabled>
+                ${Resource.msg('button.next.place.order', 'checkout', null)}
+            </button> </iscomment>
+
+            <iscomment> <button class="btn btn-primary btn-block place-order" data-action="${URLUtils.url('CheckoutServices-PlaceOrder')}"
+                    type="submit" name="submit" value="place-order">${Resource.msg('button.place.order', 'checkout', null)}
+            </button> </iscomment>
+        </div>
+    </div>
 </div>

@@ -34,7 +34,7 @@
                     <div class="navbar-header">
                         <isif condition="${pdict.isCartPage == true}">
                             <div class="header-right">
-                                <div class="hidden-xs-down">
+                                <div>
                                     <a class="continue-shopping-link" href="${URLUtils.url('Home-Show')}" title="${Resource.msg('link.continue.shopping','cart',null)}">
                                         ${Resource.msg('link.continue.shopping','cart',null)}
                                     </a>

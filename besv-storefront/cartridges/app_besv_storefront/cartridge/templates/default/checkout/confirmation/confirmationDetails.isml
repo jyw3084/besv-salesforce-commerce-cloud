@@ -10,8 +10,8 @@
             <p class="summary-details order-date"><isprint value="${pdict.order.creationDate}" style="DATE_SHORT"/></p>
         </div>
 
-        <isinclude template="checkout/shipping/shippingSummary" />
-        <isinclude template="checkout/billing/billingSummary" />
+        <isinclude template="checkout/shipping/shippingSummaryStatusPage" />
+        <isinclude template="checkout/billing/billingSummaryStatusPage" />
 
     </div>
 </div>
