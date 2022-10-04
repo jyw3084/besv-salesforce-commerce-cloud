@@ -16,11 +16,6 @@ h5 {
     text-transform: uppercase;
     letter-spacing: 1px;
 }
-#consent-tracking {
-    .btn-primary, .btn-outline-secondary {
-        width: auto;
-    }
-}
 .btn-primary {
     max-height: 54px;
     font: rem-calc(14) / rem-calc(54) $GothicA1-Medium;
@@ -71,8 +66,7 @@ a.btn-primary {
     color: $primary;
     padding: 0 30px;
     border-radius: 999px;
-    border-color: $brand-light-gray;
-    font-weight: 700;
+    border-color: $primary;
     width: 100%;
     letter-spacing: 0.02em;
     &:focus {

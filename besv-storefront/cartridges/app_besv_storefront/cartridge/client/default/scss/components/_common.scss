@@ -66,26 +66,70 @@ select {
 }
 
 #consent-tracking {
-    .modal-content {
-        padding: 20px;
-        .modal-header {
-            font-family: $Gothic-A1regular;
+    .modal-dialog {
+        width: 620px;
+        max-width: 620px;
+        max-height: 320px;
+        @include media-breakpoint-down(sm) {
+            width: 350px;
+            max-width: 350px;
+            max-height: 415px;
+            margin: 0 auto;
         }
-        .modal-body {
-            font-family: $Gothic-A1regular;
-            color: $secondary;
-            a {
-                font-family: $GothicA1-Bold;
-                color: $primary;
-                border-bottom: 1px solid $orange;
+        .modal-content {
+            padding: 30px;
+            border-radius: 8px;
+            @include media-breakpoint-down(sm) {
+                padding: 30px 20px;
             }
-        }
-        .modal-footer {
-            border-top: none;
-            .button-wrapper {
-                width: 100%;
-                display: flex;
-                justify-content: center;
+            .modal-header {
+                padding: 0 0 26px 0;
+                font: 24px/34px $GothicA1-Bold;
+                color: $primary;
+                border-bottom: 1px solid $dark-500;
+                @include media-breakpoint-down(sm) {
+                    font: 18px/25px $GothicA1-Bold;
+                }
+            }
+            .modal-body {
+                padding: 26px 0 0 0;
+                p {
+                    font: 16px/25px $Karla-Light;
+                    letter-spacing: 0.02em;
+                    color: $dark-700;
+                    margin-bottom: 26px;
+                    &:last-of-type {
+                        margin-bottom: 31px;
+                    }
+                    a {
+                        font: 14px/13px $GothicA1-Bold;
+                        padding-bottom: 5px;
+                        border-bottom: 1px solid $orange;
+                        margin-bottom: 5px;
+                    }
+                }
+            }
+            .modal-footer {
+                border-top: none;
+                padding: 0;
+                .button-wrapper {
+                    width: 100%;
+                    display: flex;
+                    @include media-breakpoint-down(sm) {
+                        flex-direction: column;
+                    }
+                    button {
+                        width: 260px;
+                        margin: 0 26px 0 0;
+                        @include media-breakpoint-down(sm) {
+                            width: 100%;
+                            margin: 0 0 20px 0;
+                            &:last-of-type {
+                                margin-bottom: 0;
+                            }
+                        }
+                    }
+                }
             }
         }
     }
