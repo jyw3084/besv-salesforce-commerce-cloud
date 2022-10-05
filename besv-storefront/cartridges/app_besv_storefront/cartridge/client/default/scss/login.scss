@@ -180,30 +180,57 @@
 .track-order-header {
     font-size: 1.75rem;
 }
-.request-password-title {
-    font-size: 1.5rem;
-}
+
 #requestPasswordResetModal {
-    .modal-content {
-        width: 538px;
-        padding: 10px;
-        border-radius: 8px;
-    }
-    .modal-header {
-        border-bottom: none;
-        h2 {
-            font-family: $Gothic-A1black;
+    .modal-dialog {
+        max-width: 620px;
+        @include media-breakpoint-down(sm) {
+            max-width: 350px;
+            margin: auto;
         }
-    }
-    .request-password-body {
-        color: $secondary;
-        font-family: $Karla-Regular;
-        .form-control-label {
-            color: $primary;
-            padding-top: 10px;
+        .modal-content {
+            width: 620px;
+            padding: 30px;
+            border-radius: 8px;
+            @include media-breakpoint-down(sm) {
+                width: 350px;
+                padding: 20px;
+            }
+            .modal-header {
+                padding: 0 0 26px 0;
+                border-bottom: 1px solid $dark-500;
+                h2 {
+                    font: 24px/34px $GothicA1-Bold;
+                    @include media-breakpoint-down(sm) {
+                        font: 18px/25px $GothicA1-Bold;
+                    }
+                }
+                .close {
+                    font-weight: 400;
+                    color: $primary;
+                    opacity: 1;
+                }
+            }
+            .modal-body {
+                padding: 26px 0 0 0;
+                .request-password-body {
+                    font: 16px/25px $Karla-Light;
+                    letter-spacing: 0.02em;
+                    color: $dark-700;
+                    p {
+                        margin-bottom: 26px;
+                    }
+                }
+                .send-email-btn {
+                    button {
+                        width: 100% !important;
+                    }
+                }
+            }
         }
     }
 }
+
 h1.page-title {
     position: static;
     background: none;
@@ -216,6 +243,7 @@ h1.page-title {
         width: 0 !important;
     }
 }
+
 .subscription-back-btn-link {
     color: #{var(--skin-primary-color-1)};
     text-decoration: underline;
