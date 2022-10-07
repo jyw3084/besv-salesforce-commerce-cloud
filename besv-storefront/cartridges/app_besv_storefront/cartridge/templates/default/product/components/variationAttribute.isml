@@ -31,7 +31,7 @@ Template Notes:
         </div>
 
         <!-- Circular Swatch Image Attribute Values -->
-        <div>
+        <div class="color-swatch">
             <isloop items="${attr.values}" var="attrValue">
                 <isif condition="${!(isBundle && product.productType === 'variant' && !attrValue.selected) }">
                     <button class="color-attribute"

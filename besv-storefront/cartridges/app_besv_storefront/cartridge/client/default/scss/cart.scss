@@ -311,134 +311,220 @@
 .remove-mobile {
     margin-top: -3px;
 }
-#removeProductModal {
-    .modal-content {
-        padding: 20px;
-       .modal-body , .modal-header, .modal-footer {
-           padding-left: 0;
-           padding-right: 0;
-       }
-       .modal-footer {
-           border-top: none;
-       }
-    }
-    margin: 20px;
-    .modal-title {
-        font-family: $Karla-Regular;
-        letter-spacing: 1px;
-        font-size: 18px;
-    }
-    .modal-body {
-        font-family: $Karla-Regular;
-        color: $secondary;
-        font-size: 16px;
-    }
-    .product-delete {
-        font: rem-calc(14) / rem-calc(14) $Gothic-A1regular;
-        padding: 20px 30px;
-        border-radius: 999px;
-        font-weight: 700;
-        max-height: 54px;
-        width: 100%;
-        border: 1px solid $primary;
-        color: $primary;
-        background-color: $white;
-        &:focus {
-            box-shadow: none !important;
-            color: $white;
-            background-color: $primary;
-        }
-        &:hover {
-            color: $white !important;
-            background-color: $primary;
-        }
-    }
-}
+
 #editProductModal {
-    .modal-body {
-        font-family: $Gothic-A1regular;
-        padding-left: 0;
-        @include media-breakpoint-down(md) {
-            padding-left: 15px;
+    .modal-dialog {
+        max-width: 978px;
+        @include media-breakpoint-down(sm) {
+            max-width: 350px;
+            margin: auto;
         }
-        .product-quickview-carousel {
-            padding-left: 0;
-            @include media-breakpoint-down(md) {
+        .modal-content {
+            border-radius: 8px;
+            padding: 30px;
+            border: none;
+            @include media-breakpoint-down(sm) {
+                padding: 40px 20px 30px 20px;
+            }
+            .modal-header {
+                position: absolute;
+                top: 0;
+                right: 0;
+                background: transparent;
+                border-bottom: none;
+                .close {
+                    font-size: 24px;
+                    line-height: 10px;
+                    color: $primary;
+                    opacity: 1;
+                    &:focus {
+                        outline: none;
+                    }
+                }
+            }
+            .modal-body {
+                font: 16px/25px $Karla-Light;
+                color: $primary;
                 padding: 0;
-            }
-        }
-    }
-    .modal-content {
-        border-radius: 12px;
-    }
-    .modal-header {
-        background: $white;
-        border-bottom: none;
-        padding: 10px 30px 10px 10px;
-        border-radius: 12px;
-        button:focus {
-            outline: none;
-        }
-    }
-    .modal-footer {
-        border-radius: 12px;
-    }
-    .product-name-wrapper {
-        padding-bottom: 15px;
-        border-bottom: 1px solid $light-gray;
-        .product-name {
-            font-family: $GothicA1-Bold;
-            font-size: 1.5rem;
-            @include media-breakpoint-down(md) {
-               font-size: 18px;
-            }
-        }
-    }
-    .attributes {
-        border-bottom: 1px solid $light-gray;
-        .attribute {
-            display: flex;
-            justify-content: space-between;
-            margin: 1rem 0;
-            .labels {
-                display: flex;
-                align-items: center;
-            }
-            .non-input-label {
-                display: inline;
-                margin-bottom: 0;
-                margin-right: 10px;
-            }
-            .color-attribute {
-                width: 36px;
-                height: 36px;
-                border-radius: 100px;
-                background: none;
-                float: right;
-                margin-left: 10px;
-                padding: 0;
-                border: none;
-                .swatch-circle {
-                    width: 36px;
-                    height: 36px;
-                    background-size: cover;
-                    border-radius: 1.25em;
-                    display: inline-block;
-                    position: relative;
-                    border: none;
-                    &.selected {
-                        border: 4px solid $white;
-                        outline: 2px solid $brand-dark;
-                        &::after {
-                            display: none;
+                max-height: none;
+                overflow-y: initial;
+                .product-quickview-carousel {
+                    padding-left: 0;
+                    padding-right: 15px;
+                    max-width: 582px;
+                    @include media-breakpoint-down(sm) {
+                        padding: 0;
+                        max-width: 100%;
+                        margin-bottom: 30px;
+                    }
+                    .carousel-inner {
+                        border-radius: 8px;
+                    }
+                    .pdp-main-left  {
+                        .carousel-control-next, .carousel-control-prev {
+                            width: 54px;
+                            height: 54px;
+                            @include media-breakpoint-down(sm) {
+                                width: 28px;
+                                height: 28px;
+                                svg {
+                                    width: 9px;
+                                }
+                            }
+                        }
+                        .carousel-control-prev {
+                            left: 8px;
+                        }
+                        .carousel-control-next {
+                            right: 8px;
+                        }
+                    }
+                    .pdp-zoom-icon {
+                        display: none;
+                    }
+                }
+                .product-details {
+                    padding: 11.5px 0 11.5px 15px;
+                    display: flex;
+                    flex-direction: column;
+                    @include media-breakpoint-down(sm) {
+                        padding: 0;
+                    }
+                    .product-name-wrapper {
+                        padding-bottom: 26px;
+                        border-bottom: 1px solid $dark-500;
+                        @include media-breakpoint-down(sm) {
+                            padding-bottom: 20px;
+                        }
+                        .product-name {
+                            font: 24px/34px $GothicA1-Bold;
+                            @include media-breakpoint-down(sm) {
+                                font: 18px/25px $GothicA1-Bold;
+                            }
+                        }
+                    }
+                    .item-attributes {
+                        color: $dark-700;
+                        flex-grow: 1;
+                        display: flex;
+                        flex-direction: column;
+                        .detail-panel {
+                            .attributes {
+                                border-bottom: 1px solid $dark-500;
+                                .attribute {
+                                    display: flex;
+                                    font: 16px/25px $Karla-Light;
+                                    margin: 26px 0;
+                                    @include media-breakpoint-down(sm) {
+                                        font: 14px/24px $Karla-Light;
+                                        margin: 20px 0;
+                                    }
+                                    .labels {
+                                        display: flex;
+                                        align-items: center;
+                                        .non-input-label {
+                                            display: inline;
+                                            margin-bottom: 0;
+                                            margin-right: 5px;
+                                        }
+                                    }
+                                    .color-swatch {
+                                        flex-grow: 1;
+                                        display: flex;
+                                        justify-content: space-evenly;
+                                        .color-attribute {
+                                            width: 32px;
+                                            height: 32px;
+                                            border-radius: 100px;
+                                            background: none;
+                                            float: right;
+                                            padding: 0;
+                                            border: none;
+                                            .swatch-circle {
+                                                width: 32px;
+                                                height: 32px;
+                                                background-size: cover;
+                                                border-radius: 1.25em;
+                                                display: inline-block;
+                                                position: relative;
+                                                border: none;
+                                                &.selected {
+                                                    border: 4px solid $white;
+                                                    outline: 2px solid $primary;
+                                                    &::after {
+                                                        display: none;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .quantity-holder {
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            margin: 26px 0;
+                            @include media-breakpoint-down(sm) {
+                                margin: 20px 0;
+                            }
+                            .quantity-heading {
+                                font: 16px/25px $Karla-Light;
+                                @include media-breakpoint-down(sm) {
+                                    font: 14px/24px $Karla-Light;
+                                }
+                            }
+                            .quantity-wrapper {
+                                display: flex;
+                                justify-content: space-between;
+                                border: 1px solid $dark-500;
+                                border-radius: 999px;
+                                padding: 20px 30px;
+                                background-color: $white;
+                                .decrease-quantity, .increase-quantity,.quantity-field {
+                                    background: none;
+                                    border: none;
+                                    outline: none;
+                                }
+                                .quantity-field {
+                                    width: 50px;
+                                    text-align: center;
+                                    font-family: $GothicA1-Bold;
+                                }
+                            }
+                        }
+                        .prices {
+                            padding: 0;
+                            text-align: left;
+                            margin-bottom: 26px;
+                            flex-grow: 1;
+                            font: 24px/34px $GothicA1-Bold;
+                            @include media-breakpoint-down(sm) {
+                                margin-bottom: 20px;
+                            }
+                            .price {
+                                color: $primary;
+                                .sales {
+                                    @include media-breakpoint-down(sm) {
+                                        font: 18px/25px $GothicA1-Bold;
+                                    }
+                                }
+                                .strike-through {
+                                    display: none;
+                                }
+                            }
+                        }
+                        .cart-and-ipay {
+                            padding-bottom: 0;
                         }
                     }
                 }
             }
+            .modal-footer {
+                display: none;
+            }
         }
-    }
-    .global-availability {
-        font-family: $Gothic-A1regular;
     }
     .availability-holder {
         padding-bottom: 7px;
@@ -450,33 +536,6 @@
             @include media-breakpoint-down(md) {
                 margin-right: 22px;
              }
-        }
-    }
-    .quantity-holder {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 15px;
-        padding-top: 20px;
-        .quantity-wrapper {
-            min-width: 31%;
-            @include media-breakpoint-down(md) {
-                flex-direction: row;
-                height: 54px;
-            }
-        }
-        .quantity-heading {
-            font-family: $Gothic-A1regular;
-        }
-    } 
-    .price {
-        font-family: $Gothic-A1regular;
-        margin-bottom: 10px;
-    }
-    .pdp-main-left  {
-        .carousel-control-next, .carousel-control-prev {
-            width: 40px;
-            height: 40px;
         }
     }
     .carousel-indicators {
@@ -499,9 +558,67 @@
             }
         }
     }
-    @include media-breakpoint-down(md) {
-        .primary-images {
-            margin-bottom: 30px;
+}
+
+#removeProductModal {
+    .modal-dialog {
+        width: 612px;
+        max-width: 612px;
+        // max-height: 320px;
+        @include media-breakpoint-down(sm) {
+            width: 350px;
+            max-width: 350px;
+            // max-height: 415px;
+            margin: 0 auto;
+        }
+        .modal-content {
+            padding: 30px;
+            border-radius: 8px;
+            @include media-breakpoint-down(sm) {
+                padding: 20px;
+            }
+            .modal-header {
+                padding: 0 0 26px 0;
+                font: 24px/34px $GothicA1-Bold;
+                color: $primary;
+                border-bottom: 1px solid $dark-500;
+                @include media-breakpoint-down(sm) {
+                    font: 18px/25px $GothicA1-Bold;
+                }
+            }
+            .modal-body {
+                padding: 26px 0 0 0;
+                font: 16px/25px $Karla-Light;
+                letter-spacing: 0.02em;
+                color: $dark-700;
+                margin-bottom: 26px;
+                a {
+                    font: 14px/13px $GothicA1-Bold;
+                    padding-bottom: 5px;
+                    border-bottom: 1px solid $orange;
+                    margin-bottom: 5px;
+                }
+            }
+            .modal-footer {
+                border-top: none;
+                padding: 0;
+                width: 100%;
+                display: flex;
+                @include media-breakpoint-down(sm) {
+                    flex-direction: column;
+                }
+                button {
+                    width: 260px;
+                    margin: 0 26px 0 0;
+                    @include media-breakpoint-down(sm) {
+                        width: 100%;
+                        margin: 0 0 20px 0;
+                        &:last-of-type {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+            }
         }
     }
 }

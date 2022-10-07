@@ -204,7 +204,7 @@ function getModalHtmlElement() {
     var htmlString = '<!-- Modal -->'
         + '<div class="modal fade" id="editProductModal" tabindex="-1" role="dialog">'
         + '<span class="enter-message sr-only" ></span>'
-        + '<div class="modal-dialog quick-view-dialog">'
+        + '<div class="modal-dialog quick-view-dialog modal-dialog-centered">'
         + '<!-- Modal content-->'
         + '<div class="modal-content">'
         + '<div class="modal-header">'
