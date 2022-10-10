@@ -18,7 +18,7 @@ Compile the plugin cartridge:
 3) npm run compile:js
 4) cd ..
 
-Compile the link cartride:
+Compile the link cartridge:
 1) cd link_stripe
 2) npm install
 3) npm run compile:scss
@@ -26,7 +26,7 @@ Compile the link cartride:
 5) cd ..
 
 
-Compile the brand cartride:
+Compile the brand cartridge:
 1) cd besv-storefront
 2) npm install
 3) npm run compile:fonts
