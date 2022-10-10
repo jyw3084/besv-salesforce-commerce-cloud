@@ -28,6 +28,8 @@ server.replace('Subscribe', server.middleware.https, function (req, res, next) {
     var emailHelper = require('*/cartridge/scripts/helpers/emailHelpers');
     var Transaction = require('dw/system/Transaction');
     var CustomObjectMgr = require('dw/object/CustomObjectMgr');
+    var URLUtils = require('dw/util/UUIDUtils');
+    var randonKey = URLUtils.createUUID();
 
     var myForm = req.form;
     var isValidEmailid = emailHelper.validateEmail(myForm.contactEmail);
@@ -35,7 +37,8 @@ server.replace('Subscribe', server.middleware.https, function (req, res, next) {
         var contactDetails = [myForm.contactFirstName, myForm.contactLastName, myForm.contactEmail, myForm.contactTopic, myForm.contactComment];
         hooksHelper('app.contactUs.subscribe', 'subscribe', contactDetails, function () {});
         Transaction.wrap(function () {
-            var CustomObject = CustomObjectMgr.createCustomObject('ContactUS', myForm.contactEmail);
+            var CustomObject = CustomObjectMgr.createCustomObject('ContactUS', randonKey);
+            CustomObject.custom.email =  myForm.contactEmail;
             CustomObject.custom.firstName = myForm.contactFirstName;
             CustomObject.custom.lastName = myForm.contactLastName;
             CustomObject.custom.message = myForm.contactComment;
