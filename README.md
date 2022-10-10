@@ -1,7 +1,7 @@
 # besv-sfcc
 BESV SFCC website
 
-Make sure you have node al least 14.x in order to start the code compilation:
+Make sure you have node at least 14.x.x in order to start the code compilation:
 Open Git bash/Terminal inside besv-sfcc.
 
 Start the compilation process from SFRA base cartridge:
