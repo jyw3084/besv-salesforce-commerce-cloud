@@ -3,105 +3,150 @@
 @import "../scss/variables";
 @import "bootstrap/scss/variables";
 @import "bootstrap/scss/mixins/breakpoints";
+
 .besv-content-wrapper {
+    padding: 120px 0 35px 0;
+    @include media-breakpoint-down(md) {
+        padding-top: 50px;
+    }
     .short-container {
-        max-width: 500px;
+        max-width: 826px;
         margin: 0 auto;
         @include media-breakpoint-down(md) {
             max-width: 100%;
             margin: 0 20px;
         }
-
         div {
-            margin-bottom: 35px;
+            margin-bottom: 50px;
+            @include media-breakpoint-down(md) {
+                margin-bottom: 40px;
+            }
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+    }
+    .shipping-content {
+        .shipping-content-top {
+            margin-top: -120px;
+            padding-top: 120px;
+            padding-bottom: 106px;
+            @include media-breakpoint-down(md) {
+                margin-top: -50px;
+                padding-top: 50px;
+            }
+            h1 {
+                padding-top: 0;
+            }
+        }
+        .shipping-bottom {
+            padding-top: 90px;
+            @include media-breakpoint-down(md) {
+                padding-top: 45px;
+            }
+            .shipping-bottom-link {
+                a {
+                    text-decoration: none;
+                    font: 16px / 25px $GothicA1-Bold;
+                    letter-spacing: 0.02em;
+                    color: $dark-700;
+                    @include media-breakpoint-down(md) {
+                        font: 14px / 24px $GothicA1-Bold;
+                    }
+                }
+                span {
+                    font: 16px / 25px $Gothic-A1regular;
+                    @include media-breakpoint-down(md) {
+                        font: 14px / 24px $Gothic-A1regular;
+                    }
+                }
+            }
         }
     }
     .container {
-        max-width: 800px;
+        max-width: 826px;
         margin: 0 auto;
         @include media-breakpoint-down(md) {
             max-width: 100%;
-            margin: 0 20px;
         }
-
         div {
-            margin-bottom: 35px;
+            margin-bottom: 50px;
+            @include media-breakpoint-down(md) {
+                margin-bottom: 40px;
+            }
+            &:last-of-type {
+                margin-bottom: 0;
+            }
         }
     }
     h1 {
-        font: rem-calc(48) / rem-calc(57) $GothicA1-Bold;
+        font: 64px / 64px $GothicA1-Bold;
         color: $primary;
-        font-weight: 900;
         text-align: center;
-        padding-top: 35px;
-        margin-bottom: 35px;
-        letter-spacing: 1px;
+        margin-bottom: 50px;
         @include media-breakpoint-down(sm) {
-            font: rem-calc(32) / rem-calc(38) $GothicA1-Bold;
-            font-weight: 900;
+            font: 28px / 28px $GothicA1-Bold;
+            margin-bottom: 40px;
         }
     }
     h2 {
-        font: rem-calc(22) / rem-calc(30) $GothicA1-Bold;
+        font: 24px / 34px $GothicA1-Bold;
         color: $primary;
-        font-weight: 900;
-        margin-bottom: 10px;
-        letter-spacing: 0.5px;
+        margin-bottom: 26px;
         @include media-breakpoint-down(md) {
-            font: rem-calc(18) / rem-calc(28) $GothicA1-Bold;
-            font-weight: 900;
+            font: 18px / 25px $GothicA1-Bold;
         }
     }
     p {
-        font: rem-calc(14) / rem-calc(17) $Karla-Light;
-        color: $secondary;
-        margin-bottom: 20px;
-    }
-   a {
-        font: rem-calc(14) / rem-calc(17) $GothicA1-Bold;
-       text-decoration: none;
-       border-bottom: 1px solid $orange;
-       color: $primary;
-       font-weight: 900;
-   }
-    p {
-        span {
-            font-weight: 900;
-            color: $primary;
-            line-height: 19px;
+        font: 16px / 25px $Karla-Light;
+        color: $dark-700;
+        letter-spacing: 0.02em;
+        margin-bottom: 26px;
+        @include media-breakpoint-down(md) {
+            font: 14px / 24px $Karla-Light;
+        }
+        &:last-of-type {
+            margin-bottom: 0px;
         }
     }
-    span {
-        font-weight: 900;
-        color: $secondary;
-        font: rem-calc(14) / rem-calc(17) $Karla-Regular;
-
+    a {
+        font: 16px / 25px $Gothic-A1regular;
+        text-decoration: underline;
+        color: $primary;
+        letter-spacing: 0.02em;
+        @include media-breakpoint-down(md) {
+            font: 14px / 24px $Gothic-A1regular;
+        }
     }
     .gray-background {
-        background-color: $gray-background;
+        background-color: $dark-400;
     }
     ul {
         list-style: disc;
-        margin-bottom: 20px;
+        margin-bottom: 26px;
         li {
-            font: rem-calc(14) / rem-calc(17) $Karla-Light;
-            color: $secondary;
-            margin-left: 30px;
+            font: 16px / 25px $Karla-Light;
+            // color: $secondary;
+            margin-left: 14px;
+            @include media-breakpoint-down(md) {
+                font: 14px / 24px $Karla-Light;
+            }
         }
         &.disc {
             list-style: disc;
         }
-        &.alpha {
-            list-style: lower-alpha;
-        }
     }
     .faq-top {
-        border-bottom: 1px solid $light-gray;
         text-align: center;
         .orange {
-            font-size: 16px;
-            font-family: $GothicA1-Bold;
-            line-height: 35px;
+            display: block;
+            text-decoration: none;
+            font: 18px / 25px $GothicA1-Bold;
+            letter-spacing: 0;
+            margin-bottom: 20px;
+            &:last-of-type {
+                margin-bottom: 0;
+            }
         }
     }
     .orange {
@@ -117,6 +162,13 @@
             font-weight: 900;
         }
     }
+    h3.orange {
+        font: 44px / 55px $GothicA1-Bold;
+        margin-bottom: 26px;
+        @include media-breakpoint-down(md) {
+            font: 28px / 28px $GothicA1-Bold;
+        }
+    }
     .background-1 {
         position: relative;
         z-index: 1;
@@ -126,7 +178,7 @@
             top: 58%;
             left: 50%;
             transform: translate(-50%, -50%);
-            font: rem-calc(200) / rem-calc(200) $Gothic-A1regular;
+            font: rem-calc(250) / rem-calc(250) $Gothic-A1regular;
             letter-spacing: 5px;
             font-weight: 700;
             color: $white;
@@ -134,7 +186,6 @@
         }
     }
     .background-2 {
-        padding-bottom: 20px;
         position: relative;
         z-index: 1;
         &::before {
@@ -143,7 +194,7 @@
             top: 58%;
             left: 50%;
             transform: translate(-50%, -50%);
-            font: rem-calc(200) / rem-calc(200) $Gothic-A1regular;
+            font: rem-calc(250) / rem-calc(250) $Gothic-A1regular;
             letter-spacing: 5px;
             font-weight: 700;
             color: $white;
