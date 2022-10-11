@@ -34,7 +34,7 @@
                     </p>
                 </div> </iscomment>
             </div>
-            <isinclude template="checkout/shipping/giftMessageSummary" />
+            <iscomment> <isinclude template="checkout/shipping/giftMessageSummary" /> </iscomment>
         </div>
     </isif>
 </isloop>

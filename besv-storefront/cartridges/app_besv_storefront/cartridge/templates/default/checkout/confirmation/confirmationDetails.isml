@@ -19,6 +19,9 @@
 <isinclude template="checkout/orderProductSummary" />
 
 <div class="card checkout-order-total-summary">
+    <div class="card-header">
+        <h2 class="card-header-custom">${Resource.msg('heading.order.summary', 'checkout', null)}</h2>
+    </div>
     <div class="card-body order-total-summary">
         <isinclude template="checkout/orderTotalSummaryStatusPage" />
     </div>

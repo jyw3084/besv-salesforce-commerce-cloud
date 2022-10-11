@@ -105,7 +105,7 @@
                         </button>
 
                         <button class="btn btn-primary btn-block place-order" data-action="${URLUtils.url('CheckoutServices-PlaceOrder')}"
-                                type="submit" name="submit" value="place-order">${Resource.msg('button.place.order', 'checkout', null)}
+                            type="submit" name="submit" value="place-order">${Resource.msg('button.place.order', 'checkout', null)}
                         </button>
                     </div>
                 </div>

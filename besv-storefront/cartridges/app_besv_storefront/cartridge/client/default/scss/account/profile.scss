@@ -168,6 +168,21 @@
             }
         }
     }
+    .checkout-order-total-summary {
+        .card-header {
+            padding: 0;
+            margin-bottom: 30px;
+            @include media-breakpoint-down(sm) {
+                margin-bottom: 20px;
+            }
+            .card-header-custom {
+                font: 18px/25px $GothicA1-Bold;
+                @include media-breakpoint-down(sm) {
+                    font: 16px/25px $GothicA1-Bold;
+                }
+            }
+        }
+    }
 }
 .cancel {
     max-height: 54px;

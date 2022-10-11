@@ -53,7 +53,8 @@
 
 <div class="row">
     <div class="col-sm-12">
-        <div class="form-group required
+        <div class="form-group
+            ${addressFields.address2.mandatory === true ? 'required' : ''}
             ${addressFields.address2.htmlName}">
             <label class="form-control-label" for="shippingAddressTwo${lineItem ? lineItem.UUID : 'default'}">
                 ${Resource.msg('field.shipping.address.two','address',null)}

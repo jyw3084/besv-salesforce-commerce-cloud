@@ -593,6 +593,9 @@ span.ship-to-city-st-zip {
             }
             .card-header-custom {
                 font: 18px/25px $GothicA1-Bold;
+                @include media-breakpoint-down(sm) {
+                    font: 16px/25px $GothicA1-Bold;
+                }
             }
         }
         .order-total-summary {
@@ -729,7 +732,7 @@ span.ship-to-city-st-zip {
             color: $primary;
             margin-bottom: 26px;
             @include media-breakpoint-down(sm) {
-                font: 28px/28px $GothicA1-Bold;
+                font: 28px/36px $GothicA1-Bold;
                 margin-bottom: 0;
             }
         }
@@ -861,41 +864,24 @@ span.ship-to-city-st-zip {
                     }
                 }
             }
-            // .product-wrapper {
-            //     padding: 20px 40px;
-            //     .line-item-header {
-            //         font-family: $GothicA1-Medium;
-            //         .line-item-name {
-            //             margin-bottom: 1rem;
-            //         }
-            //     }
-            //     .line-item-attributes {
-            //         font-family: $Gothic-A1regular;
-            //         color: #767676;
-            //     }
-            //     @include media-breakpoint-down(sm){
-            //         padding: 15px;
-            //         .product-line-item-details {
-            //             overflow-y: initial;
-            //             .item-image {
-            //                 width: 20%;
-            //                 height: auto;
-            //             }
-            //             .item-attributes {
-            //                 width: 75%;
-            //                 .line-item-name {
-            //                     text-overflow: initial;
-            //                     overflow: initial;
-            //                 }
-            //             }
-            //         }
-            //     }
-            // }
         }
     }
     .checkout-order-total-summary {
         border-bottom: none;
         margin-bottom: 0;
+        .card-header {
+            padding: 0;
+            margin-bottom: 30px;
+            @include media-breakpoint-down(sm) {
+                margin-bottom: 20px;
+            }
+            .card-header-custom {
+                font: 18px/25px $GothicA1-Bold;
+                @include media-breakpoint-down(sm) {
+                    font: 16px/25px $GothicA1-Bold;
+                }
+            }
+        }
         .card-body {
             padding: 0;
         }
