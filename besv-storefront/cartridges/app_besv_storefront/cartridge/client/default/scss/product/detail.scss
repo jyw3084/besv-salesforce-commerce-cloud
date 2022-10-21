@@ -459,6 +459,7 @@
             margin-left: -24px;
             img {
                 border-radius: 0 8px 8px 0;
+                vertical-align: bottom;
             }
         }
     }
@@ -585,6 +586,7 @@
         .story-3-image {
             img {
                 border-radius: 0 8px 8px 0;
+                vertical-align: bottom;
             }
             @include media-breakpoint-down(sm) {
                 margin-right: 47px;
