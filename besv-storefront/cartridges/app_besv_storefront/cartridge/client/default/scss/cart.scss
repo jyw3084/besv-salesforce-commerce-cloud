@@ -505,6 +505,7 @@
                             }
                             .price {
                                 color: $primary;
+                                text-align: center;
                                 .sales {
                                     @include media-breakpoint-down(sm) {
                                         font: 18px/25px $GothicA1-Bold;

@@ -16,15 +16,15 @@ Template Notes:
         <div class="labels">
             <span class="${attr.id} non-input-label">
                 <isif condition="${isQuickView}">
-                    ${Resource.msg('label.select', 'common', null)} ${attr.displayName}:
+                    ${Resource.msg('label.select', 'common', null)}:
                 <iselse/>
-                    ${attr.displayName}
+                    ${Resource.msg('label.select', 'common', null)}:
                 </isif>
             </span>
             <isif condition="${isQuickView}">
                 <isloop items="${attr.values}" var="attrVal">
                     <isif condition="${attrVal.selected}">
-                        <span>${attrVal.displayValue}</span>
+                        <span class="color-label">${attrVal.displayValue}</span>
                     </isif>
                 </isloop>
             </isif>

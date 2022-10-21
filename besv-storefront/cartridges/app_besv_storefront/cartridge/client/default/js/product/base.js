@@ -290,12 +290,13 @@ function handleVariantResponse(response, $productContainer) {
     createCarousel(primaryImageUrls, $productContainer);
 
     // Update pricing
-    if (!isChoiceOfBonusProducts) {
-        var $priceSelector = $('.prices .price', $productContainer).length
-            ? $('.prices .price', $productContainer)
-            : $('.prices .price');
-        $priceSelector.replaceWith(response.product.price.html);
-    }
+    // if (!isChoiceOfBonusProducts) {
+    //     var $priceSelector = $('.prices .price', $productContainer).length
+    //         ? $('.prices .price', $productContainer)
+    //         : $('.prices .price');
+    //     console.log($priceSelector);
+    //     $priceSelector.replaceWith(response.product.price.html);
+    // }
 
     // Update promotions
     $productContainer.find('.promotions').empty().html(response.product.promotionsHtml);
@@ -314,9 +315,10 @@ function handleVariantResponse(response, $productContainer) {
         }).trigger('product:statusUpdate', response.product);
     }
 
-    // Update attributes
-    $productContainer.find('.main-attributes').empty()
-        .html(getAttributesHtml(response.product.attributes));
+    if (response.product.variationAttributes) {
+        // Update attributes
+        $productContainer.find('.item-attributes .attributes .labels .color-label').empty().html(response.product.variationAttributes[0].displayValue);
+    }
 }
 
 /**

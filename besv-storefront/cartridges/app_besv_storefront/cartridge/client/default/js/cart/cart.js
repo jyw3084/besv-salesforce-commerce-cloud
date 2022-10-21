@@ -248,11 +248,13 @@ function fillModalElement(editProductUrl) {
         dataType: 'json',
         success: function (data) {
             var parsedHtml = parseHtml(data.renderedTemplate);
+            var selectedSubtotal = "$" + (data.product.price.sales.value * data.selectedQuantity).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,");
 
             $('#editProductModal .modal-body').empty();
             $('#editProductModal .modal-body').html(parsedHtml.body);
             $('#editProductModal .modal-header .close .sr-only').text(data.closeButtonText);
             $('#editProductModal .enter-message').text(data.enterDialogMessage);
+            $('#editProductModal .modal-body .item-attributes .prices .price .sales .value').text(selectedSubtotal);
             $('#editProductModal').modal('show');
             $('body').trigger('editproductmodal:ready');
             $.spinner().stop();
@@ -445,7 +447,11 @@ module.exports = function () {
         e.preventDefault();
         var isDecrease = $(this).hasClass('decrease-quantity') ? true : false;
         var needChangeTrigger = false;
-        var quantityValue = parseInt($('.quantity-field').val());
+        var qtyField = $(this).siblings('.quantity-field');
+        var quantityValue = parseInt($(qtyField).val());
+        var priceField = $(this).parent().closest('.quantity-holder').siblings('.prices').find('.price .sales .value');
+        var priceValue = $(priceField).attr('content');
+        
         if (isDecrease && quantityValue>1) {
             quantityValue = quantityValue - 1;
             needChangeTrigger = true;
@@ -455,7 +461,9 @@ module.exports = function () {
         }
 
         if (needChangeTrigger) {
-            $('.quantity-field').val(quantityValue);
+            $(qtyField).val(quantityValue);
+            var priceValueCurrency = "$" + (priceValue * quantityValue).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,");
+            $(priceField).text(priceValueCurrency);
         }
     });
 
@@ -602,6 +610,7 @@ module.exports = function () {
             }
         });
     });
+
     $('body').on('click', '.cart-page .bonus-product-button', function () {
         $.spinner().start();
         $(this).addClass('launched-modal');
