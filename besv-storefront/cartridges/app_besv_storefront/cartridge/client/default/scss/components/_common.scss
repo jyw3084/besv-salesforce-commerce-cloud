@@ -69,6 +69,12 @@ select {
     z-index: 4;
 }
 
+@media (min-width: 544px) and (max-width: 768.98px) {
+    .hide-link-med {
+        display: block;
+    }
+}
+
 #consent-tracking {
     .modal-dialog {
         width: 620px;

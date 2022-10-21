@@ -17,13 +17,16 @@
             margin: 0 20px;
         }
         div {
-            margin-bottom: 50px;
-            @include media-breakpoint-down(md) {
-                margin-bottom: 40px;
-            }
+            margin-bottom: 26px;
             &:last-of-type {
                 margin-bottom: 0;
             }
+        }
+    }
+    .short-container>div {
+        margin-bottom: 50px;
+        @include media-breakpoint-down(md) {
+            margin-bottom: 40px;
         }
     }
     .shipping-content {
@@ -126,7 +129,8 @@
         margin-bottom: 26px;
         li {
             font: 16px / 25px $Karla-Light;
-            // color: $secondary;
+            color: $dark-700;
+            letter-spacing: 0.02em;
             margin-left: 14px;
             @include media-breakpoint-down(md) {
                 font: 14px / 24px $Karla-Light;
@@ -175,7 +179,7 @@
         &::before {
             content: '1';
             position: absolute;
-            top: 58%;
+            top: 56%;
             left: 50%;
             transform: translate(-50%, -50%);
             font: rem-calc(250) / rem-calc(250) $Gothic-A1regular;
@@ -191,7 +195,7 @@
         &::before {
             content: '2';
             position: absolute;
-            top: 58%;
+            top: 56%;
             left: 50%;
             transform: translate(-50%, -50%);
             font: rem-calc(250) / rem-calc(250) $Gothic-A1regular;
@@ -202,11 +206,12 @@
         }
     }
 }
+
 html {
     scroll-behavior: smooth;
 }
 
 strong {
-    font-weight: 900;
+    font-family: $Karla-Regular;
     color: $primary;
 }
