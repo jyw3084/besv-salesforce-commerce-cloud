@@ -83,7 +83,7 @@
                             <span>3/3</span>
                             ${Resource.msg('heading.payment', 'checkout', null)}
                         </h2>
-                        <button class="edit-button pull-right" aria-label="${Resource.msg('action.edit.step.msg.payment', 'checkout', null)}">${Resource.msg('action.edit.step', 'checkout', null)}</button>
+                        <button class="edit-button pull-right edit-payment-btn" aria-label="${Resource.msg('action.edit.step.msg.payment', 'checkout', null)}">${Resource.msg('action.edit.step', 'checkout', null)}</button>
                     </div>
 
                     <div class="card-body">
