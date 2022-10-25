@@ -70,14 +70,14 @@
     <div class="col-4 start-lines">
         <p class="order-receipt-label">
             <span>${Resource.msg('label.order.sales.tax','confirmation', null)}</span>
+            <iscomment> <span>
+                <isif condition="${pdict.order.totals.totalTax.value == null}"> - Calculated on next step</isif>
+            </span> </iscomment>
         </p>
     </div>
     <div class="col-8 end-lines">
         <p class="text-right">
-            <span class="tax-total">
-                <iscomment> ${pdict.order.totals.totalTax} </iscomment>
-                <isif condition="${pdict.order.totals.totalTax == '$0.00'}">Calculated on next step</isif>
-                <isif condition="${pdict.order.totals.totalTax != '$0.00'}">${pdict.order.totals.totalTax}</isif>
+            <span class="tax-total">${pdict.order.totals.totalTax}
             </span>
         </p>
     </div>

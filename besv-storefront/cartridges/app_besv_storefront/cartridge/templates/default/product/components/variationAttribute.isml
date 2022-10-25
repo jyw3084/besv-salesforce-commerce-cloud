@@ -13,46 +13,50 @@ Template Notes:
     <isif condition="${attr.swatchable}">
 
         <!-- Select <Attribute> Label -->
-        <span class="${attr.id} non-input-label">
-            <isif condition="${isQuickView}">
-                ${Resource.msg('label.select', 'common', null)} ${attr.displayName}:
-            <iselse/>
-                ${attr.displayName}
-            </isif>
-        </span>
-        <isif condition="${isQuickView}">
-            <isloop items="${attr.values}" var="attrVal">
-                <isif condition="${attrVal.selected}">
-                    ${attrVal.displayValue}
+        <div class="labels">
+            <span class="${attr.id} non-input-label">
+                <isif condition="${isQuickView}">
+                    ${Resource.msg('label.select', 'common', null)}:
+                <iselse/>
+                    ${Resource.msg('label.select', 'common', null)}:
                 </isif>
-            </isloop>
-        </isif>
+            </span>
+            <isif condition="${isQuickView}">
+                <isloop items="${attr.values}" var="attrVal">
+                    <isif condition="${attrVal.selected}">
+                        <span class="color-label">${attrVal.displayValue}</span>
+                    </isif>
+                </isloop>
+            </isif>
+        </div>
 
         <!-- Circular Swatch Image Attribute Values -->
-        <isloop items="${attr.values}" var="attrValue">
-            <isif condition="${!(isBundle && product.productType === 'variant' && !attrValue.selected) }">
-                <button class="color-attribute"
-                        aria-label="${Resource.msg('label.select', 'common', null)} ${attr.displayName} ${attrValue.displayValue}"
-                        aria-describedby="${attrValue.id}"
-                        data-url="${attrValue.url}" ${ product.productType === "variant" && isBundle ? "disabled" : "" }
-                >
-                    <span data-attr-value="${attrValue.value}"
-                          class="
-                              ${attr.id}-value
-                              swatch-circle
-                              swatch-value
-                              ${attrValue.selected ? 'selected' : ''}
-                              ${attrValue.selectable ? 'selectable' : 'unselectable'}
-                          "
-                          style="background-image: url(${attrValue.images['swatch'].length > 0 ? attrValue.images['swatch'][0].url : ''})"
+        <div class="color-swatch">
+            <isloop items="${attr.values}" var="attrValue">
+                <isif condition="${!(isBundle && product.productType === 'variant' && !attrValue.selected) }">
+                    <button class="color-attribute"
+                            aria-label="${Resource.msg('label.select', 'common', null)} ${attr.displayName} ${attrValue.displayValue}"
+                            aria-describedby="${attrValue.id}"
+                            data-url="${attrValue.url}" ${ product.productType === "variant" && isBundle ? "disabled" : "" }
                     >
-                    </span>
-                    <span id="${attrValue.id}" class="sr-only selected-assistive-text">
-                        ${attrValue.selected ? Resource.msg('msg.assistive.selected.text', 'common', null) : ''}
-                    </span>
-                </button>
-            </isif>
-        </isloop>
+                        <span data-attr-value="${attrValue.value}"
+                              class="
+                                  ${attr.id}-value
+                                  swatch-circle
+                                  swatch-value
+                                  ${attrValue.selected ? 'selected' : ''}
+                                  ${attrValue.selectable ? 'selectable' : 'unselectable'}
+                              "
+                              style="background-image: url(${attrValue.images['swatch'].length > 0 ? attrValue.images['swatch'][0].url : ''})"
+                        >
+                        </span>
+                        <span id="${attrValue.id}" class="sr-only selected-assistive-text">
+                            ${attrValue.selected ? Resource.msg('msg.assistive.selected.text', 'common', null) : ''}
+                        </span>
+                    </button>
+                </isif>
+            </isloop>
+        </div>
 
     <iselse>
         <!-- Select <Attribute> Label -->

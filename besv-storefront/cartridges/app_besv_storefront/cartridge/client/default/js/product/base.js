@@ -221,7 +221,7 @@ function getAttributesHtml(attributes) {
  * @param {jQuery} $productContainer - DOM element for current product
  */
 function updateOptions(optionsHtml, $productContainer) {
-	// Update options
+    // Update options
     $productContainer.find('.product-options').empty().html(optionsHtml);
 }
 
@@ -235,16 +235,16 @@ function createCarousel(images, $productContainer) {
     var smallImages = images['small'];
     var carousel = $productContainer.find('.carousel');
     $(carousel).carousel('dispose');
-    
+
     var carouselId = $(carousel).attr('id');
-    $(carousel).empty().append('<div class="carousel-inner" role="listbox"></div><a class="carousel-control-prev" href="#' + carouselId + '" role="button" data-slide="prev"></a><a class="carousel-control-next" href="#' + carouselId + '" role="button" data-slide="next"></a><ol class="carousel-indicators"></ol><div class="pdp-zoom-icon"><span class="zoom-index" data-total="'+imgs.length+'">1/'+imgs.length+'</span> <button class="pdp-zoom-icon-btn" type="button"></button></div>');
+    $(carousel).empty().append('<div class="carousel-inner" role="listbox"></div><a class="carousel-control-prev" href="#' + carouselId + '" role="button" data-slide="prev"><svg width="20" height="15" viewBox="0 0 20 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.600498 8.20711C0.209974 7.81658 0.209974 7.18342 0.600498 6.79289L6.96446 0.428932C7.35498 0.0384078 7.98815 0.0384078 8.37867 0.428932C8.7692 0.819457 8.7692 1.45262 8.37867 1.84315L2.72182 7.5L8.37867 13.1569C8.7692 13.5474 8.7692 14.1805 8.37867 14.5711C7.98815 14.9616 7.35498 14.9616 6.96446 14.5711L0.600498 8.20711ZM19.6924 8.5L1.30761 8.5V6.5L19.6924 6.5V8.5Z" fill="#1C1C1C"/></svg><span class="sr-only">Previous</span></a><a class="carousel-control-next" href="#' + carouselId + '" role="button" data-slide="next"><svg width="20" height="15" viewBox="0 0 20 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M19.3995 8.20711C19.79 7.81658 19.79 7.18342 19.3995 6.79289L13.0355 0.428932C12.645 0.0384078 12.0119 0.0384078 11.6213 0.428932C11.2308 0.819457 11.2308 1.45262 11.6213 1.84315L17.2782 7.5L11.6213 13.1569C11.2308 13.5474 11.2308 14.1805 11.6213 14.5711C12.0119 14.9616 12.645 14.9616 13.0355 14.5711L19.3995 8.20711ZM0.307617 8.5L18.6924 8.5V6.5L0.307617 6.5L0.307617 8.5Z" fill="#1C1C1C"/></svg><span class="sr-only">Next</span></a><ol class="carousel-indicators"></ol><div class="pdp-zoom-icon"><span class="zoom-index" data-total="'+imgs.length+'">1/'+imgs.length+'</span> <button class="pdp-zoom-icon-btn" type="button"></button></div>');
     $('.carousel-control-prev').append(prevBtn);
     $('.carousel-control-next').append(nextBtn);
     $('.pdp-zoom-icon-btn').append(zoomBtn);
 
     for (var i = 0; i < imgs.length; i++) {
         $('<div class="carousel-item" data-index="'+i+'"><img src="' + imgs[i].url + '" class="d-block img-fluid" alt="' + imgs[i].alt + ' image number ' + parseInt(imgs[i].index, 10) + '" title="' + imgs[i].title + '" itemprop="image" /></div>').appendTo($(carousel).find('.carousel-inner'));
-        $('<li data-target="#' + carouselId + '" data-slide-to="' + i + '" class=""><img src="'+ smallImages[i].url +'" class="d-block img-fluid" alt="'+ smallImages[i].alt +' image number '+ i +'" itemprop="image" /></li>').appendTo($(carousel).find('.carousel-indicators'));
+        $('<li data-target="#' + carouselId + '" data-slide-to="' + i + '" class=""></li>').appendTo($(carousel).find('.carousel-indicators'));
     }
     $($(carousel).find('.carousel-item')).first().addClass('active');
     $($(carousel).find('.carousel-indicators > li')).first().addClass('active');
@@ -290,12 +290,13 @@ function handleVariantResponse(response, $productContainer) {
     createCarousel(primaryImageUrls, $productContainer);
 
     // Update pricing
-    if (!isChoiceOfBonusProducts) {
-        var $priceSelector = $('.prices .price', $productContainer).length
-            ? $('.prices .price', $productContainer)
-            : $('.prices .price');
-        $priceSelector.replaceWith(response.product.price.html);
-    }
+    // if (!isChoiceOfBonusProducts) {
+    //     var $priceSelector = $('.prices .price', $productContainer).length
+    //         ? $('.prices .price', $productContainer)
+    //         : $('.prices .price');
+    //     console.log($priceSelector);
+    //     $priceSelector.replaceWith(response.product.price.html);
+    // }
 
     // Update promotions
     $productContainer.find('.promotions').empty().html(response.product.promotionsHtml);
@@ -314,9 +315,10 @@ function handleVariantResponse(response, $productContainer) {
         }).trigger('product:statusUpdate', response.product);
     }
 
-    // Update attributes
-    $productContainer.find('.main-attributes').empty()
-        .html(getAttributesHtml(response.product.attributes));
+    if (response.product.variationAttributes) {
+        // Update attributes
+        $productContainer.find('.item-attributes .attributes .labels .color-label').empty().html(response.product.variationAttributes[0].displayValue);
+    }
 }
 
 /**
@@ -710,18 +712,18 @@ module.exports = {
             var valueId = $choiceOfBonusProduct.find('.options-select option:selected').data('valueId');
             if (totalQty <= maxPids) {
                 var selectedBonusProductHtml = ''
-                + '<div class="selected-pid row" '
-                + 'data-pid="' + pid + '"'
-                + 'data-qty="' + submittedQty + '"'
-                + 'data-optionID="' + (optionID || '') + '"'
-                + 'data-option-selected-value="' + (valueId || '') + '"'
-                + '>'
-                + '<div class="col-sm-11 col-9 bonus-product-name" >'
-                + $choiceOfBonusProduct.find('.product-name').html()
-                + '</div>'
-                + '<div class="col-1"><i class="fa fa-times" aria-hidden="true"></i></div>'
-                + '</div>'
-                ;
+                    + '<div class="selected-pid row" '
+                    + 'data-pid="' + pid + '"'
+                    + 'data-qty="' + submittedQty + '"'
+                    + 'data-optionID="' + (optionID || '') + '"'
+                    + 'data-option-selected-value="' + (valueId || '') + '"'
+                    + '>'
+                    + '<div class="col-sm-11 col-9 bonus-product-name" >'
+                    + $choiceOfBonusProduct.find('.product-name').html()
+                    + '</div>'
+                    + '<div class="col-1"><i class="fa fa-times" aria-hidden="true"></i></div>'
+                    + '</div>'
+                    ;
                 $('#chooseBonusProductModal .selected-bonus-products').append(selectedBonusProductHtml);
                 $('.pre-cart-products').html(totalQty);
                 $('.selected-bonus-products .bonus-summary').removeClass('alert-danger');

@@ -12,13 +12,17 @@
         <span class="address1">
             <isif condition="${address && address.address1}">${address.address1}</isif>
         </span>
+    </div>
 
+    <div>
         <span class="address2">
             <isif condition="${address && address.address2}">${address.address2}</isif>
         </span>
+    </div>
 
+    <div>
         <span class="city">
-            <isif condition="${address && address.city}">${address.city}</isif>
+            <isif condition="${address && address.city}">${address.city},</isif>
         </span>
 
         <span class="stateCode">

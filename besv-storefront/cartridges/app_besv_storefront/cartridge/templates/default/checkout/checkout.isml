@@ -21,16 +21,16 @@
         <!----------------------------------------------------------------------------------->
         <!-- Help and Phone -->
         <!----------------------------------------------------------------------------------->
-        <div class="row need-help">
+        <iscomment> <div class="row need-help">
             <div class="col-12 col-sm-5 offset-sm-7 col-md-5 offset-md-7">
                 <div class="text-right">
                     <span>${Resource.msg('info.need.help','cart',null)}</span>
-                    <iscomment> <span><a href="tel:${Resource.msg('info.phone.number','common',null)}">${Resource.msg('info.phone.number','common',null)}</a></span> </iscomment>
+                    <span><a href="tel:${Resource.msg('info.phone.number','common',null)}">${Resource.msg('info.phone.number','common',null)}</a></span>
                 </div>
             </div>
-        </div>
+        </div> </iscomment>
         <div class="row">
-            <div class="col-sm-7 checkout-right-side">
+            <div class="col-md-6 checkout-right-side">
 
                 <!----------------------------------------------------------------------------------->
                 <!-- Checkout Forms: Shipping, Payment, Coupons, Billing, etc -->
@@ -94,30 +94,29 @@
                 <!----------------------------------------------------------------------------------->
                 <!-- Checkout Workflow Buttons -->
                 <!----------------------------------------------------------------------------------->
-                <div class="row">
+                <div class="row form-group">
                     <div class="col-12 next-step-button">
-                        <div class="mb-sm-3">
-                            <button class="btn btn-primary btn-block submit-shipping" type="submit" name="submit" value="submit-shipping" <isif condition="${pdict.order.usingMultiShipping && !pdict.order.shippable}">disabled</isif>>
-                                ${Resource.msg('button.next.payment', 'checkout', null)}
-                            </button>
+                        <iscomment> <button class="btn btn-primary btn-block submit-shipping" type="submit" name="submit" value="submit-shipping" <isif condition="${pdict.order.usingMultiShipping && !pdict.order.shippable}">disabled</isif>>
+                            ${Resource.msg('button.next.payment', 'checkout', null)}
+                        </button> </iscomment>
 
-                            <button class="btn btn-primary btn-block submit-payment" type="submit" name="submit" value="submit-payment" disabled>
-                                ${Resource.msg('button.next.place.order', 'checkout', null)}
-                            </button>
+                        <button class="btn btn-primary btn-block submit-payment" type="submit" name="submit" value="submit-payment" disabled>
+                            ${Resource.msg('button.next.place.order', 'checkout', null)}
+                        </button>
 
-                            <button class="btn btn-primary btn-block place-order" data-action="${URLUtils.url('CheckoutServices-PlaceOrder')}"
-                                    type="submit" name="submit" value="place-order">${Resource.msg('button.place.order', 'checkout', null)}
-                            </button>
-                        </div>
+                        <button class="btn btn-primary btn-block place-order" data-action="${URLUtils.url('CheckoutServices-PlaceOrder')}"
+                            type="submit" name="submit" value="place-order">${Resource.msg('button.place.order', 'checkout', null)}
+                        </button>
                     </div>
                 </div>
 
             </div>
 
+            <div class="col-md-1 seperator"></div>
             <!----------------------------------------------------------------------------------->
             <!-- Order Totals, Details and Summary -->
             <!----------------------------------------------------------------------------------->
-            <div class="col-sm-5">
+            <div class="col-md-4 offset-md-1">
 
                 <div class="card order-summary-card">
                     <div class="card-header">

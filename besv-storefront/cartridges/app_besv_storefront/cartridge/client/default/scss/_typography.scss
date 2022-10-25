@@ -16,73 +16,105 @@ h5 {
     text-transform: uppercase;
     letter-spacing: 1px;
 }
-#consent-tracking {
-    .btn-primary, .btn-outline-secondary {
-        width: auto;
-    }
-}
 .btn-primary {
-    font: rem-calc(14) / rem-calc(14) $GothicA1-Medium;
-    padding: 20px 30px;
-    border-radius: 999px;
-    font-weight: 700;
     max-height: 54px;
+    font: rem-calc(14) / rem-calc(54) $GothicA1-Medium;
+    padding: 0 60px;
+    border-radius: 999px;
     width: 100%;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.02em;
     &:focus {
         box-shadow: none !important;
     }
     &:disabled {
         opacity: 0.15;
+    }
+    @include media-breakpoint-down(sm) {
+        max-height: 44px;
+        font: rem-calc(14) / rem-calc(44) $GothicA1-Medium;
+    }
+}
+a.btn-primary {
+    padding: 0 60px;
+    @include media-breakpoint-down(sm) {
+        padding: 0 30px;
+    }
+}
+.btn-outline-primary {
+    max-height: 54px;
+    font: rem-calc(14) / rem-calc(54) $GothicA1-Medium;
+    color: $primary;
+    padding: 0 60px;
+    border-radius: 999px;
+    border-color: $primary;
+    width: 100%;
+    letter-spacing: 0.02em;
+    &:focus {
+        box-shadow: none !important;
+    }
+    &:disabled {
+        opacity: 0.15;
+    }
+    @include media-breakpoint-down(sm) {
+        max-height: 44px;
+        font: rem-calc(14) / rem-calc(44) $GothicA1-Medium;
     }
 }
 .btn-outline-secondary {
-    font: rem-calc(14) / rem-calc(14) $GothicA1-Medium;
-    color: $primary;
-    padding: 20px 30px;
-    border-radius: 999px;
-    border-color: $brand-light-gray;
-    font-weight: 700;
     max-height: 54px;
+    font: rem-calc(14) / rem-calc(54) $GothicA1-Medium;
+    color: $primary;
+    padding: 0 30px;
+    border-radius: 999px;
+    border-color: $primary;
     width: 100%;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.02em;
     &:focus {
         box-shadow: none !important;
     }
     &:disabled {
         opacity: 0.15;
     }
+    @include media-breakpoint-down(sm) {
+        max-height: 44px;
+        font: rem-calc(14) / rem-calc(44) $GothicA1-Medium;
+    }
 }
 .btn-black {
+    max-height: 54px;
     display: inline-block;
-    font: rem-calc(14) / rem-calc(14) $GothicA1-Medium;
-    padding: 16px 40px;
+    font: rem-calc(14) / rem-calc(54) $GothicA1-Medium;
+    padding: 0 40px;
     background-color: $primary;
     color: $white !important;
     border-radius: 999px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.02em;
     &:hover {
         outline: none;
         color: $white;
     }
+    @include media-breakpoint-down(sm) {
+        max-height: 44px;
+        font: rem-calc(14) / rem-calc(44) $GothicA1-Medium;
+    }
 }
 .btn-white {
-    font: rem-calc(14) / rem-calc(14) $GothicA1-Medium;
-    padding: 20px 30px;
+    max-height: 54px;
+    font: rem-calc(14) / rem-calc(54) $GothicA1-Medium;
+    padding: 0 30px;
     border-radius: 999px;
     font-weight: 700;
-    max-height: 54px;
     width: 100%;
     background-color: $white;
     color: $primary;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.02em;
     &:hover {
         outline: none;
         color: $primary;
+    }
+    @include media-breakpoint-down(sm) {
+        max-height: 44px;
+        font: rem-calc(14) / rem-calc(44) $GothicA1-Medium;
     }
 }
 .home-text {
@@ -103,6 +135,6 @@ img {
 .container {
     padding: 0;
     @include media-breakpoint-down(md) {
-        padding: 0 24px;
+        padding: 0 20px;
     }
 }

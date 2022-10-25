@@ -5,7 +5,7 @@
 
 <div class="video">
 	<div class="video-holder">
-		<video width="100%" height="auto" loop autoplay muted poster="${pdict.videoFallbackImg.src.desktop}">
+		<video width="100%" height="auto" loop autoplay muted playsinline poster="${pdict.videoFallbackImg.src.desktop}">
 		<source src="${pdict.videoUrl.src}" type="video/mp4">
 		</video>
 	</div>

@@ -2,7 +2,7 @@
 <isloop var="shippingModel" items="${pdict.order.shipping}" status="shippingLoop">
     <isif condition="${shippingLoop.first}">
         <div class="single-shipping" data-shipment-summary="${shippingModel.UUID}">
-            <iscomment> <isinclude template="checkout/shipping/shippingTitle"/> </iscomment>
+            <isinclude template="checkout/shipping/shippingTitle"/>
             <isif condition="${shippingModel.shippingAddress !== null}">
                 <isset name="address" value="${shippingModel.shippingAddress}" scope="page"/>
             <iselse>
@@ -16,8 +16,8 @@
             </div>
 
             <!--- Shipping information --->
-            <iscomment> <p class="summary-section-label shipping-method-label">${Resource.msg('label.order.shipping.method', 'confirmation', null)}</p> </iscomment>
-            <iscomment> <div class="row summary-details leading-lines">
+            <p class="summary-section-label shipping-method-label">${Resource.msg('label.order.shipping.method', 'confirmation', null)}</p>
+            <div class="row summary-details leading-lines">
                 <div class="col-8 start-lines">
                     <p class="shipping-method">
                         <span class="shipping-method-title">${shippingModel.selectedShippingMethod.displayName}</span>
@@ -28,12 +28,12 @@
                         </span>
                     </p>
                 </div>
-                <div class="col-4 end-lines">
+                <iscomment> <div class="col-4 end-lines">
                     <p class="text-right pricing shipping-method-price">
                         ${shippingModel.selectedShippingMethod.shippingCost}
                     </p>
-                </div>
-            </div> </iscomment>
+                </div> </iscomment>
+            </div>
             <iscomment> <isinclude template="checkout/shipping/giftMessageSummary" /> </iscomment>
         </div>
     </isif>

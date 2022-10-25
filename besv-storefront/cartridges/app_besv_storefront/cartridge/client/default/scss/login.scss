@@ -8,166 +8,225 @@
 @import "components/formFields";
 
 .login-page {
-    margin-top: 96px;
-    padding-bottom: 48px;
-    border-bottom: 1px solid $brand-light-gray;
+    padding-top: 128px;
+    padding-bottom: 40px;
     @include media-breakpoint-down(sm) {
-        margin-top: 32px;
+        padding-top: 50px;
+        padding-bottom: 72px;
     }
-    .login-form-nav {
-        margin-bottom: 1.25em;
-
-        .tab-pane {
-            margin-top: 1em;
+    .card {
+        border-bottom: none;
+        margin-bottom: 40px;
+        font-size: 14px;
+        .card-body {
+            padding: 0;
         }
     }
-
-    .login {
-        margin-bottom: 0.938em;
-
-        .error-message-form {
-            padding: 0.625em;
-            background-color: $danger;
-            color: $state-danger-text;
-            border-radius: 0.188em;
+    .login-form-nav {
+        .nav-tabs {
+            border-bottom: none;
+            margin-bottom: 46px;
+            .nav-item {
+                width: 50%;
+                .nav-link {
+                    padding: 0;
+                    padding-bottom: 20px;
+                    font: 28px/28px $GothicA1-Medium;
+                    color: $dark-500 !important;
+                    &.active {
+                        border-bottom: 2px solid $orange;
+                        color: $primary !important;
+                    }
+                    @include media-breakpoint-down(sm) {
+                        font: 18px/25px $GothicA1-Medium;
+                    }
+                }
+            }
+        }
+        .tab-content {
+            .tab-pane#login {
+                .btn-primary {
+                    width: 294px;
+                    padding: 0;
+                    margin: 0 auto;
+                    @include media-breakpoint-down(sm) {
+                        width: 100%;
+                        padding: 0;
+                    }
+                }
+            }
+        }
+        .custom-checkbox .custom-control-label::before {
+            border: 1px solid #ced4da;
+            margin-right: 10px;
+        }
+        .privacy-policy {
+            font: 14px/24px $Karla-Light;
+            color: $dark-700;
+        }
+        .login {
+            .custom-control-label {
+                font: 14px/20px $Gothic-A1regular;
+                letter-spacing: 0.02em;
+                color: $dark-700;
+            }
+            #password-reset {
+                font: 14px/14px $Gothic-A1regular;
+                letter-spacing: 0.02em;
+                color: $dark-700 !important;
+                text-decoration: underline;
+            }
+            .error-message-form {
+                padding: 0.625em;
+                background-color: $danger;
+                color: $state-danger-text;
+                border-radius: 0.188em;
+            }
+        }
+        .create-account-wrapper {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 26px;
+            align-items: center;
+            padding-top: 10px;
+            @include media-breakpoint-down(sm) {
+                display: block;
+            }
+            .create-account-newsletter {
+                margin-bottom: 0;
+                @include media-breakpoint-down(md) {
+                    width: 100%;
+                    max-width: 100%;
+                    margin-bottom: 26px;
+                }
+                .custom-control-label {
+                    color: $dark-700;
+                }
+            }
+            .create-account-submit {
+                width: 240px;
+                @include media-breakpoint-down(md) {
+                    width: 100%;
+                    max-width: 100%;
+                }
+            }
+        }
+        .create-account-privacy {
+            a {
+                text-decoration: underline;
+            }
+        }
+    }
+    .trackorder {
+        background-color: $dark-400;
+        padding: 20px 30px;
+        border-radius: 8px;
+        @include media-breakpoint-down(sm) {
+            padding: 20px;
+        }
+        .card-body {
+            .form-group:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+        .track-order-header {
+            padding: 0;
+            margin-bottom: 26px;
+            font-family: $GothicA1-Medium;
+            text-align: center;
+            background: none;
+            color: $primary;
+        }
+        .track-order-header-text {
+            font: 14px/14px $Karla-Light;
+            color: $dark-700;
+            letter-spacing: 0.02em;
+            text-align: center;
+            margin-bottom: 26px;
+        }
+        .btn-primary {
+            width: 294px;
+            padding: 0;
+            margin: 0 auto;
+            background-color: $dark-600;
+            border: none;
+            @include media-breakpoint-down(sm) {
+                width: 100%;
+                padding: 0;
+            }
         }
     }
 }
-
 .registration-page {
     .privacy-policy {
         margin-top: 1rem;
     }
 }
-
 .login-banner {
     background-image: url('../images/account.jpg');
     background-position-y: 40%;
 }
 
+// Newsletter subscription page
 .equal-height .card {
     width: 100%;
+    border-bottom: none;
+    margin-bottom: 44px;
+    @include media-breakpoint-down(sm) {
+        margin-bottom: 6px;
+    }
 }
 
 .track-order-header {
     font-size: 1.75rem;
 }
 
-.request-password-title {
-    font-size: 1.5rem;
-}
-
-//Custom Style
-
-.login-form-nav {
-    .nav-tabs {
-        border-bottom: none;
-    }
-    font-family: $Gothic-A1black;
-    .nav-link{
-        opacity: .4;
-        &.active {
-            border-bottom: 2px solid $primary;
-            opacity: 1;
-        }
-    }
-    .custom-checkbox .custom-control-label::before {
-        border: 1px solid #ced4da;
-    }
-    .privacy-policy {
-        font-family: $Gothic-A1regular;
-    }
-    #password-reset {
-        font-family: $Gothic-A1regular;
-        text-decoration: underline;
-    }
-    .submit {
-        border-bottom: 15px;
-    }
-}
-
-.trackorder {
-    background-color: $gray-background;
-    padding: 30px;
-    border-radius: 8px;
-    opacity: .4;
-    @include media-breakpoint-down(sm) {
-        padding: 30px 0;
-    }
-    .track-order-header {
-        font-family: $Gothic-A1black;
-        text-align: center;
-        background: none;
-        color: $secondary;
-    }
-    .submit.brt-primary {
-        background: white;
-        color: $primary;
-    }
-    .track-order-header-text {
-        font-family: $Gothic-A1regular;
-        text-align: center;
-        margin-top: -20px;
-        margin-bottom: 20px;
-        color: $secondary;
-    }
-}
-.card {
-    border-bottom: none;
-    margin-bottom: 10px;
-    font-size: 14px;
-}
-.create-account-wrapper {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-    align-items: center;
-    padding-top: 10px;
-    .create-account-newsletter {
-        width: 50%;
-        max-width: 50%;
-        margin-bottom: 0;
-        @include media-breakpoint-down(md) {
-            width: 100%;
-            max-width: 100%;
-            margin-bottom: 20px;
-        }
-    }
-    .create-account-submit {
-        width: 50%;
-        max-width: 50%;
-        @include media-breakpoint-down(md) {
-            width: 100%;
-            max-width: 100%;
-        }
-    }
-}
-.create-account-privacy {
-    color: $secondary;
-    a {
-        color: $secondary !important;
-        border-bottom: 1px solid $secondary;
-        padding-bottom: 1px;
-    }
-}
 #requestPasswordResetModal {
-    .modal-content {
-        width: 538px;
-        padding: 10px;
-        border-radius: 8px;
-    }
-    .modal-header {
-        border-bottom: none;
-        h2 {
-            font-family: $Gothic-A1black;
+    .modal-dialog {
+        max-width: 620px;
+        @include media-breakpoint-down(sm) {
+            max-width: 350px;
+            margin: auto;
         }
-    }
-    .request-password-body {
-        color: $secondary;
-        font-family: $Karla-Regular;
-        .form-control-label {
-            color: $primary;
-            padding-top: 10px;
+        .modal-content {
+            width: 620px;
+            padding: 30px;
+            border-radius: 8px;
+            @include media-breakpoint-down(sm) {
+                width: 350px;
+                padding: 20px;
+            }
+            .modal-header {
+                padding: 0 0 26px 0;
+                border-bottom: 1px solid $dark-500;
+                h2 {
+                    font: 24px/34px $GothicA1-Bold;
+                    @include media-breakpoint-down(sm) {
+                        font: 18px/25px $GothicA1-Bold;
+                    }
+                }
+                .close {
+                    font-weight: 400;
+                    color: $primary;
+                    opacity: 1;
+                }
+            }
+            .modal-body {
+                padding: 26px 0 0 0;
+                .request-password-body {
+                    font: 16px/25px $Karla-Light;
+                    letter-spacing: 0.02em;
+                    color: $dark-700;
+                    p {
+                        margin-bottom: 26px;
+                    }
+                }
+                .send-email-btn {
+                    button {
+                        width: 100% !important;
+                    }
+                }
+            }
         }
     }
 }

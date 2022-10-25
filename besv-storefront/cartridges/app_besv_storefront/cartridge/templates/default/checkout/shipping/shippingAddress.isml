@@ -89,7 +89,7 @@
     </div>
     <div class="col-sm-6">
         <div class="form-group
-            ${addressFields.postalCode.mandatory === true ? 'required' : ''}
+        ${addressFields.postalCode.mandatory === true ? 'required' : ''}
             ${addressFields.postalCode.htmlName}">
             <label class="form-control-label" for="shippingZipCode${lineItem ? lineItem.UUID : 'default'}">
                 ${Resource.msg('field.shipping.address.zip.code','address',null)}

@@ -1,16 +1,40 @@
-
 header ~ #maincontent .container a:not(.btn-primary, .btn-outline-primary) {
     color: $primary;
 }
+
 input {
     border-radius: 999px !important;
+    border-color: $dark-600;
     font-family: $Gothic-A1regular;
 }
+
+textarea {
+    font-family: $Gothic-A1regular;
+}
+
+.form-control {
+    height: 54px;
+    border-color: $dark-600;
+    padding: 0 20px;
+    @include media-breakpoint-down(md) {
+        height: 44px;
+    }
+}
+
+.form-group {
+    margin-bottom: 26px;
+}
+
 label {
+    color: $primary;
     font-family: $Gothic-A1regular;
-    margin-bottom: 10px;
-    font-weight: 600;
+    line-height: 16px;
+    margin-bottom: 13px;
+    @include media-breakpoint-down(sm) {
+        font-size: 14px;
+    }
 }
+
 a:hover {
     text-decoration: none;
 }
@@ -41,27 +65,81 @@ select {
     }
 }
 
+.add-to-cart-messages {
+    z-index: 4;
+}
+
+@media (min-width: 544px) and (max-width: 768.98px) {
+    .hide-link-med {
+        display: block;
+    }
+}
+
 #consent-tracking {
-    .modal-content {
-        padding: 20px;
-        .modal-header {
-            font-family: $Gothic-A1regular;
+    .modal-dialog {
+        width: 620px;
+        max-width: 620px;
+        max-height: 320px;
+        @include media-breakpoint-down(sm) {
+            width: 350px;
+            max-width: 350px;
+            max-height: 415px;
+            margin: 0 auto;
         }
-        .modal-body {
-            font-family: $Gothic-A1regular;
-            color: $secondary;
-            a {
-                font-family: $GothicA1-Bold;
-                color: $primary;
-                border-bottom: 1px solid $orange;
+        .modal-content {
+            padding: 30px;
+            border-radius: 8px;
+            @include media-breakpoint-down(sm) {
+                padding: 30px 20px;
             }
-        }
-        .modal-footer {
-            border-top: none;
-            .button-wrapper {
-                width: 100%;
-                display: flex;
-                justify-content: center;
+            .modal-header {
+                padding: 0 0 26px 0;
+                font: 24px/34px $GothicA1-Bold;
+                color: $primary;
+                border-bottom: 1px solid $dark-500;
+                @include media-breakpoint-down(sm) {
+                    font: 18px/25px $GothicA1-Bold;
+                }
+            }
+            .modal-body {
+                padding: 26px 0 0 0;
+                p {
+                    font: 16px/25px $Karla-Light;
+                    letter-spacing: 0.02em;
+                    color: $dark-700;
+                    margin-bottom: 26px;
+                    &:last-of-type {
+                        margin-bottom: 31px;
+                    }
+                    a {
+                        font: 14px/13px $GothicA1-Bold;
+                        padding-bottom: 5px;
+                        border-bottom: 1px solid $orange;
+                        margin-bottom: 5px;
+                    }
+                }
+            }
+            .modal-footer {
+                border-top: none;
+                padding: 0;
+                .button-wrapper {
+                    width: 100%;
+                    display: flex;
+                    @include media-breakpoint-down(sm) {
+                        flex-direction: column;
+                    }
+                    button {
+                        width: 260px;
+                        margin: 0 26px 0 0;
+                        @include media-breakpoint-down(sm) {
+                            width: 100%;
+                            margin: 0 0 20px 0;
+                            &:last-of-type {
+                                margin-bottom: 0;
+                            }
+                        }
+                    }
+                }
             }
         }
     }

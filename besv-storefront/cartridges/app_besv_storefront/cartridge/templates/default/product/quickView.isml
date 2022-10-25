@@ -6,15 +6,15 @@
 <isset name="loopState" value="${{count: 1}}" scope="page" />
 <div class="product-quickview product-${product.productType} col product-wrapper product-detail" data-pid="${product.id}">
     <div class="row">
-        <div class="col-12 col-md-6 product-quickview-carousel">
+        <div class="col-12 col-md-auto product-quickview-carousel">
             <!-- Product Images Carousel -->
             <isinclude template="product/components/imageCarousel" />
         </div>
-        <div class="col">
+        <div class="col product-details">
             <section class="product-name-wrapper">
                 <h1 class="product-name">${product.productName}</h1>
             </section>
-            <div class="align-items-end">
+            <div class="item-attributes">
                 <!-- Color -->
                 <div class="detail-panel">
                     <!-- Attributes -->
@@ -24,17 +24,17 @@
 
                         <isloop items="${product.variationAttributes}" var="attr" status="attributeStatus">
                             <div data-attr="${attr.id}" class="swatch row">
-                                <div class="col-8">
+                                <div class="col-12">
                                     <isinclude template="product/components/variationAttribute" />
                                 </div>
 
                                 <isif condition="${attributeStatus.last}">
                                     <!-- Quantity Drop Down Menu -->
-                                    <div class="attribute quantity col-4 d-sm-none">
+                                    <iscomment> <div class="attribute quantity col-4 d-none">
                                         <isif condition="${pdict.addToCartUrl || pdict.updateCartUrl}">
                                             <isinclude template="product/components/quantity" />
                                         </isif>
-                                    </div>
+                                    </div> </iscomment>
                                 </isif>
                             </div>
                         </isloop>
@@ -72,27 +72,25 @@
                         <isinclude template="product/components/quantity" />
                     </isif>
                 </div>
-                <div class=" col availability align-self-end global-availability"
+                <div class="col availability align-self-end global-availability d-none"
                 data-ready-to-order="${product.readyToOrder}" data-available="${product.available}">
                     <div class="row availability-holder">
                         <isinclude template="product/components/availability" />
                     </div>
                 </div>
 
-                <div class="col-8 mx-auto">
-                    <!-- Prices -->
-                    <div class="prices">
-                        <isset name="price" value="${product.price}" scope="page" />
-                        <isinclude template="product/components/pricing/main" />
-                    </div>
-
-                    <!-- Cart and [Optionally] Apple Pay -->
-                    <isif condition="${pdict.addToCartUrl}">
-                            <isinclude template="product/components/addToCartGlobal" />
-                        <iselse>
-                            <isinclude template="product/components/updateProduct" />
-                    </isif>
+                <!-- Prices -->
+                <div class="prices">
+                    <isset name="price" value="${product.price}" scope="page" />
+                    <isinclude template="product/components/pricing/main" />
                 </div>
+
+                <!-- Cart and [Optionally] Apple Pay -->
+                <isif condition="${pdict.addToCartUrl}">
+                        <isinclude template="product/components/addToCartGlobal" />
+                    <iselse>
+                        <isinclude template="product/components/updateProduct" />
+                </isif>
             </div>
         </div>
     </div>

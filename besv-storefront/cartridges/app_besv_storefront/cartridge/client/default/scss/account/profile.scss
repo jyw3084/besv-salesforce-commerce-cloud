@@ -6,10 +6,15 @@
 @import "account";
 
 .profile-back-to-account-link {
-    color: #{var(--skin-primary-color-1)};
-    text-decoration: underline;
-    display: block;
-    text-align: center;
+    font: 14px/13px $Gothic-A1regular;
+    color: $dark-700;
+    text-decoration: none;
+    padding-bottom: 1px;
+    border-bottom: 1px solid $dark-700;
+    letter-spacing: 0.02em;
+    @include media-breakpoint-down(sm) {
+        font: 12px/15px $Gothic-A1regular;
+    }
 }
 
 .tracking-consent {
@@ -19,22 +24,173 @@
 }
 
 /* Custom Style */
-.card-header {
-    font-family: $GothicA1-Bold;
-    font-size: 22px;
-    letter-spacing: 0.5px;
+#maincontent {
+    padding-top: 120px;
+    padding-bottom: 63px;
+    @include media-breakpoint-down(sm) {
+        padding-top: 44px;
+        padding-bottom: 192px;
+    }
+    h1.page-title {
+        position: static;
+        background: none;
+        font: 44px/55px $GothicA1-Bold;
+        color: $primary;
+        text-transform: capitalize;
+        padding: 0;
+        margin-top: 0;
+        margin-bottom: 26px;
+        width: 100%;
+        text-align: center;
+        @include media-breakpoint-down(sm) {
+            font: 30px/37.5px $GothicA1-Bold;
+        }
+    }
+    .card {
+        margin-bottom: 46px;
+        border-bottom: none;
+        @include media-breakpoint-down(sm) {
+            margin-bottom: 32px;
+        }
+        .card-body {
+            padding: 0;
+        }
+    }
 }
-.profile-back-to-account-link {
-    font-family: $Gothic-A1regular;
+
+.page {
+    background: none;
+    .summary-section-label {
+        font: 18px/25px $GothicA1-Bold;
+        margin-bottom: 10px;
+        color: $primary;
+    }
+    .summary-details {
+        font: 16px/25px $Karla-Light;
+        margin-bottom: 30px;
+        color: $dark-700;
+        @include media-breakpoint-down(sm) {
+            font: 14px/24px $Karla-Light;
+        }
+        .address-summary {
+            margin-bottom: 0;
+        }
+    }
+    .leading-lines .start-lines::before {
+        content: "";
+    }
+}
+
+.receipt {
+    .card {
+        margin-bottom: 30px !important;
+    }
+    .payment {
+        margin-bottom: 0;
+    }
+    .order-product-summary {
+        border-bottom: 1px solid $dark-500 !important;
+        padding-bottom: 20px;
+        .product-summary-block {
+            margin: 0;
+            .product-line-item {
+                background-color: $dark-400;
+                border-radius: 8px;
+                padding: 20px 10px;
+                margin-bottom: 10px !important;
+                @include media-breakpoint-down(sm) {
+                    padding: 10px 20px;
+                }
+                .product-line-item-details {
+                    overflow-y: inherit;
+                    .item-image {
+                        margin-right: 30px;
+                        width: 166px;
+                        height: auto;
+                        @include media-breakpoint-down(sm) {
+                            width: 100px;
+                        }
+                        .product-image {
+                            max-height: none;
+                        }
+                    }
+                    .item-attributes {
+                        padding: 10px 0;
+                        max-width: 60%;
+                        @include media-breakpoint-down(sm) {
+                            padding: 0;
+                        }
+                        .line-item-name {
+                            font: 18px/25px $GothicA1-Bold;
+                            color: $primary;
+                            text-overflow: inherit;
+                            white-space: inherit;
+                            overflow: inherit;
+                            @include media-breakpoint-down(sm) {
+                                font: 14px/25px $GothicA1-Bold;
+                            }
+                        }
+                        .line-item-attributes {
+                            font: 14px/24px $Karla-Regular;
+                            color: $dark-700;
+                            letter-spacing: 0.02em;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .order-total-summary {
+        .leading-lines {
+            margin-bottom: 30px;
+            @include media-breakpoint-down(sm) {
+                margin-bottom: 20px;
+            }
+        }
+        .start-lines {
+            padding: 0;
+            font: 16px/20px $Gothic-A1regular;
+            color: $primary;
+            letter-spacing: 0.02em;
+        }
+        .end-lines {
+            padding: 0;
+            font: 16px/20px $GothicA1-Bold;
+            color: $primary;
+            letter-spacing: 0.02em;
+        }
+        .grand-total {
+            padding-top: 30px;
+            border-top: 1px solid $dark-500 !important;
+            margin-bottom: 0;
+            .start-lines {
+                font-family: $GothicA1-Bold;
+            }
+        }
+    }
+    .checkout-order-total-summary {
+        .card-header {
+            padding: 0;
+            margin-bottom: 30px;
+            @include media-breakpoint-down(sm) {
+                margin-bottom: 20px;
+            }
+            .card-header-custom {
+                font: 18px/25px $GothicA1-Bold;
+                @include media-breakpoint-down(sm) {
+                    font: 16px/25px $GothicA1-Bold;
+                }
+            }
+        }
+    }
 }
 .cancel {
-    font: rem-calc(14) / rem-calc(14) $GothicA1-Medium;
-    text-transform: uppercase;
-    padding: 20px 30px;
-    border-radius: 999px;
-    font-weight: 700;
     max-height: 54px;
+    font: rem-calc(14) / rem-calc(54) $GothicA1-Medium;
+    padding: 0 30px;
+    border-radius: 999px;
     width: 100%;
+    letter-spacing: 0.02em;
     border: 1px solid $primary;
     &:focus {
         box-shadow: none !important;
@@ -45,16 +201,11 @@
         color: $white !important;
         background-color: $primary;
     }
-}
-h1.page-title {
-    position: static;
-    background: none;
-    color: #000;
-    margin-bottom: 25px;
-    font-family: $GothicA1-Bold;
-    width: 100%;
-    text-align: center;
-    letter-spacing: 1px;
+    @include media-breakpoint-down(sm) {
+        max-height: 44px;
+        font: rem-calc(14) / rem-calc(44) $GothicA1-Medium;
+        margin-bottom: 20px;
+    }
 }
 
 .pull-right.btn-ab-edit {

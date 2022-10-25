@@ -1,9 +1,9 @@
 .main-header {
     background: $white;
-    padding: 28px 0 18px;
+    padding: 26px 0;
     border-bottom: 1px solid $light-gray;
     @include media-breakpoint-down(md) {
-        padding: 24px 0;
+        padding: 22px 0;
     }
     .header-wrapper {
         display: flex;
@@ -74,10 +74,10 @@
                 }
             }
             .minicart {
-                margin: -3px 0 0 22px;
+                margin: 0 0 0 22px;
                 @include media-breakpoint-down(md) {
                     padding-bottom: 0;
-                    margin: auto 15px;
+                    margin-right: 10px;
                 }
                 .minicart-quantity {
                     background-color: transparent;
@@ -88,6 +88,7 @@
                 }
             }
             .navbar-toggler  {
+                padding: 0;
                 line-height: 0;
             }
         }
@@ -136,7 +137,6 @@
         font-size: 14px;
     }
 }
-
 // Remove Global Header Styles 
 
 .menu-toggleable-left.in .nav-item + .nav-item {

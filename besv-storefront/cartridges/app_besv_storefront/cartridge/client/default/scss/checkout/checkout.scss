@@ -28,25 +28,13 @@ $checkout-font-weight: 600;
 }
 
 .checkout-checkbox {
-    font-size: 0.875em;
+    font: 16px/20px $Karla-Light;
 }
 
-.customer-information-block  {
-    .js-cancel-login {
-        font: 0.875rem/0.875rem "GothicA1-Medium";
-        padding: 20px 30px;
-        border-radius: 999px;
-        font-weight: 700;
-        max-height: 54px;
-        width: 100%;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
-    .btn-link {
-        color: #{var(--skin-link-color-2)};
-        padding: 0;
-        vertical-align: baseline;
-    }
+.customer-information-block .btn-link {
+    color: #{var(--skin-link-color-2)};
+    padding: 0;
+    vertical-align: baseline;
 }
 
 .edit-button,
@@ -75,15 +63,22 @@ $checkout-font-weight: 600;
     position: fixed;
     bottom: 0;
     z-index: 3;
-    padding-right: 0;
-    padding-left: 0;
+    // padding-right: 0;
+    // padding-left: 0;
 
-    @include media-breakpoint-down(xs) {
-        background-color: rgba(255, 255, 255, 0.95);
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    // @include media-breakpoint-down(xs) {
+    //     background-color: rgba(255, 255, 255, 0.95);
+    //     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 
-        div {
-            padding: $spacer;
+    //     div {
+    //         padding: $spacer;
+    //     }
+    // }
+
+    @include media-breakpoint-down(sm) {
+        position: relative;
+        .btn-block + .btn-block {
+            margin-top: 0;
         }
     }
 
@@ -91,6 +86,11 @@ $checkout-font-weight: 600;
         position: static;
         padding-right: 0.938em;
         padding-left: 0.938em;
+    }
+    .submit-payment:disabled {
+        opacity: 1;
+        background-color: $dark-600;
+        border-color: transparent;
     }
 }
 
@@ -177,7 +177,7 @@ span.ship-to-city-st-zip {
             display: none;
         }
 
-        .card.ghost {
+        .card.ghost.shipping {
             display: none;
         }
 
@@ -359,9 +359,320 @@ span.ship-to-city-st-zip {
 }
 
 /* Custom Style */
+#maincontent {
+    padding-top: 118px;
+    padding-bottom: 170px;
+    @include media-breakpoint-down(sm) {
+        padding-top: 58px;
+        padding-bottom: 30px;
+    }
+    h1.page-title {
+        position: static;
+        background: none;
+        color: $primary;
+        padding: 0;
+        margin-top: 0;
+        margin-bottom: 25px;
+        font: 44px/55px $GothicA1-Bold;
+        @include media-breakpoint-down(md) {
+            width: 100%;
+            text-align: center;
+            font: 28px/28px $GothicA1-Bold;
+            margin-bottom: 21px;
+        }
+    }
+    .checkout-right-side {
+        .card {
+            border-bottom: 1px solid $dark-500;
+            margin-bottom: 26px;
+            .card-header {
+                padding: 0;
+                margin-bottom: 26px;
+                .card-header-custom {
+                    font: 18px/35px $GothicA1-Bold;
+                    color: $primary;
+                    @include media-breakpoint-down(sm){
+                        font: 16px/25px $GothicA1-Bold;
+                    }
+                    span {
+                        border-radius: 50% !important;
+                        padding: 10px 5px 8px;
+                        background: $primary;
+                        color: $white;
+                        display: inline-flex;
+                        font-size: 14px;
+                        line-height: 14px;
+                        align-items: center;
+                        margin-right: 10px;
+                    }
+                }
+            }
+            .card-body {
+                padding: 0;
+                margin-bottom: 26px;
+                .continue-to-shipping {
+                    position: relative;
+                    .form-group {
+                        .email {
+                            height: 54px;
+                            max-height: 54px;
+                            width: 100%;
+                            border-radius: 999px;
+                            padding: 10px 260px 10px 15px;
+                            border: 1px solid $dark-600;
+                            font: 14px/17.5px $Gothic-A1regular;
+                            letter-spacing: 0.02em;
+                            color: $primary;
+                            @include media-breakpoint-down(md) { 
+                                height: 44px;
+                                max-height: 44px;
+                                padding-right: 10px;
+                                margin-bottom: 15px;
+                            }
+                        }
+                    }
+                    .submit-customer {
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                        width: 246.34px;
+                        padding: 0;
+                        @include media-breakpoint-down(md) { 
+                            position: relative;
+                            width: 100%;
+                            margin-bottom: 26px;
+                        }
+                    }
+                }
+                .or-sign-up {
+                    font: 12px/15px $Gothic-A1regular;
+                    color: $dark-700;
+                    button {
+                        font: 14px/13px $GothicA1-Bold;
+                        color: $dark-700 !important;
+                        padding-bottom: 5px;
+                        border-bottom: 1px solid $dark-700;
+                        border-radius: 0;
+                    }
+                }
+                &.shipping-content {
+                    margin-bottom: 0;
+                }
+            }
+            &.ghost {
+                opacity: 1;
+                .card-header {
+                    .card-header-custom {
+                        color: $dark-600;
+                        span {
+                            background: $dark-500;
+                        }
+                    }
+                }
+            }
+            &.shipping-section {
+                .gift-message-block {
+                    padding: 0;
+                    .custom-control-label::before {
+                        margin-right: 10px;
+                    }
+                }
+            }
+            &.customer-summary {
+                .summary-details {
+                    font: 16px/20px $Gothic-A1regular;
+                    letter-spacing: 0.02em;
+                }
+            }
+            &.shipping-summary {
+                .summary-details {
+                    font: 16px/28px $Gothic-A1regular;
+                    letter-spacing: 0.02em;
+                    .address-summary {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+            &.payment-form {
+                .billing-address-block {
+                    .address-selector-block {
+                        .form-control-label {
+                            font: 16px/20px $GothicA1-Bold;
+                            letter-spacing: 0.02em;
+                            margin-bottom: 26px;
+                        }
+                        .addressSelector {
+                            background-color: $dark-400;
+                            border-color: transparent;
+                            letter-spacing: 0.02em;
+                            margin-bottom: 26px;
+                            -moz-appearance: none;
+                            -webkit-appearance: none;
+                        }
+                        .btn-show-details {
+                            padding: 0 0 5px 0;
+                            font: 14px/13px $GothicA1-Bold;
+                            letter-spacing: 0.02em;
+                            color: $dark-700;
+                            border-bottom: 1px solid $orange;
+                            background-color: transparent;
+                            &:hover {
+                                text-decoration: none;
+                            }
+                        }
+                    }
+                }
+                .payment-information {
+                    margin-bottom: 0;
+                }
+                #new-card-form-container > .form-group {
+                    margin-bottom: -24px;
+                }
+                #new-card-form-container {
+                    .form-control {
+                        @include media-breakpoint-down(md) {
+                            height: 54px;
+                        }
+                    }
+                }
+                .payment-privacy {
+                    color: $primary;
+                    .custom-control-label {
+                        font: 16px/20px $Karla-Light;
+                        padding-left: 5px;
+                        &::before {
+                            background: $white !important;
+                            border-radius: 50%;
+                            height: 20px;
+                            width: 20px;
+                            margin-right: 5px;
+                            top: 0;
+                        }
+                        &::after {
+                            top: 2px;
+                            width: 20px;
+                        }
+                        a {
+                            border-bottom: 1px solid $primary;
+                            color: $primary !important;
+                        }
+                    }
+                    .custom-control-input:checked ~ .custom-control-label::after {
+                        background-image: $svg-check;
+                    }
+                }
+                .nav-tabs {
+                    border-bottom: none;
+                }
+            }
+            &.payment-summary {
+                .summary-details {
+                    font: 16px/28px $Gothic-A1regular;
+                    letter-spacing: 0.02em;
+                    .address-summary {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+    .seperator {
+        border-right: 1px solid $dark-400;
+        @include media-breakpoint-down(md) {
+            border-right: none;
+        }
+    }
+    .order-summary-card {
+        border: none;
+        margin-bottom: 0;
+        .card-header {
+            padding: 0;
+            margin-bottom: 30px;
+            @include media-breakpoint-down(sm) {
+                margin-bottom: 20px;
+            }
+            .card-header-custom {
+                font: 18px/25px $GothicA1-Bold;
+                @include media-breakpoint-down(sm) {
+                    font: 16px/25px $GothicA1-Bold;
+                }
+            }
+        }
+        .order-total-summary {
+            border: none;
+            padding: 0;
+            margin: 0;
+            font: 18px/25px $GothicA1-Bold;
+            color: $primary;
+            @include media-breakpoint-down(sm) {
+                font: 16px/25px $GothicA1-Bold;
+            }
+            .checkout-summary-detail {
+                .start-lines {
+                    margin-bottom: 30px;
+                    padding: 0;
+                    @include media-breakpoint-down(sm) {
+                        margin-bottom: 20px;
+                    }
+                    &::before {
+                        content: "";
+                    }
+                    span {
+                        font-family: $Gothic-A1regular;
+                    }
+                }
+                .end-lines {
+                    padding: 0;
+                }
+                &.grand-total {
+                    border-top: 1px solid $dark-500;
+                    padding-top: 30px;
+                    @include media-breakpoint-down(sm) {
+                        padding-top: 20px;
+                    }
+                    .start-lines {
+                        margin-bottom: 0 !important;
+                        span {
+                            font-family: $GothicA1-Bold;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.data-checkout-stage {
+    // Shipping ------------------------------
+    &[data-checkout-stage=shipping] {
+        .next-step-button {
+            display: none;
+        }
+        .card.shipping-section .next-step-button {
+            display: block;
+        }
+    }
+}
+
+.customer-information-block  {
+    .btn-link {
+        color: #{var(--skin-link-color-2)};
+        padding: 0;
+        vertical-align: baseline;
+    }
+    @include media-breakpoint-down(sm) {
+        .submit-customer-login {
+            margin-bottom: 10px;
+        }
+    }
+}
+
 .checkout-header {
-    padding: 15px 0;
-      border-bottom: 1px solid $light-gray;
+    padding: 29px 0;
+    border-bottom: 1px solid $dark-500;
+    @include media-breakpoint-down(sm) {
+        padding: 24px 0;
+    }
     .header-wrapper {
         .logo {
             width: 120px;
@@ -372,297 +683,241 @@ span.ship-to-city-st-zip {
         }
     }
 }
-h1.page-title {
-    position: static;
-    background: none;
-    color: $primary;
-    margin-bottom: 25px;
-    font-family: $GothicA1-Bold;
-    @include media-breakpoint-down(md) {
-        width: 100%;
-        text-align: center;
-    }
-}
+
 .page {
     background-color: $white;
 }
-.card-header-custom {
-    font-family: $Gothic-A1regular;
-    color: $primary;
-    @include media-breakpoint-down(sm){
-        text-align: center;
-        font-size: 0.8rem;
-    }
-}
-.order-summary-card {
-    border: none;
-    .order-total-summary {
-        border: none;
-        .checkout-summary-detail {
-            margin-bottom: 15px;
-            font-weight: 600;
-            .start-lines::before {
-                content: "";
-            }
-            span {
-                font-family: $Gothic-A1regular;
-            }
-            .attribute {
-                font-size: 12px;
-                line-height: 15px;
-                color: $cart-light-gray;
-                margin-top: 0;
-                margin-bottom: 14px;
-            }
-            &.grand-total {
-                border-top: 1px solid $brand-light-gray;
-                padding-top: 15px;
-                font-size: 22px !important;
-                font-family: $Gothic-A1black;
-            }
-        }
-    }
-}
+
 .leading-lines .start-lines::before {
     content: '';
 }
-.continue-to-shipping {
-    position: relative;
-    .form-group {
-        margin-bottom: 10px;
-        .email{
-            height: 54px;
-            max-height: 54px;
-            width: 100%;
-            border-radius: 999px;
-            padding: 10px 260px 10px 15px;
-            border: 1px solid $light-gray;
-            font: 1.125rem/1.6875rem "Karla-Regular";
-            @include media-breakpoint-down(md) { 
-                padding-right: 10px;
-                margin-bottom: 15px;
-            }
-        }
-    }
-    .submit-customer {
-        position: absolute;
-        right: 0;
-        top: 0;
-        width: 38%;
-        @include media-breakpoint-down(md) { 
-            position: static;
-            width: 100%;
-            margin-bottom: 15px;
-        }
 
-    }
-}
-.card-header {
-    font: rem-calc(16) / rem-calc(18) $Gothic-A1black;
-    font-weight: 900;
-    span {
-        border-radius: 50% !important;
-        padding: 6px;
-        background: $primary;
-        color: $white;
-        font-size: 12px;
-        color: #fff;
-        display: inline-flex;
-        font-size: 14px;
-        align-items: center;
-        font-weight: 900;
-        margin-right: 10px;
-    }
-
-}
-.checkout-right-side {
-    border-right: 1px solid $brand-light-gray;
-    @include media-breakpoint-down(md) {
-        border-right: none;
-    }
-
-}
-.or-sign-up {
-    font-family: $Karla-Regular;
-    color: #cccccc;
-    button {
-        color: $primary !important;
-    }
-}
 .customer-summary, .shipping-summary, .payment-summary {
     .edit-button {
-        color: $secondary;
-        border-bottom: 1px solid $secondary;
+        color: $dark-700;
+        border-bottom: 1px solid $dark-700;
         padding-bottom: 4px;
         font-family: $Gothic-A1regular;
-        text-transform: uppercase;
-        &:hover {
-            text-decoration: none;
-        }
+    }
+    .summary-details {
+        margin-bottom: 0;
     }
 }
+
 .payment-summary {
     .card-body {
         font-family: $Gothic-A1regular;
     }
 }
+
 .customer-summary-email {
     font-family: $Gothic-A1regular;
 }
+
 .example {
     font-family: $Gothic-A1regular;
     padding-top: 5px;
     display: inline-block;
 }
-.single-shipping {
-    font-family: $Gothic-A1regular;
-}
-.thankyou-header {
-    text-align: center;
-    margin-bottom: 60px;
-    padding-top: 90px;
-    .order-thank-you-msg {
-        font: rem-calc(42) / rem-calc(50) $GothicA1-Bold;
-        color: $primary;
-        font-weight: 900;
-        margin-bottom: 15px;
-        @include media-breakpoint-down(md) {
-            font: rem-calc(22) / rem-calc(32) $GothicA1-Bold;
-            font-weight: 900;
+
+.receipt {
+    .thankyou-header {
+        text-align: center;
+        margin-bottom: 35px;
+        @include media-breakpoint-down(sm) {
+            margin-bottom: 30px;
+        }
+        .order-thank-you-msg {
+            font: 44px/55px $GothicA1-Bold;
+            color: $primary;
+            margin-bottom: 26px;
+            @include media-breakpoint-down(sm) {
+                font: 28px/36px $GothicA1-Bold;
+                margin-bottom: 0;
+            }
+        }
+        .order-thank-you-email-msg {
+            font: 18px/32px $Gothic-A1regular;
+            letter-spacing: 0.02em;
+            @include media-breakpoint-down(sm) {
+                display: none;
+            }
+        }
+        .order-email {
+            font: 18px/32px $GothicA1-Bold;
+            letter-spacing: 0.02em;
+            display: inline-block;
+            @include media-breakpoint-down(sm) {
+                display: none;
+            }
         }
     }
-}
-.order-thank-you-email-msg {
-    font-family: $Gothic-A1regular;
-}
-.order-confirm-create-account {
-    background-color: $cart-gray-background;
-    border-radius: 8px;
-    .card-header {
-        background: none;
-    }
-}
-.order-email {
-    font-family: $GothicA1-Bold;
-    margin-bottom: 10px;
-    display: inline-block;
-    margin-right: 5px;
-}
-
-.confirm-details {
-    border-bottom: none;
-    .order-number-label, .order-date-label, .shipping-addr-label, .shipping-method-label, .billing-addr-label, .payment-info-label{
-        font-family: $GothicA1-Bold;
-        display: inline-block;
-        margin-right: 5px;
-    }
-    .summary-details {
-        font-family: $Gothic-A1regular;
-    }
-    .single-shipping {
-        padding-top: 15px;
-    }
-}
-
-.order-product-summary {
-    border: none;
-    .product-line-item {
-        border: 1px solid #DDDDDC;
+    .order-confirm-create-account {
+        background-color: $dark-400;
         border-radius: 8px;
-        .product-wrapper {
-            padding: 20px 40px;
-            .line-item-header {
-                font-family: $GothicA1-Medium;
-                .line-item-name {
-                    margin-bottom: 1rem;
+        @include media-breakpoint-down(sm) {
+            margin-bottom: 30px;
+        }
+        .card-header {
+            background: none;
+            padding: 20px 119px 26px 30px;
+            @include media-breakpoint-down(sm) {
+                padding: 20px 61px 26px 20px;
+            }
+            .card-header-custom {
+                font: 24px/34px $GothicA1-Bold;
+                @include media-breakpoint-down(sm) {
+                    font: 18px/25px $GothicA1-Bold;
                 }
             }
-            .line-item-attributes {
-                font-family: $Gothic-A1regular;
-                color: #767676;
+        }
+        .card-body {
+            padding: 0 30px 20px 30px;
+            @include media-breakpoint-down(sm) {
+                padding: 0 20px 20px 20px;
             }
-            @include media-breakpoint-down(sm){
-                padding: 15px;
+        }
+    }
+    .confirm-details {
+        border-bottom: none;
+        margin-bottom: 30px;
+        .card-body {
+            padding: 0;
+            .summary-section-label {
+                font: 18px/25px $GothicA1-Bold;
+                margin-bottom: 10px;
+                color: $primary;
+                // display: inline-block;
+                // margin-right: 5px;
+            }
+            .summary-details {
+                font: 16px/25px $Karla-Light;
+                margin-bottom: 30px;
+                color: $dark-700;
+                @include media-breakpoint-down(sm) {
+                    font: 14px/24px $Karla-Light;
+                }
+                .address-summary {
+                    margin-bottom: 0;
+                }
+            }
+            .payment {
+                margin-bottom: 0;
+            }
+        }
+        .single-shipping {
+            font-family: $Gothic-A1regular;
+            // padding-top: 15px;
+        }
+    }
+    .order-product-summary {
+        border-bottom: 1px solid $dark-500 !important;
+        padding-bottom: 20px;
+        margin-bottom: 30px;
+        .card-body {
+            padding: 0;
+        }
+        .product-summary-block {
+            margin: 0;
+            .product-line-item {
+                background-color: $dark-400;
+                border-radius: 8px;
+                padding: 20px 10px;
+                margin-bottom: 10px !important;
+                @include media-breakpoint-down(sm) {
+                    padding: 10px 20px;
+                }
                 .product-line-item-details {
-                    overflow-y: initial;
+                    overflow-y: inherit;
                     .item-image {
-                        width: 20%;
+                        margin-right: 30px;
+                        width: 166px;
                         height: auto;
+                        @include media-breakpoint-down(sm) {
+                            width: 100px;
+                        }
+                        .product-image {
+                            max-height: none;
+                        }
                     }
                     .item-attributes {
-                        width: 75%;
+                        padding: 10px 0;
+                        max-width: 60%;
+                        @include media-breakpoint-down(sm) {
+                            padding: 0;
+                        }
                         .line-item-name {
-                            text-overflow: initial;
-                            overflow: initial;
+                            font: 18px/25px $GothicA1-Bold;
+                            color: $primary;
+                            text-overflow: inherit;
+                            white-space: inherit;
+                            overflow: inherit;
+                            @include media-breakpoint-down(sm) {
+                                font: 14px/25px $GothicA1-Bold;
+                            }
+                        }
+                        .line-item-attributes {
+                            font: 14px/24px $Karla-Regular;
+                            color: $dark-700;
+                            letter-spacing: 0.02em;
                         }
                     }
                 }
             }
         }
     }
-}
-.checkout-order-total-summary {
-    border: none;
-    font-family: $Gothic-A1regular;
-    .order-total-summary {
-        h3 {
-            font-size: 16px;
-        }
-        .checkout-summary-detail {
-            span {
-                font-size: 14px;
+    .checkout-order-total-summary {
+        border-bottom: none;
+        margin-bottom: 0;
+        .card-header {
+            padding: 0;
+            margin-bottom: 30px;
+            @include media-breakpoint-down(sm) {
+                margin-bottom: 20px;
             }
-            .attribute {
-                margin-top: 0;
-                font-size: 12px;
-                color: $cart-light-gray;
-                span {
-                    margin-right: 10px;
+            .card-header-custom {
+                font: 18px/25px $GothicA1-Bold;
+                @include media-breakpoint-down(sm) {
+                    font: 16px/25px $GothicA1-Bold;
                 }
             }
         }
-        .grand-total {
-            font-size: 16px;
-            font-family: $GothicA1-Bold;
+        .card-body {
+            padding: 0;
         }
-        .end-lines {
-            font-family: $GothicA1-Medium;
+        .order-total-summary {
+            .leading-lines {
+                margin-bottom: 30px;
+                @include media-breakpoint-down(sm) {
+                    margin-bottom: 20px;
+                }
+            }
+            .start-lines {
+                padding: 0;
+                font: 16px/20px $Gothic-A1regular;
+                color: $primary;
+                letter-spacing: 0.02em;
+            }
+            .end-lines {
+                padding: 0;
+                font: 16px/20px $GothicA1-Bold;
+                color: $primary;
+                letter-spacing: 0.02em;
+            }
+            .grand-total {
+                padding-top: 30px;
+                border-top: 1px solid $dark-500 !important;
+                margin-bottom: 0;
+                .start-lines {
+                    font-family: $GothicA1-Bold;
+                }
+            }
         }
     }
 }
+
 .grand-total-label, .grand-total-price {
     font-family: $Gothic-A1regular;
-}
-
-.payment-privacy {
-    padding-top: 15px;
-    color: $secondary;
-
-    .custom-control-label {
-        font-weight: normal;
-        font-family: $Gothic-A1regular;
-        font-size: 14px;
-        padding-left: 10px;
-        &::before {
-            background: $white !important;
-            border-radius: 50%;
-            height: 20px;
-            width: 20px;
-            margin-right: 5px;
-            top: 0;
-        }
-        &::after {
-            top: 2px;
-            width: 20px;
-        }
-        a {
-            border-bottom: 1px solid $secondary;
-            color: $secondary !important;
-        }
-    }
-    .custom-control-input:checked ~ .custom-control-label::after {
-        background-image: $svg-check;
-    }
 }
 
 .payment-options {
@@ -670,6 +925,7 @@ h1.page-title {
         display: none;
     }
 }
+
 .nav-tabs .nav-link.active {
     border-bottom: 0.188em solid $orange;
 }

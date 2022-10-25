@@ -24,155 +24,138 @@ var csrfProtection = require('*/cartridge/scripts/middleware/csrf');
  * @param {category} - sensitive
  * @param {serverfunction} - post
  */
- server.replace(
-    'CreateAccount',
-    server.middleware.https,
-    csrfProtection.validateAjaxRequest,
-    function (req, res, next) {
-        var OrderMgr = require('dw/order/OrderMgr');
-        var CustomerMgr = require('dw/customer/CustomerMgr');
-        var formErrors = require('*/cartridge/scripts/formErrors');
+server.replace(
+	'CreateAccount',
+	server.middleware.https,
+	csrfProtection.validateAjaxRequest,
+	function (req, res, next) {
+		var OrderMgr = require('dw/order/OrderMgr');
+		var CustomerMgr = require('dw/customer/CustomerMgr');
+		var formErrors = require('*/cartridge/scripts/formErrors');
 
-        var passwordForm = server.forms.getForm('newPasswords');
-        var newPassword = passwordForm.newpassword.htmlValue;
-        var confirmPassword = passwordForm.newpasswordconfirm.htmlValue;
-        if (newPassword !== confirmPassword) {
-            passwordForm.valid = false;
-            passwordForm.newpasswordconfirm.valid = false;
-            passwordForm.newpasswordconfirm.error =
-                Resource.msg('error.message.mismatch.newpassword', 'forms', null);
-        }
+		var passwordForm = server.forms.getForm('newPasswords');
+		var newPassword = passwordForm.newpassword.htmlValue;
+		var confirmPassword = passwordForm.newpasswordconfirm.htmlValue;
+		if (newPassword !== confirmPassword) {
+			passwordForm.valid = false;
+			passwordForm.newpasswordconfirm.valid = false;
+			passwordForm.newpasswordconfirm.error =
+				Resource.msg('error.message.mismatch.newpassword', 'forms', null);
+		}
 
-        if (!CustomerMgr.isAcceptablePassword(newPassword)) {
-            passwordForm.valid = false;
-            passwordForm.newpasswordconfirm.valid = false;
-            passwordForm.newpasswordconfirm.error =
-                Resource.msg('error.message.password.constraints.not.matched', 'forms', null);
-        }
+		if (!CustomerMgr.isAcceptablePassword(newPassword)) {
+			passwordForm.valid = false;
+			passwordForm.newpasswordconfirm.valid = false;
+			passwordForm.newpasswordconfirm.error =
+				Resource.msg('error.message.password.constraints.not.matched', 'forms', null);
+		}
 
-        var order = OrderMgr.getOrder(req.querystring.ID);
-        if (!order || order.customer.ID !== req.currentCustomer.raw.ID || order.getUUID() !== req.querystring.UUID) {
-            res.json({ error: [Resource.msg('error.message.unable.to.create.account', 'login', null)] });
-            return next();
-        }
+		var order = OrderMgr.getOrder(req.querystring.ID);
+		if (!order || order.customer.ID !== req.currentCustomer.raw.ID || order.getUUID() !== req.querystring.UUID) {
+			res.json({ error: [ Resource.msg('error.message.unable.to.create.account', 'login', null) ] });
+			return next();
+		}
 
-        res.setViewData({ orderID: req.querystring.ID });
-        var registrationObj = {
-            firstName: order.billingAddress.firstName,
-            lastName: order.billingAddress.lastName,
-            phone: order.billingAddress.phone,
-            email: order.customerEmail,
-            password: newPassword
-        };
+		res.setViewData({ orderID: req.querystring.ID });
+		var registrationObj = {
+			firstName: order.billingAddress.firstName,
+			lastName: order.billingAddress.lastName,
+			phone: order.billingAddress.phone,
+			email: order.customerEmail,
+			password: newPassword
+		};
 
-        if (passwordForm.valid) {
-            res.setViewData(registrationObj);
-            res.setViewData({ passwordForm: passwordForm });
+		if (passwordForm.valid) {
+			res.setViewData(registrationObj);
+			res.setViewData({ passwordForm: passwordForm });
 
-            var email = registrationObj && registrationObj.email ? registrationObj.email : null;
-            if (email && CustomerMgr.getCustomerByLogin(email)) {
-                res.json({
-                    success: false,
-                    error: [Resource.msgf('error.message.account.exist', 'forms', null, email)]
-                });
-                return next();
-            }
+			this.on('route:BeforeComplete', function (req, res) { // eslint-disable-line no-shadow
+				var Transaction = require('dw/system/Transaction');
+				var accountHelpers = require('*/cartridge/scripts/helpers/accountHelpers');
+				var addressHelpers = require('*/cartridge/scripts/helpers/addressHelpers');
 
-            this.on('route:BeforeComplete', function (req, res) { // eslint-disable-line no-shadow
-                var Transaction = require('dw/system/Transaction');
-                var accountHelpers = require('*/cartridge/scripts/helpers/accountHelpers');
-                var addressHelpers = require('*/cartridge/scripts/helpers/addressHelpers');
+				var registrationData = res.getViewData();
 
-                var registrationData = res.getViewData();
+				var login = registrationData.email;
+				var password = registrationData.password;
+				var newCustomer;
+				var authenticatedCustomer;
+				var newCustomerProfile;
+				var errorObj = {};
 
-                var login = registrationData.email;
-                var password = registrationData.password;
-                var newCustomer;
-                var authenticatedCustomer;
-                var newCustomerProfile;
-                var errorObj = {};
+				delete registrationData.email;
+				delete registrationData.password;
 
-                delete registrationData.email;
-                delete registrationData.password;
+				// attempt to create a new user and log that user in.
+				try {
+					Transaction.wrap(function () {
+						var error = {};
+						newCustomer = CustomerMgr.createCustomer(login, password);
 
-                // attempt to create a new user and log that user in.
-                try {
-                    Transaction.wrap(function () {
-                        var error = {};
-                        newCustomer = CustomerMgr.createCustomer(login, password);
+						var authenticateCustomerResult = CustomerMgr.authenticateCustomer(login, password);
+						if (authenticateCustomerResult.status !== 'AUTH_OK') {
+							error = { authError: true, status: authenticateCustomerResult.status };
+							throw error;
+						}
 
-                        var authenticateCustomerResult = CustomerMgr.authenticateCustomer(login, password);
-                        if (authenticateCustomerResult.status !== 'AUTH_OK') {
-                            error = { authError: true, status: authenticateCustomerResult.status };
-                            throw error;
-                        }
+						authenticatedCustomer = CustomerMgr.loginCustomer(authenticateCustomerResult, false);
 
-                        authenticatedCustomer = CustomerMgr.loginCustomer(authenticateCustomerResult, false);
+						if (!authenticatedCustomer) {
+							error = { authError: true, status: authenticateCustomerResult.status };
+							throw error;
+						} else {
+							// assign values to the profile
+							newCustomerProfile = newCustomer.getProfile();
 
-                        if (!authenticatedCustomer) {
-                            error = { authError: true, status: authenticateCustomerResult.status };
-                            throw error;
-                        } else {
-                            // assign values to the profile
-                            newCustomerProfile = newCustomer.getProfile();
+							newCustomerProfile.firstName = registrationData.firstName;
+							newCustomerProfile.lastName = registrationData.lastName;
+							newCustomerProfile.phoneHome = registrationData.phone;
+							newCustomerProfile.email = login;
 
-                            newCustomerProfile.firstName = registrationData.firstName;
-                            newCustomerProfile.lastName = registrationData.lastName;
-                            newCustomerProfile.phoneHome = registrationData.phone;
-                            newCustomerProfile.email = login;
+							order.setCustomer(newCustomer);
 
-                            order.setCustomer(newCustomer);
+							// save all used shipping addresses to address book of the logged in customer
+							var allAddresses = addressHelpers.gatherShippingAddresses(order);
+							allAddresses.forEach(function (address) {
+								addressHelpers.saveAddress(address, { raw: newCustomer }, addressHelpers.generateAddressName(address));
+							});
 
-                            // save all used shipping addresses to address book of the logged in customer
-                            var allAddresses = addressHelpers.gatherShippingAddresses(order);
-                            allAddresses.forEach(function (address) {
-                                addressHelpers.saveAddress(address, { raw: newCustomer }, addressHelpers.generateAddressName(address));
-                            });
+							res.setViewData({ newCustomer: newCustomer });
+							res.setViewData({ order: order });
+						}
+					});
+				} catch (e) {
+					errorObj.error = true;
+					errorObj.errorMessage = e.authError
+						? Resource.msg('error.message.unable.to.create.account', 'login', null)
+						: Resource.msg('error.message.account.create.error', 'forms', null);
+				}
 
-                            res.setViewData({ newCustomer: newCustomer });
-                            res.setViewData({ order: order });
-                        }
-                    });
-                } catch (e) {
-                    errorObj.error = true;
-                    errorObj.errorMessage = e.authError
-                        ? Resource.msg('error.message.unable.to.create.account', 'login', null)
-                        : Resource.msg('error.message.account.create.error', 'forms', null);
-                }
+				delete registrationData.firstName;
+				delete registrationData.lastName;
+				delete registrationData.phone;
 
-                delete registrationData.firstName;
-                delete registrationData.lastName;
-                delete registrationData.phone;
+				if (errorObj.error) {
+					res.json({ error: [ errorObj.errorMessage ] });
 
-                if (errorObj.error) {
-                    res.json({ error: [errorObj.errorMessage] });
+					return;
+				}
 
-                    return;
-                }
+				accountHelpers.sendCreateAccountEmail(authenticatedCustomer.profile);
 
-                accountHelpers.sendCreateAccountEmail(authenticatedCustomer.profile);
+				res.json({
+					success: true,
+					redirectUrl: URLUtils.url('Account-Show', 'registration', 'submitted').toString()
+				});
+			});
+		} else {
+			res.json({
+				fields: formErrors.getFormErrors(passwordForm)
+			});
+		}
 
-                res.json({
-                    success: true,
-                    redirectUrl: URLUtils.url('Account-Show', 'registration', 'submitted').toString()
-                });
-            });
-        } else {
-            res.json({
-                fields: formErrors.getFormErrors(passwordForm)
-            });
-        }
-
-        return next();
-    }
+		return next();
+	}
 );
-
-server.append('Confirm', function (req, res, next) {
-    var viewData = res.getViewData();
-    viewData.isConfirm = true;
-    res.setViewData(viewData);
-
-    next();
-});
 
 module.exports = server.exports();

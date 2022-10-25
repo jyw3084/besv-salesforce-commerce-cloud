@@ -20,15 +20,16 @@
     </div>
 
     <div class="container">
-        <h1 class="page-title" id="cart-title">${Resource.msg('title.cart','cart',null)} (${pdict.items.length})</h1>
-        <div class="row cart-header">
+        <h1 class="page-title number-of-items" id="cart-title">${Resource.msgf('label.number.items.in.cart','cart', null, pdict.numItems)}</h1>
+        <iscomment> <div class="row cart-header">
             <div class="col-sm-12 text-right hidden-xs-down">
                 <div>
                     <span>${Resource.msg('info.need.help','cart',null)}</span>
-                    <iscomment> <span><a class="help-phone-number" href="tel:${Resource.msg('info.phone.number','common',null)}">${Resource.msg('info.phone.number','common',null)}</a></span> </iscomment>
+                    <span><a class="help-phone-number" href="tel:${Resource.msg('info.phone.number','common',null)}">${Resource.msg('info.phone.number','common',null)}</a></span>
                 </div>
             </div>
-        </div>
+        </div> </iscomment>
+        <iscomment> <hr class="no-margin-top"> </iscomment>
     </div>
 
     <isif condition="${pdict.items.length === 0}">
@@ -43,7 +44,7 @@
         <div class="container cart cart-page">
             <div class="row">
                 <!---product cards--->
-                <div class="col-sm-7 col-md-8">
+                <div class="col-md-7 product-card">
                     <isloop items="${pdict.items}" var="lineItem">
                         <isif condition="${lineItem.productType === 'bundle'}">
                             <isinclude template="cart/productCard/cartBundleCard" />
@@ -58,14 +59,14 @@
                     <isinclude template="cart/cartApproachingDiscount" />
                 </div>
                 <!---totals, and checkout actions--->
-                <div class="col-sm-5 col-md-4 totals">
+                <div class="col-md-4 offset-md-1 totals">
                     <isinclude template="cart/cartPromoCode" />
                     <div class="coupons-and-promos">
                         <isinclude template="cart/cartCouponDisplay" />
                     </div>
-                    <div class="row mb-3 cart-total-amount">
+                    <iscomment> <div class="row mb-3 cart-total-amount">
                         <isinclude template="cart/cartShippingMethodSelection" />
-                    </div>
+                    </div> </iscomment>
                     <isinclude template="cart/cartTotals" />
                     <div class="row">
                         <div class="col-12 checkout-continue">

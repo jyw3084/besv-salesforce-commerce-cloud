@@ -4,7 +4,9 @@
         <div class="form-group
             ${billingFields.firstName.mandatory === true ? 'required' : ''}
             ${billingFields.firstName.htmlName}">
-            <label class="form-control-label" for="billingFirstName">${Resource.msg('field.billing.address.first.name','address',null)}</label>
+            <label class="form-control-label" for="billingFirstName">
+                ${Resource.msg('field.billing.address.first.name','address',null)}
+            </label>
             <input autofocus type="text" class="form-control billingFirstName" id="billingFirstName"
                 value="${pdict.order.billing.billingAddress.address
                     && pdict.order.billing.billingAddress.address.firstName
@@ -19,7 +21,9 @@
         <div class="form-group
             ${billingFields.lastName.mandatory === true ? 'required' : ''}
             ${billingFields.lastName.htmlName}">
-            <label class="form-control-label" for="billingLastName">${Resource.msg('field.billing.address.last.name','address',null)}</label>
+            <label class="form-control-label" for="billingLastName">
+                ${Resource.msg('field.billing.address.last.name','address',null)}
+            </label>
             <input type="text" class="form-control billingLastName" id="billingLastName"
                 value="${pdict.order.billing.billingAddress.address
                     && pdict.order.billing.billingAddress.address.lastName
@@ -37,7 +41,9 @@
         <div class="form-group
             ${billingFields.address1.mandatory === true ? 'required' : ''}
             ${billingFields.address1.htmlName}">
-            <label class="form-control-label" for="billingAddressOne">${Resource.msg('field.billing.address.one','address',null)}</label>
+            <label class="form-control-label" for="billingAddressOne">
+                ${Resource.msg('field.billing.address.one','address',null)}
+            </label>
             <input type="text" class="form-control billingAddressOne" id="billingAddressOne"
                 value="${pdict.order.billing.billingAddress.address
                     && pdict.order.billing.billingAddress.address.address1
@@ -55,7 +61,9 @@
         <div class="form-group
             ${billingFields.address2.mandatory === true ? 'required' : ''}
             ${billingFields.address2.htmlName}">
-            <label class="form-control-label" for="billingAddressTwo">${Resource.msg('field.billing.address.two','address',null)}</label>
+            <label class="form-control-label" for="billingAddressTwo">
+                ${Resource.msg('field.billing.address.two','address',null)}
+            </label>
             <input type="text" class="form-control billingAddressTwo" id="billingAddressTwo"
                 value="${pdict.order.billing.billingAddress.address
                     && pdict.order.billing.billingAddress.address.address2
@@ -74,7 +82,9 @@
         <div class="form-group
             ${billingFields.country.mandatory === true ? 'required' : ''}
             ${billingFields.country.htmlName}">
-            <label class="form-control-label" for="billingCountry">${Resource.msg('field.billing.address.country','address',null)}</label>
+            <label class="form-control-label" for="billingCountry">
+                ${Resource.msg('field.billing.address.country','address',null)}
+            </label>
             <select class="form-control billingCountry custom-select" id="billingCountry"
                 <isprint value=${billingFields.country.attributes} encoding="off"/>
                 autocomplete="billing country">
@@ -92,7 +102,9 @@
         <div class="form-group
             ${billingFields.postalCode.mandatory === true ? 'required' : ''}
             ${billingFields.postalCode.htmlName}">
-            <label class="form-control-label" for="billingZipCode">${Resource.msg('field.billing.address.zip.code','address',null)}</label>
+            <label class="form-control-label" for="billingZipCode">
+                ${Resource.msg('field.billing.address.zip.code','address',null)}
+            </label>
             <input type="text" class="form-control billingZipCode" id="billingZipCode"
                 value="${pdict.order.billing.billingAddress.address
                     && pdict.order.billing.billingAddress.address.postalCode
@@ -108,7 +120,9 @@
         <div class="form-group
             ${billingFields.states.stateCode.mandatory === true ? 'required' : ''}
             ${billingFields.states.stateCode.htmlName}">
-            <label class="form-control-label" for="billingState">${Resource.msg('field.billing.address.state','address',null)}</label>
+            <label class="form-control-label" for="billingState">
+                ${Resource.msg('field.billing.address.state','address',null)}
+            </label>
             <select class="form-control billingState custom-select" id="billingState"
                 <isprint value=${billingFields.states.stateCode.attributes} encoding="off"/>
                 autocomplete="billing address-level1">
@@ -129,11 +143,13 @@
 </div>
 
 <div class="row">
-    <div class="col-sm-6">
+    <div class="col-sm-12">
         <div class="form-group
             ${billingFields.city.mandatory === true ? 'required' : ''}
             ${billingFields.city.htmlName}">
-            <label class="form-control-label" for="billingAddressCity">${Resource.msg('field.billing.address.city','address',null)}</label>
+            <label class="form-control-label" for="billingAddressCity">
+                ${Resource.msg('field.billing.address.city','address',null)}
+            </label>
             <input type="text" class="form-control billingAddressCity" id="billingAddressCity"
                 value="${pdict.order.billing.billingAddress.address
                     && pdict.order.billing.billingAddress.address.city
@@ -144,7 +160,7 @@
             <div class="invalid-feedback"></div>
         </div>
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm-6 d-none">
         <div class="form-group
             <isif condition=${pdict.forms.billingForm.contactInfoFields.phone.mandatory === true}>required</isif>
             ${pdict.forms.billingForm.contactInfoFields.phone.htmlName}">

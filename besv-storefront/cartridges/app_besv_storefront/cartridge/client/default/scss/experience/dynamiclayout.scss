@@ -1,13 +1,16 @@
-
 @import "../variable";
 @import "../mixins";
 @import "bootstrap/scss/functions";
 @import "bootstrap/scss/variables";
 @import "bootstrap/scss/mixins/breakpoints";
 
+.home-page-wrapper {
+    @include media-breakpoint-down(md) {
+        overflow: hidden;
+    }
+}
 
 /* Key Features */
-
 .key-features-wrapper__parent {
     display: flex;
     justify-content: space-between;
@@ -100,7 +103,6 @@
 
 
 /*Video Banner*/
-
 .video {
     position: relative;
     margin-bottom: 38px;
@@ -181,7 +183,6 @@
 
 
 /* Award Winning */
-
 .award-winner-banner {
     display: flex;
     margin-bottom: 67px;
@@ -196,7 +197,7 @@
         max-width: 50%;
         overflow: hidden;
         .banner-image {
-            height: 100%;
+            // height: 100%;
             border-radius: 0 8px 8px 0;
             @include media-breakpoint-down(md) {
                 border-radius: 0 0 8px 8px;
@@ -210,7 +211,7 @@
     .award-banner-content {
         width: 50%;
         max-width: 50%;
-        padding: 92px 82px 72px;
+        padding: 92px 82px 65px;
         @include media-breakpoint-down(md) {
             width: 100%;
             max-width: 100%;
@@ -251,11 +252,17 @@
     }
 }
 
-/* Story Banner */
+.experience-assets-storyBanner {
+    overflow: hidden;
+    @include media-breakpoint-down(md) {
+        overflow: initial;
+    }
+}
 
+/* Story Banner */
 .story-banner {
     display: flex;
-    margin-bottom: 100px;
+    // margin-bottom: 100px;
     @include media-breakpoint-down(md) {
         flex-direction: column-reverse;
         margin-bottom: 0;
@@ -303,26 +310,31 @@
         }
     }
     &.image-position-right {
-        // position: relative;
+        position: relative;
         flex-direction: row-reverse;
+        padding-top: 100px;
         @include media-breakpoint-down(md) {
             flex-direction: column-reverse;
             align-items: center;
+            margin-top: -100px !important;
         }
-        // &::before {
-        //     content: 'CF1 LINO';
-        //     position: absolute;
-        //     top: -103px;
-        //     right: -393px;
-        //     font: rem-calc(200) / rem-calc(200) $GothicA1-Bold;
-        //     letter-spacing: 5px;
-        //     color: $brand-dark;
-        //     opacity: 0.05;
-        //     z-index: -1;
-        //     @include media-breakpoint-down(md) {
-        //         bottom: 0;
-        //     }
-        // }
+        &::before {
+            content: 'CF1 LINO';
+            position: absolute;
+            top: 0;
+            right: -393px;
+            font: 200px / 200px $GothicA1-Bold;
+            letter-spacing: 0.05em;
+            color: $brand-dark;
+            opacity: 0.05;
+            z-index: -1;
+            @include media-breakpoint-down(md) {
+                top: 60px;
+                left: -40px;
+                font: 100px / 100px $GothicA1-Bold;
+                z-index: initial;
+            }
+        }
     }
     &.margin-class {
         max-width: 1240px;
@@ -426,7 +438,6 @@
 }
 
 /* Sign Up */
-
 .home-email-signup {
     background: linear-gradient(to right, rgb(18, 18, 18) 0%, rgb(49, 49, 48) 100%);
     .email-signup-wrapper {
@@ -458,15 +469,19 @@
            .signup-input {
                 width: 100%;
                 input {
-                   height: 54px;
-                   max-height: 54px;
-                   width: 100%;
-                   border-radius: 999px;
-                   padding: 10px 163px 10px 24px;
-                   background-color: $primary;
-                   color: $white;
-                   border: 1px solid $white;
-                   font: rem-calc(18) / rem-calc(27) $Karla-Regular;
+                    height: 54px;
+                    max-height: 54px;
+                    width: 100%;
+                    border-radius: 999px;
+                    padding: 10px 163px 10px 24px;
+                    background-color: $primary;
+                    color: $white;
+                    border: 1px solid $white;
+                    font: rem-calc(18) / rem-calc(27) $Karla-Regular;
+                    @include media-breakpoint-down(sm) {
+                        height: 44px;
+                        max-height: 44px;
+                    }
                 }
             }
            .signup-button {

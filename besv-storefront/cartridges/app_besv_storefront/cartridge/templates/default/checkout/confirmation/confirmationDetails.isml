@@ -1,19 +1,17 @@
 <div class="card confirm-details">
 
     <div class="card-body">
-        <p class="mb-3">
-            <span class="summary-section-label order-number-label">${Resource.msg('label.order.number', 'confirmation', null)}</span>
-            <br/>
-            <span class="summary-details order-number">${pdict.order.orderNumber}</span>
-        </p>
-        <p>
-            <span class="summary-section-label order-date-label">${Resource.msg('label.order.date', 'confirmation', null)}</span>
-            <br/>
-            <span class="summary-details order-date"><isprint value="${pdict.order.creationDate}" style="DATE_SHORT"/></span>
-        </p>
+        <div>
+            <p class="summary-section-label order-number-label">${Resource.msg('label.order.number', 'confirmation', null)}</p>
+            <p class="summary-details order-number">${pdict.order.orderNumber}</p>
+        </div>
+        <div>
+            <p class="summary-section-label order-date-label">${Resource.msg('label.order.date', 'confirmation', null)}</p>
+            <p class="summary-details order-date"><isprint value="${pdict.order.creationDate}" style="DATE_SHORT"/></p>
+        </div>
 
-        <isinclude template="checkout/shipping/shippingSummary" />
-        <isinclude template="checkout/billing/billingSummary" />
+        <isinclude template="checkout/shipping/shippingSummaryStatusPage" />
+        <isinclude template="checkout/billing/billingSummaryStatusPage" />
 
     </div>
 </div>
@@ -21,7 +19,10 @@
 <isinclude template="checkout/orderProductSummary" />
 
 <div class="card checkout-order-total-summary">
+    <div class="card-header">
+        <h2 class="card-header-custom">${Resource.msg('heading.order.summary', 'checkout', null)}</h2>
+    </div>
     <div class="card-body order-total-summary">
-        <isinclude template="checkout/orderTotalSummary" />
+        <isinclude template="checkout/orderTotalSummaryStatusPage" />
     </div>
 </div>

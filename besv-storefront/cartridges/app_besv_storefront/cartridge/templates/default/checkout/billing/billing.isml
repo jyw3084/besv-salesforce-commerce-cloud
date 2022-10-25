@@ -32,7 +32,9 @@
                         <isinclude template="checkout/billing/addressSelector" />
                         <div class="invalid-feedback"></div>
                         <div class="row">
-                            <button class="col-6 text-left btn-show-details btn" type="button">${Resource.msg('action.update.address', 'checkout', null)}</button>
+                            <div class="col-auto">
+                                <button class="btn-show-details" type="button">${Resource.msg('action.update.address', 'checkout', null)}</button>
+                            </div>
                             <iscomment> <button class="col-6 text-center btn-add-new btn" type="button">${Resource.msg('action.add.new', 'checkout', null)}</button> </iscomment>
                         </div>
                     </div>

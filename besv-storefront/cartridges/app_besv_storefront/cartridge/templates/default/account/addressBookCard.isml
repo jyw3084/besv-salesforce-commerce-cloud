@@ -7,13 +7,13 @@
     </div>
     <isif condition="${pdict.account.preferredAddress}">
         <div class="card-body">
-            <div>
+            <div class="mb-30px">
                 <div class="my-account-profile-heading">${Resource.msg('label.addressbook.defaultaddress','account',null)}</div>
-                <div class="dashboard-info">${pdict.account.preferredAddress.address.ID}</div>
-                <div class="dashboard-info">${pdict.account.preferredAddress.address.firstName} ${pdict.account.preferredAddress.address.lastName}</div>
+                <iscomment> <div class="dashboard-info">${pdict.account.preferredAddress.address.ID}</div> </iscomment>
+                <iscomment> <div class="dashboard-info">${pdict.account.preferredAddress.address.firstName} ${pdict.account.preferredAddress.address.lastName}</div> </iscomment>
                 <div class="dashboard-info">${pdict.account.preferredAddress.address.address1}</div>
                 <div class="dashboard-info">${pdict.account.preferredAddress.address.city}, ${pdict.account.preferredAddress.address.stateCode} ${pdict.account.preferredAddress.address.postalCode}</div>
-                <div class="dashboard-info">${pdict.account.preferredAddress.address.phone}</div>
+                <iscomment> <div class="dashboard-info">${pdict.account.preferredAddress.address.phone}</div> </iscomment>
             </div>
         </div>
     </isif>
